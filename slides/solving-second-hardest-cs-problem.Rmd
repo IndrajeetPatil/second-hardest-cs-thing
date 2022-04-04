@@ -1,0 +1,21 @@
+---
+title: "Dealing with second hardest thing in Computer Science"
+subtitle: "<br/>How to name things"
+author: "Indrajeet Patil"
+institute: "esqLABS"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+> There are only two hard things in Computer Science: cache invalidation and naming things.
+> -- Phil Karlton
