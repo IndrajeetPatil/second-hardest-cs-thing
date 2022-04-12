@@ -17,8 +17,14 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-> There are only two hard things in Computer Science: cache invalidation and naming things.
-> -- Phil Karlton
+---
+
+layout: false
+
+class: inverse, center, middle
+
+## "There are only two hard things in Computer Science: </br>cache invalidation and naming things."</br>
+### - Phil Karlton
 
 ---
 
@@ -74,15 +80,19 @@ And, since they prefer American spellings, they do this:
 guide_colorbar(ticks.color = "black")
 ```
 
-**That doesn't work!!**
+**That won't work!!**
 
-Because both functions support only the British spelling of function parameter:
+Because both functions support **only** the British spelling of parameters:
 
 ```{r, eval=FALSE}
 guide_colourbar(ticks.colour = "black")
 guide_colorbar(ticks.colour = "black")
 ```
 
-This can be nasty source of bug, especially in a long function. 
+This is **inconsistent** and **violates user assumptions** about function and parameter naming schema<sup>*</sup>.
 
-It'll also be hard to debug since your first assumption is unlikely to be "I must be spelling color incorrectly".
+.footnote[
+
+*This can be a nasty source of bug to fix in a function producing complex plots, especially because your first thought is unlikely to be "I must be spelling color incorrectly".
+
+]
