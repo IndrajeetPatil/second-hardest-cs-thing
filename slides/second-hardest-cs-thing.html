@@ -51,11 +51,13 @@ class: inverse, center, middle
 &gt; 
 &gt; -- Jonh Ousterhout
 
-&lt;/br&gt;
-
 ## Importance: **Names are at the core of software design** 
 
 If you can't find a good name for a variable or a function that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+
+## Properties: **Good names are precise and consistent**
+
+In what follows, we will see some advice on how to satisfy these properties.
 
 ---
 
@@ -67,7 +69,7 @@ class: inverse, center, middle
 
 ---
 
-## Good names can act like comments.
+## Good names are a form of documentation.
 
 How good a name is can be assessed by how detailed the accompanying comment needs to be.
 
@@ -118,6 +120,37 @@ template&lt;
 A better name would have been `size`.
 
 **Generic names compromise code readability because they provide little information.**
+
+---
+
+## Follow conventions if you use generic names.
+
+Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow the conventions!
+
+For example, using `j` for outer and `i` for inner loop is confusing!
+
+
+```javascript
+  for (let j = 0; j &lt; arr.length; j++) {
+    for (let i = 0; i &lt; arr[i].length; i++) {
+      
+    }
+  }
+```
+
+Similarly, `temp` shouldn't be used to store objects that are not temporary.
+
+
+```r
+sumXY &lt;- function(x, y) {
+  temp = x + y
+  return(temp)
+}
+```
+
+etc.
+
+**Don't violate reader assumptions about what generic names represent.**
 
 ---
 
@@ -196,9 +229,45 @@ This is **inconsistent** and **violates user assumptions** about function and pa
 
 .footnote[
 
-*This can be a nasty source of bug to fix in a function producing complex plots, especially because your first thought is unlikely to be "I must be spelling color incorrectly".
+*This can be a painful source of bug to fix because the function will silently fail.
 
 ]
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# Find me on...
+
+.font100[
+
+🐦 [Twitter](http://twitter.com/patilindrajeets)
+
+💼 [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/)
+
+💻 [GitHub](mailto:patilindrajeet.science@gmail.com)
+
+]
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+## Code for these slides is available [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
+
+If you have any feedback on these slides, please create issue there.
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# The End 👋
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
