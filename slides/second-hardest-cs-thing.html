@@ -105,20 +105,6 @@ distance() # too generic
 euclidean_distance() # more specific and informative
 ```
 
-*Case study*
-
-The parameter [`N`](https://en.cppreference.com/w/cpp/container/array) in `std::array` definition is too generic.
-
-
-```cpp
-template&lt;
-    class T,
-    std::size_t N
-&gt; struct array;
-```
-
-A better name would have been `size`.
-
 **Generic names compromise code readability because they provide little information.**
 
 ---
@@ -184,6 +170,7 @@ plotHistogram()
 
 .pull-left[
 
+
 ```r
 # okay 
 child_height
@@ -194,6 +181,7 @@ address
 ]
 
 .pull-right[
+
 
 ```r
 # better 
@@ -216,7 +204,27 @@ layout: false
 
 class: inverse, center, middle
 
-# Naming schema should be consistent
+# Case studies
+
+Looking at names in the wild that violate presented guidelines.
+
+This is not meant as a criticism but as real-life learning opportunities to drive home importance of some of these guidelines.
+
+---
+
+## Violation: Generic name
+
+The parameter [`N`](https://en.cppreference.com/w/cpp/container/array) in `std::array` definition is too generic.
+
+
+```cpp
+template&lt;
+    class T,
+    std::size_t N
+&gt; struct array;
+```
+
+A better name would have been `size`.
 
 ---
 
@@ -224,13 +232,13 @@ layout: false
 
 class: inverse, center, middle
 
-## Case study: *ggplot2*
+## Violation: Inconsistency in naming schema
 
 *ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/) in R. 
 
-Quite admirably, it anticipates both **British** and **American** English spellings. 
+Quite admirably, it accepts both **British** and **American** English spellings. 
 
-But does it do it consistently?
+But does it do so *consistently*?
 
 ---
 
@@ -256,7 +264,7 @@ Both forms of spellings are supported.
 # works
 aes(color = my_variable)
 
-# this works as well
+# this works as well!
 aes(colour = my_variable)
 ```
 
@@ -287,9 +295,13 @@ This is **inconsistent** and **violates user assumptions** about function and pa
 
 .footnote[
 
-*This can be a painful source of bug to fix because the function will silently fail.
+*This can be a painful source of a bug because the function will fail silently.
 
 ]
+
+---
+
+# Further reading
 
 ---
 
