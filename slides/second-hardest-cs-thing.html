@@ -4,7 +4,7 @@
     <title>Dealing with second hardest thing in Computer Science</title>
     <meta charset="utf-8" />
     <meta name="author" content="Indrajeet Patil" />
-    <meta name="date" content="2022-04-04" />
+    <meta name="date" content="2022-04-12" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 ## <br/>How to name things
 ### Indrajeet Patil
 ### esqLABS
-### 2022-04-04
+### 2022-04-12
 
 ---
 
@@ -26,6 +26,77 @@ class: center, middle, inverse, title-slide
 
 &gt; There are only two hard things in Computer Science: cache invalidation and naming things.
 &gt; -- Phil Karlton
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# Naming consistency issues
+
+## Case study: *ggplot2*
+
+*ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/) in R. 
+
+Quite admirably, it anticipates both **British** and **American** English spellings. 
+
+But does it do it consistently?
+
+---
+
+## Function names
+
+Both forms of spellings are supported.
+
+
+```r
+# works
+guide_colorbar(...)
+
+# this works as well
+guide_colourbar(...)
+```
+
+## Function parameters
+
+Both forms of spellings are supported.
+
+
+```r
+# works
+aes(color = my_variable)
+
+# this works as well
+aes(colour = my_variable)
+```
+
+---
+
+# Function names *and* parameters 
+
+A user has now come to believe that *ggplot2* supports British and American spellings for both function names and parameters.
+
+And, since they prefer American spellings, they do this:
+
+
+```r
+guide_colorbar(ticks.color = "black")
+```
+
+**That doesn't work!!**
+
+Because both functions support only the British spelling of function parameter:
+
+
+```r
+guide_colourbar(ticks.colour = "black")
+guide_colorbar(ticks.colour = "black")
+```
+
+This can be nasty source of bug, especially in a long function. 
+
+It'll also be hard to debug since your first assumption is unlikely to be "I must be spelling color incorrectly".
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

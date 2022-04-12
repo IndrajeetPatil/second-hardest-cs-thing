@@ -1,2 +1,3 @@
-# solving-second-hardest-cs-problem
-Thoughts on how to name things
+# Dealing with second hardest thing in Computer Science
+
+Thoughts on how to name things.
