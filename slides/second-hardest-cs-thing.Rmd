@@ -15,6 +15,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(eval = FALSE)
 ```
 
 ---
@@ -32,7 +33,95 @@ layout: false
 
 class: inverse, center, middle
 
-# Naming consistency issues
+## The following advice about naming applies to various objects (variables, functions, classes, etc.)!
+
+## It is deliberately language-agnostic.
+
+---
+
+## Guiding Principle: **Names are a form of abstraction**
+
+> [T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important.
+> 
+> -- Jonh Ousterhout
+
+</br>
+
+## Importance: **Names are at the core of software design** 
+
+If you can't find a good name for a variable or a function that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# Names should convey a lot of information
+
+---
+
+## Good names can act like comments.
+
+How good a name is can be assessed by how detailed the accompanying comment needs to be.
+
+For example, this has neither good function nor parameter name, and you can tell that from how much work the comments are doing:
+
+```{Rcpp}
+// function to convert temperature from Fahrenheit to Celsius scale
+// temp is the temperature in Fahrenheit
+double unitCoverter(double temp)
+```
+
+Contrast it with (we don't even need a comment here!):
+
+```{Rcpp}
+double fahrenheitToCelsius(double fahrenheit)
+```
+
+**Good names rarely require readers to read the documentation to understand what they represent.**
+
+---
+
+## Avoid generic names.
+
+Generic names don't provide much information about the values or the purpose of the entity that the name is attached to.
+
+For example, 
+
+```{python}
+distance() # too generic 
+euclidean_distance() # more specific and informative
+```
+
+*Case study*
+
+The parameter [`N`](https://en.cppreference.com/w/cpp/container/array) in `std::array` definition is too generic.
+
+```{Rcpp}
+template<
+    class T,
+    std::size_t N
+> struct array;
+```
+
+A better name would have been `size`.
+
+**Generic names compromise code readability because they provide little information.**
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# Naming schema should be consistent
+
+---
+
+layout: false
+
+class: inverse, center, middle
 
 ## Case study: *ggplot2*
 
@@ -70,7 +159,7 @@ aes(colour = my_variable)
 
 ---
 
-# Function names *and* parameters 
+## Function names *and* parameters 
 
 A user has now come to believe that *ggplot2* supports British and American spellings for both function names and parameters.
 
