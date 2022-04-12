@@ -142,6 +142,60 @@ etc.
 
 ---
 
+## Remove unnecessary words from names...
+
+.pull-left[
+
+```{r}
+# okay 
+convert_to_string()
+createPlotHistogram()
+```
+
+]
+
+.pull-right[
+
+```{r}
+# better 
+to_string()
+plotHistogram()
+```
+
+]
+
+</br>
+
+## but keep important extra details!
+
+.pull-left[
+```{r}
+# okay 
+child_height
+id
+address
+```
+
+]
+
+.pull-right[
+```{r}
+# better 
+child_height_cm
+hex_id
+ip_address
+```
+
+]
+
+---
+
+## Names should be difficult to misunderstand.
+
+**Making names as precise and unambiguous as possible leaves little room for misconstrual.**
+
+---
+
 layout: false
 
 class: inverse, center, middle
