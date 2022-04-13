@@ -202,7 +202,7 @@ ip_address
 
 While naming things, always ask yourself how easy it would be to replace the chosen name with a different name in the future.
 
-For example, if your code to create a plot, using `p` to represent plot is asking for trouble.
+For example, this plotting function uses `p` to represent plot.
 
 ```{r}
 plotScatter <- function() {
@@ -212,9 +212,30 @@ plotScatter <- function() {
 }
 ```
 
-In future, if you wanted to rename it, it won't be easy to search or to replace in the codebase.
+In future, if you wanted to rename it, it won't be easy either to search or to replace in the codebase.
 
 Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
+
+---
+
+## Names should honor the culture.
+
+The names should respect the conventions adopted in the given programming language, domain of knowledge, project, organization, etc.
+
+For example, if convention is PascalCase for class names and lowerCamel case for methods, the following compromises code readability:
+
+```{Rcpp}
+class playerEntity
+{
+public:
+    double height;
+    set_height(double height) : height{height} { }
+};
+```
+
+--
+
+**Don't break conventions unless other guidelines require overriding conventions for consistency.**
 
 ---
 
@@ -235,6 +256,24 @@ class: inverse, center, middle
 Looking at names in the wild that violate presented guidelines.
 
 This is not meant as a criticism but as real-life learning opportunities to drive home importance of some of these guidelines.
+
+---
+
+## Violation: Breaking conventions
+
+R is a programming language for statistical computing, and function names can be expected to respect the domain conventions.
+
+Statistical distributions can be characterized centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
+
+```{r}
+mean(c(1, 2, 3, 4)) # works
+median(c(1, 2, 3, 4)) # works
+mode(c(1, 2, 3, 4)) # error! #<<
+```
+
+The `mode()` function actually returns the storage mode of an R object!
+
+This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific conventions for naming functions.
 
 ---
 
