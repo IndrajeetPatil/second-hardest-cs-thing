@@ -1,9 +1,8 @@
 ---
-title: "Dealing with second hardest thing in Computer Science"
-subtitle: "<br/>How to name things"
-author: "Indrajeet Patil"
-institute: "esqLABS"
-date: "`r Sys.Date()`"
+title: "Dealing with the Second Hardest Thing in Computer Science"
+subtitle: "Thoughts on naming things for software development"
+author: "</br></br></br>Indrajeet Patil (Software Engineer, esqLABS)"
+#date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,10 +14,9 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
 knitr::opts_chunk$set(eval = FALSE)
 ```
-
----
 
 layout: false
 
@@ -43,15 +41,19 @@ class: inverse, center, middle
 
 > [T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important.
 > 
-> -- Jonh Ousterhout
+> \- Jonh Ousterhout
+
+--
 
 ## Importance: **Names are at the core of software design** 
 
-If you can't find a good name for a variable or a function that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+If you can't find a good name that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+
+--
 
 ## Properties: **Good names are precise and consistent**
 
-In what follows, we will see some advice on how to satisfy these properties.
+We will see some advice on how to satisfy these properties.
 
 ---
 
@@ -59,13 +61,16 @@ layout: false
 
 class: inverse, center, middle
 
-# Names should convey a lot of information
+# "The beginning of wisdom is to call things by their proper name."</br>
+## - Confucius
 
 ---
 
 ## Good names are a form of documentation.
 
-How good a name is can be assessed by how detailed the accompanying comment needs to be.
+How good a name is can be assessed by how detailed the accompanying comments need to be.
+
+--
 
 For example, this has neither good function nor parameter name, and you can tell that from how much work the comments are doing:
 
@@ -75,11 +80,15 @@ For example, this has neither good function nor parameter name, and you can tell
 double unitCoverter(double temp)
 ```
 
+--
+
 Contrast it with (we don't even need a comment here!):
 
 ```{Rcpp}
-double fahrenheitToCelsius(double fahrenheit)
+double fahrenheitToCelsius(double tempFahrenheit)
 ```
+
+--
 
 **Good names rarely require readers to read the documentation to understand what they represent.**
 
@@ -87,11 +96,11 @@ double fahrenheitToCelsius(double fahrenheit)
 
 ## Avoid generic names.
 
-Generic names don't provide much information about the values or the purpose of the entity that the name is attached to.
+Generic names don't provide much information about the values or the purpose of the entity they represent.
 
 For example, 
 
-```{python}
+```{r}
 distance() # too generic 
 euclidean_distance() # more specific and informative
 ```
@@ -102,7 +111,7 @@ euclidean_distance() # more specific and informative
 
 ## Follow conventions if you use generic names.
 
-Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow the conventions!
+Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow the conventions.
 
 For example, using `j` for outer and `i` for inner loop is confusing!
 
@@ -189,6 +198,14 @@ ip_address
 
 ---
 
+## Names should be kept up-to-date.
+
+To resist software entropy, not only should you name things properly, but you should also rename things to keep up with new developments.
+
+Otherwise, names will become something worse than meaningless or confusing: **misleading**.
+
+---
+
 layout: false
 
 class: inverse, center, middle
@@ -203,7 +220,7 @@ This is not meant as a criticism but as real-life learning opportunities to driv
 
 ## Violation: Generic name
 
-The parameter [`N`](https://en.cppreference.com/w/cpp/container/array) in `std::array` definition is too generic.
+The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cpp/container/array)) is too generic.
 
 ```{Rcpp}
 template<
@@ -244,7 +261,7 @@ But does it do so *consistently*?
 
 Both forms of spellings are supported.
 
-```{r, eval=FALSE}
+```{r}
 # works
 guide_colorbar(...)
 
@@ -252,11 +269,13 @@ guide_colorbar(...)
 guide_colourbar(...)
 ```
 
+--
+
 ## Function parameters
 
 Both forms of spellings are supported.
 
-```{r, eval=FALSE}
+```{r}
 # works
 aes(color = my_variable)
 
@@ -272,26 +291,50 @@ A user has now come to believe that *ggplot2* supports British and American spel
 
 And, since they prefer American spellings, they do this:
 
-```{r, eval=FALSE}
+```{r}
 guide_colorbar(ticks.color = "black")
 ```
 
-**That won't work!!**
+--
 
-Because both functions support **only** the British spelling of parameters:
+**That won't work!**
 
-```{r, eval=FALSE}
+Both functions support **only** the British spelling of parameters:
+
+```{r}
 guide_colourbar(ticks.colour = "black")
 guide_colorbar(ticks.colour = "black")
 ```
 
-This is **inconsistent** and **violates user assumptions** about function and parameter naming schema<sup>*</sup>.
+--
+
+This is **inconsistent** and **violates user's mental model** about function and parameter naming schema<sup>*</sup>.
 
 .footnote[
 
 *This can be a painful source of a bug because the function will fail silently.
 
 ]
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# Benefits of naming things correctly
+
+---
+
+## "What's in a name?" Well, everthing!
+
+--
+
+- Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** of what motivates this change. This is critical for thoughtful software design.
+
+--
+
+- Searching for precise names requires clarity, and seeking such clarity **improves your own understanding** of the code.
 
 ---
 

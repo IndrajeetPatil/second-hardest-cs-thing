@@ -1,11 +1,14 @@
-# Dealing with second hardest thing in Computer Science
+# Dealing with the Second Hardest Thing in Computer Science
 
-Thoughts on how to name things during software development.
+Thoughts on naming things for software development.
 
 The title is inspired by the following quote:
 
 > "There are only two hard things in Computer Science: </br>cache invalidation and naming things."</br>
 > - Phil Karlton
+
+Slides can be seen here:
+<>
 
 # Further Reading
 
