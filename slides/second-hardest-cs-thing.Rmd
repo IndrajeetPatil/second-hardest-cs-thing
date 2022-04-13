@@ -106,7 +106,7 @@ Sometimes using generic names may actually improve code readability. But, in suc
 
 For example, using `j` for outer and `i` for inner loop is confusing!
 
-```{javascript}
+```{js}
   for (let j = 0; j < arr.length; j++) {
     for (let i = 0; i < arr[i].length; i++) {
       
@@ -160,6 +160,7 @@ plotHistogram()
 ```{r}
 # okay 
 child_height
+password
 id
 address
 ```
@@ -171,11 +172,14 @@ address
 ```{r}
 # better 
 child_height_cm
+plaintext_password
 hex_id
 ip_address
 ```
 
 ]
+
+**If something is critical to know, it should be part of the name.**
 
 ---
 
@@ -204,11 +208,21 @@ The parameter [`N`](https://en.cppreference.com/w/cpp/container/array) in `std::
 ```{Rcpp}
 template<
     class T,
-    std::size_t N
+    std::size_t N #<<
 > struct array;
 ```
 
-A better name would have been `size`.
+`size` is a bit better but still leaves room for misunderstanding: 
+> "Does it mean length or memory bytes?"
+
+`numberOfElements` is more precise and unmistakable:
+
+```{Rcpp}
+template<
+    class T,
+    std::size_t numberOfElements #<<
+> struct array;
+```
 
 ---
 
