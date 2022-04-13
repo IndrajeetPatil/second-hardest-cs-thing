@@ -138,7 +138,7 @@ etc.
 
 ---
 
-## Remove unnecessary words from names...
+## Unnecessary words from names should be removed...
 
 .pull-left[
 
@@ -162,7 +162,7 @@ plotHistogram()
 
 </br>
 
-## but keep important extra details!
+## but important details should be kept!
 
 .pull-left[
 
@@ -195,6 +195,26 @@ ip_address
 ## Names should be difficult to misunderstand.
 
 **Making names as precise and unambiguous as possible leaves little room for misconstrual.**
+
+---
+
+## Names should be easily searchable.
+
+While naming things, always ask yourself how easy it would be to replace the chosen name with a different name in the future.
+
+For example, if your code to create a plot, using `p` to represent plot is asking for trouble.
+
+```{r}
+plotScatter <- function() {
+  p <- ggplot(mtcars, aes(wt, mpg)) + geom_point()
+  p <- p + labs(title = "my first scatter plot")
+  p
+}
+```
+
+In future, if you wanted to rename it, it won't be easy to search or to replace in the codebase.
+
+Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
 
 ---
 
@@ -330,7 +350,7 @@ class: inverse, center, middle
 
 --
 
-- Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** of what motivates this change. This is critical for thoughtful software design.
+- Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** that motivates this change. This is critical for thoughtful software design.
 
 --
 
