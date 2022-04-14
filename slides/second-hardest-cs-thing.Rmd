@@ -351,6 +351,60 @@ public:
 
 ---
 
+## Name Booleans with extra care.
+
+Names for Boolean variables or functions should make clear what true and false means. This can be done using prefixes (**is**, **has**, **can**, etc.).
+
+.pull-left[
+
+```{r}
+# not great
+if (child) {
+  if (parentSupervision) {
+    watchHorrorMovie <- TRUE
+  }
+}
+```
+
+]
+
+.pull-right[
+
+```{r}
+# better
+if (isChild) {
+  if (hasParentSupervision) {
+    canWatchHorrorMovie <- TRUE
+  }
+}
+```
+
+]
+
+</br>
+
+Prefer not to use negated terms for Booleans since they are harder to process.
+
+.pull-left[
+
+```{r}
+# not great
+disable_firewall = FALSE
+```
+
+]
+
+.pull-right[
+
+```{r}
+# better
+enable_firewall = TRUE
+```
+
+]
+
+---
+
 ## Formatting names can provide additional information.
 
 Having different name formats for different entities makes the code easier to read because it **acts like syntax highlighting**.
