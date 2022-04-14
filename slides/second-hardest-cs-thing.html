@@ -482,13 +482,33 @@ generateTimeStamp()
 
 ---
 
+# Use consistent lexicon in a project.
+
+Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
+
+E.g., the same abstraction is mapped to different names across R6 classes:
+
+
+```cpp
+DebitCardAccount$new()$fetch_expenditure()
+CreditCardAccount$new()$get_expenditure()
+```
+
+Across classes, this method should either be named `$get_expenditure()` or `$fetch_expenditure()`, but not both.
+
+.content-box-blue[
+**Consistency of naming conventions should be respected at the codebase level, not just for short scopes.**
+]
+
+---
+
 layout: false
 
 class: inverse, center, middle
 
 # Case studies
 
-Looking at names in the wild that violate presented guidelines.
+### Looking at names in the wild that violate presented guidelines.
 
 This is **not** to be taken as criticisms but as real-life learning opportunities to drive home the importance of these guidelines.
 
