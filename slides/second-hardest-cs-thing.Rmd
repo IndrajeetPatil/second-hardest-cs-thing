@@ -1,11 +1,12 @@
 ---
-title: "Dealing with the Second Hardest Thing in Computer Science"
-subtitle: "Thoughts on naming things for software development"
-author: "</br></br></br>Indrajeet Patil (Software Engineer, esqLABS)"
+title: ".yellow[Dealing with the Second Hardest Thing in Computer Science]</br></br></br>"
+#subtitle: ".green[Thoughts on naming things for software development]"
+author: "</br></br></br></br></br></br></br></br>.yellow[Indrajeet Patil (Software Engineer, esqLABS)]"
 #date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    css: ["default", "hygge", "second-hardest-cs-thing.css"]
     nature:
       highlightStyle: github
       highlightLines: true
