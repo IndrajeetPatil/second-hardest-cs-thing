@@ -514,6 +514,29 @@ This is **inconsistent** and **violates user's mental model** about function and
 
 ---
 
+## Violation: Room for misunderstanding
+
+In Python, [`filter()`](https://www.w3schools.com/python/ref_func_filter.asp) can be used to apply a function to an iterable.
+
+```{python}
+list(filter(lambda x: x > 0, [-1, 1]))
+```
+
+But `filter` is an ambiguous work:
+- It could mean to pick out elements that pass a condition (what *remains after filtering*), or
+- it could mean to pick out elements that need to be removed (what *is filtered*). 
+
+Imagine you've never used this function before. Can you predict if it will return `1` or `-1`?
+
+--
+
+It returns `1`, so the intent is to pick out the elements that pass the condition. </br>
+In this case, **`keep()`** would've be a better name.
+
+Had the intent been to find elements to remove, **`discard()`** would've be a better name.
+
+---
+
 layout: false
 
 class: inverse, center, middle
