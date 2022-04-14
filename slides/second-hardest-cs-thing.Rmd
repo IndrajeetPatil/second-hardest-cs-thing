@@ -94,7 +94,7 @@ double fahrenheitToCelsius(double tempFahrenheit)
 
 ---
 
-## Avoid generic names.
+## Generic names should be avoided.
 
 Generic names don't provide much information about the values or the purpose of the entity they represent.
 
@@ -109,11 +109,33 @@ euclidean_distance() # more specific and informative
 
 ---
 
-## Follow conventions if you use generic names.
+## Names should be consistent.
+
+Consistent names reduce cognitive burden on the readers because if they encounter a name in one context, they can safely reuse that knowledge in another context.
+
+For example, these names are inconsistent since the reader can't safely assume the name `size` means the same thing throughout the program.
+
+```{c}
+// context-1: `size` stands for number of memory bytes
+{
+  size = sizeof(x);
+}
+
+// context-2: `size` stands for number of elements
+{
+  size = strlen(a);
+}
+```
+
+**Allow users to make safe assumptions about what the names represent across different scopes.**
+
+---
+
+## Conventions should be followed for generic names.
 
 Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow the conventions.
 
-For example, using `j` for outer and `i` for inner loop is confusing!
+For example, using `j` for outermost and `i` for nested loop is confusing!
 
 ```{js}
   for (let j = 0; j < arr.length; j++) {
@@ -125,12 +147,7 @@ For example, using `j` for outer and `i` for inner loop is confusing!
 
 Similarly, `temp` shouldn't be used to store objects that are not temporary.
 
-```{r}
-sumXY <- function(x, y) {
-  temp = x + y
-  return(temp)
-}
-```
+Or `retVal` shouldn't be used for something that is not returned from function.
 
 etc.
 
@@ -146,6 +163,8 @@ etc.
 # okay 
 convert_to_string()
 createPlotHistogram()
+fileObject
+strName # Hungarian notation
 ```
 
 ]
@@ -156,6 +175,8 @@ createPlotHistogram()
 # better 
 to_string()
 plotHistogram()
+file
+name
 ```
 
 ]
@@ -394,6 +415,18 @@ class: inverse, center, middle
 --
 
 - Searching for precise names requires clarity, and seeking such clarity **improves your own understanding** of the code.
+
+--
+
+- Naming precisely and consistently **reduce ambiguities and misunderstandings**, which reduce the possibility of bugs.
+
+--
+
+- Good names **reduce the need for documentation**.
+
+--
+
+- Good names **reduce cognitive overload** for the developers and make the code more maintainable.
 
 ---
 
