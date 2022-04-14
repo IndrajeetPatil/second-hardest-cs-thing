@@ -10,7 +10,7 @@ h1, h2, h3 {
 .remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }
 
 .title-slide {
-  background-image: url(cat.png);
+  background-image: url(images/cat.png);
   background-size: 45%;
   background-position: 50% 60%;
 }

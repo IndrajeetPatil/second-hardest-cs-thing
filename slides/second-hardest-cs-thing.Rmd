@@ -351,6 +351,19 @@ public:
 
 ---
 
+## Formatting names can provide additional information.
+
+Having different name formats for different entities makes the code easier to read because it **acts like syntax highlighting**.
+
+For example, here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md)):
+
+```{r, echo=FALSE, eval=TRUE}
+knitr::include_graphics("images/osp_naming.png")
+```
+
+
+---
+
 ## Names should be kept up-to-date.
 
 To resist software entropy, not only should you name things properly, but you should also rename things to keep up with new developments.
@@ -575,6 +588,10 @@ The **page numbers** in parentheses point to the relevant portions.
 - Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-30**)
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
+
+For a good example of organizational naming guidelines, see:
+
+- [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
 
 
 ---
