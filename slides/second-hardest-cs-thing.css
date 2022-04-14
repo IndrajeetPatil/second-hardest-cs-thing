@@ -12,6 +12,20 @@ h1, h2, h3 {
 .title-slide {
   background-image: url(cat.jpeg);
   background-size: 45%;
-  /*background-position: 50% 50%;*/
+  background-position: 50% 60%;
 }
 
+.content-box-blue,
+.content-box-gray,
+.content-box-grey,
+.content-box-army,
+.content-box-green,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+    border-radius: 10px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 10px;
+    width: 100%;
+}

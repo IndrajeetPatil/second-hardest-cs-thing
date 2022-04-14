@@ -91,7 +91,9 @@ double fahrenheitToCelsius(double tempFahrenheit)
 
 --
 
+.content-box-blue[
 **Good names rarely require readers to read the documentation to understand what they represent.**
+]
 
 ---
 
@@ -128,7 +130,9 @@ For example, these names are inconsistent since the reader can't safely assume t
 }
 ```
 
-**Allow users to make safe assumptions about what the names represent across different scopes.**
+.content-box-blue[
+**Allow users to make safe assumptions about what the names represent across different scopes/contexts.**
+]
 
 ---
 
@@ -152,7 +156,9 @@ Or `retVal` shouldn't be used for something that is not returned from function.
 
 etc.
 
+.content-box-blue[
 **Don't violate reader assumptions about what generic names represent.**
+]
 
 ---
 
@@ -182,8 +188,6 @@ name
 
 ]
 
-</br>
-
 ## but important details should be kept!
 
 .pull-left[
@@ -210,7 +214,9 @@ ip_address
 
 ]
 
+.content-box-blue[
 **If some information is critical to know, it should be part of the name.**
+]
 
 ---
 
@@ -235,13 +241,15 @@ days_since_last_accident_floor_4_lab_23
 ...
 ```
 
-**Don't go too far with making them precise.**
+.content-box-blue[
+**Don't go too far with making names precise.**
+]
 
 ---
 
 ## Names should be difficult to misinterpret.
 
-When you think of names, try your best to find alternative ways to interpret them and see how successful you are.
+Try your best to misinterpret candidate names and see if you succeed.
 
 --
 
@@ -273,7 +281,9 @@ std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
 
 --
 
+.content-box-blue[
 **Making names as precise and unambiguous as possible leaves little room for misconstrual.**
+]
 
 ---
 
@@ -295,6 +305,10 @@ In future, if you wanted to rename it, it won't be easy either to search or to r
 
 Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
 
+.content-box-blue[
+**Choose names that can be searched and replaced, if the need arises.**
+]
+
 ---
 
 ## Names should honor the culture.
@@ -314,7 +328,9 @@ public:
 
 --
 
+.content-box-blue[
 **Don't break conventions unless other guidelines require overriding conventions for consistency.**
+]
 
 ---
 
