@@ -42,7 +42,7 @@ class: inverse, center, middle
 
 ## Guiding Principle: **Names are a form of abstraction**
 
-&gt; [T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important.
+&gt; "[T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important."
 &gt; 
 &gt; \- Jonh Ousterhout
 
@@ -50,13 +50,13 @@ class: inverse, center, middle
 
 ## Importance: **Names are at the core of software design** 
 
-If you can't find a good name that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+If you can't find a name that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
 
 --
 
 ## Properties: **Good names are precise and consistent**
 
-We will see some advice on how to satisfy these properties.
+It is difficult to miss out on critical information about the object or to misinterpret the underlying representation based on its name
 
 ---
 
@@ -109,11 +109,43 @@ For example,
 
 
 ```r
+count # too generic
+character_count # more informative
+
 distance() # too generic 
 euclidean_distance() # more specific and informative
 ```
 
+.content-box-blue[
 **Generic names compromise code readability because they provide little information.**
+]
+
+---
+
+## Conventions should be followed for generic names.
+
+Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow language or domain conventions.
+
+For example, using `j` for outermost and `i` for nested loop is confusing!
+
+
+```js
+  for (let j = 0; j &lt; arr.length; j++) {
+    for (let i = 0; i &lt; arr[j].length; i++) {
+      
+    }
+  }
+```
+
+Similarly,
+
+- `temp` shouldn't be used to store objects that are not temporary
+- `retVal` shouldn't be used for objects not returned from function
+- etc.
+
+.content-box-blue[
+**Don't violate reader assumptions about what generic names represent.**
+]
 
 ---
 
@@ -142,37 +174,9 @@ For example, these names are inconsistent since the reader can't safely assume t
 
 ---
 
-## Conventions should be followed for generic names.
-
-Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow the conventions.
-
-For example, using `j` for outermost and `i` for nested loop is confusing!
-
-
-```js
-  for (let j = 0; j &lt; arr.length; j++) {
-    for (let i = 0; i &lt; arr[i].length; i++) {
-      
-    }
-  }
-```
-
-Similarly, `temp` shouldn't be used to store objects that are not temporary.
-
-Or `retVal` shouldn't be used for something that is not returned from function.
-
-etc.
-
-.content-box-blue[
-**Don't violate reader assumptions about what generic names represent.**
-]
-
----
-
-## Unnecessary words from names should be removed...
+### Unnecessary words from names should be removed...
 
 .pull-left[
-
 
 ```r
 # okay 
@@ -181,7 +185,6 @@ createPlotHistogram()
 fileObject
 strName # Hungarian notation
 ```
-
 ]
 
 .pull-right[
@@ -197,7 +200,11 @@ name
 
 ]
 
-## but important details should be kept!
+&lt;/br&gt;
+
+--
+
+### but important details should be kept!
 
 .pull-left[
 
@@ -235,7 +242,9 @@ ip_address
 
 How precise the name should be is a **subjective decision**. You can typically find a middle ground.
 
-Consider the following variable name:
+--
+
+Consider the following variable names:
 
 
 ```r
@@ -253,6 +262,8 @@ days_since_last_accident_floor_4_lab_23
 ...
 ```
 
+--
+
 .content-box-blue[
 **Don't go too far with making names precise.**
 ]
@@ -265,7 +276,7 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 --
 
-Here is a method in GUI text editor class to get position of a character:
+Example: Here is a GUI text editor class method to get position of a character
 
 
 ```cpp
@@ -305,7 +316,9 @@ std::tuple&lt;int, int&gt; getCharPosition(int lineIndex, int charIndex)
 
 While naming things, always ask yourself how easy it would be to replace the chosen name with a different name in the future.
 
-For example, this plotting function uses `p` to represent plot.
+--
+
+For example, this plotting function uses identifier `p` to represent plot.
 
 
 ```r
@@ -316,21 +329,25 @@ plotScatter &lt;- function() {
 }
 ```
 
-In future, if you wanted to rename it, it won't be easy either to search or to replace in the codebase.
+In future, if you wanted to rename it, it won't be easy either to search or to replace it in the codebase.
 
 Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
 
+--
+
 .content-box-blue[
-**Choose names that can be searched and replaced, if the need arises.**
+**Choose names that can be searched and, if the need arises, replaced.**
 ]
 
 ---
 
 ## Names should honor the culture.
 
-The names should respect the conventions adopted in the given programming language, domain of knowledge, project, organization, etc.
+The names should respect the conventions adopted in a given programming language, domain of knowledge, project, organization, etc.
 
-For example, if convention is PascalCase for class names and lowerCamel case for methods, the following compromises code readability:
+--
+
+For example, C++ convention is to use PascalCase for class names and lowerCamel case for methods. The following code violates these conventions and compromises readability:
 
 
 ```cpp
@@ -345,7 +362,7 @@ public:
 --
 
 .content-box-blue[
-**Don't break conventions unless other guidelines require overriding conventions for consistency.**
+**Don't break conventions unless other guidelines require overriding them for consistency.**
 ]
 
 ---
@@ -355,6 +372,12 @@ public:
 To resist software entropy, not only should you name things properly, but you should also rename things to keep up with new developments.
 
 Otherwise, names will become something worse than meaningless or confusing: **misleading**.
+
+--
+
+.content-box-blue[
+**Keep an eye out for API changes that make names in your codebase misleading.**
+]
 
 ---
 
@@ -366,13 +389,15 @@ class: inverse, center, middle
 
 Looking at names in the wild that violate presented guidelines.
 
-This is not meant as a criticism but as real-life learning opportunities to drive home importance of some of these guidelines.
+This is **not** to be taken as criticisms but as real-life learning opportunities to drive home the importance of these guidelines.
 
 ---
 
-## Violation: Breaking conventions
+## Violation: Breaking (domain) conventions
 
 R is a programming language for statistical computing, and function names can be expected to respect the domain conventions.
+
+--
 
 Statistical distributions can be characterized centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
 
@@ -385,7 +410,9 @@ median(c(1, 2, 3, 4)) # works
 
 The `mode()` function actually returns the storage mode of an R object!
 
-This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific conventions for naming functions.
+--
+
+This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific conventions.
 
 ---
 
@@ -403,6 +430,8 @@ template&lt;
 
 `size` is a bit better but still leaves room for misunderstanding: 
 &gt; "Does it mean length or memory bytes?"
+
+--
 
 `numberOfElements` is more precise and unmistakable:
 
@@ -462,7 +491,7 @@ aes(colour = my_variable)
 
 ## Function names *and* parameters 
 
-A user has now come to believe that *ggplot2* supports British and American spellings for both function names and parameters.
+A user has now come to believe that *ggplot2* supports British and American spellings for both function names *and* parameters.
 
 And, since they prefer American spellings, they do this:
 
@@ -489,7 +518,7 @@ This is **inconsistent** and **violates user's mental model** about function and
 
 .footnote[
 
-*This can be a painful source of a bug because the function will fail silently.
+*This can be a painful source of bugs because the function will fail silently.
 
 ]
 
@@ -509,7 +538,7 @@ class: inverse, center, middle
 
 Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head.
 
-**Resist this urge!**
+**Resist the urge!**
 
 --
 
@@ -527,7 +556,7 @@ layout: false
 
 class: inverse, center, middle
 
-# Benefits of naming things correctly
+# Benefits of naming things well
 
 ---
 
@@ -558,7 +587,7 @@ class: inverse, center, middle
 # Further Reading
 
 For more detailed account of how to name things, check out following references. 
-The **page numbers** in parentheses point to the relevant portions of the book.
+The **page numbers** in parentheses point to the relevant portions.
 
 - Boswell, D., &amp; Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
@@ -595,7 +624,7 @@ layout: false
 
 class: inverse, center, middle
 
-## Code for these slides is available [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
+## Source code for these slides is available [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
 
 If you have any feedback on these slides, please create issue there.
 
