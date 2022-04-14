@@ -7,12 +7,12 @@ The title is inspired by the following quote:
 > "There are only two hard things in Computer Science: cache invalidation and naming things."</br>
 > - Phil Karlton
 
-<a href="https://indrajeetpatil.github.io/second-hardest-cs-thing.html#1">
+<a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/#1">
 <img src="thumbnail.png" alt="introductory slide" width="400"/>
 </a>
 
 The slides can be seen here:<br>
-https://indrajeetpatil.github.io/second-hardest-cs-thing.html#1
+https://indrajeetpatil.github.io/second-hardest-cs-thing/#1
 
 # Further Reading
 
