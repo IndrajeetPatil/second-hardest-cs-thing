@@ -1,7 +1,7 @@
 ---
 title: ".yellow[Dealing with the Second Hardest Thing in Computer Science]</br></br></br>"
 #subtitle: ".green[Thoughts on naming things for software development]"
-author: "</br></br></br></br></br></br></br></br>.yellow[Indrajeet Patil (Software Engineer, esqLABS)]"
+author: "</br></br></br></br></br></br></br></br>.yellow[Indrajeet Patil </br>(Software Engineer, esqLABS)]"
 #date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -34,7 +34,7 @@ class: inverse, center, middle
 
 ## The following advice about naming applies to various objects (variables, functions, classes, etc.)!
 
-## It is deliberately language-agnostic.
+## It is language-agnostic.
 
 ---
 
@@ -690,6 +690,10 @@ class: inverse, center, middle
 
 --
 
+- Intent-revealing names make the **code easier to read**.
+
+--
+
 - Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** that motivates this change. This is critical for thoughtful software design.
 
 --
@@ -706,14 +710,18 @@ class: inverse, center, middle
 
 --
 
-- Good names **reduce cognitive overload** for the developers and make the code more maintainable.
+- Consistent names **reduce cognitive overload** for the developers and make the code more readable and maintainable.
+
+--
+
+- etc.
 
 ---
 
 # Further Reading
 
 For more detailed account of how to name things, check out following references. 
-The **page numbers** in parentheses point to the relevant portions.
+The **page numbers** in parentheses point to relevant sections/chapters.
 
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 

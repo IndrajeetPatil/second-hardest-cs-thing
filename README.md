@@ -7,13 +7,17 @@ The title is inspired by the following quote:
 > "There are only two hard things in Computer Science: cache invalidation and naming things."</br>
 > - Phil Karlton
 
-Slides can be seen here:
-<>
+<a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing">
+<img src="thumbnail.png" alt="introductory slide" width="400"/>
+</a>
+
+The slides can be seen here:<br>
+https://github.com/IndrajeetPatil/second-hardest-cs-thing
 
 # Further Reading
 
 For more detailed account of how to name things, check out following references. 
-The **page numbers** in parentheses point to the relevant portions of the book.
+The **page numbers** in parentheses point to relevant sections/chapters.
 
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
