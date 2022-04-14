@@ -524,9 +524,9 @@ Statistical distributions can be characterized centrality measures, like mean, m
 
 
 ```r
-mean(c(1, 2, 3, 4)) # works
+mean(c(1, 2, 3, 4))   # works
 median(c(1, 2, 3, 4)) # works
-*mode(c(1, 2, 3, 4)) # error!
+mode(c(1, 2, 3, 4))   # error! 
 ```
 
 The `mode()` function actually returns the storage mode of an R object!
@@ -545,7 +545,7 @@ The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cp
 ```cpp
 template&lt;
     class T,
-*   std::size_t N
+    std::size_t N 
 &gt; struct array;
 ```
 
@@ -560,7 +560,7 @@ template&lt;
 ```cpp
 template&lt;
     class T,
-*   std::size_t numberOfElements
+    std::size_t numberOfElements
 &gt; struct array;
 ```
 

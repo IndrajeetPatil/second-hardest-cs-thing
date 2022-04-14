@@ -502,9 +502,9 @@ R is a programming language for statistical computing, and function names can be
 Statistical distributions can be characterized centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
 
 ```{r}
-mean(c(1, 2, 3, 4)) # works
+mean(c(1, 2, 3, 4))   # works
 median(c(1, 2, 3, 4)) # works
-mode(c(1, 2, 3, 4)) # error! #<<
+mode(c(1, 2, 3, 4))   # error! 
 ```
 
 The `mode()` function actually returns the storage mode of an R object!
@@ -522,7 +522,7 @@ The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cp
 ```{Rcpp}
 template<
     class T,
-    std::size_t N #<<
+    std::size_t N 
 > struct array;
 ```
 
@@ -536,7 +536,7 @@ template<
 ```{Rcpp}
 template<
     class T,
-    std::size_t numberOfElements #<<
+    std::size_t numberOfElements
 > struct array;
 ```
 
