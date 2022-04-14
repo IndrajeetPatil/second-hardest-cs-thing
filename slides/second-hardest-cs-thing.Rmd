@@ -213,6 +213,31 @@ ip_address
 
 ---
 
+## Names should be precise but not *too* long.
+
+How precise the name should be is a **subjective decision**. You can typically find a middle ground.
+
+Consider the following variable name:
+
+```{r}
+# not ideal - too imprecise
+d
+# okay - can use more precision
+days 
+
+# good - middle ground
+days_since_last_accident 
+
+# not ideal - unnecessarily precise
+days_since_last_accident_floor_4_lab_23 
+
+...
+```
+
+**Don't go too far with making them precise.**
+
+---
+
 ## Names should be difficult to misinterpret.
 
 When you think of names, try your best to find alternative ways to interpret them and see how successful you are.
