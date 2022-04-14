@@ -213,7 +213,39 @@ ip_address
 
 ---
 
-## Names should be difficult to misunderstand.
+## Names should be difficult to misinterpret.
+
+When you think of names, try your best to find alternative ways to interpret them and see how successful you are.
+
+--
+
+Here is a method in GUI text editor class to get position of a character:
+
+```{Rcpp}
+std::tuple<int, int> getCharPosition(int x, int y)
+```
+
+--
+
+How I interpret it: 
+
+> `x` and `y` refer to pixel positions for a character.
+
+--
+
+How it's meant to be interpreted:
+
+> `x` and `y` refer to line of text and character position in that line.
+
+--
+
+You can avoid such misinterpretation with better names:
+
+```{Rcpp}
+std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
+```
+
+--
 
 **Making names as precise and unambiguous as possible leaves little room for misconstrual.**
 
