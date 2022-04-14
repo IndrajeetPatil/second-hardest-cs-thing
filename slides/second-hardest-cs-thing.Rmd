@@ -8,7 +8,7 @@ output:
     lib_dir: libs
     css: ["default", "hygge", "second-hardest-cs-thing.css"]
     nature:
-      highlightStyle: github
+      highlightStyle: monokai
       highlightLines: true
       countIncrementalSlides: false
 ---
@@ -420,15 +420,45 @@ knitr::include_graphics("images/osp_naming.png")
 
 ## Names should be kept up-to-date.
 
-To resist software entropy, not only should you name things properly, but you should also rename things to keep up with new developments.
+To resist software entropy, not only should you name entities properly, but you should also rename them to keep up with the new developments.
+
+--
 
 Otherwise, names will become something worse than meaningless or confusing: **misleading**.
+
+For example, let's say your class has `$getMeans()` method. 
+
+- In its initial implementation, it used to return *precomputed* mean values. 
+- In its current implementation, it *computes* the means on the fly. 
+
+Therefore, it is misleading to continue to call it a getter method, and it should be renamed to `$computeMeans()`.
 
 --
 
 .content-box-blue[
 **Keep an eye out for API changes that make names in your codebase misleading.**
 ]
+
+---
+
+## Names should be pronounceable.
+
+This is probably the weakest of the requirements, but one can't deny the ease of communication when names are pronounceable.
+
+--
+
+If you are writing a function to generate a time-stamp, discussing following function verbally would be challenging.
+
+```{r}
+# generate year month date hour minute second
+genymdhms()
+```
+
+This is a much better (and pronounceable) alternative:
+
+```{r}
+generateTimeStamp()
+```
 
 ---
 
@@ -588,6 +618,16 @@ It returns `1`, so the intent is to pick out the elements that pass the conditio
 In this case, **`keep()`** would've be a better name.
 
 Had the intent been to find elements to remove, **`discard()`** would've be a better name.
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# etc.
+
+### It is easy to find such violations, but, whenever you encounter one, make it a personal exercise to come up with a better name.
 
 ---
 
