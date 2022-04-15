@@ -846,7 +846,7 @@ class: inverse, center, middle
 
 # Further Reading
 
-For more detailed account of how to name things, check out following references. 
+For a more detailed discussion about how to name things, check out following references. 
 The **page numbers** in parentheses point to relevant sections/chapters.
 
 - McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
