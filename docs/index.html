@@ -124,7 +124,7 @@ euclidean_distance() # more specific and informative
 
 Sometimes using generic names can improve code readability. But, in such cases, it is **vital** to follow language or domain customs.
 
-For example, using `j` for outermost and `i` for nested loop&lt;sup&gt;*&lt;/sup&gt; is confusing!.
+For example, using `j` for outermost and `i` for nested loop is confusing!.
 
 
 ```js
@@ -134,7 +134,7 @@ For example, using `j` for outermost and `i` for nested loop&lt;sup&gt;*&lt;/sup
 
 Similarly,
 
-- `temp` shouldn't be used to store objects that are not temporary
+- `tmp` shouldn't be used to store objects that are not temporary
 - `retVal` shouldn't be used for objects not returned from function
 - etc.
 
@@ -142,11 +142,59 @@ Similarly,
 **Don't violate reader assumptions about what generic names represent.**
 ]
 
-.footnote[
+---
 
-*If a loop is longer than few lines, you should use more meaningful names for loop variables than `i`, `j`, `k`.
+## But, seriously, avoid generic names.
 
-] 
+If a loop is longer than a few lines, use more meaningful names for loop variables than `i`, `j`, `k` because you will quickly lose track of what they mean.
+
+.pull-left[
+
+```r
+# abstruse
+score[i][j]
+```
+
+]
+
+.pull-right[
+
+```r
+# crystal clear
+score[school][student]
+```
+
+]
+
+All variables are temporary in some sense. Calling one `tmp` is inviting developers to treat it carelessly and introduce bugs.
+
+.pull-left[
+
+```r
+# generic name
+if (right &lt; left) {
+  tmp   &lt;- right
+  right &lt;- left
+  left  &lt;- tmp
+}
+```
+]
+
+.pull-right[
+
+```r
+# more descriptive
+if (right &lt; left) {
+ old_right &lt;- right
+ right     &lt;- left
+ left      &lt;- old_right
+}
+```
+]
+
+.content-box-blue[
+**Even when you think you need generic names, you are better off using descriptive names.**
+]
 
 ---
 
@@ -778,11 +826,11 @@ class: inverse, center, middle
 For more detailed account of how to name things, check out following references. 
 The **page numbers** in parentheses point to relevant sections/chapters.
 
+- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
+
 - Boswell, D., &amp; Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
-
-- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
 
 - Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-30**)
 

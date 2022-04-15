@@ -19,11 +19,11 @@ https://indrajeetpatil.github.io/second-hardest-cs-thing/#1
 For more detailed account of how to name things, check out following references. 
 The **page numbers** in parentheses point to relevant sections/chapters.
 
+- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
+
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
-
-- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
 
 - Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-30**)
 
