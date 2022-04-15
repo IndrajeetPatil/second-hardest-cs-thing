@@ -441,7 +441,7 @@ if (isChild) {
 
 </br>
 
-Prefer not to use negated terms for Booleans since they are harder to process.
+Avoid negated<sup>*</sup> terms for Booleans since they are harder to process.
 
 .pull-left[
 
@@ -459,6 +459,10 @@ disable_firewall = FALSE
 enable_firewall = TRUE
 ```
 
+]
+
+.footnote[
+*This is deliberately self-referential. 😉
 ]
 
 ---
