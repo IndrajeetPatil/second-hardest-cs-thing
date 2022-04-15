@@ -38,7 +38,7 @@ class: inverse, center, middle
 
 ---
 
-## Guiding Principle: **Names are a form of abstraction**
+## Principle: **Names are a form of abstraction**
 
 &gt; "[T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important."
 &gt; 
@@ -54,7 +54,7 @@ If you can't find a name that provides the right abstraction for the underlying 
 
 ## Properties: **Good names are precise and consistent**
 
-It is difficult to miss out on critical information about the object or to misinterpret the underlying representation based on its name
+If a name is good, it is difficult to miss out on critical information about the object or to misinterpret the underlying representation.
 
 ---
 
@@ -84,12 +84,14 @@ double unitCoverter(double temp)
 
 --
 
-Contrast it with (we don't even need a comment here!):
+Contrast it with:
 
 
 ```cpp
 double fahrenheitToCelsius(double tempFahrenheit)
 ```
+
+We didn't even need a comment here!
 
 --
 
@@ -103,16 +105,31 @@ double fahrenheitToCelsius(double tempFahrenheit)
 
 Generic names don't provide much information about the values or the purpose of the entity they represent.
 
+--
+
 For example, 
 
+.pull-left[
 
 ```r
-count # too generic
-character_count # more informative
-
-distance() # too generic 
-euclidean_distance() # more specific and informative
+# generic
+count 
+distance()
+size
 ```
+]
+
+.pull-right[
+
+```r
+# more informative
+character_count 
+euclidean_distance()
+memoryBytes
+```
+]
+
+--
 
 .content-box-blue[
 **Generic names compromise code readability because they provide little information.**
@@ -124,6 +141,8 @@ euclidean_distance() # more specific and informative
 
 Sometimes using generic names can improve code readability. But, in such cases, it is **vital** to follow language or domain customs.
 
+--
+
 For example, using `j` for outermost and `i` for nested loop is confusing!.
 
 
@@ -132,11 +151,13 @@ For example, using `j` for outermost and `i` for nested loop is confusing!.
     for (let i = 0; i &lt; arr[j].length; i++) {
 ```
 
-Similarly,
+In a similar vein,
 
 - `tmp` shouldn't be used to store objects that are not temporary
 - `retVal` shouldn't be used for objects not returned from function
 - etc.
+
+--
 
 .content-box-blue[
 **Don't violate reader assumptions about what generic names represent.**
@@ -146,7 +167,7 @@ Similarly,
 
 ## But, seriously, avoid generic names.
 
-If a loop is longer than a few lines, use more meaningful names for loop variables than `i`, `j`, `k` because you will quickly lose track of what they mean.
+If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what refers to what.
 
 .pull-left[
 
@@ -165,6 +186,8 @@ exam_score[school][student]
 ```
 
 ]
+
+--
 
 All variables are temporary in some sense. Calling one `tmp` is inviting developers to treat it carelessly and introduce bugs.
 
@@ -193,14 +216,16 @@ if (right &lt; left) {
 ]
 
 .content-box-blue[
-**Even when you think you need generic names, you are better off using descriptive names.**
+**Even when you *think* you need generic names, you are better off using descriptive names.**
 ]
 
 ---
 
 ## Names should be consistent.
 
-Consistent names reduce cognitive burden on the readers because if they encounter a name in one context, they can safely reuse that knowledge in another context.
+Consistent names **reduce cognitive burden** on the readers because if they encounter a name in one context, they can safely reuse that knowledge in another context.
+
+--
 
 For example, these names are inconsistent since the reader can't safely assume the name `size` means the same thing throughout the program.
 
@@ -216,6 +241,8 @@ For example, these names are inconsistent since the reader can't safely assume t
   size = strlen(a);
 }
 ```
+
+--
 
 .content-box-blue[
 **Allow users to make safe assumptions about what the names represent across different scopes/contexts.**
@@ -293,7 +320,7 @@ How precise (and thus long) the name should be is a **subjective decision**, but
 
 --
 
-You can typically find a middle ground between too short or too long names.:
+You can typically find a middle ground between too short and too long names.
 
 
 ```r
@@ -336,13 +363,13 @@ std::tuple&lt;int, int&gt; getCharPosition(int x, int y)
 
 How I interpret the parameters `x` and `y`: 
 
-&gt; `x` and `y` refer to pixel positions for a character.
+&gt; "`x` and `y` refer to pixel positions for a character."
 
 --
 
 How they are meant to be interpreted:
 
-&gt; `x` and `y` refer to line of text and character position in that line.
+&gt; "`x` and `y` refer to line of text and character position in that line."
 
 --
 
@@ -378,7 +405,7 @@ plotScatter &lt;- function() {
 }
 ```
 
-In future, if you wanted to rename it, it won't be easy either to search or to replace it in the codebase.
+In future, it won't be easy either to search for and/or to rename it in the codebase.
 
 Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
 
@@ -462,15 +489,15 @@ if (isChild) {
 
 ]
 
-&lt;/br&gt;
+--
 
-Avoid negated&lt;sup&gt;*&lt;/sup&gt; terms for Booleans since they are harder to process.
+Use positive terms for Booleans since they are easier to process.
 
 .pull-left[
 
 
 ```r
-# not great
+# double negation - diffiult
 disable_firewall = FALSE
 ```
 
@@ -486,8 +513,10 @@ enable_firewall = TRUE
 
 ]
 
-.footnote[
-*This is deliberately self-referential. 😉
+--
+
+.content-box-blue[
+Give Boolean variable names that convey what true or false implies.
 ]
 
 ---
@@ -507,14 +536,14 @@ For example, here is an example of formatting conventions (adopted in [OSP organ
 
 To resist software entropy, not only should you name entities properly, but you should also rename them to keep up with the new developments.
 
---
-
 Otherwise, names will become something worse than meaningless or confusing: **misleading**.
+
+--
 
 For example, let's say your class has `$getMeans()` method. 
 
 - In its initial implementation, it used to return *precomputed* mean values. 
-- In its current implementation, it *computes* the means on the fly. 
+- In its current implementation, it *computes* the mean values on the fly. 
 
 Therefore, it is misleading to continue to call it a getter method, and it should be renamed to `$computeMeans()`.
 
@@ -553,15 +582,19 @@ generateTimeStamp()
 
 Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
 
-E.g., the same abstraction is mapped to different names across R6 classes:
+--
+
+E.g., two similar methods have different names across R6 classes:
 
 
 ```cpp
+CreditCardAccount$new()$retrieve_expenditure()
 DebitCardAccount$new()$fetch_expenditure()
-CreditCardAccount$new()$get_expenditure()
 ```
 
-Across classes, this method should either be named `$get_expenditure()` or `$fetch_expenditure()`, but not both.
+Both of these methods should either be named `$retrieve_expenditure()` or `$fetch_expenditure()`.
+
+--
 
 .content-box-blue[
 **Consistency of naming conventions should be respected at the codebase level, not just for short scopes.**
@@ -570,6 +603,8 @@ Across classes, this method should either be named `$get_expenditure()` or `$fet
 ---
 
 # A sundry of don'ts
+
+--
 
 - **Don't use pop-culture references in names.** Not everyone can be expected to be familiar with them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
 
@@ -609,13 +644,14 @@ R is a programming language for statistical computing, and function names can be
 
 --
 
-Statistical distributions can be characterized centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
+Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
 
 
 ```r
-mean(c(1, 2, 3, 4))   # works
-median(c(1, 2, 3, 4)) # works
-mode(c(1, 2, 3, 4))   # error! 
+x &lt;- c(1, 2, 3, 4)
+mean(x)   # works
+median(x) # works
+mode(x)   # error! 
 ```
 
 The `mode()` function actually returns the storage mode of an R object!
@@ -628,7 +664,7 @@ This function could have been named (e.g.) `storageMode()`, which is more precis
 
 ## Violation: Generic name
 
-The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cpp/container/array)) is too generic.
+The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cpp/container/array) is too generic.
 
 
 ```cpp
@@ -643,7 +679,7 @@ template&lt;
 
 --
 
-`numberOfElements` is more precise and unmistakable:
+Here is an alternative name:
 
 
 ```cpp
@@ -652,6 +688,8 @@ template&lt;
     std::size_t numberOfElements
 &gt; struct array;
 ```
+
+`numberOfElements` is more precise and unmistakable
 
 ---
 
