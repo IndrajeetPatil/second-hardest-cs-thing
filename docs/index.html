@@ -285,13 +285,13 @@ std::tuple&lt;int, int&gt; getCharPosition(int x, int y)
 
 --
 
-How I interpret it: 
+How I interpret the parameters `x` and `y`: 
 
 &gt; `x` and `y` refer to pixel positions for a character.
 
 --
 
-How it's meant to be interpreted:
+How they are meant to be interpreted:
 
 &gt; `x` and `y` refer to line of text and character position in that line.
 
@@ -502,6 +502,20 @@ Across classes, this method should either be named `$get_expenditure()` or `$fet
 
 ---
 
+# A sundry of don'ts
+
+- **Don't use pop-culture references in names.** Not everyone can be expected to be familiar with them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
+
+--
+
+- **Don't use slang.** You can't assume current or future developers to be familiar with them. E.g. `exit()` is better than `hit_the_road()`.
+
+--
+
+- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially Urban dictionary!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html).
+
+---
+
 layout: false
 
 class: inverse, center, middle
@@ -654,7 +668,10 @@ In Python, [`filter()`](https://www.w3schools.com/python/ref_func_filter.asp) ca
 list(filter(lambda x: x &gt; 0, [-1, 1]))
 ```
 
+--
+
 But `filter` is an ambiguous work:
+
 - It could mean to pick out elements that pass a condition (what *remains after filtering*), or
 - it could mean to pick out elements that need to be removed (what *is filtered*). 
 
@@ -765,7 +782,6 @@ The **page numbers** in parentheses point to relevant sections/chapters.
 For a good example of organizational naming guidelines, see:
 
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
-
 
 ---
 
