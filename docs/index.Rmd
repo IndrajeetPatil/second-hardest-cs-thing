@@ -32,9 +32,7 @@ layout: false
 
 class: inverse, center, middle
 
-## The following advice about naming applies to various objects (variables, functions, classes, etc.)!
-
-## It is language-agnostic.
+## The following advice on naming applies to all kinds of programming entities (variables, functions, packages, classes, etc.) and is language-agnostic.
 
 ---
 
@@ -119,16 +117,13 @@ euclidean_distance() # more specific and informative
 
 ## Conventions should be followed for generic names.
 
-Sometimes using generic names may actually improve code readability. But, in such cases, it is vital to follow language or domain conventions.
+Sometimes using generic names can improve code readability. But, in such cases, it is **vital** to follow language or domain customs.
 
-For example, using `j` for outermost and `i` for nested loop is confusing!
+For example, using `j` for outermost and `i` for nested loop<sup>*</sup> is confusing!.
 
 ```{js}
   for (let j = 0; j < arr.length; j++) {
     for (let i = 0; i < arr[j].length; i++) {
-      
-    }
-  }
 ```
 
 Similarly,
@@ -140,6 +135,12 @@ Similarly,
 .content-box-blue[
 **Don't violate reader assumptions about what generic names represent.**
 ]
+
+.footnote[
+
+*If a loop is longer than few lines, you should use more meaningful names for loop variables than `i`, `j`, `k`.
+
+] 
 
 ---
 
@@ -229,11 +230,11 @@ ip_address
 
 ## Names should be precise but not *too* long.
 
-How precise the name should be is a **subjective decision**. You can typically find a middle ground.
+How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure visual structure of a program.
 
 --
 
-Consider the following variable names:
+You can typically find a middle ground between too short or too long names.:
 
 ```{r}
 # not ideal - too imprecise
@@ -492,6 +493,14 @@ Across classes, this method should either be named `$get_expenditure()` or `$fet
 --
 
 - **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially Urban dictionary!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html).
+
+--
+
+- **Avoid imprecise opposites**, since they can be confusing. E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
+
+--
+
+- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one and use it consistently.
 
 ---
 
