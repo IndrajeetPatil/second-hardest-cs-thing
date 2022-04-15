@@ -145,7 +145,7 @@ If a loop is longer than a few lines, use more meaningful names for loop variabl
 .pull-left[
 ```{r}
 # abstruse
-score[i][j]
+exam_score[i][j]
 ```
 
 ]
@@ -153,7 +153,7 @@ score[i][j]
 .pull-right[
 ```{r}
 # crystal clear
-score[school][student]
+exam_score[school][student]
 ```
 
 ]
@@ -377,16 +377,29 @@ The names should respect the conventions adopted in a given programming language
 
 --
 
-For example, C++ convention is to use PascalCase for class names and lowerCamel case for methods. The following code violates these conventions and compromises readability:
+For example, C++ convention is to use PascalCase for class names and lowerCamel case for variables. 
 
+.pull-left[
 ```{Rcpp}
+// non-conventional
 class playerEntity
 {
 public:
-    double height;
-    set_height(double height) : height{height} { }
+    std::string HairColor;
 };
 ```
+]
+
+.pull-right[
+```{Rcpp}
+// conventional
+class PlayerEntity
+{
+public:
+    std::string hairColor;
+};
+```
+]
 
 --
 
