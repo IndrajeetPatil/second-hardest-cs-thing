@@ -707,7 +707,7 @@ list(filter(lambda x: x > 0, [-1, 1]))
 
 --
 
-But `filter` is an ambiguous work:
+But `filter` is an ambiguous word:
 
 - It could mean to pick out elements that pass a condition (what *remains after filtering*), or
 - it could mean to pick out elements that need to be removed (what *is filtered*). 
