@@ -48,13 +48,13 @@ class: inverse, center, middle
 
 ### Importance: **Names are at the core of software design** 
 
-If you can't find a name that provides the right abstraction for the underlying object, it is possible that the underlying object doesn't have a clear design.
+If you can't find a name that provides the right abstraction for the underlying entity, it is possible that the underlying entity doesn't have a clear design.
 
 --
 
 ### Properties: **Good names are precise and consistent**
 
-If a name is good, it is difficult to miss out on critical information about the object or to misinterpret the underlying representation.
+If a name is good, it is difficult to miss out on critical information about the entity or to misinterpret the underlying representation.
 
 ---
 
@@ -79,7 +79,7 @@ For example, this has neither good function nor parameter name, and you can tell
 ```cpp
 // function to convert temperature from Fahrenheit to Celsius scale
 // temp is the temperature in Fahrenheit
-double unitCoverter(double temp)
+double unitConverter(double temp)
 ```
 
 --
@@ -259,7 +259,6 @@ For example, these names are inconsistent since the reader can't safely assume t
 ```r
 # okay 
 convert_to_string()
-createPlotHistogram()
 fileObject
 strName # Hungarian notation
 ```
@@ -271,7 +270,6 @@ strName # Hungarian notation
 ```r
 # better 
 to_string()
-plotHistogram()
 file
 name
 ```
@@ -407,7 +405,7 @@ plotScatter &lt;- function() {
 }
 ```
 
-In the future, it won't be easy either to search for and/or to rename it in the codebase.
+In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag all *p*s (e.g. gg**p**lot), and not just the one corresponding to the plot object.
 
 Instead, if `scatter_plot` identifier is used, both search and replace operations will be a piece of cake.
 
@@ -421,7 +419,7 @@ Instead, if `scatter_plot` identifier is used, both search and replace operation
 
 ## Names should honor the culture.
 
-The names should respect the conventions adopted in a given programming language, domain of knowledge, project, organization, etc.
+The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.
 
 --
 
@@ -500,7 +498,7 @@ Use positive terms for Booleans since they are easier to process.
 
 ```r
 # double negation - difficult
-disable_firewall = FALSE
+is_firewall_disabled = FALSE
 ```
 
 ]
@@ -510,7 +508,7 @@ disable_firewall = FALSE
 
 ```r
 # better
-enable_firewall = TRUE
+is_firewall_enabled = TRUE
 ```
 
 ]
@@ -590,7 +588,7 @@ Discussing entities named `waste` and `waist` is inevitably going to lead to con
 
 # Use consistent lexicon in a project.
 
-Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
+Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the code base*.
 
 --
 
@@ -607,7 +605,7 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 --
 
 .content-box-blue[
-**Consistency of naming conventions should be respected at the codebase level, not just for short scopes.**
+**Consistency of naming conventions should be respected at the code base level, not just for short scopes.**
 ]
 
 ---
