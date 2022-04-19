@@ -621,7 +621,7 @@ class: inverse, center, middle
 
 ---
 
-# Avoid the following:
+### Avoid the following (Part-1):
 
 --
 
@@ -641,11 +641,15 @@ class: inverse, center, middle
 
 --
 
-- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one and use it consistently.
+- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
+
+--
+
+- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, it can be hard to distinguish `firstl` from `firstI`.
 
 ---
 
-# Avoid the following:
+### Avoid the following (Part-2):
 
 --
 
@@ -653,15 +657,19 @@ class: inverse, center, middle
 
 --
 
-- **Don't use hard-to-distinguish character pairs in names.** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, it is hard to distinguish `firstl` from `firstI`.
-
---
-
 - **Don't use commonly misspelled words in English.** Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it `accumulate`, `accummulate`, `acumulate`, or `acummulate`?!
 
 --
 
-- **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter is typically reserved for removing (`rm`) missing values (`NA`). But if you use it to mean "remove (`rm`) non-authorized (`NA`) entries" for your function parameter, it'll be quite misleading.
+- **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter removes (`rm`) missing values (`NA`). Using it to mean "remove (`rm`) non-authorized (`NA`) entries" for a function parameter will be misleading.
+
+--
+
+- **Don't allow multiple English standards.** E.g. using both American and British English standards would've you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
+
+--
+
+- **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
 
 ---
 
