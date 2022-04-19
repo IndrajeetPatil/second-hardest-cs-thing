@@ -40,7 +40,7 @@ class: inverse, center, middle
 
 > "[T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important."
 > 
-> \- Jonh Ousterhout
+> \- John Ousterhout
 
 --
 
@@ -385,7 +385,7 @@ plotScatter <- function() {
 }
 ```
 
-In future, it won't be easy either to search for and/or to rename it in the codebase.
+In the future, it won't be easy either to search for and/or to rename it in the codebase.
 
 Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
 
@@ -664,20 +664,20 @@ R is a programming language for statistical computing, and function names can be
 
 --
 
-Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, except one:
+Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, **except one**:
 
 ```{r}
 x <- c(1, 2, 3, 4)
-mean(x)   # works
-median(x) # works
-mode(x)   # error! 
+mean(x)   # expected output
+median(x) # expected output
+mode(x)   # unexpected output! 
 ```
 
 The `mode()` function actually returns the storage mode of an R object!
 
 --
 
-This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific conventions.
+This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific expectations.
 
 ---
 
@@ -692,12 +692,14 @@ template<
 > struct array;
 ```
 
+--
+
 `size` is a bit better but still leaves room for misunderstanding: 
 > "Does it mean length or memory bytes?"
 
 --
 
-Here is an alternative name:
+Here is an alternative parameter name:
 
 ```{Rcpp}
 template<
@@ -718,7 +720,7 @@ class: inverse, center, middle
 
 *ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/) in R. 
 
-Quite admirably, it accepts both **British** and **American** English spellings. 
+Admirably, it supports both **British** and **American** English spelling standards. 
 
 But does it do so *consistently*?
 
@@ -732,7 +734,7 @@ Both forms of spellings are supported.
 # works
 guide_colorbar(...)
 
-# this works as well
+# this works as well!
 guide_colourbar(...)
 ```
 
@@ -779,7 +781,7 @@ This is **inconsistent** and **violates user's mental model** about function and
 
 .footnote[
 
-*This can be a painful source of bugs because the function will fail silently.
+*This can also be a painful source of bugs because the function will fail silently.
 
 ]
 
@@ -873,7 +875,7 @@ class: inverse, center, middle
 
 --
 
-- Naming precisely and consistently **reduce ambiguities and misunderstandings**, which reduce the possibility of bugs.
+- Naming precisely and consistently **reduces ambiguities and misunderstandings**, which in turn reduces the possibility of bugs.
 
 --
 
@@ -881,7 +883,7 @@ class: inverse, center, middle
 
 --
 
-- Consistent names **reduce cognitive overload** for the developers and make the code more readable and maintainable.
+- Consistent naming **reduces cognitive overload** for the developers and make the code more readable and maintainable.
 
 --
 
