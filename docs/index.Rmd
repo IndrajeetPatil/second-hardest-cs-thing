@@ -204,6 +204,8 @@ if (right < left) {
 ```
 ]
 
+--
+
 .content-box-blue[
 **Even when you *think* you need generic names, you are better off using descriptive names.**
 ]
@@ -212,7 +214,7 @@ if (right < left) {
 
 ## Names should be consistent.
 
-Consistent names **reduce cognitive burden** on the readers because if they encounter a name in one context, they can safely reuse that knowledge in another context.
+Consistent names **reduce cognitive burden** for the reader because if they encounter a name in one context, they can safely reuse that knowledge in another context.
 
 --
 
@@ -335,7 +337,7 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 --
 
-Example: Here is a GUI text editor class method to get position of a character
+E.g., here is a GUI text editor class method to get position of a character:
 
 ```{Rcpp}
 std::tuple<int, int> getCharPosition(int x, int y)
@@ -364,18 +366,18 @@ std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
 --
 
 .content-box-blue[
-**Making names as precise and unambiguous as possible leaves little room for misconstrual.**
+**Precise and unambiguous names leave little room for misconstrual.**
 ]
 
 ---
 
 ## Names should be easily searchable.
 
-While naming things, always ask yourself how easy it would be to replace the chosen name with a different name in the future.
+While naming things, always ask yourself how easy it would be to replace the chosen name with a different name.
 
 --
 
-For example, this plotting function uses identifier `p` to represent plot.
+E.g., this plotting function uses identifier `p` to represent a scatter plot object.
 
 ```{r}
 plotScatter <- function() {
@@ -387,7 +389,7 @@ plotScatter <- function() {
 
 In the future, it won't be easy either to search for and/or to rename it in the codebase.
 
-Instead, if you use `scatter_plot`, both search and replace operations will be a piece of cake.
+Instead, if `scatter_plot` identifier is used, both search and replace operations will be a piece of cake.
 
 --
 
@@ -497,11 +499,11 @@ Give Boolean variable names that convey what true or false implies.
 
 ## Formatting names can provide additional information.
 
-Having different name formats for different entities makes the code easier to read because it **acts like syntax highlighting**.
+Having different name formats for different entities makes it easier to read code because it **acts like syntax highlighting**.
 
 --
 
-For example, here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md)):
+Here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md)):
 
 ```{r, echo=FALSE, eval=TRUE}
 knitr::include_graphics("images/osp_naming.png")
@@ -523,12 +525,12 @@ For example, let's say your class has `$getMeans()` method.
 - In its initial implementation, it used to return *precomputed* mean values. 
 - In its current implementation, it *computes* the mean values on the fly. 
 
-Therefore, it is misleading to continue to call it a getter method, and it should be renamed to `$computeMeans()`.
+Therefore, it is misleading to continue to call it a getter method, and it should be renamed to (e.g.) `$computeMeans()`.
 
 --
 
 .content-box-blue[
-**Keep an eye out for API changes that make names in your codebase misleading.**
+**Keep an eye out for API changes that make names misleading.**
 ]
 
 ---
@@ -746,10 +748,10 @@ Both forms of spellings are supported.
 
 ```{r}
 # works
-aes(color = my_variable)
+aes(color = ...)
 
 # this works as well!
-aes(colour = my_variable)
+aes(colour = ...)
 ```
 
 ---
