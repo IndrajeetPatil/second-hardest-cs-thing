@@ -32,3 +32,7 @@ The **page numbers** in parentheses point to relevant sections/chapters.
 # Feedback
 
 I'd love to hear thoughts and comments [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues).
+
+# Code of Conduct
+
+Please note that the second-hardest-cs-thing project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
