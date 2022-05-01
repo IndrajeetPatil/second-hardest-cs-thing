@@ -139,45 +139,11 @@ We didn't even need a comment here!
 
 ---
 
-## Generic names should be avoided.
-
-Generic names don't provide much information about the values or the purpose of the entity they represent.
-
---
-
-For example, 
-
-.pull-left[
-
-```r
-# generic
-count 
-distance()
-size
-```
-]
-
-.pull-right[
-
-```r
-# more informative
-character_count 
-euclidean_distance()
-memoryBytes
-```
-]
-
---
-
-.content-box-blue[
-**Generic names compromise code readability because they provide little information.**
-]
-
----
-
 ## Conventions should be followed for generic names.
 
-Sometimes using generic names can improve code readability. But, in such cases, it is **vital** to follow language or domain customs.
+In some contexts, using generic names improves code readability, even if such names aren't too informative. 
+
+In such cases, it is **vital** to follow language or domain customs.
 
 --
 
@@ -203,7 +169,7 @@ In a similar vein,
 
 ---
 
-## But, seriously, avoid generic names.
+## Alternatives to using generic names.
 
 If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what refers to what.
 
@@ -445,7 +411,7 @@ plotScatter &lt;- function() {
 
 In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag all *p*s (e.g. gg**p**lot), and not just the one corresponding to the plot object.
 
-Instead, if `scatter_plot` identifier is used, both search and replace operations will be a piece of cake.
+Instead, if `scatter_plot` identifier is used, both search and replace operations will be straightforward.
 
 --
 
