@@ -36,6 +36,15 @@ class: inverse, center, middle
 
 ---
 
+```{r xaringan-logo, echo=FALSE, eval=TRUE}
+xaringanExtra::use_logo(
+  image_url = 'images/github.png', 
+  link_url  = 'https://github.com/IndrajeetPatil/second-hardest-cs-thing', 
+  width     = '30px', 
+  height    = '30px'
+)
+```
+
 ### Principle: **Names are a form of abstraction**
 
 > "[T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important."
