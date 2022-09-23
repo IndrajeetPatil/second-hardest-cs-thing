@@ -7,7 +7,7 @@ format:
     slide-number: true
     preview-links: auto
     #css: ["theme.css"]
-    footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/master/docs)."
+    footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs)."
 author: "Indrajeet Patil"
 affiliation: "cynkra GmbH"
 execute:
