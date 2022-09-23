@@ -587,6 +587,7 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 # A sundry of don'ts
 
 You won't have to remember any of the following rules if you adopt a single principle:
+
 "Names should be readable for the *reader*, and not *writer*, of code."
 
 ## {.smaller}
@@ -855,3 +856,8 @@ For a more detailed discussion about how to name things, see the following refer
 # Thank You 
 
 And Happy Naming! 😊
+
+```{r, echo=FALSE, eval=TRUE}
+knitr::include_graphics("images/cat.png")
+```
+
