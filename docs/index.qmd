@@ -41,7 +41,7 @@ The following advice on naming applies to all kinds of programming entities (var
 
 ## *Principle*: **Names are a form of abstraction**
 
-"[T]he best names are those that focus attention on what is most important about the underlying entity while omitting details that are less important."
+"[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important."
 
 \- John Ousterhout
 
@@ -600,7 +600,7 @@ You won't have to remember any of the following rules if you adopt a single prin
 
 . . .
 
-- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially Urban dictionary!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html).
+- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/)!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html).
 
 . . .
 
