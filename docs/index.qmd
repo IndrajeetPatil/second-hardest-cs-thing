@@ -866,6 +866,6 @@ knitr::include_graphics("images/cat.png")
 
 ## Session information {.smaller}
 
-```{r}
+```{r, eval=TRUE}
 sessioninfo::session_info(include_base = TRUE)
 ```
