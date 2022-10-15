@@ -9,7 +9,7 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.150">
+  <meta name="generator" content="quarto-1.2.209">
 
   <meta name="author" content="Indrajeet Patil">
   <meta name="keywords" content="naming, software-engineering, computer-science">
@@ -1439,12 +1439,15 @@ Indrajeet Patil
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1456,6 +1459,9 @@ Indrajeet Patil
             }
           }
         }
+
+        // fire slideEnter for tabby tab activations (for htmlwidget resize behavior)
+        document.addEventListener("tabby", fireSlideEnter, false);
 
         // hookup for reveal
         if (window.Reveal) {
