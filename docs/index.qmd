@@ -167,12 +167,12 @@ All variables are temporary in some sense. Calling one `tmp` is inviting careles
 
 ::: {.column width='50%'}
 
-```{r}
+```{cpp}
 # generic name
 if (right < left) {
-  tmp   <- right
-  right <- left
-  left  <- tmp
+  tmp   = right
+  right = left
+  left  = tmp
 }
 ```
 
@@ -180,12 +180,12 @@ if (right < left) {
 
 ::: {.column width='50%'}
 
-```{r}
+```{cpp}
 # more descriptive
 if (right < left) {
- old_right <- right
- right     <- left
- left      <- old_right
+  old_right = right
+  right     = left
+  left      = old_right
 }
 ```
 
@@ -240,7 +240,7 @@ For example, these names are inconsistent since the reader can't safely assume t
 ::: {.column width='50%'}
 
 ```{r}
-# okay 
+# okay
 convert_to_string()
 fileObject
 strName # Hungarian notation
@@ -251,7 +251,7 @@ strName # Hungarian notation
 ::: {.column width='50%'}
 
 ```{r}
-# better 
+# better
 to_string()
 file
 name
@@ -270,7 +270,7 @@ name
 ::: {.column width='50%'}
 
 ```{r}
-# okay 
+# okay
 child_height
 password
 id
@@ -282,7 +282,7 @@ address
 ::: {.column width='50%'}
 
 ```{r}
-# better 
+# better
 child_height_cm
 plaintext_password
 hex_id
@@ -311,13 +311,13 @@ You can typically find a middle ground between too short and too long names.
 # not ideal - too imprecise
 d
 # okay - can use more precision
-days 
+days
 
 # good - middle ground
-days_since_last_accident 
+days_since_last_accident
 
 # not ideal - unnecessarily precise
-days_since_last_accident_floor_4_lab_23 
+days_since_last_accident_floor_4_lab_23
 
 ...
 ```
@@ -374,7 +374,7 @@ While naming things, always ask yourself how easy it would be to replace the cho
 
 E.g., this plotting function uses identifier `p` to represent a scatter plot object.
 
-```{r}
+```{r, tidy=FALSE}
 plotScatter <- function() {
   p <- ggplot(mtcars, aes(wt, mpg)) + geom_point()
   p <- p + labs(title = "my first scatter plot")
@@ -481,7 +481,7 @@ Use positive terms for Booleans since they are easier to process.
 
 ::: {.column width='50%'}
 
-```{r}
+```{cpp}
 # double negation - difficult
 is_firewall_disabled = FALSE
 ```
@@ -490,7 +490,7 @@ is_firewall_disabled = FALSE
 
 ::: {.column width='50%'}
 
-```{r}
+```{cpp}
 # better
 is_firewall_enabled = TRUE
 ```
@@ -650,11 +650,11 @@ R is a programming language for statistical computing, and function names can be
 
 Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, **except one**:
 
-```{r}
+```{r, tidy=FALSE}
 x <- c(1, 2, 3, 4)
 mean(x)   # expected output
 median(x) # expected output
-mode(x)   # unexpected output! 
+mode(x)   # unexpected output!
 ```
 
 The `mode()` function actually returns the storage mode of an R object!
@@ -780,25 +780,138 @@ It is easy to find such violations.
 
 But, whenever you encounter one, make it a personal exercise to come up with a better name.
 
-# Challenges
+# Naming and good design
 
-Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head. 
+Deep dive into benefits of thoughtful naming for an entity at the heart of all software:
+***function***
 
-**Resist the urge!**
+## Following Unix philosophy {.smaller}
 
-## Worth the struggle 
+Unix philosophy specifies the golden rule for writing good a function: </br>
+_"Do One Thing And Do It Well."_
 
-Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.
+Finding a descriptive name for a function can inform us if we are following this rule.
 
-**The more you do it, the easier it will get!**
+. . .
 
-And, after a while, you won't even need to think long and hard to come up with a good name. You will instinctively think of one.
+Consider a function to extract a table of regression estimates. For convenience, it also allows to sort the table by estimate.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution}
+
+## Naming is hard
+
+Trying to find a name highlights that the function is doing more than one thing.
+
+```{r}
+`???` <- function(model, sort = "asc") {
+  # code to extract estimates from model
+  ...
+  # code to sort table
+  ...
+}
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip}
+
+## Naming is easy
+
+These individual functions are easier to read, understand, and test.
+
+```{r}
+extract_estimates <- function(model, sort = "asc") {
+  # code to extract estimates from model
+  ...
+}
+
+sort_estimates <- function(table, sort = "asc") {
+  # code to sort table
+  ...
+}
+```
+
+:::
+
+:::
+
+::::
+
+## Function parameter names {.smaller}
+
+When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.
+
+E.g. a boolean or flag parameter name means function is doing more than one thing.
+
+. . .
+
+Consider a function that converts Markdown or HTML document to PDF.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution}
+
+## Boolean parameter name
+
+Doing more than one thing.
+
+```{r}
+convert_to_pdf <- function(file, is_markdown = FALSE) {
+  if (is_markdown) {
+    # code to convert Markdown to PDF
+    ...
+  }
+
+  if (!is_markdown) {
+    # code to convert HTML to PDF
+    ...
+  }
+}
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip}
+
+## Non-boolean parameter name
+
+Doing one thing.
+
+```{r}
+convert_md_to_pdf <- function(file) {
+  # code to convert Markdown to PDF
+  ...
+}
+
+convert_html_to_pdf <- function(file) {
+  # code to convert HTML to PDF
+  ...
+}
+```
+
+:::
+
+:::
+
+::::
 
 # Benefits of good names
 
-*"What's in a name?"* Well, everything!
-
-## {.smaller}
+## *"What's in a name?"* Well, everything! {.smaller}
 
 - Intent-revealing names make the **code easier to read**.
 
@@ -822,9 +935,19 @@ And, after a while, you won't even need to think long and hard to come up with a
 
 - Consistent naming **reduces cognitive overload** for the developers and make the code more readable and maintainable.
 
-. . .
+# Challenges
 
-- etc.
+Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head. 
+
+**Resist the urge!**
+
+## Worth the struggle 
+
+Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.
+
+**The more you do it, the easier it will get!**
+
+And, after a while, you won't even need to think long and hard to come up with a good name. You will instinctively think of one.
 
 # Further Reading {.smaller}
 

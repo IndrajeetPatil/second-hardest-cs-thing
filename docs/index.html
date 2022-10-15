@@ -556,21 +556,21 @@ Indrajeet Patil
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># generic name</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">if</span> (right <span class="sc">&lt;</span> left) {</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  tmp   <span class="ot">&lt;-</span> right</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  right <span class="ot">&lt;-</span> left</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  left  <span class="ot">&lt;-</span> tmp</span>
-<span id="cb6-6"><a href="#cb6-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp"># </span><span class="er">generic name</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">if</span> <span class="op">(</span>right <span class="op">&lt;</span> left<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  tmp   <span class="op">=</span> right</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  right <span class="op">=</span> left</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  left  <span class="op">=</span> tmp</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># more descriptive</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">if</span> (right <span class="sc">&lt;</span> left) {</span>
-<span id="cb7-3"><a href="#cb7-3"></a> old_right <span class="ot">&lt;-</span> right</span>
-<span id="cb7-4"><a href="#cb7-4"></a> right     <span class="ot">&lt;-</span> left</span>
-<span id="cb7-5"><a href="#cb7-5"></a> left      <span class="ot">&lt;-</span> old_right</span>
-<span id="cb7-6"><a href="#cb7-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1"></a><span class="pp"># </span><span class="er">more descriptive</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">if</span> <span class="op">(</span>right <span class="op">&lt;</span> left<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  old_right <span class="op">=</span> right</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  right     <span class="op">=</span> left</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  left      <span class="op">=</span> old_right</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -631,14 +631,14 @@ Indrajeet Patil
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># okay </span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># okay</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="fu">convert_to_string</span>()</span>
 <span id="cb9-3"><a href="#cb9-3"></a>fileObject</span>
 <span id="cb9-4"><a href="#cb9-4"></a>strName <span class="co"># Hungarian notation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># better </span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># better</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">to_string</span>()</span>
 <span id="cb10-3"><a href="#cb10-3"></a>file</span>
 <span id="cb10-4"><a href="#cb10-4"></a>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -650,7 +650,7 @@ Indrajeet Patil
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># okay </span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># okay</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>child_height</span>
 <span id="cb11-3"><a href="#cb11-3"></a>password</span>
 <span id="cb11-4"><a href="#cb11-4"></a>id</span>
@@ -658,7 +658,7 @@ Indrajeet Patil
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># better </span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># better</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>child_height_cm</span>
 <span id="cb12-3"><a href="#cb12-3"></a>plaintext_password</span>
 <span id="cb12-4"><a href="#cb12-4"></a>hex_id</span>
@@ -689,13 +689,13 @@ Indrajeet Patil
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># not ideal - too imprecise</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>d</span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="co"># okay - can use more precision</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a>days </span>
+<span id="cb13-4"><a href="#cb13-4"></a>days</span>
 <span id="cb13-5"><a href="#cb13-5"></a></span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="co"># good - middle ground</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a>days_since_last_accident </span>
+<span id="cb13-7"><a href="#cb13-7"></a>days_since_last_accident</span>
 <span id="cb13-8"><a href="#cb13-8"></a></span>
 <span id="cb13-9"><a href="#cb13-9"></a><span class="co"># not ideal - unnecessarily precise</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a>days_since_last_accident_floor_4_lab_23 </span>
+<span id="cb13-10"><a href="#cb13-10"></a>days_since_last_accident_floor_4_lab_23</span>
 <span id="cb13-11"><a href="#cb13-11"></a></span>
 <span id="cb13-12"><a href="#cb13-12"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -856,13 +856,13 @@ Indrajeet Patil
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># double negation - difficult</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>is_firewall_disabled <span class="ot">=</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1"></a><span class="pp"># </span><span class="er">double negation - difficult</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>is_firewall_disabled <span class="op">=</span> FALSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># better</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>is_firewall_enabled <span class="ot">=</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb22-1"><a href="#cb22-1"></a><span class="pp"># </span><span class="er">better</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>is_firewall_enabled <span class="op">=</span> TRUE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1041,7 +1041,7 @@ Indrajeet Patil
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="fu">mean</span>(x)   <span class="co"># expected output</span></span>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="fu">median</span>(x) <span class="co"># expected output</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>mode()</code> function actually returns the storage mode of an R object!</p>
 </div>
@@ -1142,24 +1142,138 @@ Indrajeet Patil
 </section>
 
 <section>
-<section id="challenges" class="title-slide slide level1 center">
-<h1>Challenges</h1>
-<p>Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head.</p>
-<p><strong>Resist the urge!</strong></p>
+<section id="naming-and-good-design" class="title-slide slide level1 center">
+<h1>Naming and good design</h1>
+<p>Deep dive into benefits of thoughtful naming for an entity at the heart of all software: <strong><em>function</em></strong></p>
 </section>
-<section id="worth-the-struggle" class="slide level2">
-<h2>Worth the struggle</h2>
-<p>Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.</p>
-<p><strong>The more you do it, the easier it will get!</strong></p>
-<p>And, after a while, you won’t even need to think long and hard to come up with a good name. You will instinctively think of one.</p>
+<section id="following-unix-philosophy" class="slide level2 smaller">
+<h2>Following Unix philosophy</h2>
+<p>Unix philosophy specifies the golden rule for writing good a function: <br> <em>“Do One Thing And Do It Well.”</em></p>
+<p>Finding a descriptive name for a function can inform us if we are following this rule.</p>
+<div class="fragment">
+<p>Consider a function to extract a table of regression estimates. For convenience, it also allows to sort the table by estimate.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Naming is hard</strong></p>
+</div>
+<div class="callout-content">
+<p>Trying to find a name highlights that the function is doing more than one thing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="st">`</span><span class="at">???</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  ...</span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="co"># code to sort table</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  ...</span>
+<span id="cb34-6"><a href="#cb34-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Naming is easy</strong></p>
+</div>
+<div class="callout-content">
+<p>These individual functions are easier to read, understand, and test.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  ...</span>
+<span id="cb35-4"><a href="#cb35-4"></a>}</span>
+<span id="cb35-5"><a href="#cb35-5"></a></span>
+<span id="cb35-6"><a href="#cb35-6"></a>sort_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(table, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb35-7"><a href="#cb35-7"></a>  <span class="co"># code to sort table</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  ...</span>
+<span id="cb35-9"><a href="#cb35-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="function-parameter-names" class="slide level2 smaller">
+<h2>Function parameter names</h2>
+<p>When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.</p>
+<p>E.g. a boolean or flag parameter name means function is doing more than one thing.</p>
+<div class="fragment">
+<p>Consider a function that converts Markdown or HTML document to PDF.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Boolean parameter name</strong></p>
+</div>
+<div class="callout-content">
+<p>Doing more than one thing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>convert_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">is_markdown =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="cf">if</span> (is_markdown) {</span>
+<span id="cb36-3"><a href="#cb36-3"></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>    ...</span>
+<span id="cb36-5"><a href="#cb36-5"></a>  }</span>
+<span id="cb36-6"><a href="#cb36-6"></a></span>
+<span id="cb36-7"><a href="#cb36-7"></a>  <span class="cf">if</span> (<span class="sc">!</span>is_markdown) {</span>
+<span id="cb36-8"><a href="#cb36-8"></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>    ...</span>
+<span id="cb36-10"><a href="#cb36-10"></a>  }</span>
+<span id="cb36-11"><a href="#cb36-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Non-boolean parameter name</strong></p>
+</div>
+<div class="callout-content">
+<p>Doing one thing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>convert_md_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  ...</span>
+<span id="cb37-4"><a href="#cb37-4"></a>}</span>
+<span id="cb37-5"><a href="#cb37-5"></a></span>
+<span id="cb37-6"><a href="#cb37-6"></a>convert_html_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb37-7"><a href="#cb37-7"></a>  <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>  ...</span>
+<span id="cb37-9"><a href="#cb37-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="benefits-of-good-names" class="title-slide slide level1 center">
 <h1>Benefits of good names</h1>
-<p><em>“What’s in a name?”</em> Well, everything!</p>
+
 </section>
-<section id="section-6" class="slide level2 smaller">
-<h2></h2>
+<section id="whats-in-a-name-well-everything" class="slide level2 smaller">
+<h2><em>“What’s in a name?”</em> Well, everything!</h2>
 <ul>
 <li>Intent-revealing names make the <strong>code easier to read</strong>.</li>
 </ul>
@@ -1188,11 +1302,18 @@ Indrajeet Patil
 <li>Consistent naming <strong>reduces cognitive overload</strong> for the developers and make the code more readable and maintainable.</li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li>etc.</li>
-</ul>
-</div>
+</section></section>
+<section>
+<section id="challenges" class="title-slide slide level1 center">
+<h1>Challenges</h1>
+<p>Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head.</p>
+<p><strong>Resist the urge!</strong></p>
+</section>
+<section id="worth-the-struggle" class="slide level2">
+<h2>Worth the struggle</h2>
+<p>Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.</p>
+<p><strong>The more you do it, the easier it will get!</strong></p>
+<p>And, after a while, you won’t even need to think long and hard to come up with a good name. You will instinctively think of one.</p>
 </section></section>
 <section>
 <section id="further-reading" class="title-slide slide level1 smaller center">
@@ -1228,7 +1349,7 @@ Indrajeet Patil
 <section id="session-information" class="slide level2 smaller">
 <h2>Session information</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
