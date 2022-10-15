@@ -108,12 +108,14 @@ Using generic names can improve code readability, but *only if* language or doma
 
 . . .
 
-For example, using `j` for outermost and `i` for nested loop is confusing!
+E.g., in a nested loop, using `j` for outer and `i` for inner loop index is confusing!
 
 ```{js}
   for (let j = 0; j < arr.length; j++) {
     for (let i = 0; i < arr[j].length; i++) {
 ```
+
+. . .
 
 Similarly
 
@@ -663,7 +665,7 @@ This function could have been named (e.g.) `storageMode()`, which is more precis
 
 ## Violation: Generic name {.smaller}
 
-The parameter `N` in `std::array` [definition]((https://en.cppreference.com/w/cpp/container/array) is too generic.
+The parameter `N` in `std::array` [definition](https://en.cppreference.com/w/cpp/container/array) is too generic.
 
 ```{c}
 template<
@@ -674,7 +676,8 @@ template<
 
 . . .
 
-`size` is a bit better but still leaves room for misunderstanding: 
+`size` is a bit better but still leaves room for misunderstanding:
+
 > "Does it mean length or memory bytes?"
 
 . . .
@@ -835,7 +838,7 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
 
-- Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-30**)
+- Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-52**)
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
 
@@ -861,3 +864,8 @@ And Happy Naming! 😊
 knitr::include_graphics("images/cat.png")
 ```
 
+## Session information {.smaller}
+
+```{r}
+sessioninfo::session_info(include_base = TRUE)
+```

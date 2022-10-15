@@ -504,11 +504,13 @@ Indrajeet Patil
 <h2>Generic names should follow conventions</h2>
 <p>Using generic names can improve code readability, but <em>only if</em> language or domain customs are followed.</p>
 <div class="fragment">
-<p>For example, using <code>j</code> for outermost and <code>i</code> for nested loop is confusing!</p>
+<p>E.g., in a nested loop, using <code>j</code> for outer and <code>i</code> for inner loop index is confusing!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> j<span class="op">++</span>) {</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr[j]<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+<div class="fragment">
 <p>Similarly</p>
 <ul>
 <li><code>tmp</code> shouldn’t be used to store objects that are not temporary</li>
@@ -1049,7 +1051,7 @@ Indrajeet Patil
 </section>
 <section id="violation-generic-name" class="slide level2 smaller">
 <h2>Violation: Generic name</h2>
-<p>The parameter <code>N</code> in <code>std::array</code> [definition]((https://en.cppreference.com/w/cpp/container/array) is too generic.</p>
+<p>The parameter <code>N</code> in <code>std::array</code> <a href="https://en.cppreference.com/w/cpp/container/array">definition</a> is too generic.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb27-1"><a href="#cb27-1"></a>template<span class="op">&lt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>    class T<span class="op">,</span></span>
@@ -1057,7 +1059,10 @@ Indrajeet Patil
 <span id="cb27-4"><a href="#cb27-4"></a><span class="op">&gt;</span> <span class="kw">struct</span> array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p><code>size</code> is a bit better but still leaves room for misunderstanding: &gt; “Does it mean length or memory bytes?”</p>
+<p><code>size</code> is a bit better but still leaves room for misunderstanding:</p>
+<blockquote>
+<p>“Does it mean length or memory bytes?”</p>
+</blockquote>
 </div>
 <div class="fragment">
 <p>Here is an alternative parameter name:</p>
@@ -1200,7 +1205,7 @@ Indrajeet Patil
 <li><p>McConnell, S. (2004). <em>Code Complete</em>. Microsoft Press. (<strong>pp.&nbsp;259-290</strong>)</p></li>
 <li><p>Boswell, D., &amp; Foucher, T. (2011). <em>The Art of Readable Code</em>. O’Reilly Media, Inc.&nbsp;(<strong>pp.&nbsp;7-31</strong>)</p></li>
 <li><p>Ousterhout, J. K. (2018). <em>A Philosophy of Software Design</em>. Palo Alto: Yaknyam Press. (<strong>pp.&nbsp;121-129</strong>)</p></li>
-<li><p>Martin, R. C. (2009). <em>Clean Code</em>. Pearson Education.(<strong>pp.&nbsp;17-30</strong>)</p></li>
+<li><p>Martin, R. C. (2009). <em>Clean Code</em>. Pearson Education.(<strong>pp.&nbsp;17-52</strong>)</p></li>
 <li><p>Thomas, D., &amp; Hunt, A. (2019). <em>The Pragmatic Programmer</em>. Addison-Wesley Professional. (<strong>pp.&nbsp;238-242</strong>)</p></li>
 <li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming">Google C++ Style Guide</a>.</p></li>
 </ul>
@@ -1214,14 +1219,21 @@ Indrajeet Patil
 <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:patilindrajeet.science@gmail.com">E-mail</a></p>
 </section>
 
+<section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
 <p>And Happy Naming! 😊</p>
 
-<img data-src="images/cat.png" width="250" class="r-stretch"><div class="footer footer-default">
+<img data-src="images/cat.png" width="250" class="r-stretch"></section>
+<section id="session-information" class="slide level2 smaller">
+<h2>Session information</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer footer-default">
 <p>Source code for the slides can be found <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs">here</a>.</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
