@@ -1,6 +1,6 @@
 ---
-title: "Dealing with the Second Hardest Thing in Computer Science"
-subtitle: "Thoughts on naming things for software development"
+#title: "Dealing with the Second Hardest Thing in Computer Science"
+#subtitle: "Thoughts on naming things for software development"
 format:
   revealjs: 
     theme: simple
@@ -8,8 +8,8 @@ format:
     preview-links: auto
     #css: ["theme.css"]
     footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs)."
-author: "Indrajeet Patil"
-affiliation: "cynkra GmbH"
+#author: "Indrajeet Patil"
+#affiliation: "cynkra GmbH"
 execute:
   echo: true
 # title-slide-attributes:
@@ -25,6 +25,23 @@ options(htmltools.dir.version = FALSE)
 
 knitr::opts_chunk$set(eval = FALSE)
 ```
+
+
+## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em;"}
+
+::: {style="margin-bottom: 1em; font-size: 0.75em"}
+Indrajeet Patil
+
+Software Engineer, cynkra GmbH
+:::
+
+
+::: {style="font-size:0.5em"}
+- Link to slides: [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/)
+- Github repo for talk: [repo](https://github.com/IndrajeetPatil/second-hardest-cs-thing/)
+:::
+
+![](images/cat.png){.absolute width="500" height="350" right="40" top="150"}
 
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
@@ -982,10 +999,6 @@ For a more detailed discussion about how to name things, see the following refer
 # Thank You 
 
 And Happy Naming! 😊
-
-```{r, echo=FALSE, eval=TRUE}
-knitr::include_graphics("images/cat.png")
-```
 
 ## Session information {.smaller}
 

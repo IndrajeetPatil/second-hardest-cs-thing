@@ -9,11 +9,10 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.209">
+  <meta name="generator" content="quarto-1.2.242">
 
-  <meta name="author" content="Indrajeet Patil">
   <meta name="keywords" content="naming, software-engineering, computer-science">
-  <title>Dealing with the Second Hardest Thing in Computer Science</title>
+  <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,18 +389,20 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Dealing with the Second Hardest Thing in Computer Science</h1>
-  <p class="subtitle">Thoughts on naming things for software development</p>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Indrajeet Patil 
+<section id="dealing-with-the-second-hardest-thing-in-computer-science" class="slide level2" style="margin-top: 2em;">
+<h2>Dealing with the Second Hardest Thing in Computer Science</h2>
+<div style="margin-bottom: 1em; font-size: 0.75em">
+<p>Indrajeet Patil</p>
+<p>Software Engineer, cynkra GmbH</p>
 </div>
+<div style="font-size:0.5em">
+<ul>
+<li>Link to slides: <a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/">slides</a></li>
+<li>Github repo for talk: <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/">repo</a></li>
+</ul>
 </div>
-</div>
-
+<p><img data-src="images/cat.png" class="absolute" style="top: 150px; right: 40px; width: 500px; height: 350px; "></p>
 </section>
 <section id="there-are-only-two-hard-things-in-computer-science-cache-invalidation-and-naming-things." class="title-slide slide level1 center">
 <h1>“There are only two hard things in Computer Science: cache invalidation and naming things.”</h1>
@@ -1344,8 +1345,7 @@ Indrajeet Patil
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
 <p>And Happy Naming! 😊</p>
-
-<img data-src="images/cat.png" width="250" class="r-stretch"></section>
+</section>
 <section id="session-information" class="slide level2 smaller">
 <h2>Session information</h2>
 <div class="cell">
@@ -1361,7 +1361,7 @@ Indrajeet Patil
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       Europe/Berlin
- date     2022-10-15
+ date     2022-10-25
  pandoc   2.19.2 @ /usr/local/bin/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
@@ -1370,14 +1370,14 @@ Indrajeet Patil
    cli           3.4.1   2022-09-23 [1] CRAN (R 4.2.0)
  P compiler      4.2.1   2022-06-24 [1] local
  P datasets    * 4.2.1   2022-06-24 [1] local
-   digest        0.6.29  2021-12-01 [1] CRAN (R 4.2.0)
+   digest        0.6.30  2022-10-18 [1] CRAN (R 4.2.1)
    evaluate      0.17    2022-10-07 [1] CRAN (R 4.2.1)
    fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.2.0)
  P graphics    * 4.2.1   2022-06-24 [1] local
  P grDevices   * 4.2.1   2022-06-24 [1] local
  P grid          4.2.1   2022-06-24 [1] local
    htmltools     0.5.3   2022-07-18 [1] CRAN (R 4.2.1)
-   jsonlite      1.8.2   2022-10-02 [1] CRAN (R 4.2.1)
+   jsonlite      1.8.3   2022-10-21 [1] CRAN (R 4.2.1)
    knitr         1.40    2022-08-24 [1] CRAN (R 4.2.1)
    lattice       0.20-45 2021-09-22 [1] CRAN (R 4.2.1)
    magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
@@ -1395,8 +1395,8 @@ Indrajeet Patil
    stringr       1.4.1   2022-08-20 [1] CRAN (R 4.2.1)
  P tools         4.2.1   2022-06-24 [1] local
  P utils       * 4.2.1   2022-06-24 [1] local
-   xfun          0.33    2022-09-12 [1] CRAN (R 4.2.1)
-   yaml          2.3.5   2022-02-21 [1] CRAN (R 4.2.0)
+   xfun          0.34    2022-10-18 [1] CRAN (R 4.2.1)
+   yaml          2.3.6   2022-10-18 [1] CRAN (R 4.2.1)
 
  [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
 
@@ -1645,16 +1645,6 @@ Indrajeet Patil
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // fire slideEnter for tabby tab activations (for htmlwidget resize behavior)
-        document.addEventListener("tabby", fireSlideEnter, false);
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
