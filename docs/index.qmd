@@ -6,17 +6,11 @@ format:
     theme: simple
     slide-number: true
     preview-links: auto
-    #css: ["theme.css"]
     footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs)."
 #author: "Indrajeet Patil"
 #affiliation: "cynkra GmbH"
 execute:
   echo: true
-# title-slide-attributes:
-#   data-background-image: "images/cat.png"
-#   data-background-opacity: "80%"
-#   data-background-position: "right"
-#   data-background-size: "25%"
 keywords: ["naming", "software-engineering", "computer-science"]
 ---
 
@@ -27,18 +21,22 @@ knitr::opts_chunk$set(eval = FALSE)
 ```
 
 
-## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em;"}
+## Dealing with the Second Hardest Thing in Computer Science  {style="margin-top: 3em;"}
 
-::: {style="margin-bottom: 1em; font-size: 0.75em"}
+::: {style="margin-top: 2em; margin-bottom: 1em; font-size: 0.75em"}
+
 Indrajeet Patil
 
 Software Engineer, cynkra GmbH
+
 :::
 
 
-::: {style="font-size:0.5em"}
+::: {style="margin-top: 2em; font-size:0.5em"}
+
 - Link to slides: [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/)
 - Github repo for talk: [repo](https://github.com/IndrajeetPatil/second-hardest-cs-thing/)
+
 :::
 
 ![](images/cat.png){.absolute width="500" height="350" right="40" top="150"}
