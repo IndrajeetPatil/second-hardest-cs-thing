@@ -8,7 +8,7 @@ format:
     preview-links: auto
     footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs)."
 #author: "Indrajeet Patil"
-#affiliation: "cynkra GmbH"
+#affiliation: 
 execute:
   echo: true
 keywords: ["naming", "software-engineering", "computer-science"]
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(eval = FALSE)
 
 Indrajeet Patil
 
-Software Engineer, cynkra GmbH
+Software Engineer
 
 :::
 
