@@ -9,7 +9,7 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.269">
+  <meta name="generator" content="quarto-1.3.11">
 
   <meta name="keywords" content="naming, software-engineering, computer-science">
   <title>index</title>
@@ -392,14 +392,13 @@
 
 <section id="dealing-with-the-second-hardest-thing-in-computer-science" class="slide level2" style="margin-top: 3em;">
 <h2>Dealing with the Second Hardest Thing in Computer Science</h2>
-<div style="margin-top: 2em; margin-bottom: 1em; font-size: 0.75em">
+<div style="margin-top: 2em; margin-bottom: 1em; font-size: 1em">
 <p>Indrajeet Patil</p>
-<p>Software Engineer</p>
 </div>
 <div style="margin-top: 2em; font-size:0.5em">
 <ul>
-<li>Link to slides: <a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/">slides</a></li>
-<li>Github repo for talk: <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/">repo</a></li>
+<li>Link to slides: <a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/" target="_blank">slides</a></li>
+<li>Github repo for talk: <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/" target="_blank">repo</a></li>
 </ul>
 </div>
 <p><img data-src="images/cat.png" class="absolute" style="top: 150px; right: 40px; width: 500px; height: 350px; "></p>
@@ -887,7 +886,7 @@
 <section id="naming-conventions-as-extra-information" class="slide level2 smaller">
 <h2>Naming conventions as extra information</h2>
 <p>Having different name formats for different entities <strong>acts like syntax highlighting</strong>.</p>
-<p>Here is an example of formatting conventions (adopted in <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md">OSP organization</a>):</p>
+<p>Here is an example of formatting conventions (adopted in <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md" target="_blank">OSP organization</a>):</p>
 
 <img data-src="images/osp_naming.png" width="1212" class="r-stretch"></section>
 <section id="names-should-be-kept-up-to-date" class="slide level2 smaller">
@@ -981,7 +980,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Avoid unintended meanings.</strong> Do your due diligence to check dictionaries (especially <a href="https://www.urbandictionary.com/">Urban dictionary</a>!) if the word has unintended meaning. E.g. <code>cumulative_sum()</code> is a better function name than <a href="https://rdrr.io/r/base/cumsum.html"><code>cumsum()</code></a>.</li>
+<li><strong>Avoid unintended meanings.</strong> Do your due diligence to check dictionaries (especially <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a>!) if the word has unintended meaning. E.g. <code>cumulative_sum()</code> is a better function name than <a href="https://rdrr.io/r/base/cumsum.html" target="_blank"><code>cumsum()</code></a>.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1052,7 +1051,7 @@
 </section>
 <section id="violation-generic-name" class="slide level2 smaller">
 <h2>Violation: Generic name</h2>
-<p>The parameter <code>N</code> in <code>std::array</code> <a href="https://en.cppreference.com/w/cpp/container/array">definition</a> is too generic.</p>
+<p>The parameter <code>N</code> in <code>std::array</code> <a href="https://en.cppreference.com/w/cpp/container/array" target="_blank">definition</a> is too generic.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb27-1"><a href="#cb27-1"></a>template<span class="op">&lt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>    class T<span class="op">,</span></span>
@@ -1078,7 +1077,7 @@
 </section>
 <section id="violation-inconsistency-in-naming" class="slide level2 smaller">
 <h2>Violation: Inconsistency in naming</h2>
-<p><em>ggplot2</em> is a <a href="https://ggplot2.tidyverse.org/">plotting framework</a> in R, and supports both <strong>British</strong> and <strong>American</strong> English spelling standards. But does it do so <em>consistently</em>?</p>
+<p><em>ggplot2</em> is a <a href="https://ggplot2.tidyverse.org/" target="_blank">plotting framework</a> in R, and supports both <strong>British</strong> and <strong>American</strong> English spelling standards. But does it do so <em>consistently</em>?</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1119,7 +1118,7 @@
 </section>
 <section id="violation-room-for-misunderstanding" class="slide level2 smaller">
 <h2>Violation: Room for misunderstanding</h2>
-<p>In Python, <a href="https://www.w3schools.com/python/ref_func_filter.asp"><code>filter()</code></a> can be used to apply a function to an iterable.</p>
+<p>In Python, <a href="https://www.w3schools.com/python/ref_func_filter.asp" target="_blank"><code>filter()</code></a> can be used to apply a function to an iterable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1329,16 +1328,16 @@
 <li><p>Ousterhout, J. K. (2018). <em>A Philosophy of Software Design</em>. Palo Alto: Yaknyam Press. (<strong>pp.&nbsp;121-129</strong>)</p></li>
 <li><p>Martin, R. C. (2009). <em>Clean Code</em>. Pearson Education.(<strong>pp.&nbsp;17-52</strong>)</p></li>
 <li><p>Thomas, D., &amp; Hunt, A. (2019). <em>The Pragmatic Programmer</em>. Addison-Wesley Professional. (<strong>pp.&nbsp;238-242</strong>)</p></li>
-<li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming">Google C++ Style Guide</a>.</p></li>
+<li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming" target="_blank">Google C++ Style Guide</a>.</p></li>
 </ul>
 </section></section>
 <section id="find-me-at" class="title-slide slide level1 center">
 <h1>Find me at…</h1>
-<p><i class="fa-brands fa-twitter" aria-hidden="true"></i> <a href="http://twitter.com/patilindrajeets">Twitter</a></p>
-<p><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/">LikedIn</a></p>
-<p><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="http://github.com/IndrajeetPatil">GitHub</a></p>
-<p><i class="fa-solid fa-link" aria-hidden="true"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/">Website</a></p>
-<p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:patilindrajeet.science@gmail.com">E-mail</a></p>
+<p><i class="fa-brands fa-twitter" aria-hidden="true"></i> <a href="http://twitter.com/patilindrajeets" target="_blank">Twitter</a></p>
+<p><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/" target="_blank">LikedIn</a></p>
+<p><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="http://github.com/IndrajeetPatil" target="_blank">GitHub</a></p>
+<p><i class="fa-solid fa-link" aria-hidden="true"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/" target="_blank">Website</a></p>
+<p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:patilindrajeet.science@gmail.com" target="_blank">E-mail</a></p>
 </section>
 
 <section>
@@ -1361,7 +1360,7 @@
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       Europe/Berlin
- date     2022-11-12
+ date     2022-11-20
  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
@@ -1378,10 +1377,10 @@
  P grid          4.2.2   2022-10-31 [1] local
    htmltools     0.5.3   2022-07-18 [1] CRAN (R 4.2.1)
    jsonlite      1.8.3   2022-10-21 [1] CRAN (R 4.2.1)
-   knitr         1.40    2022-08-24 [1] CRAN (R 4.2.1)
+   knitr         1.41    2022-11-18 [1] CRAN (R 4.2.2)
    lattice       0.20-45 2021-09-22 [1] CRAN (R 4.2.2)
    magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
-   Matrix        1.5-1   2022-09-13 [1] CRAN (R 4.2.2)
+   Matrix        1.5-3   2022-11-11 [1] CRAN (R 4.2.0)
  P methods     * 4.2.2   2022-10-31 [1] local
    png           0.1-7   2013-12-03 [1] CRAN (R 4.2.0)
    Rcpp          1.0.9   2022-07-08 [1] CRAN (R 4.2.1)
@@ -1395,7 +1394,7 @@
    stringr       1.4.1   2022-08-20 [1] CRAN (R 4.2.1)
  P tools         4.2.2   2022-10-31 [1] local
  P utils       * 4.2.2   2022-10-31 [1] local
-   xfun          0.34    2022-10-18 [1] CRAN (R 4.2.1)
+   xfun          0.35    2022-11-16 [1] CRAN (R 4.2.2)
    yaml          2.3.6   2022-10-18 [1] CRAN (R 4.2.1)
 
  [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library

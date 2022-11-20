@@ -23,19 +23,17 @@ knitr::opts_chunk$set(eval = FALSE)
 
 ## Dealing with the Second Hardest Thing in Computer Science  {style="margin-top: 3em;"}
 
-::: {style="margin-top: 2em; margin-bottom: 1em; font-size: 0.75em"}
+::: {style="margin-top: 2em; margin-bottom: 1em; font-size: 1em"}
 
 Indrajeet Patil
-
-Software Engineer
 
 :::
 
 
 ::: {style="margin-top: 2em; font-size:0.5em"}
 
-- Link to slides: [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/)
-- Github repo for talk: [repo](https://github.com/IndrajeetPatil/second-hardest-cs-thing/)
+- Link to slides: [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/){target="_blank"}
+- Github repo for talk: [repo](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target="_blank"}
 
 :::
 
@@ -526,7 +524,7 @@ is_firewall_enabled = TRUE
 
 Having different name formats for different entities **acts like syntax highlighting**.
 
-Here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md)):
+Here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
 
 ```{r, echo=FALSE, eval=TRUE}
 knitr::include_graphics("images/osp_naming.png")
@@ -617,7 +615,7 @@ You won't have to remember any of the following rules if you adopt a single prin
 
 . . .
 
-- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/)!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html).
+- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html){target="_blank"}.
 
 . . .
 
@@ -680,7 +678,7 @@ This function could have been named (e.g.) `storageMode()`, which is more precis
 
 ## Violation: Generic name {.smaller}
 
-The parameter `N` in `std::array` [definition](https://en.cppreference.com/w/cpp/container/array) is too generic.
+The parameter `N` in `std::array` [definition](https://en.cppreference.com/w/cpp/container/array){target="_blank"} is too generic.
 
 ```{c}
 template<
@@ -710,7 +708,7 @@ template<
 
 ## Violation: Inconsistency in naming {.smaller}
 
-*ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/) in R, and supports both **British** and **American** English spelling standards. But does it do so *consistently*?
+*ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/){target="_blank"} in R, and supports both **British** and **American** English spelling standards. But does it do so *consistently*?
 
 . . .
 
@@ -767,7 +765,7 @@ This is **inconsistent** and **violates user's mental model** about function and
 
 ## Violation: Room for misunderstanding {.smaller}
 
-In Python, [`filter()`](https://www.w3schools.com/python/ref_func_filter.asp) can be used to apply a function to an iterable.
+In Python, [`filter()`](https://www.w3schools.com/python/ref_func_filter.asp){target="_blank"} can be used to apply a function to an iterable.
 
 ```{python}
 list(filter(lambda x: x > 0, [-1, 1]))
@@ -980,19 +978,20 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
 
-- For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming).
+- For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming){target="_blank"}.
 
 # Find me at...
 
-{{< fa brands twitter >}} [Twitter](http://twitter.com/patilindrajeets)
+{{< fa brands twitter >}} [Twitter](http://twitter.com/patilindrajeets){target="_blank"}
 
-{{< fa brands linkedin >}} [LikedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/)
+{{< fa brands linkedin >}} [LikedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/){target="_blank"}
 
-{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil)
+{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil){target="_blank"}
 
-{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/)
+{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/){target="_blank"}
 
-{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com)
+{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com){target="_blank"}
+
 
 # Thank You 
 
