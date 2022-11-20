@@ -30,10 +30,9 @@ Indrajeet Patil
 :::
 
 
-::: {style="margin-top: 2em; font-size:0.5em"}
+::: {style="margin-top: 1em; font-size:0.75em"}
 
-- Link to slides: [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/){target="_blank"}
-- Github repo for talk: [repo](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target="_blank"}
+Link to [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/){target="_blank"}
 
 :::
 
