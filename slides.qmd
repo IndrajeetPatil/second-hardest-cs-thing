@@ -979,6 +979,10 @@ For a more detailed discussion about how to name things, see the following refer
 
 - For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming){target="_blank"}.
 
+# For more
+
+If you are interested in reading more of my slide decks on related topics, visit [this](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"} page.
+
 # Find me at...
 
 {{< fa brands twitter >}} [Twitter](http://twitter.com/patilindrajeets){target="_blank"}
@@ -990,7 +994,6 @@ For a more detailed discussion about how to name things, see the following refer
 {{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/){target="_blank"}
 
 {{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com){target="_blank"}
-
 
 # Thank You 
 
