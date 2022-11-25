@@ -19,4 +19,5 @@ URL: https://github.com/IndrajeetPatil/second-hardest-cs-thing
 BugReports: https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues
 Depends: 
     fs,
-    quarto
+    quarto,
+    reticulate
