@@ -15,13 +15,11 @@ keywords: ["naming", "software-engineering", "computer-science"]
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
 
-## Dealing with the Second Hardest Thing in Computer Science  {style="margin-top: 3em;"}
+## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
 ::: {style="margin-top: 2em; margin-bottom: 1em; font-size: 1em"}
 
