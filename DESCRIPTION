@@ -1,5 +1,6 @@
 Package: second-hardest-cs-thing
 Title: Dealing with the Second Hardest Thing in Computer Science
+Version: 1.0
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",
