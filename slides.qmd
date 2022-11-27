@@ -18,25 +18,16 @@ keywords: ["naming", "software-engineering", "computer-science"]
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
-<!-- Don't render this file manually. Run `renderer.R` script instead. -->
-
 ## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
-::: {style="margin-top: 2em; margin-bottom: 1em; font-size: 1em"}
+<!-- Don't render this file manually. Run `renderer.R` script instead. -->
+
+::: {style="margin-top: 1em; margin-bottom: 1em; font-size: 1em"}
 
 Indrajeet Patil
 
+![](images/cat.png){.absolute width="500" height="350" right="40" top="175"}
 :::
-
-
-::: {style="margin-top: 1em; font-size:0.75em"}
-
-Link to [slides](https://indrajeetpatil.github.io/second-hardest-cs-thing/){target="_blank"}
-
-:::
-
-![](images/cat.png){.absolute width="500" height="350" right="40" top="150"}
-
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
 \- Phil Karlton

@@ -38,6 +38,7 @@ jobs:
 
       - name: Render slides
         run: |
+          options(crayon.enabled = TRUE)
           quarto::quarto_render("slides.qmd")
           fs::file_copy("slides.html", "index.html", overwrite = TRUE)
         shell: Rscript {0}
