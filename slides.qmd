@@ -18,6 +18,7 @@ keywords: ["naming", "software-engineering", "computer-science"]
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
+<!-- Don't render this file manually. Run `renderer.R` script instead. -->
 
 ## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
