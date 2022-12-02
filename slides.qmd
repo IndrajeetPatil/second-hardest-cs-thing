@@ -575,10 +575,10 @@ def should_serialize_the_formula_cache_if_required
 
 Don't hesitate to choose lengthy names for **test** functions.
 
-This is not a problem because, unlike regular functions, test functions are not
+Unlike regular functions, long names are less problematic for test functions because
 
-- visible or accessible for users
-- called repeatedly throughout the codebase 
+- they are not visible or accessible to the users
+- they are not called repeatedly throughout the codebase 
 
 :::
 
