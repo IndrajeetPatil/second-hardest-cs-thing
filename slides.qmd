@@ -20,7 +20,7 @@ knitr::opts_chunk$set(eval = FALSE)
 
 ## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
-<!-- Don't render this file manually. Run `renderer.R` script instead. -->
+<!-- Don't render this file locally Run `renderer.R` script instead. -->
 
 ::: {style="margin-top: 1em; margin-bottom: 1em; font-size: 1em"}
 
@@ -441,6 +441,23 @@ public:
 
 :::
 
+## Names should clarify dependencies {.smaller}
+
+If a set of functions have dependencies (because they share the same data, e.g.), their names should clarify this dependence.
+
+. . . 
+
+E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues.
+
+```{r}
+revenues <- compute_revenues_data(raw_revenues_data)
+revenues <- compute_monthly_revenues(revenues)
+revenues <- compute_quarterly_revenues(revenues)
+revenues <- compute_annual_revenues(revenues)
+```
+
+Each of the function names makes clear the order in which they need to be run.
+
 ## Name Booleans with extra care {.smaller}
 
 Names for Boolean variables or functions should make clear what true and false means. This can be done using prefixes (**is**, **has**, **can**, etc.).
@@ -519,13 +536,59 @@ Here is an example of formatting conventions (adopted in [OSP organization](http
 knitr::include_graphics("images/osp_naming.png")
 ```
 
+## Test function names should be detailed {.smaller}
+
+If unit testing in a given programming language requires writing test functions, choose names that describe details of the test.
+
+The test function names should effectively act as a comment.
+
+:::: {.columns}
+
+::: {.column width='30%'}
+
+```{.python}
+# bad
+def test1
+def my_test
+def retrieve_commands
+def serialize_success
+```
+
+
+:::
+
+::: {.column width='70%'}
+
+```{.python}
+# good
+def test_array
+def test_multilinear_model
+def all_the_saved_commands_should_be_retrieved
+def should_serialize_the_formula_cache_if_required
+```
+
+:::
+
+::::
+
+:::{.callout-note}
+
+Don't hesitate to choose lengthy names for **test** functions.
+
+This is not a problem because, unlike regular functions, test functions are not
+
+- visible or accessible for users
+- called repeatedly throughout the codebase 
+
+:::
+
 ## Names should be kept up-to-date {.smaller}
 
 To resist software entropy, not only should you name entities properly, but you should also update them. Otherwise, names will become something worse than meaningless or confusing: **misleading**.
 
 . . .
 
-For example, let's say your class has `$getMeans()` method. 
+For example, let's say your class has `$getMeans()` method.
 
 - In its initial implementation, it used to return *precomputed* mean values. 
 - In its current implementation, it *computes* the mean values on the fly. 
