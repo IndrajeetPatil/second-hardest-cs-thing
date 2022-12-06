@@ -110,20 +110,17 @@ Using generic names can improve code readability, but *only if* language or doma
 
 . . .
 
-E.g., in a nested loop, using `j` for outer and `i` for inner loop index is confusing!
+Examples:
+
+- In a nested loop, using `j` for outer and `i` for inner loop index is confusing!
 
 ```{js}
   for (let j = 0; j < arr.length; j++) {
     for (let i = 0; i < arr[j].length; i++) {
 ```
 
-. . .
-
-Similarly
-
 - `tmp` shouldn't be used to store objects that are not temporary
 - `retVal` shouldn't be used for objects not returned from function
-- etc.
 
 . . .
 
@@ -133,7 +130,7 @@ Similarly
 
 :::
 
-## Alternatives to using generic names {.smaller}
+## Alternatives to generic names {.smaller}
 
 If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what refers to what.
 
@@ -169,7 +166,7 @@ All variables are temporary in some sense. Calling one `tmp` is inviting careles
 
 ::: {.column width='50%'}
 
-```{cpp}
+```{c}
 # generic name
 if (right < left) {
   tmp   = right
@@ -182,7 +179,7 @@ if (right < left) {
 
 ::: {.column width='50%'}
 
-```{cpp}
+```{c}
 # more descriptive
 if (right < left) {
   old_right = right
@@ -500,7 +497,7 @@ Use positive terms for Booleans since they are easier to process.
 
 ::: {.column width='50%'}
 
-```{cpp}
+```{c}
 # double negation - difficult
 is_firewall_disabled = FALSE
 ```
@@ -509,7 +506,7 @@ is_firewall_disabled = FALSE
 
 ::: {.column width='50%'}
 
-```{cpp}
+```{c}
 # better
 is_firewall_enabled = TRUE
 ```
@@ -530,7 +527,7 @@ is_firewall_enabled = TRUE
 
 Having different name formats for different entities **acts like syntax highlighting**.
 
-Here is an example of formatting conventions (adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
+Here is an example of formatting conventions (from [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
 
 ```{r, echo=FALSE, eval=TRUE}
 knitr::include_graphics("images/osp_naming.png")
@@ -653,9 +650,9 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 
 # A sundry of don'ts
 
-You won't have to remember any of the following rules if you adopt a single principle:
+You won't have to remember any of the following rules if you follow the following principle:
 
-"Names should be readable for the *reader*, and not *writer*, of code."
+"Names must be readable for the *reader*, not *writer*, of code."
 
 ## {.smaller}
 
@@ -705,7 +702,7 @@ You won't have to remember any of the following rules if you adopt a single prin
 
 Looking at names in the wild that violate presented guidelines.
 
-This is **not** to be taken as criticisms but as real-life learning opportunities to drive home the importance of these guidelines.
+This is **not** to be taken as criticisms, but as learning opportunities to drive home the importance of these guidelines.
 
 ## Violation: Breaking (domain) conventions {.smaller}
 
@@ -813,7 +810,7 @@ guide_colourbar(ticks.colour = "black")
 guide_colorbar(ticks.colour = "black")
 ```
 
-This is **inconsistent** and **violates user's mental model** about function and parameter naming schema.
+This is **inconsistent** and **violates user's mental model** about naming schema.
 
 ## Violation: Room for misunderstanding {.smaller}
 
@@ -825,19 +822,19 @@ list(filter(lambda x: x > 0, [-1, 1]))
 
 . . .
 
-But `filter` is an ambiguous word:
+But `filter` is an ambiguous word. It could mean either of these:
 
-- It could mean to pick out elements that pass a condition (what *remains after filtering*), or
-- it could mean to pick out elements that need to be removed (what *is filtered*). 
+- to pick out elements that pass a condition (what *remains after filtering*)
+- to pick out elements that need to be removed (what *is filtered out*)
 
 If you've never used this function before, could you predict if it returns `1` or `-1`?
 
 . . .
 
 It returns `1`, so the intent is to pick out the elements that pass the condition. </br>
-In this case, **`keep()`** would've be a better name.
+In this case, **`keep()`** would be a better name.
 
-Had the intent been to find elements to remove, **`discard()`** would've be a better name.
+Had the intent been to find elements to remove, **`discard()`** would be a better name.
 
 # etc.
 
@@ -893,7 +890,7 @@ Trying to find a name highlights that the function is doing more than one thing.
 These individual functions are easier to read, understand, and test.
 
 ```{r}
-extract_estimates <- function(model, sort = "asc") {
+extract_estimates <- function(model) {
   # code to extract estimates from model
   ...
 }
