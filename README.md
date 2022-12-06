@@ -16,8 +16,8 @@ The slides can be seen here:<br>
 
 # Feedback
 
-I'd love to hear thoughts and comments [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues){target="_blank"}.
+I'd love to hear thoughts and comments [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues).
 
 # Code of Conduct
 
-Please note that the second-hardest-cs-thing project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html){target="_blank"}. By contributing to this project, you agree to abide by its terms.
+Please note that the second-hardest-cs-thing project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
