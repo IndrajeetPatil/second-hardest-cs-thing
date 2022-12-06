@@ -499,18 +499,17 @@
 <h2>Generic names should follow conventions</h2>
 <p>Using generic names can improve code readability, but <em>only if</em> language or domain customs are followed.</p>
 <div class="fragment">
-<p>E.g., in a nested loop, using <code>j</code> for outer and <code>i</code> for inner loop index is confusing!</p>
+<p>Examples:</p>
+<ul>
+<li>In a nested loop, using <code>j</code> for outer and <code>i</code> for inner loop index is confusing!</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> j<span class="op">++</span>) {</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr[j]<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="fragment">
-<p>Similarly</p>
 <ul>
 <li><code>tmp</code> shouldn’t be used to store objects that are not temporary</li>
 <li><code>retVal</code> shouldn’t be used for objects not returned from function</li>
-<li>etc.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -529,8 +528,8 @@
 </div>
 </div>
 </section>
-<section id="alternatives-to-using-generic-names" class="slide level2 smaller">
-<h2>Alternatives to using generic names</h2>
+<section id="alternatives-to-generic-names" class="slide level2 smaller">
+<h2>Alternatives to generic names</h2>
 <p>If a loop is longer than a few lines, use more meaningful loop variable names than <code>i</code>, <code>j</code>, <code>k</code> because you will quickly lose track of what refers to what.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -551,7 +550,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp"># </span><span class="er">generic name</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1"></a><span class="er"># generic name</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="cf">if</span> <span class="op">(</span>right <span class="op">&lt;</span> left<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>  tmp   <span class="op">=</span> right</span>
 <span id="cb6-4"><a href="#cb6-4"></a>  right <span class="op">=</span> left</span>
@@ -560,7 +559,7 @@
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1"></a><span class="pp"># </span><span class="er">more descriptive</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1"></a><span class="er"># more descriptive</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="cf">if</span> <span class="op">(</span>right <span class="op">&lt;</span> left<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  old_right <span class="op">=</span> right</span>
 <span id="cb7-4"><a href="#cb7-4"></a>  right     <span class="op">=</span> left</span>
@@ -865,12 +864,12 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb22-1"><a href="#cb22-1"></a><span class="pp"># </span><span class="er">double negation - difficult</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb22-1"><a href="#cb22-1"></a><span class="er"># double negation - difficult</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>is_firewall_disabled <span class="op">=</span> FALSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb23-1"><a href="#cb23-1"></a><span class="pp"># </span><span class="er">better</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb23-1"><a href="#cb23-1"></a><span class="er"># better</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>is_firewall_enabled <span class="op">=</span> TRUE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -895,7 +894,7 @@
 <section id="naming-conventions-as-extra-information" class="slide level2 smaller">
 <h2>Naming conventions as extra information</h2>
 <p>Having different name formats for different entities <strong>acts like syntax highlighting</strong>.</p>
-<p>Here is an example of formatting conventions (adopted in <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md" target="_blank">OSP organization</a>):</p>
+<p>Here is an example of formatting conventions (from <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md" target="_blank">OSP organization</a>):</p>
 
 <img data-src="images/osp_naming.png" width="1212" class="r-stretch"></section>
 <section id="test-function-names-should-be-detailed" class="slide level2 smaller">
@@ -1012,8 +1011,8 @@
 <section>
 <section id="a-sundry-of-donts" class="title-slide slide level1 center">
 <h1>A sundry of don’ts</h1>
-<p>You won’t have to remember any of the following rules if you adopt a single principle:</p>
-<p>“Names should be readable for the <em>reader</em>, and not <em>writer</em>, of code.”</p>
+<p>You won’t have to remember any of the following rules if you follow the following principle:</p>
+<p>“Names must be readable for the <em>reader</em>, not <em>writer</em>, of code.”</p>
 </section>
 <section id="section-3" class="slide level2 smaller">
 <h2></h2>
@@ -1077,7 +1076,7 @@
 <section id="case-studies" class="title-slide slide level1 center">
 <h1>Case studies</h1>
 <p>Looking at names in the wild that violate presented guidelines.</p>
-<p>This is <strong>not</strong> to be taken as criticisms but as real-life learning opportunities to drive home the importance of these guidelines.</p>
+<p>This is <strong>not</strong> to be taken as criticisms, but as learning opportunities to drive home the importance of these guidelines.</p>
 </section>
 <section id="violation-breaking-domain-conventions" class="slide level2 smaller">
 <h2>Violation: Breaking (domain) conventions</h2>
@@ -1160,7 +1159,7 @@
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This is <strong>inconsistent</strong> and <strong>violates user’s mental model</strong> about function and parameter naming schema.</p>
+<p>This is <strong>inconsistent</strong> and <strong>violates user’s mental model</strong> about naming schema.</p>
 </div>
 </section>
 <section id="violation-room-for-misunderstanding" class="slide level2 smaller">
@@ -1170,16 +1169,16 @@
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p>But <code>filter</code> is an ambiguous word:</p>
+<p>But <code>filter</code> is an ambiguous word. It could mean either of these:</p>
 <ul>
-<li>It could mean to pick out elements that pass a condition (what <em>remains after filtering</em>), or</li>
-<li>it could mean to pick out elements that need to be removed (what <em>is filtered</em>).</li>
+<li>to pick out elements that pass a condition (what <em>remains after filtering</em>)</li>
+<li>to pick out elements that need to be removed (what <em>is filtered out</em>)</li>
 </ul>
 <p>If you’ve never used this function before, could you predict if it returns <code>1</code> or <code>-1</code>?</p>
 </div>
 <div class="fragment">
-<p>It returns <code>1</code>, so the intent is to pick out the elements that pass the condition. <br> In this case, <strong><code>keep()</code></strong> would’ve be a better name.</p>
-<p>Had the intent been to find elements to remove, <strong><code>discard()</code></strong> would’ve be a better name.</p>
+<p>It returns <code>1</code>, so the intent is to pick out the elements that pass the condition. <br> In this case, <strong><code>keep()</code></strong> would be a better name.</p>
+<p>Had the intent been to find elements to remove, <strong><code>discard()</code></strong> would be a better name.</p>
 </div>
 </section></section>
 <section id="etc." class="title-slide slide level1 center">
@@ -1234,7 +1233,7 @@
 <div class="callout-content">
 <p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="co"># code to extract estimates from model</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  ...</span>
 <span id="cb38-4"><a href="#cb38-4"></a>}</span>
@@ -1412,7 +1411,7 @@
  collate  C.UTF-8
  ctype    C.UTF-8
  tz       UTC
- date     2022-12-04
+ date     2022-12-06
  pandoc   2.19.2 @ /usr/bin/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
@@ -1424,6 +1423,7 @@
  digest        0.6.30  2022-10-18 [1] RSPM
  evaluate      0.18    2022-11-07 [1] RSPM
  fastmap       1.1.0   2021-01-25 [1] RSPM
+ glue          1.6.2   2022-02-24 [1] RSPM
  graphics    * 4.2.2   2022-10-31 [3] local
  grDevices   * 4.2.2   2022-10-31 [3] local
  grid          4.2.2   2022-10-31 [3] local
@@ -1431,6 +1431,7 @@
  jsonlite      1.8.3   2022-10-21 [1] RSPM
  knitr         1.41    2022-11-18 [1] RSPM
  lattice       0.20-45 2021-09-22 [3] CRAN (R 4.2.2)
+ lifecycle     1.0.3   2022-10-07 [1] RSPM
  magrittr      2.0.3   2022-03-30 [1] RSPM
  Matrix        1.5-1   2022-09-13 [3] CRAN (R 4.2.2)
  methods     * 4.2.2   2022-10-31 [3] local
@@ -1442,9 +1443,10 @@
  sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)
  stats       * 4.2.2   2022-10-31 [3] local
  stringi       1.7.8   2022-07-11 [1] RSPM
- stringr       1.4.1   2022-08-20 [1] RSPM
+ stringr       1.5.0   2022-12-02 [1] RSPM
  tools         4.2.2   2022-10-31 [3] local
  utils       * 4.2.2   2022-10-31 [3] local
+ vctrs         0.5.1   2022-11-16 [1] RSPM
  xfun          0.35    2022-11-16 [1] RSPM
  yaml          2.3.6   2022-10-18 [1] RSPM
 
