@@ -995,7 +995,7 @@ convert_html_to_pdf <- function(file) {
 
 . . .
 
-- Consistent naming **reduces cognitive overload** for the developers and make the code more readable and maintainable.
+- Consistent naming **reduces cognitive overload** for the developers and makes the code more readable and maintainable.
 
 # Challenges
 
