@@ -158,7 +158,7 @@ exam_score[school][student]
 
 . . .
 
-</br>
+<br>
 
 All variables are temporary in some sense. Calling one `tmp` is inviting carelessness.
 
@@ -194,7 +194,7 @@ if (right < left) {
 
 . . .
 
-</br>
+<br>
 
 ::: {.callout-tip}
 
@@ -260,7 +260,7 @@ name
 
 ::::
 
-</br>
+<br>
 
 ### **but** important details should be kept!
 
@@ -831,7 +831,7 @@ If you've never used this function before, could you predict if it returns `1` o
 
 . . .
 
-It returns `1`, so the intent is to pick out the elements that pass the condition. </br>
+It returns `1`, so the intent is to pick out the elements that pass the condition. <br>
 In this case, **`keep()`** would be a better name.
 
 Had the intent been to find elements to remove, **`discard()`** would be a better name.
@@ -849,7 +849,7 @@ Deep dive into benefits of thoughtful naming for an entity at the heart of all s
 
 ## Following Unix philosophy {.smaller}
 
-Unix philosophy specifies the golden rule for writing good a function: </br>
+Unix philosophy specifies the golden rule for writing good a function: <br>
 _"Do One Thing And Do It Well."_
 
 Finding a descriptive name for a function can inform us if we are following this rule.
