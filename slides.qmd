@@ -138,7 +138,7 @@ If a loop is longer than a few lines, use more meaningful loop variable names th
 
 ::: {.column width='50%'}
 
-```{r}
+```{c}
 # abstruse
 exam_score[i][j]
 ```
@@ -147,7 +147,7 @@ exam_score[i][j]
 
 ::: {.column width='50%'}
 
-```{r}
+```{c}
 # crystal clear
 exam_score[school][student]
 ```
@@ -291,6 +291,8 @@ ip_address
 :::
 
 ::::
+
+<br>
 
 ::: {.callout-tip}
 
