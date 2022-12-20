@@ -55,7 +55,7 @@ The following advice on naming applies to all kinds of programming entities (var
 
 ### *Importance*: **Names are at the core of software design** 
 
-If you can't find a name that provides the right abstraction for the underlying entity, it is possible that the underlying entity doesn't have a clear design.
+If you can't find a name that provides the right abstraction for the underlying entity, it is possible that the design isn't clear.
 
 :::
 
@@ -65,7 +65,7 @@ If you can't find a name that provides the right abstraction for the underlying 
 
 ## *Properties*: **Good names are precise and consistent**
 
-If a name is good, it is difficult to miss out on critical information about the entity or to misinterpret the underlying representation.
+If a name is good, it is difficult to miss out on critical information about the entity or to misunderstand what it represents.
 
 :::
 
@@ -74,11 +74,11 @@ If a name is good, it is difficult to miss out on critical information about the
 
 ## Good names are a form of documentation {.smaller}
 
-How good a name is can be assessed by how detailed the accompanying comments need to be.
+How good a name is can be assessed by how detailed the accompanying comment needs to be.
 
 . . .
 
-E.g., this has neither good function nor parameter name, and so comments need to do all the heavy lifting:
+E.g., the function and parameter are named poorly here, and so comments need to do all the heavy lifting:
 
 ```{c}
 // function to convert temperature from Fahrenheit to Celsius scale
@@ -94,7 +94,7 @@ Contrast it with this:
 double fahrenheitToCelsius(double tempFahrenheit)
 ```
 
-We don't even need a comment here!
+No need for a comment here!
 
 . . .
 
@@ -132,7 +132,7 @@ Examples:
 
 ## Alternatives to generic names {.smaller}
 
-If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what refers to what.
+If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what they mean.
 
 :::: {.columns}
 
@@ -204,11 +204,11 @@ if (right < left) {
 
 ## Names should be consistent {.smaller}
 
-Consistent names **reduce cognitive burden** for the reader because if they encounter a name in one context, they can safely reuse that knowledge in another context.
+Consistent names **reduce cognitive burden** because if the reader encounters a name in one context, they can safely reuse that knowledge in another context.
 
 . . .
 
-For example, these names are inconsistent since the reader can't safely assume the name `size` means the same thing throughout the program.
+For example, these names are inconsistent since the reader can't safely assume that the name *size* means the same thing throughout the program.
 
 ```{c}
 // context-1: `size` stands for number of memory bytes
@@ -365,23 +365,91 @@ std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
 
 :::
 
-## Names should be easily searchable {.smaller}
+## Names should be distinguishable {.smaller}
 
-While naming things, always ask yourself how easy it would be to replace the chosen name with a different name.
+Names that are too similar make great candidates for mistaken identity.
+
+. . .
+
+E.g. `nn` and `nnn` are easy to be confused and such confusion can lead to painful bugs.
+
+:::: {.columns}
+
+::: {.column width='40%'}
+
+```{js}
+// bad
+let n   = x;
+let nn  = x ** 2;
+let nnn = x ** 3;
+```
+
+:::
+
+::: {.column width='60%'}
+
+
+```{js}
+// good
+let n       = x;
+let nSquare = x ** 2;
+let nCube   = x ** 3;
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Any pair of names should be difficult to be mistaken for each other.**
+
+:::
+
+
+## Names should be easy to search {.smaller}
+
+While naming, always ask yourself how easy it would be to find and update the name.
 
 . . .
 
 E.g., this plotting function uses identifier `p` to represent a scatter plot object.
 
+:::: {.columns}
+
+::: {.column width='40%'}
+
 ```{r, tidy=FALSE}
+# bad
 plotScatter <- function() {
-  p <- ggplot(mtcars, aes(wt, mpg)) + geom_point()
-  p <- p + labs(title = "my first scatter plot")
+  p <- ggplot(mtcars, aes(wt, mpg)) 
+  p <- p + geom_point()
   p
 }
 ```
 
-In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag all *p*s (e.g. gg**p**lot), and not just the one corresponding to the plot object.
+:::
+
+::: {.column width='60%'}
+
+
+```{r, tidy=FALSE}
+# good
+plotScatter <- function() {
+  scatter_plot <- ggplot(mtcars, aes(wt, mpg)) 
+  scatter_plot <- scatter_plot + geom_point()
+  scatter_plot
+}
+```
+
+:::
+
+::::
+
+
+In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag **all** *p*s (gg**p**lot, m**p**g, etc.).
 
 Instead, if `scatter_plot` identifier is used, both search and replace operations will be straightforward.
 
@@ -389,7 +457,7 @@ Instead, if `scatter_plot` identifier is used, both search and replace operation
 
 ::: {.callout-tip}
 
-**Choose names that can be searched and, if the need arises, replaced.**
+**Choose names that can be searched and, if needed, replaced.**
 
 :::
 
@@ -409,7 +477,7 @@ For example, C++ convention is to use PascalCase for class names and lowerCamel 
 // non-conventional
 class playerEntity
 {
-public:
+  public:
     std::string HairColor;
 };
 ```
@@ -421,7 +489,7 @@ public:
 // conventional
 class PlayerEntity
 {
-public:
+  public:
     std::string hairColor;
 };
 ```
@@ -497,18 +565,18 @@ Use positive terms for Booleans since they are easier to process.
 
 ::: {.column width='50%'}
 
-```{c}
+```{r}
 # double negation - difficult
-is_firewall_disabled = FALSE
+is_firewall_disabled <- FALSE
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{c}
+```{r}
 # better
-is_firewall_enabled = TRUE
+is_firewall_enabled <- TRUE
 ```
 
 :::
@@ -519,7 +587,7 @@ is_firewall_enabled = TRUE
 
 ::: {.callout-tip}
 
-**Give Boolean variable names that convey what true or false implies.**
+**Boolean variable names should convey what true or false values represent.**
 
 :::
 
@@ -650,7 +718,7 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 
 # A sundry of don'ts
 
-You won't have to remember any of the following rules if you follow the following principle:
+You won't have to remember any of these rules if you follow the following principle:
 
 "Names must be readable for the *reader*, not *writer*, of code."
 
