@@ -2,7 +2,8 @@
 #title: "Dealing with the Second Hardest Thing in Computer Science"
 #subtitle: "Thoughts on naming things for software development"
 format:
-  revealjs: 
+  revealjs:
+    css: style.css
     theme: simple
     slide-number: true
     preview-links: auto
@@ -80,7 +81,7 @@ How good a name is can be assessed by how detailed the accompanying comment need
 
 E.g., the function and parameter are named poorly here, and so comments need to do all the heavy lifting:
 
-```{c}
+```{js}
 // function to convert temperature from Fahrenheit to Celsius scale
 // temp is the temperature in Fahrenheit
 double unitConverter(double temp)
@@ -90,7 +91,7 @@ double unitConverter(double temp)
 
 Contrast it with this:
 
-```{c}
+```{js}
 double fahrenheitToCelsius(double tempFahrenheit)
 ```
 
@@ -138,7 +139,7 @@ If a loop is longer than a few lines, use more meaningful loop variable names th
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 # abstruse
 exam_score[i][j]
 ```
@@ -147,7 +148,7 @@ exam_score[i][j]
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 # crystal clear
 exam_score[school][student]
 ```
@@ -166,7 +167,7 @@ All variables are temporary in some sense. Calling one `tmp` is inviting careles
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 # generic name
 if (right < left) {
   tmp   = right
@@ -179,7 +180,7 @@ if (right < left) {
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 # more descriptive
 if (right < left) {
   old_right = right
@@ -210,7 +211,7 @@ Consistent names **reduce cognitive burden** because if the reader encounters a 
 
 For example, these names are inconsistent since the reader can't safely assume that the name *size* means the same thing throughout the program.
 
-```{c}
+```{js}
 // context-1: `size` stands for number of memory bytes
 {
   size = sizeof(x);
@@ -339,7 +340,7 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 E.g., here is a GUI text editor class method to get position of a character:
 
-```{c}
+```{js}
 std::tuple<int, int> getCharPosition(int x, int y)
 ```
 
@@ -355,7 +356,7 @@ In reality: *"`x` and `y` refer to line of text and character position in that l
 
 You can avoid such misinterpretation with better names:
 
-```{c}
+```{js}
 std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
 ```
 
@@ -475,7 +476,7 @@ For example, C++ convention is to use PascalCase for class names and lowerCamel 
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 // non-conventional
 class playerEntity
 {
@@ -487,7 +488,7 @@ class playerEntity
 
 ::: {.column width='50%'}
 
-```{c}
+```{js}
 // conventional
 class PlayerEntity
 {
@@ -799,7 +800,7 @@ This function could have been named (e.g.) `storageMode()`, which is more precis
 
 The parameter `N` in `std::array` [definition](https://en.cppreference.com/w/cpp/container/array){target="_blank"} is too generic.
 
-```{c}
+```{js}
 template<
     class T,
     std::size_t N 
@@ -816,7 +817,7 @@ template<
 
 Here is an alternative parameter name:
 
-```{c}
+```{js}
 template<
     class T,
     std::size_t numberOfElements
@@ -1101,7 +1102,7 @@ For a more detailed discussion about how to name things, see the following refer
 
 # For more
 
-If you are interested in reading more of my slide decks on related topics, visit [this](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"} page.
+If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"}.
 
 # Find me at...
 
