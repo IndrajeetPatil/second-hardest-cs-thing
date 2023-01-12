@@ -7,7 +7,7 @@ format:
     theme: simple
     slide-number: true
     preview-links: auto
-    footer: "Source code for the slides can be found [here](https://github.com/IndrajeetPatil/second-hardest-cs-thing/tree/main/docs)."
+    footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
 #author: "Indrajeet Patil"
 #affiliation: 
 execute:
