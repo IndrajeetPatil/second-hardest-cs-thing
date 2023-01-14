@@ -27,7 +27,7 @@ knitr::opts_chunk$set(eval = FALSE)
 
 Indrajeet Patil
 
-![](images/cat.png){.absolute width="500" height="350" right="40" top="175"}
+![](media/cat.png){.absolute width="500" height="350" right="40" top="175"}
 :::
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
@@ -601,7 +601,7 @@ Having different name formats for different entities **acts like syntax highligh
 Here is an example of formatting conventions (from [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
 
 ```{r, echo=FALSE, eval=TRUE}
-knitr::include_graphics("images/osp_naming.png")
+knitr::include_graphics("media/osp_naming.png")
 ```
 
 ## Test function names should be detailed {.smaller}
