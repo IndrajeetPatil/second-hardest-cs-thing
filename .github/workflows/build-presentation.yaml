@@ -45,11 +45,11 @@ jobs:
         shell: Rscript {0}
 
       - name: Create directory for PDF
-        run: mkdir slides && sudo chmod 777 slides
+        run: mkdir PDF-slides && sudo chmod 777 PDF-slides
 
       - name: Build PDF using decktape
         run: |
           npm install -g decktape
-          docker run --rm -t -v `pwd`:/slides astefanutti/decktape https://indrajeetpatil.github.io/second-hardest-cs-thing/ slides/slides.pdf
+          docker run --rm -t -v `pwd`:/PDF-slides astefanutti/decktape https://indrajeetpatil.github.io/second-hardest-cs-thing/ PDF-slides/slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
