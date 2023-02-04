@@ -1,6 +1,4 @@
 ---
-#title: "Dealing with the Second Hardest Thing in Computer Science"
-#subtitle: "Thoughts on naming things for software development"
 format:
   revealjs:
     css: style.css
@@ -8,11 +6,15 @@ format:
     slide-number: true
     preview-links: auto
     footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
-#author: "Indrajeet Patil"
+  pdf: 
+    toc: true
+    title: "Dealing with the Second Hardest Thing in Computer Science"
+    subtitle: "Thoughts on naming things for software development"
+author: "Indrajeet Patil"
 #affiliation: 
 execute:
   echo: true
-keywords: ["naming", "software-engineering", "computer-science"]
+keywords: ["naming", "software-engineering", "computer-science", "software-development"]
 ---
 
 ```{r setup, include=FALSE}
