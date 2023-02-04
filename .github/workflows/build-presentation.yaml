@@ -50,7 +50,7 @@ jobs:
         run: |
           [ -d slides ] && sudo chmod 777 slides && echo "Directory Exists" || mkdir slides && sudo chmod 777 slides
           rm -i slides/*
-          npm install -g decktape
+          sudo npm install -g --unsafe-perm=true --allow-root decktape
           docker run --rm -t -v `pwd`:/slides astefanutti/decktape slides.html slides/slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
