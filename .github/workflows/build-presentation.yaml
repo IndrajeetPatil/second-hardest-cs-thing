@@ -48,8 +48,9 @@ jobs:
 
       - name: Build PDF using decktape
         run: |
-          rm -f slides.pdf
+          rm -rf slides
+          mkdir slides && sudo chmod 777 slides
           sudo npm install -g --unsafe-perm=true --allow-root decktape
-          docker run --rm -t astefanutti/decktape slides.html slides.pdf
+          docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape slides.html slides/slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
