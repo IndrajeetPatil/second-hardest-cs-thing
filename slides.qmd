@@ -6,10 +6,10 @@ format:
     slide-number: true
     preview-links: auto
     footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
-  pdf: 
-    title: "Dealing with the Second Hardest Thing in Computer Science"
-    subtitle: "Thoughts on naming things for software development"
-author: "Indrajeet Patil"
+#   pdf: 
+#     title: "Dealing with the Second Hardest Thing in Computer Science"
+#     subtitle: "Thoughts on naming things for software development"
+# author: "Indrajeet Patil"
 #affiliation: 
 execute:
   echo: true
