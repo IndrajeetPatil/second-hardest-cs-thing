@@ -48,8 +48,7 @@ jobs:
 
       - name: Build PDF using decktape
         run: |
-          [ -d slides ] && echo "Directory Exists" || mkdir slides
-          sudo chmod -R 777 /slides
+          [ -d slides ] && sudo chmod 777 slides && echo "Directory Exists" || mkdir slides && sudo chmod 777 slides
           rm -i slides/*
           npm install -g decktape
           docker run --rm -t -v `pwd`:/slides astefanutti/decktape slides.html slides/slides.pdf
