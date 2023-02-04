@@ -48,7 +48,7 @@ jobs:
 
       - name: Build PDF using decktape
         run: |
-          mkdir -p slides
+          [ -d slides ] && echo "Directory Exists" || mkdir slides
           sudo chmod -R 777 /slides
           rm -i slides/*
           npm install -g decktape
