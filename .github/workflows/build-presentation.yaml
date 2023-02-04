@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: "3.0.1"
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -37,11 +39,24 @@ jobs:
           extra-packages: |
             quarto-dev/quarto-r
 
+      - uses: r-lib/actions/setup-tinytex@v2
+        env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
+
       - name: Render slides
         run: |
           options(crayon.enabled = TRUE)
           quarto::quarto_render("slides.qmd")
           fs::file_copy("slides.html", "index.html", overwrite = TRUE)
         shell: Rscript {0}
+
+      - name: Create directory for PDF
+        run: mkdir slides && sudo chmod 777 slides
+
+      - name: Build PDF using decktape
+        run: |
+          npm install -g decktape
+          docker run --rm -t -v `pwd`:/slides astefanutti/decktape slides.html slides/slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
