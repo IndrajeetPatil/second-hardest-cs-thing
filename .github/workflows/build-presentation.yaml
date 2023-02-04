@@ -46,13 +46,11 @@ jobs:
           fs::file_copy("slides.html", "index.html", overwrite = TRUE)
         shell: Rscript {0}
 
-      - name: Create directory for PDF
-        run: |
-          mkdir -p slides && sudo chmod 777 slides
-          rm -i slides/*
-
       - name: Build PDF using decktape
         run: |
+          mkdir -p slides
+          sudo chmod -R 777 /slides
+          rm -i slides/*
           npm install -g decktape
           docker run --rm -t -v `pwd`:/slides astefanutti/decktape slides.html slides/slides.pdf
 
