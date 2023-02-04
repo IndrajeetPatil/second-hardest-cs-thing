@@ -50,6 +50,6 @@ jobs:
         run: |
           rm -f slides.pdf
           sudo npm install -g --unsafe-perm=true --allow-root decktape
-          docker run --rm -t -v `pwd`:/. astefanutti/decktape slides.html slides.pdf
+          docker run --rm -t -v astefanutti/decktape slides.html slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
