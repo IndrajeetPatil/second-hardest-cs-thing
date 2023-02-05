@@ -511,7 +511,7 @@
 </div>
 <ul>
 <li><code>tmp</code> shouldn’t be used to store objects that are not temporary</li>
-<li><code>retVal</code> shouldn’t be used for objects not returned from function</li>
+<li><code>retVal</code> shouldn’t be used for objects not returned from a function</li>
 </ul>
 </div>
 <div class="fragment">
@@ -532,7 +532,7 @@
 </section>
 <section id="alternatives-to-generic-names" class="slide level2 smaller">
 <h2>Alternatives to generic names</h2>
-<p>If a loop is longer than a few lines, use more meaningful loop variable names than <code>i</code>, <code>j</code>, <code>k</code> because you will quickly lose track of what they mean.</p>
+<p>If a loop is longer than a few lines, use more meaningful loop variable names than <code>i</code>, <code>j</code>, and <code>k</code> because you will quickly lose track of what they mean.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -679,7 +679,7 @@
 </section>
 <section id="names-should-be-precise-but-not-too-long" class="slide level2 smaller">
 <h2>Names should be precise but not <em>too</em> long</h2>
-<p>How precise (and thus long) the name should be is a <strong>subjective decision</strong>, but keep in mind that long names can obscure visual structure of a program.</p>
+<p>How precise (and thus long) the name should be is a <strong>subjective decision</strong>, but keep in mind that long names can obscure the visual structure of a program.</p>
 <div class="fragment">
 <p>You can typically find a middle ground between too short and too long names.</p>
 <div class="cell">
@@ -816,7 +816,7 @@
 </div>
 </div>
 <p>In the future, it won’t be easy either to search for and/or to rename it in the code base because searching for <code>p</code> would flag <strong>all</strong> <em>p</em>s (gg<strong>p</strong>lot, m<strong>p</strong>g, etc.).</p>
-<p>Instead, if <code>scatter_plot</code> identifier is used, both search and replace operations will be straightforward.</p>
+<p>Instead, if the <code>scatter_plot</code> identifier is used, both search and replace operations will be straightforward.</p>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
@@ -834,8 +834,8 @@
 </div>
 </div>
 </section>
-<section id="names-should-honor-the-culture" class="slide level2 smaller">
-<h2>Names should honor the culture</h2>
+<section id="names-should-honour-the-culture" class="slide level2 smaller">
+<h2>Names should honour the culture</h2>
 <p>The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.</p>
 <div class="fragment">
 <p>For example, C++ convention is to use PascalCase for class names and lowerCamel case for variables.</p>
@@ -893,7 +893,7 @@
 </section>
 <section id="name-booleans-with-extra-care" class="slide level2 smaller">
 <h2>Name Booleans with extra care</h2>
-<p>Names for Boolean variables or functions should make clear what true and false means. This can be done using prefixes (<strong>is</strong>, <strong>has</strong>, <strong>can</strong>, etc.).</p>
+<p>Names for Boolean variables or functions should make clear what true and false mean. This can be done using prefixes (<strong>is</strong>, <strong>has</strong>, <strong>can</strong>, etc.).</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -955,7 +955,7 @@
 <img data-src="media/osp_naming.png" width="1212" class="r-stretch"></section>
 <section id="test-function-names-should-be-detailed" class="slide level2 smaller">
 <h2>Test function names should be detailed</h2>
-<p>If unit testing in a given programming language requires writing test functions, choose names that describe details of the test.</p>
+<p>If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.</p>
 <p>The test function names should effectively act as a comment.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -995,7 +995,7 @@
 <h2>Names should be kept up-to-date</h2>
 <p>To resist software entropy, not only should you name entities properly, but you should also update them. Otherwise, names will become something worse than meaningless or confusing: <strong>misleading</strong>.</p>
 <div class="fragment">
-<p>For example, let’s say your class has <code>$getMeans()</code> method.</p>
+<p>For example, let’s say your class has the <code>$getMeans()</code> method.</p>
 <ul>
 <li>In its initial implementation, it used to return <em>precomputed</em> mean values.</li>
 <li>In its current implementation, it <em>computes</em> the mean values on the fly.</li>
@@ -1103,7 +1103,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Don’t misspell to save a few characters.</strong> Remembering spelling is difficult, and remembering <em>correct misspelling</em> even more so. E.g. don’t use <code>hilite</code> instead of <code>highlight</code>. Benefit is not worth the cost here.</li>
+<li><strong>Don’t misspell to save a few characters.</strong> Remembering spelling is difficult, and remembering <em>correct misspelling</em> even more so. E.g. don’t use <code>hilite</code> instead of <code>highlight</code>. The benefit is not worth the cost here.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1215,7 +1215,7 @@
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This is <strong>inconsistent</strong> and <strong>violates user’s mental model</strong> about naming schema.</p>
+<p>This is <strong>inconsistent</strong> and <strong>violates the user’s mental model</strong> about naming schema.</p>
 </div>
 </section>
 <section id="violation-room-for-misunderstanding" class="slide level2 smaller">
@@ -1253,7 +1253,7 @@
 <p>Unix philosophy specifies the golden rule for writing good a function: <br> <em>“Do One Thing And Do It Well.”</em></p>
 <p>Finding a descriptive name for a function can inform us if we are following this rule.</p>
 <div class="fragment">
-<p>Consider a function to extract a table of regression estimates. For convenience, it also allows to sort the table by estimate.</p>
+<p>Consider a function to extract a table of regression estimates. For convenience, it also allows sorting the table by estimate.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -1311,7 +1311,7 @@
 <p>When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.</p>
 <p>E.g. a boolean or flag parameter name means function is doing more than one thing.</p>
 <div class="fragment">
-<p>Consider a function that converts Markdown or HTML document to PDF.</p>
+<p>Consider a function that converts Markdown or HTML documents to PDF.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -1413,7 +1413,7 @@
 </section>
 <section id="worth-the-struggle" class="slide level2">
 <h2>Worth the struggle</h2>
-<p>Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.</p>
+<p>Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing the accumulation of complexity in the system.</p>
 <p><strong>The more you do it, the easier it will get!</strong></p>
 <p>And, after a while, you won’t even need to think long and hard to come up with a good name. You will instinctively think of one.</p>
 </section></section>
@@ -1428,7 +1428,8 @@
 <li><p>McConnell, S. (2004). <em>Code Complete</em>. Microsoft Press. (<strong>pp.&nbsp;259-290</strong>)</p></li>
 <li><p>Boswell, D., &amp; Foucher, T. (2011). <em>The Art of Readable Code</em>. O’Reilly Media, Inc.&nbsp;(<strong>pp.&nbsp;7-31</strong>)</p></li>
 <li><p>Ousterhout, J. K. (2018). <em>A Philosophy of Software Design</em>. Palo Alto: Yaknyam Press. (<strong>pp.&nbsp;121-129</strong>)</p></li>
-<li><p>Martin, R. C. (2009). <em>Clean Code</em>. Pearson Education.(<strong>pp.&nbsp;17-52</strong>)</p></li>
+<li><p>Martin, R. C. (2009). <em>Clean Code</em>. Pearson Education. (<strong>pp.&nbsp;17-52</strong>)</p></li>
+<li><p>Goodliffe, P. (2007). <em>Code Craft</em>. No Starch Press. (<strong>pp.&nbsp;39-56</strong>)</p></li>
 <li><p>Thomas, D., &amp; Hunt, A. (2019). <em>The Pragmatic Programmer</em>. Addison-Wesley Professional. (<strong>pp.&nbsp;238-242</strong>)</p></li>
 <li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming" target="_blank">Google C++ Style Guide</a>.</p></li>
 </ul>
