@@ -122,7 +122,7 @@ Examples:
 ```
 
 - `tmp` shouldn't be used to store objects that are not temporary
-- `retVal` shouldn't be used for objects not returned from function
+- `retVal` shouldn't be used for objects not returned from a function
 
 . . .
 
@@ -134,7 +134,7 @@ Examples:
 
 ## Alternatives to generic names {.smaller}
 
-If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k` because you will quickly lose track of what they mean.
+If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, and `k` because you will quickly lose track of what they mean.
 
 :::: {.columns}
 
@@ -304,7 +304,7 @@ ip_address
 
 ## Names should be precise but not *too* long {.smaller}
 
-How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure visual structure of a program.
+How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure the visual structure of a program.
 
 . . .
 
@@ -452,10 +452,9 @@ plotScatter <- function() {
 
 ::::
 
-
 In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag **all** *p*s (gg**p**lot, m**p**g, etc.).
 
-Instead, if `scatter_plot` identifier is used, both search and replace operations will be straightforward.
+Instead, if the `scatter_plot` identifier is used, both search and replace operations will be straightforward.
 
 . . .
 
@@ -465,7 +464,7 @@ Instead, if `scatter_plot` identifier is used, both search and replace operation
 
 :::
 
-## Names should honor the culture {.smaller}
+## Names should honour the culture {.smaller}
 
 The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.
 
@@ -529,7 +528,7 @@ Each of the function names makes clear the order in which they need to be run.
 
 ## Name Booleans with extra care {.smaller}
 
-Names for Boolean variables or functions should make clear what true and false means. This can be done using prefixes (**is**, **has**, **can**, etc.).
+Names for Boolean variables or functions should make clear what true and false mean. This can be done using prefixes (**is**, **has**, **can**, etc.).
 
 :::: {.columns}
 
@@ -609,7 +608,7 @@ knitr::include_graphics("media/osp_naming.png")
 
 ## Test function names should be detailed {.smaller}
 
-If unit testing in a given programming language requires writing test functions, choose names that describe details of the test.
+If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.
 
 The test function names should effectively act as a comment.
 
@@ -659,7 +658,7 @@ To resist software entropy, not only should you name entities properly, but you 
 
 . . .
 
-For example, let's say your class has `$getMeans()` method.
+For example, let's say your class has the `$getMeans()` method.
 
 - In its initial implementation, it used to return *precomputed* mean values. 
 - In its current implementation, it *computes* the mean values on the fly. 
@@ -754,7 +753,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't misspell to save a few characters.** Remembering spelling is difficult, and remembering *correct misspelling* even more so. E.g. don't use `hilite` instead of `highlight`. Benefit is not worth the cost here.
+- **Don't misspell to save a few characters.** Remembering spelling is difficult, and remembering *correct misspelling* even more so. E.g. don't use `hilite` instead of `highlight`. The benefit is not worth the cost here.
 
 . . .
 
@@ -884,7 +883,7 @@ guide_colourbar(ticks.colour = "black")
 guide_colorbar(ticks.colour = "black")
 ```
 
-This is **inconsistent** and **violates user's mental model** about naming schema.
+This is **inconsistent** and **violates the user's mental model** about naming schema.
 
 ## Violation: Room for misunderstanding {.smaller}
 
@@ -930,7 +929,7 @@ Finding a descriptive name for a function can inform us if we are following this
 
 . . .
 
-Consider a function to extract a table of regression estimates. For convenience, it also allows to sort the table by estimate.
+Consider a function to extract a table of regression estimates. For convenience, it also allows sorting the table by estimate.
 
 :::: {.columns}
 
@@ -989,7 +988,7 @@ E.g. a boolean or flag parameter name means function is doing more than one thin
 
 . . .
 
-Consider a function that converts Markdown or HTML document to PDF.
+Consider a function that converts Markdown or HTML documents to PDF.
 
 :::: {.columns}
 
@@ -1079,7 +1078,7 @@ Initially, you may struggle to find good names and settle down for the first ser
 
 ## Worth the struggle 
 
-Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing accumulation of complexity in the system.
+Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing the accumulation of complexity in the system.
 
 **The more you do it, the easier it will get!**
 
@@ -1097,7 +1096,9 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
 
-- Martin, R. C. (2009). *Clean Code*. Pearson Education.(**pp. 17-52**)
+- Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
+
+- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
 
