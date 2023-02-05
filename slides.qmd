@@ -594,18 +594,6 @@ is_firewall_enabled <- TRUE
 
 :::
 
-## Naming conventions as extra information {.smaller}
-
-Having different name formats for different entities **acts like syntax highlighting**.
-
-Here is an example of formatting conventions (from [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
-
-```{r}
-#| echo: false
-#| eval: true
-knitr::include_graphics("media/osp_naming.png")
-```
-
 ## Test function names should be detailed {.smaller}
 
 If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.
@@ -718,6 +706,33 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 ::: {.callout-tip}
 
 **Consistency of naming conventions should be respected at the code base level, not just for short scopes.**
+
+:::
+
+## Choose informative naming conventions {.smaller}
+
+Having different name formats for different entities **acts like syntax highlighting**. That is, a name not only represents an entity but also provides hints about its nature.
+
+:::{.callout-note}
+
+## Example
+
+From coding standards adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}):
+
+- Use all ALL_CAPS for constant variables (`public const double PI = 3.14;`)
+- Prefix private/protected member variable with `_` (`private int _currentDebt`)
+- Use Pascal Casing for class names (`public class GlobalAccounting`)
+- Use Pascal Casing for public and protected method name (`public void GetRevenues()`)
+- Use Camel Casing for private method name (`private int balanceBooks()`)
+- ...
+
+:::
+
+. . .
+
+::: {.callout-tip}
+
+**Following *a* convention consistently is more important than *which* convention you adopt.**
 
 :::
 
