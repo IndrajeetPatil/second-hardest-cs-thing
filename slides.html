@@ -947,12 +947,6 @@
 </div>
 </div>
 </section>
-<section id="naming-conventions-as-extra-information" class="slide level2 smaller">
-<h2>Naming conventions as extra information</h2>
-<p>Having different name formats for different entities <strong>acts like syntax highlighting</strong>.</p>
-<p>Here is an example of formatting conventions (from <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md" target="_blank">OSP organization</a>):</p>
-
-<img data-src="media/osp_naming.png" width="1212" class="r-stretch"></section>
 <section id="test-function-names-should-be-detailed" class="slide level2 smaller">
 <h2>Test function names should be detailed</h2>
 <p>If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.</p>
@@ -1059,6 +1053,46 @@
 </div>
 <div class="callout-content">
 <p><strong>Consistency of naming conventions should be respected at the code base level, not just for short scopes.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="choose-informative-naming-conventions" class="slide level2 smaller">
+<h2>Choose informative naming conventions</h2>
+<p>Having different name formats for different entities <strong>acts like syntax highlighting</strong>. That is, a name not only represents an entity but also provides hints about its nature.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Example</strong></p>
+</div>
+<div class="callout-content">
+<p>From coding standards adopted in <a href="https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md" target="_blank">OSP organization</a>):</p>
+<ul>
+<li>Use all ALL_CAPS for constant variables (<code>public const double PI = 3.14;</code>)</li>
+<li>Prefix private/protected member variable with <code>_</code> (<code>private int _currentDebt</code>)</li>
+<li>Use Pascal Casing for class names (<code>public class GlobalAccounting</code>)</li>
+<li>Use Pascal Casing for public and protected method name (<code>public void GetRevenues()</code>)</li>
+<li>Use Camel Casing for private method name (<code>private int balanceBooks()</code>)</li>
+<li>…</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Following <em>a</em> convention consistently is more important than <em>which</em> convention you adopt.</strong></p>
 </div>
 </div>
 </div>
