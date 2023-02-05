@@ -736,6 +736,24 @@ From coding standards adopted in [OSP organization](https://github.com/Open-Syst
 
 :::
 
+## ICYMI: Available casing conventions {.smaller}
+
+There are various casing conventions used for software development.
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "An illustration showing casing conventions used for software development."
+knitr::include_graphics("media/horst_cases.jpeg")
+```
+
+:::{style="text-align: center; font-size: 0.9rem;"}
+
+Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+
+:::
+
 # A sundry of don'ts
 
 You won't have to remember any of these rules if you follow the following principle:
