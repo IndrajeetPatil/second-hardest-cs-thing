@@ -262,7 +262,14 @@ name
 
 ::::
 
-<br>
+:::{.callout-note}
+
+## Avoid redundancy
+
+- In type names, avoid using *class*, *data*, *object*, and *type* (e.g. bad: `classShape`, good: `Shape`)
+- In function names, avoid using *be*, *do*, *perform*, etc. (e.g. bad: `doAddition()`, good: `add()`)
+
+:::
 
 ### **but** important details should be kept!
 
@@ -293,8 +300,6 @@ ip_address
 :::
 
 ::::
-
-<br>
 
 ::: {.callout-tip}
 
@@ -1130,11 +1135,11 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
-- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
+- Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
 
-- Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
+- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
 
 - Padolsey, J. (2020). *Clean Code in JavaScript*. Packt Publishing. (**pp. 93-111**)
 
