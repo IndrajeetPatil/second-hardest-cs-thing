@@ -1130,11 +1130,13 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
+- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
+
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
 
 - Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
 
-- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
+- Padolsey, J. (2020). *Clean Code in JavaScript*. Packt Publishing. (**pp. 93-111**)
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
 
