@@ -1059,6 +1059,9 @@ convert_html_to_pdf <- function(file) {
 
 ::::
 
+# "In your name I will hope, for your name is good."
+\- Psalms 52:9
+
 # Benefits of good names
 
 ## *"What's in a name?"* Well, everything! {.smaller}
