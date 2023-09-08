@@ -424,7 +424,7 @@ While naming, always ask yourself how easy it would be to find and update the na
 
 . . .
 
-E.g., this plotting function uses identifier `p` to represent a scatter plot object.
+E.g., this function uses `a` and `f` parameters to represent an array and a function.
 
 :::: {.columns}
 
@@ -432,10 +432,8 @@ E.g., this plotting function uses identifier `p` to represent a scatter plot obj
 
 ```{r, tidy=FALSE}
 # bad
-plotScatter <- function() {
-  p <- ggplot(mtcars, aes(wt, mpg)) 
-  p <- p + geom_point()
-  p
+arrayMap <- function(a, f) {
+  ...
 }
 ```
 
@@ -446,10 +444,8 @@ plotScatter <- function() {
 
 ```{r, tidy=FALSE}
 # good
-plotScatter <- function() {
-  scatter_plot <- ggplot(mtcars, aes(wt, mpg)) 
-  scatter_plot <- scatter_plot + geom_point()
-  scatter_plot
+arrayMap <- function(arr, fun) {
+  ...
 }
 ```
 
@@ -457,9 +453,9 @@ plotScatter <- function() {
 
 ::::
 
-In the future, it won't be easy either to search for and/or to rename it in the code base because searching for `p` would flag **all** *p*s (gg**p**lot, m**p**g, etc.).
+In the future, it won't be easy either to search for and/or to rename these parameters in the codebase because searching for `a` or `f` would flag **all** *a*s and *f*s (**a**pi, **f**ile, etc.).
 
-Instead, if the `scatter_plot` identifier is used, both search and replace operations will be straightforward.
+Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.
 
 . . .
 
@@ -469,7 +465,7 @@ Instead, if the `scatter_plot` identifier is used, both search and replace opera
 
 :::
 
-## Names should honour the culture {.smaller}
+## Names should honour the conventions {.smaller}
 
 The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.
 
@@ -567,7 +563,7 @@ if (isChild) {
 
 . . .
 
-Use positive terms for Booleans since they are easier to process.
+In general, use positive terms for Booleans since they are easier to process.
 
 :::: {.columns}
 
@@ -588,6 +584,8 @@ is_firewall_enabled <- TRUE
 ```
 
 :::
+
+But if the variable is only ever used in its false version (e.g. `is_volcano_inactive`), the negative version can be easier to work with.
 
 ::::
 
@@ -777,7 +775,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Avoid imprecise opposites**, since they can be confusing. E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
+- **Avoid imprecise opposites**, since they can be [confusing](https://github.com/pomber/awesome-word-pairs). E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
 
 ## {.smaller}
 
@@ -801,7 +799,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't allow multiple English standards.** E.g. using both American and British English standards would've you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
+- **Don't allow multiple English standards.** E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
 
 . . .
 
