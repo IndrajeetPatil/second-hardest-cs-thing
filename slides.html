@@ -10,7 +10,7 @@
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.339">
+  <meta name="generator" content="quarto-1.4.354">
 
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>slides</title>
@@ -33,7 +33,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -809,30 +809,26 @@
 <h2>Names should be easy to search</h2>
 <p>While naming, always ask yourself how easy it would be to find and update the name.</p>
 <div class="fragment">
-<p>E.g., this plotting function uses identifier <code>p</code> to represent a scatter plot object.</p>
+<p>E.g., this function uses <code>a</code> and <code>f</code> parameters to represent an array and a function.</p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># bad</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>plotScatter <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb18-3"><a href="#cb18-3"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) </span>
-<span id="cb18-4"><a href="#cb18-4"></a>  p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb18-5"><a href="#cb18-5"></a>  p</span>
-<span id="cb18-6"><a href="#cb18-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(a, f) {</span>
+<span id="cb18-3"><a href="#cb18-3"></a>  ...</span>
+<span id="cb18-4"><a href="#cb18-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># good</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>plotScatter <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  scatter_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) </span>
-<span id="cb19-4"><a href="#cb19-4"></a>  scatter_plot <span class="ot">&lt;-</span> scatter_plot <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb19-5"><a href="#cb19-5"></a>  scatter_plot</span>
-<span id="cb19-6"><a href="#cb19-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-2"><a href="#cb19-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(arr, fun) {</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  ...</span>
+<span id="cb19-4"><a href="#cb19-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>In the future, it won’t be easy either to search for and/or to rename it in the code base because searching for <code>p</code> would flag <strong>all</strong> <em>p</em>s (gg<strong>p</strong>lot, m<strong>p</strong>g, etc.).</p>
-<p>Instead, if the <code>scatter_plot</code> identifier is used, both search and replace operations will be straightforward.</p>
+<p>In the future, it won’t be easy either to search for and/or to rename these parameters in the codebase because searching for <code>a</code> or <code>f</code> would flag <strong>all</strong> <em>a</em>s and <em>f</em>s (<strong>a</strong>pi, <strong>f</strong>ile, etc.).</p>
+<p>Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.</p>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -850,8 +846,8 @@
 </div>
 </div>
 </section>
-<section id="names-should-honour-the-culture" class="slide level2 smaller">
-<h2>Names should honour the culture</h2>
+<section id="names-should-honour-the-conventions" class="slide level2 smaller">
+<h2>Names should honour the conventions</h2>
 <p>The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.</p>
 <div class="fragment">
 <p>For example, C++ convention is to use PascalCase for class names and lowerCamel case for variables.</p>
@@ -932,7 +928,7 @@
 </div>
 </div>
 <div class="fragment">
-<p>Use positive terms for Booleans since they are easier to process.</p>
+<p>In general, use positive terms for Booleans since they are easier to process.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -944,7 +940,7 @@
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># better</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>is_firewall_enabled <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+</div><p>But if the variable is only ever used in its false version (e.g.&nbsp;<code>is_volcano_inactive</code>), the negative version can be easier to work with.</p>
 </div>
 </div>
 <div class="fragment">
@@ -1144,7 +1140,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Avoid imprecise opposites</strong>, since they can be confusing. E.g. parameter combination <code>begin</code>/<code>last</code> is worse than either <code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code>.</li>
+<li><strong>Avoid imprecise opposites</strong>, since they can be <a href="https://github.com/pomber/awesome-word-pairs">confusing</a>. E.g. parameter combination <code>begin</code>/<code>last</code> is worse than either <code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code>.</li>
 </ul>
 </div>
 </section>
@@ -1176,7 +1172,7 @@
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Don’t allow multiple English standards.</strong> E.g. using both American and British English standards would’ve you constantly guessing if the variable is named (e.g.) <code>centre</code> or <code>center</code>. Adopt one standard and stick to it.</li>
+<li><strong>Don’t allow multiple English standards.</strong> E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) <code>centre</code> or <code>center</code>. Adopt one standard and stick to it.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1531,7 +1527,7 @@
  collate  C.UTF-8
  ctype    C.UTF-8
  tz       UTC
- date     2023-09-03
+ date     2023-09-08
  pandoc   3.1.3 @ /usr/bin/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
