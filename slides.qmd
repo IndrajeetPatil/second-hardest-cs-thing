@@ -310,7 +310,7 @@ ip_address
 
 ## Names should utilize the context {.smaller}
 
-When naming, avoid redundant words by exploiting the context in which the names appear.
+When naming, avoid redundant words by exploiting the context.
 
 E.g. if you are defining a class, its methods and variables will be read in that context.
 
@@ -318,7 +318,7 @@ E.g. if you are defining a class, its methods and variables will be read in that
 
 ::: {.column width='50%'}
 
-```{python}
+```{js}
 # okay
 Router.run_router()
 FileHandler.close_file()
@@ -329,7 +329,7 @@ BeerShelf.beer_count
 
 ::: {.column width='50%'}
 
-```{python}
+```{js}
 # better
 Router.run()
 FileHandler.close()
@@ -340,13 +340,13 @@ BeerShelf.count
 
 ::::
 
-If doing so imposes ambiguity, then you can of course tolerate some redundancy.
+But, if doing so imposes ambiguity, then you can of course tolerate some redundancy.
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
-```{python}
+```{js}
 # bad
 MediaPlayer.play()
 ```
@@ -355,7 +355,7 @@ MediaPlayer.play()
 
 ::: {.column width='50%'}
 
-```{python}
+```{js}
 # better
 MediaPlayer.play_audio()
 MediaPlayer.play_video()
@@ -412,7 +412,7 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 E.g., here is a GUI text editor class method to get position of a character:
 
-```{js}
+```{c}
 std::tuple<int, int> getCharPosition(int x, int y)
 ```
 
@@ -428,7 +428,7 @@ In reality: *"`x` and `y` refer to line of text and character position in that l
 
 You can avoid such misinterpretation with better names:
 
-```{js}
+```{c}
 std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
 ```
 
