@@ -308,6 +308,38 @@ ip_address
 
 :::
 
+## Names should utilize the context {.smaller}
+
+When naming, avoid redundant words by exploiting the context in which the names appear.
+
+E.g. if you are defining a class, its methods and variables will be read in that context.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# okay
+Router.run_router()
+FileHandler.close_file()
+BeerShelf.beer_count
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+Router.run()
+FileHandler.close()
+BeerShelf.count
+```
+
+:::
+
+::::
+
 ## Names should be precise but not *too* long {.smaller}
 
 How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure the visual structure of a program.
