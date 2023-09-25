@@ -399,7 +399,7 @@
 <!-- Don't render this file locally Run `renderer.R` script instead. -->
 <div style="margin-top: 1em; margin-bottom: 1em; font-size: 1em">
 <p>Indrajeet Patil</p>
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute quarto-figure quarto-figure-center" data-right="40" height="350" width="500" data-top="100" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute quarto-figure quarto-figure-center" data-top="100" height="350" width="500" data-right="40" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
 <figure class="quarto-float quarto-float-fig">
 <div>
 <img data-src="media/cat.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
@@ -720,6 +720,36 @@
 </div>
 </div>
 </div>
+<p>If doing so imposes ambiguity, then you can of course tolerate some redundancy.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># bad</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>MediaPlayer.play()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># better</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>MediaPlayer.play_audio()</span>
+<span id="cb16-3"><a href="#cb16-3"></a>MediaPlayer.play_video()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong></strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Shorten names with the help of context.</strong></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="names-should-be-precise-but-not-too-long" class="slide level2 smaller">
 <h2>Names should be precise but not <em>too</em> long</h2>
@@ -727,18 +757,18 @@
 <div class="fragment">
 <p>You can typically find a middle ground between too short and too long names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># not ideal - too imprecise</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>d</span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># okay - can use more precision</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>days</span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># good - middle ground</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>days_since_last_accident</span>
-<span id="cb15-8"><a href="#cb15-8"></a></span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="co"># not ideal - unnecessarily precise</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a>days_since_last_accident_floor_4_lab_23</span>
-<span id="cb15-11"><a href="#cb15-11"></a></span>
-<span id="cb15-12"><a href="#cb15-12"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># not ideal - too imprecise</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>d</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># okay - can use more precision</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>days</span>
+<span id="cb17-5"><a href="#cb17-5"></a></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="co"># good - middle ground</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>days_since_last_accident</span>
+<span id="cb17-8"><a href="#cb17-8"></a></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="co"># not ideal - unnecessarily precise</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>days_since_last_accident_floor_4_lab_23</span>
+<span id="cb17-11"><a href="#cb17-11"></a></span>
+<span id="cb17-12"><a href="#cb17-12"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -763,7 +793,7 @@
 <div class="fragment">
 <p>E.g., here is a GUI text editor class method to get position of a character:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int x<span class="op">,</span> int y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int x<span class="op">,</span> int y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -775,7 +805,7 @@
 <div class="fragment">
 <p>You can avoid such misinterpretation with better names:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int lineIndex<span class="op">,</span> int charIndex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int lineIndex<span class="op">,</span> int charIndex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -802,17 +832,17 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">// bad</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">let</span> n   <span class="op">=</span> x<span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="kw">let</span> nn  <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="kw">let</span> nnn <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">// bad</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">let</span> n   <span class="op">=</span> x<span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="kw">let</span> nn  <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="kw">let</span> nnn <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">// good</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">let</span> n       <span class="op">=</span> x<span class="op">;</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="kw">let</span> nSquare <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="kw">let</span> nCube   <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="co">// good</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">let</span> n       <span class="op">=</span> x<span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="kw">let</span> nSquare <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="kw">let</span> nCube   <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -841,17 +871,17 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># bad</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(a, f) {</span>
-<span id="cb20-3"><a href="#cb20-3"></a>  ...</span>
-<span id="cb20-4"><a href="#cb20-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># bad</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(a, f) {</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  ...</span>
+<span id="cb22-4"><a href="#cb22-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># good</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(arr, fun) {</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  ...</span>
-<span id="cb21-4"><a href="#cb21-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># good</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>arrayMap <span class="ot">&lt;-</span> <span class="cf">function</span>(arr, fun) {</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  ...</span>
+<span id="cb23-4"><a href="#cb23-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -882,21 +912,21 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">// non-conventional</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="kw">class</span> playerEntity</span>
-<span id="cb22-3"><a href="#cb22-3"></a>{</span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="dt">public</span><span class="op">:</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>    <span class="dt">std</span><span class="op">::</span>string HairColor<span class="op">;</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">// non-conventional</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">class</span> playerEntity</span>
+<span id="cb24-3"><a href="#cb24-3"></a>{</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="dt">public</span><span class="op">:</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="dt">std</span><span class="op">::</span>string HairColor<span class="op">;</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">// conventional</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">class</span> PlayerEntity</span>
-<span id="cb23-3"><a href="#cb23-3"></a>{</span>
-<span id="cb23-4"><a href="#cb23-4"></a>  <span class="dt">public</span><span class="op">:</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>    <span class="dt">std</span><span class="op">::</span>string hairColor<span class="op">;</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">// conventional</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">class</span> PlayerEntity</span>
+<span id="cb25-3"><a href="#cb25-3"></a>{</span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="dt">public</span><span class="op">:</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="dt">std</span><span class="op">::</span>string hairColor<span class="op">;</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -923,10 +953,10 @@
 <div class="fragment">
 <p>E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_revenues_data</span>(raw_revenues_data)</span>
-<span id="cb24-2"><a href="#cb24-2"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_monthly_revenues</span>(revenues)</span>
-<span id="cb24-3"><a href="#cb24-3"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_quarterly_revenues</span>(revenues)</span>
-<span id="cb24-4"><a href="#cb24-4"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_annual_revenues</span>(revenues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_revenues_data</span>(raw_revenues_data)</span>
+<span id="cb26-2"><a href="#cb26-2"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_monthly_revenues</span>(revenues)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_quarterly_revenues</span>(revenues)</span>
+<span id="cb26-4"><a href="#cb26-4"></a>revenues <span class="ot">&lt;-</span> <span class="fu">compute_annual_revenues</span>(revenues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Each of the function names makes clear the order in which they need to be run.</p>
 </div>
@@ -937,21 +967,21 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># not great</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="cf">if</span> (child) {</span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="cf">if</span> (parentSupervision) {</span>
-<span id="cb25-4"><a href="#cb25-4"></a>    watchHorrorMovie <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a>  }</span>
-<span id="cb25-6"><a href="#cb25-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># not great</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="cf">if</span> (child) {</span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="cf">if</span> (parentSupervision) {</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    watchHorrorMovie <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  }</span>
+<span id="cb27-6"><a href="#cb27-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># better</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="cf">if</span> (isChild) {</span>
-<span id="cb26-3"><a href="#cb26-3"></a>  <span class="cf">if</span> (hasParentSupervision) {</span>
-<span id="cb26-4"><a href="#cb26-4"></a>    canWatchHorrorMovie <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a>  }</span>
-<span id="cb26-6"><a href="#cb26-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># better</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="cf">if</span> (isChild) {</span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="cf">if</span> (hasParentSupervision) {</span>
+<span id="cb28-4"><a href="#cb28-4"></a>    canWatchHorrorMovie <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a>  }</span>
+<span id="cb28-6"><a href="#cb28-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -960,13 +990,13 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># double negation - difficult</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>is_firewall_disabled <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># double negation - difficult</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>is_firewall_disabled <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># better</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>is_firewall_enabled <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># better</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>is_firewall_enabled <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><p>But if the variable is only ever used in its false version (e.g.&nbsp;<code>is_volcano_inactive</code>), the negative version can be easier to work with.</p>
 </div>
@@ -993,17 +1023,17 @@
 <p>The test function names should effectively act as a comment.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># bad</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">def</span> test1</span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="kw">def</span> my_test</span>
-<span id="cb29-4"><a href="#cb29-4"></a><span class="kw">def</span> retrieve_commands</span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="kw">def</span> serialize_success</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># bad</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="kw">def</span> test1</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="kw">def</span> my_test</span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="kw">def</span> retrieve_commands</span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="kw">def</span> serialize_success</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:70%;">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># good</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">def</span> test_array</span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="kw">def</span> test_multilinear_model</span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="kw">def</span> all_the_saved_commands_should_be_retrieved</span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="kw">def</span> should_serialize_the_formula_cache_if_required</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># good</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="kw">def</span> test_array</span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="kw">def</span> test_multilinear_model</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="kw">def</span> all_the_saved_commands_should_be_retrieved</span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="kw">def</span> should_serialize_the_formula_cache_if_required</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -1058,12 +1088,12 @@
 <div class="fragment">
 <p>If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># generate year month date hour minute second</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">genymdhms</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># generate year month date hour minute second</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">genymdhms</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is a much better (and pronounceable) alternative:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">generateTimeStamp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">generateTimeStamp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1077,8 +1107,8 @@
 <div class="fragment">
 <p>E.g., two similar methods here have different names across <code>R6</code> classes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>CreditCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">retrieve_expenditure</span>()</span>
-<span id="cb33-2"><a href="#cb33-2"></a>DebitCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">fetch_expenditure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>CreditCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">retrieve_expenditure</span>()</span>
+<span id="cb35-2"><a href="#cb35-2"></a>DebitCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">fetch_expenditure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Both of these methods should either be named <code>$retrieve_expenditure()</code> or <code>$fetch_expenditure()</code>.</p>
 </div>
@@ -1221,10 +1251,10 @@
 <div class="fragment">
 <p>Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn’t surprise you, <strong>except one</strong>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">mean</span>(x)   <span class="co"># expected output</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="fu">median</span>(x) <span class="co"># expected output</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">mean</span>(x)   <span class="co"># expected output</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">median</span>(x) <span class="co"># expected output</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>mode()</code> function actually returns the storage mode of an R object!</p>
 </div>
@@ -1236,10 +1266,10 @@
 <h2>Violation: Generic name</h2>
 <p>The parameter <code>N</code> in <code>std::array</code> <a href="https://en.cppreference.com/w/cpp/container/array" target="_blank">definition</a> is too generic.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a>template<span class="op">&lt;</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>    <span class="kw">class</span> T<span class="op">,</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>    std<span class="op">::</span>size_t N </span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a>template<span class="op">&lt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>    <span class="kw">class</span> T<span class="op">,</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>    std<span class="op">::</span>size_t N </span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><code>size</code> is a bit better but still leaves room for misunderstanding:</p>
@@ -1250,10 +1280,10 @@
 <div class="fragment">
 <p>Here is an alternative parameter name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a>template<span class="op">&lt;</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>    <span class="kw">class</span> T<span class="op">,</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>    std<span class="op">::</span>size_t numberOfElements</span>
-<span id="cb36-4"><a href="#cb36-4"></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a>template<span class="op">&lt;</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>    <span class="kw">class</span> T<span class="op">,</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    std<span class="op">::</span>size_t numberOfElements</span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>numberOfElements</code> is more precise and unmistakable.</p>
 </div>
@@ -1266,20 +1296,20 @@
 <div class="column" style="width:50%;">
 <p><strong>Function names</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># works</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">guide_colorbar</span>(...)</span>
-<span id="cb37-3"><a href="#cb37-3"></a></span>
-<span id="cb37-4"><a href="#cb37-4"></a><span class="co"># this works as well!</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a><span class="fu">guide_colourbar</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># works</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">guide_colorbar</span>(...)</span>
+<span id="cb39-3"><a href="#cb39-3"></a></span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="co"># this works as well!</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="fu">guide_colourbar</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <p><strong>Function parameters</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># works</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">aes</span>(<span class="at">color =</span> ...)</span>
-<span id="cb38-3"><a href="#cb38-3"></a></span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="co"># this works as well!</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">aes</span>(<span class="at">colour =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># works</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">aes</span>(<span class="at">color =</span> ...)</span>
+<span id="cb40-3"><a href="#cb40-3"></a></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co"># this works as well!</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="fu">aes</span>(<span class="at">colour =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1287,14 +1317,14 @@
 <div class="fragment">
 <p>A user now believes that both spelling standards for function names <em>and</em> parameters are supported. And, since they prefer American spellings, they do this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
 <p><strong>That won’t work!</strong> Both functions support <strong>only</strong> the British spelling of parameters:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is <strong>inconsistent</strong> and <strong>violates the user’s mental model</strong> about naming schema.</p>
 </div>
@@ -1303,7 +1333,7 @@
 <h2>Violation: Room for misunderstanding</h2>
 <p>In Python, <a href="https://www.w3schools.com/python/ref_func_filter.asp" target="_blank"><code>filter()</code></a> can be used to apply a function to an iterable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>But <code>filter</code> is an ambiguous word. It could mean either of these:</p>
@@ -1348,12 +1378,12 @@
 <div class="callout-content">
 <p>Trying to find a name highlights that the function is doing more than one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="st">`</span><span class="at">???</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
-<span id="cb42-2"><a href="#cb42-2"></a>  <span class="co"># code to extract estimates from model</span></span>
-<span id="cb42-3"><a href="#cb42-3"></a>  ...</span>
-<span id="cb42-4"><a href="#cb42-4"></a>  <span class="co"># code to sort table</span></span>
-<span id="cb42-5"><a href="#cb42-5"></a>  ...</span>
-<span id="cb42-6"><a href="#cb42-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="st">`</span><span class="at">???</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>  ...</span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="co"># code to sort table</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  ...</span>
+<span id="cb44-6"><a href="#cb44-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1370,15 +1400,15 @@
 <div class="callout-content">
 <p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
-<span id="cb43-2"><a href="#cb43-2"></a>  <span class="co"># code to extract estimates from model</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a>  ...</span>
-<span id="cb43-4"><a href="#cb43-4"></a>}</span>
-<span id="cb43-5"><a href="#cb43-5"></a></span>
-<span id="cb43-6"><a href="#cb43-6"></a>sort_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(table, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
-<span id="cb43-7"><a href="#cb43-7"></a>  <span class="co"># code to sort table</span></span>
-<span id="cb43-8"><a href="#cb43-8"></a>  ...</span>
-<span id="cb43-9"><a href="#cb43-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  ...</span>
+<span id="cb45-4"><a href="#cb45-4"></a>}</span>
+<span id="cb45-5"><a href="#cb45-5"></a></span>
+<span id="cb45-6"><a href="#cb45-6"></a>sort_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(table, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="co"># code to sort table</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a>  ...</span>
+<span id="cb45-9"><a href="#cb45-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1406,17 +1436,17 @@
 <div class="callout-content">
 <p>Doing more than one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>convert_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">is_markdown =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="cf">if</span> (is_markdown) {</span>
-<span id="cb44-3"><a href="#cb44-3"></a>    <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb44-4"><a href="#cb44-4"></a>    ...</span>
-<span id="cb44-5"><a href="#cb44-5"></a>  }</span>
-<span id="cb44-6"><a href="#cb44-6"></a></span>
-<span id="cb44-7"><a href="#cb44-7"></a>  <span class="cf">if</span> (<span class="sc">!</span>is_markdown) {</span>
-<span id="cb44-8"><a href="#cb44-8"></a>    <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a>    ...</span>
-<span id="cb44-10"><a href="#cb44-10"></a>  }</span>
-<span id="cb44-11"><a href="#cb44-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>convert_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">is_markdown =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="cf">if</span> (is_markdown) {</span>
+<span id="cb46-3"><a href="#cb46-3"></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>    ...</span>
+<span id="cb46-5"><a href="#cb46-5"></a>  }</span>
+<span id="cb46-6"><a href="#cb46-6"></a></span>
+<span id="cb46-7"><a href="#cb46-7"></a>  <span class="cf">if</span> (<span class="sc">!</span>is_markdown) {</span>
+<span id="cb46-8"><a href="#cb46-8"></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb46-9"><a href="#cb46-9"></a>    ...</span>
+<span id="cb46-10"><a href="#cb46-10"></a>  }</span>
+<span id="cb46-11"><a href="#cb46-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1433,15 +1463,15 @@
 <div class="callout-content">
 <p>Doing one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>convert_md_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb45-3"><a href="#cb45-3"></a>  ...</span>
-<span id="cb45-4"><a href="#cb45-4"></a>}</span>
-<span id="cb45-5"><a href="#cb45-5"></a></span>
-<span id="cb45-6"><a href="#cb45-6"></a>convert_html_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
-<span id="cb45-7"><a href="#cb45-7"></a>  <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb45-8"><a href="#cb45-8"></a>  ...</span>
-<span id="cb45-9"><a href="#cb45-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>convert_md_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>  ...</span>
+<span id="cb47-4"><a href="#cb47-4"></a>}</span>
+<span id="cb47-5"><a href="#cb47-5"></a></span>
+<span id="cb47-6"><a href="#cb47-6"></a>convert_html_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a>  ...</span>
+<span id="cb47-9"><a href="#cb47-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1543,7 +1573,7 @@
 <section id="session-information" class="slide level2 smaller">
 <h2>Session information</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
