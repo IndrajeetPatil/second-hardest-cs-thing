@@ -340,6 +340,39 @@ BeerShelf.count
 
 ::::
 
+If doing so imposes ambiguity, then you can of course tolerate some redundancy.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# bad
+MediaPlayer.play()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+MediaPlayer.play_audio()
+MediaPlayer.play_video()
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Shorten names with the help of context.**
+
+:::
+
 ## Names should be precise but not *too* long {.smaller}
 
 How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure the visual structure of a program.
