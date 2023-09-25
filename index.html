@@ -399,7 +399,7 @@
 <!-- Don't render this file locally Run `renderer.R` script instead. -->
 <div style="margin-top: 1em; margin-bottom: 1em; font-size: 1em">
 <p>Indrajeet Patil</p>
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute quarto-figure quarto-figure-center" data-top="100" height="350" width="500" data-right="40" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute quarto-figure quarto-figure-center" data-right="40" height="350" width="500" data-top="100" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
 <figure class="quarto-float quarto-float-fig">
 <div>
 <img data-src="media/cat.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="absolute" style="top: 100px; right: 40px; width: 500px; height: 350px; ">
@@ -701,37 +701,37 @@
 </section>
 <section id="names-should-utilize-the-context" class="slide level2 smaller">
 <h2>Names should utilize the context</h2>
-<p>When naming, avoid redundant words by exploiting the context in which the names appear.</p>
+<p>When naming, avoid redundant words by exploiting the context.</p>
 <p>E.g. if you are defining a class, its methods and variables will be read in that context.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># okay</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>Router.run_router()</span>
-<span id="cb13-3"><a href="#cb13-3"></a>FileHandler.close_file()</span>
-<span id="cb13-4"><a href="#cb13-4"></a>BeerShelf.beer_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a># okay</span>
+<span id="cb13-2"><a href="#cb13-2"></a>Router<span class="op">.</span><span class="fu">run_router</span>()</span>
+<span id="cb13-3"><a href="#cb13-3"></a>FileHandler<span class="op">.</span><span class="fu">close_file</span>()</span>
+<span id="cb13-4"><a href="#cb13-4"></a>BeerShelf<span class="op">.</span><span class="at">beer_count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># better</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>Router.run()</span>
-<span id="cb14-3"><a href="#cb14-3"></a>FileHandler.close()</span>
-<span id="cb14-4"><a href="#cb14-4"></a>BeerShelf.count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a># better</span>
+<span id="cb14-2"><a href="#cb14-2"></a>Router<span class="op">.</span><span class="fu">run</span>()</span>
+<span id="cb14-3"><a href="#cb14-3"></a>FileHandler<span class="op">.</span><span class="fu">close</span>()</span>
+<span id="cb14-4"><a href="#cb14-4"></a>BeerShelf<span class="op">.</span><span class="at">count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>If doing so imposes ambiguity, then you can of course tolerate some redundancy.</p>
+<p>But, if doing so imposes ambiguity, then you can of course tolerate some redundancy.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># bad</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>MediaPlayer.play()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a># bad</span>
+<span id="cb15-2"><a href="#cb15-2"></a>MediaPlayer<span class="op">.</span><span class="fu">play</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># better</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>MediaPlayer.play_audio()</span>
-<span id="cb16-3"><a href="#cb16-3"></a>MediaPlayer.play_video()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a># better</span>
+<span id="cb16-2"><a href="#cb16-2"></a>MediaPlayer<span class="op">.</span><span class="fu">play_audio</span>()</span>
+<span id="cb16-3"><a href="#cb16-3"></a>MediaPlayer<span class="op">.</span><span class="fu">play_video</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -793,7 +793,7 @@
 <div class="fragment">
 <p>E.g., here is a GUI text editor class method to get position of a character:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int x<span class="op">,</span> int y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb18-1"><a href="#cb18-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">&gt;</span> getCharPosition<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -805,7 +805,7 @@
 <div class="fragment">
 <p>You can avoid such misinterpretation with better names:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span>int<span class="op">,</span> int<span class="op">&gt;</span> <span class="fu">getCharPosition</span>(int lineIndex<span class="op">,</span> int charIndex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb19-1"><a href="#cb19-1"></a>std<span class="op">::</span>tuple<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">&gt;</span> getCharPosition<span class="op">(</span><span class="dt">int</span> lineIndex<span class="op">,</span> <span class="dt">int</span> charIndex<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
