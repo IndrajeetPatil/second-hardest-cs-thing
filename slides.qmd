@@ -784,7 +784,7 @@ Having different name formats for different entities **acts like syntax highligh
 
 :::{.callout-note}
 
-## Example of coding standards adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"})
+## Example of coding standards adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}
 
 - Use all ALL_CAPS for constant variables (`public const double PI = 3.14;`)
 - Prefix private/protected member variable with `_` (`private int _currentDebt`)
