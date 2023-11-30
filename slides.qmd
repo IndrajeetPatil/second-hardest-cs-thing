@@ -663,7 +663,49 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 :::
 
-## Test function names should be detailed {.smaller}
+## Names can avoid implementation details {.smaller}
+
+Names that encode implementation details (e.g. data structure used) increases the maintenance cost of the code because implementation changes necessitate changes in identifier names.
+
+. . .
+
+E.g., consider a variable that represents bonuses across company departments:
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# bad
+bonuses_dict # dictionary
+bonuses_pd   # pandas DataFrame
+bonuses_pl   # polars DataFrame
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# good
+bonuses
+```
+
+:::
+
+Note that `bonuses` doesn't need to be changed if the data structure is changed.
+
+::::
+
+. . . 
+
+::: {.callout-tip}
+
+**Names should be independent of implementation details.**
+
+:::
+
+## Names for test function should be detailed {.smaller}
 
 If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.
 
