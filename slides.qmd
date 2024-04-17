@@ -707,11 +707,11 @@ Note that good names don't need to change even if the implementation details cha
 
 :::
 
-## Choose correct abstraction level for names {.smaller}
+## Find correct abstraction level for names {.smaller}
 
-Don't fall into the trap of selecting names at a lower level of abstraction.
+Don't select names at a lower level of abstraction just because that's where the corresponding objects were defined.
 
-E.g., if you are writing a function to compute a difference between before and after values, the parameter names should reflect the higher-level concept.
+E.g., if you are writing a function to compute difference between before and after values, the parameter names should reflect the higher-level concept.
 
 :::: {.columns}
 
@@ -719,7 +719,7 @@ E.g., if you are writing a function to compute a difference between before and a
 
 ```{r}
 # bad
-diff <- function(value_before, value_after) { ... }
+function(value_before, value_after) { ... }
 ```
 
 :::
@@ -728,14 +728,14 @@ diff <- function(value_before, value_after) { ... }
 
 ```{r}
 # good
-diff <- function(value1, value2) { ... }
+function(value1, value2) { ... }
 ```
 
 :::
 
 ::::
 
-Note that the good parameter names make it clear that the function is actually of more general use than just temporally separated values.
+Note that the good parameter names clarify the general purpose of the function, which is to compute difference between *any* two values, not just before and after values.
 
 . . .
 
@@ -1288,6 +1288,8 @@ For a more detailed discussion about how to name things, see the following refer
 - Padolsey, J. (2020). *Clean Code in JavaScript*. Packt Publishing. (**pp. 93-111**)
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
+
+- [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/){target="_blank"}
 
 - For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming){target="_blank"}.
 
