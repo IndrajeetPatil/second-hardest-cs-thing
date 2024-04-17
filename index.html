@@ -1011,25 +1011,27 @@
 </div>
 </div>
 </section>
-<section id="names-can-avoid-implementation-details" class="slide level2 smaller">
-<h2>Names can avoid implementation details</h2>
-<p>Names that encode implementation details (e.g.&nbsp;data structure used) increases the maintenance cost of the code because implementation changes necessitate changes in identifier names.</p>
+<section id="avoid-implementation-details-in-names" class="slide level2 smaller">
+<h2>Avoid implementation details in names</h2>
+<p>Names that encode implementation details (e.g., data structure) increase the maintenance cost. When implementation changes, identifier names need to change as well.</p>
 <div class="fragment">
 <p>E.g., consider a variable that represents bonuses across company departments:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb31-2"><a href=""></a>bonuses_dict <span class="co"># dictionary</span></span>
-<span id="cb31-3"><a href=""></a>bonuses_pd   <span class="co"># pandas DataFrame</span></span>
-<span id="cb31-4"><a href=""></a>bonuses_pl   <span class="co"># polars DataFrame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-2"><a href=""></a>bonuses_pd  <span class="co"># pandas DataFrame</span></span>
+<span id="cb31-3"><a href=""></a>bonuses_pl  <span class="co"># polars DataFrame</span></span>
+<span id="cb31-4"><a href=""></a>aws_s3_url  <span class="co"># AWS bucket</span></span>
+<span id="cb31-5"><a href=""></a>gcp_url     <span class="co"># GCP bucket</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb32-2"><a href=""></a>bonuses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href=""></a>bonuses    <span class="co"># data structure independent</span></span>
+<span id="cb32-3"><a href=""></a>bucket_url <span class="co"># cloud service independent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><p>Note that <code>bonuses</code> doesn’t need to be changed if the data structure is changed.</p>
+</div><p>Note that good names don’t need to change even if the implementation details change.</p>
 </div>
 </div>
 <div class="fragment">
@@ -1048,8 +1050,8 @@
 </div>
 </div>
 </section>
-<section id="names-for-test-function-should-be-detailed" class="slide level2 smaller">
-<h2>Names for test function should be detailed</h2>
+<section id="test-function-names-should-be-detailed" class="slide level2 smaller">
+<h2>Test function names should be detailed</h2>
 <p>If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.</p>
 <p>The test function names should effectively act as a comment.</p>
 <div class="columns">
@@ -1153,7 +1155,7 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Consistency of naming conventions should be respected at the code base level, not just for short scopes.</strong></p>
+<p><strong>Consistency of naming conventions should be respected at both narrow and broad scopes.</strong></p>
 </div>
 </div>
 </div>
@@ -1616,7 +1618,7 @@
  collate  C.UTF-8
  ctype    C.UTF-8
  tz       UTC
- date     2024-04-14
+ date     2024-04-17
  pandoc   3.1.8 @ /opt/hostedtoolcache/pandoc/3.1.8/x64/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
@@ -1639,7 +1641,7 @@
  methods     * 4.3.3   2024-03-04 [3] local
  png           0.1-8   2022-11-29 [1] RSPM
  Rcpp          1.0.12  2024-01-09 [1] RSPM
- reticulate    1.35.0  2024-01-31 [1] RSPM
+ reticulate    1.36.0  2024-04-15 [1] RSPM
  rlang         1.1.3   2024-01-10 [1] RSPM
  rmarkdown     2.26    2024-03-05 [1] RSPM
  sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)
