@@ -663,9 +663,9 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 :::
 
-## Names can avoid implementation details {.smaller}
+## Avoid implementation details in names {.smaller}
 
-Names that encode implementation details (e.g. data structure used) increases the maintenance cost of the code because implementation changes necessitate changes in identifier names.
+Names that encode implementation details (e.g., data structure) increase the maintenance cost. When implementation changes, identifier names need to change as well.
 
 . . .
 
@@ -677,9 +677,10 @@ E.g., consider a variable that represents bonuses across company departments:
 
 ```{python}
 # bad
-bonuses_dict # dictionary
-bonuses_pd   # pandas DataFrame
-bonuses_pl   # polars DataFrame
+bonuses_pd  # pandas DataFrame
+bonuses_pl  # polars DataFrame
+aws_s3_url  # AWS bucket
+gcp_url     # GCP bucket
 ```
 
 :::
@@ -688,12 +689,13 @@ bonuses_pl   # polars DataFrame
 
 ```{python}
 # good
-bonuses
+bonuses    # data structure independent
+bucket_url # cloud service independent
 ```
 
 :::
 
-Note that `bonuses` doesn't need to be changed if the data structure is changed.
+Note that good names don't need to change even if the implementation details change.
 
 ::::
 
@@ -705,7 +707,7 @@ Note that `bonuses` doesn't need to be changed if the data structure is changed.
 
 :::
 
-## Names for test function should be detailed {.smaller}
+## Test function names should be detailed {.smaller}
 
 If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.
 
@@ -816,7 +818,7 @@ Both of these methods should either be named `$retrieve_expenditure()` or `$fetc
 
 ::: {.callout-tip}
 
-**Consistency of naming conventions should be respected at the code base level, not just for short scopes.**
+**Consistency of naming conventions should be respected at both narrow and broad scopes.**
 
 :::
 
