@@ -707,6 +707,44 @@ Note that good names don't need to change even if the implementation details cha
 
 :::
 
+## Choose correct abstraction level for names {.smaller}
+
+Don't fall into the trap of selecting names at a lower level of abstraction.
+
+E.g., if you are writing a function to compute a difference between before and after values, the parameter names should reflect the higher-level concept.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{r}
+# bad
+diff <- function(value_before, value_after) { ... }
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{r}
+# good
+diff <- function(value1, value2) { ... }
+```
+
+:::
+
+::::
+
+Note that the good parameter names make it clear that the function is actually of more general use than just temporally separated values.
+
+. . .
+
+::: {.callout-tip}
+
+**Choose names that reflect the higher-level concept.**
+
+:::
+
 ## Test function names should be detailed {.smaller}
 
 If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.

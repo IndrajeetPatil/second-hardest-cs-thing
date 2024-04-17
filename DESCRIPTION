@@ -15,7 +15,7 @@ Description: This presentation summarizes my understanding of best practices in
 License: CC0 1.0 Universal
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.2
+RoxygenNote: 7.3.1
 URL: https://github.com/IndrajeetPatil/second-hardest-cs-thing/,
     https://indrajeetpatil.github.io/second-hardest-cs-thing/
 BugReports: https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues

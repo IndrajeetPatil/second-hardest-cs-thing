@@ -1050,23 +1050,57 @@
 </div>
 </div>
 </section>
+<section id="choose-correct-abstraction-level-for-names" class="slide level2 smaller">
+<h2>Choose correct abstraction level for names</h2>
+<p>Don’t fall into the trap of selecting names at a lower level of abstraction.</p>
+<p>E.g., if you are writing a function to compute a difference between before and after values, the parameter names should reflect the higher-level concept.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="co"># bad</span></span>
+<span id="cb33-2"><a href=""></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(value_before, value_after) { ... }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="co"># good</span></span>
+<span id="cb34-2"><a href=""></a>diff <span class="ot">&lt;-</span> <span class="cf">function</span>(value1, value2) { ... }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Note that the good parameter names make it clear that the function is actually of more general use than just temporally separated values.</p>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Choose names that reflect the higher-level concept.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="test-function-names-should-be-detailed" class="slide level2 smaller">
 <h2>Test function names should be detailed</h2>
 <p>If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.</p>
 <p>The test function names should effectively act as a comment.</p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb33-2"><a href=""></a><span class="kw">def</span> test1</span>
-<span id="cb33-3"><a href=""></a><span class="kw">def</span> my_test</span>
-<span id="cb33-4"><a href=""></a><span class="kw">def</span> retrieve_commands</span>
-<span id="cb33-5"><a href=""></a><span class="kw">def</span> serialize_success</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="co"># bad</span></span>
+<span id="cb35-2"><a href=""></a><span class="kw">def</span> test1</span>
+<span id="cb35-3"><a href=""></a><span class="kw">def</span> my_test</span>
+<span id="cb35-4"><a href=""></a><span class="kw">def</span> retrieve_commands</span>
+<span id="cb35-5"><a href=""></a><span class="kw">def</span> serialize_success</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:70%;">
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb34-2"><a href=""></a><span class="kw">def</span> test_array</span>
-<span id="cb34-3"><a href=""></a><span class="kw">def</span> test_multilinear_model</span>
-<span id="cb34-4"><a href=""></a><span class="kw">def</span> all_the_saved_commands_should_be_retrieved</span>
-<span id="cb34-5"><a href=""></a><span class="kw">def</span> should_serialize_the_formula_cache_if_required</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># good</span></span>
+<span id="cb36-2"><a href=""></a><span class="kw">def</span> test_array</span>
+<span id="cb36-3"><a href=""></a><span class="kw">def</span> test_multilinear_model</span>
+<span id="cb36-4"><a href=""></a><span class="kw">def</span> all_the_saved_commands_should_be_retrieved</span>
+<span id="cb36-5"><a href=""></a><span class="kw">def</span> should_serialize_the_formula_cache_if_required</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -1121,12 +1155,12 @@
 <div class="fragment">
 <p>If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="co"># generate year month date hour minute second</span></span>
-<span id="cb35-2"><a href=""></a><span class="fu">genymdhms</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a><span class="co"># generate year month date hour minute second</span></span>
+<span id="cb37-2"><a href=""></a><span class="fu">genymdhms</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is a much better (and pronounceable) alternative:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a><span class="fu">generateTimeStamp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a><span class="fu">generateTimeStamp</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1140,8 +1174,8 @@
 <div class="fragment">
 <p>E.g., two similar methods here have different names across <code>R6</code> classes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>CreditCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">retrieve_expenditure</span>()</span>
-<span id="cb37-2"><a href=""></a>DebitCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">fetch_expenditure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href=""></a>CreditCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">retrieve_expenditure</span>()</span>
+<span id="cb39-2"><a href=""></a>DebitCardAccount<span class="sc">$</span><span class="fu">new</span>()<span class="sc">$</span><span class="fu">fetch_expenditure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Both of these methods should either be named <code>$retrieve_expenditure()</code> or <code>$fetch_expenditure()</code>.</p>
 </div>
@@ -1204,7 +1238,7 @@
 <h2>ICYMI: Available casing conventions</h2>
 <p>There are various casing conventions used for software development.</p>
 
-<img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development."><div style="text-align: center; font-size: 0.9rem;">
+<img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development." width="2000"><div style="text-align: center; font-size: 0.9rem;">
 <p>Illustration (CC-BY) by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
 </div>
 </section></section>
@@ -1284,10 +1318,10 @@
 <div class="fragment">
 <p>Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn’t surprise you, <strong>except one</strong>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb38-2"><a href=""></a><span class="fu">mean</span>(x)   <span class="co"># expected output</span></span>
-<span id="cb38-3"><a href=""></a><span class="fu">median</span>(x) <span class="co"># expected output</span></span>
-<span id="cb38-4"><a href=""></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb40-2"><a href=""></a><span class="fu">mean</span>(x)   <span class="co"># expected output</span></span>
+<span id="cb40-3"><a href=""></a><span class="fu">median</span>(x) <span class="co"># expected output</span></span>
+<span id="cb40-4"><a href=""></a><span class="fu">mode</span>(x)   <span class="co"># unexpected output!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>mode()</code> function actually returns the storage mode of an R object!</p>
 </div>
@@ -1299,10 +1333,10 @@
 <h2>Violation: Generic name</h2>
 <p>The parameter <code>N</code> in <code>std::array</code> <a href="https://en.cppreference.com/w/cpp/container/array" target="_blank">definition</a> is too generic.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb39-1"><a href=""></a>template<span class="op">&lt;</span></span>
-<span id="cb39-2"><a href=""></a>    <span class="kw">class</span> T<span class="op">,</span></span>
-<span id="cb39-3"><a href=""></a>    std<span class="op">::</span>size_t N </span>
-<span id="cb39-4"><a href=""></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb41-1"><a href=""></a>template<span class="op">&lt;</span></span>
+<span id="cb41-2"><a href=""></a>    <span class="kw">class</span> T<span class="op">,</span></span>
+<span id="cb41-3"><a href=""></a>    std<span class="op">::</span>size_t N </span>
+<span id="cb41-4"><a href=""></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><code>size</code> is a bit better but still leaves room for misunderstanding:</p>
@@ -1313,10 +1347,10 @@
 <div class="fragment">
 <p>Here is an alternative parameter name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href=""></a>template<span class="op">&lt;</span></span>
-<span id="cb40-2"><a href=""></a>    <span class="kw">class</span> T<span class="op">,</span></span>
-<span id="cb40-3"><a href=""></a>    std<span class="op">::</span>size_t numberOfElements</span>
-<span id="cb40-4"><a href=""></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb42-1"><a href=""></a>template<span class="op">&lt;</span></span>
+<span id="cb42-2"><a href=""></a>    <span class="kw">class</span> T<span class="op">,</span></span>
+<span id="cb42-3"><a href=""></a>    std<span class="op">::</span>size_t numberOfElements</span>
+<span id="cb42-4"><a href=""></a><span class="op">&gt;</span> struct array<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>numberOfElements</code> is more precise and unmistakable.</p>
 </div>
@@ -1329,20 +1363,20 @@
 <div class="column" style="width:50%;">
 <p><strong>Function names</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a><span class="co"># works</span></span>
-<span id="cb41-2"><a href=""></a><span class="fu">guide_colorbar</span>(...)</span>
-<span id="cb41-3"><a href=""></a></span>
-<span id="cb41-4"><a href=""></a><span class="co"># this works as well!</span></span>
-<span id="cb41-5"><a href=""></a><span class="fu">guide_colourbar</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="co"># works</span></span>
+<span id="cb43-2"><a href=""></a><span class="fu">guide_colorbar</span>(...)</span>
+<span id="cb43-3"><a href=""></a></span>
+<span id="cb43-4"><a href=""></a><span class="co"># this works as well!</span></span>
+<span id="cb43-5"><a href=""></a><span class="fu">guide_colourbar</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <p><strong>Function parameters</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="co"># works</span></span>
-<span id="cb42-2"><a href=""></a><span class="fu">aes</span>(<span class="at">color =</span> ...)</span>
-<span id="cb42-3"><a href=""></a></span>
-<span id="cb42-4"><a href=""></a><span class="co"># this works as well!</span></span>
-<span id="cb42-5"><a href=""></a><span class="fu">aes</span>(<span class="at">colour =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="co"># works</span></span>
+<span id="cb44-2"><a href=""></a><span class="fu">aes</span>(<span class="at">color =</span> ...)</span>
+<span id="cb44-3"><a href=""></a></span>
+<span id="cb44-4"><a href=""></a><span class="co"># this works as well!</span></span>
+<span id="cb44-5"><a href=""></a><span class="fu">aes</span>(<span class="at">colour =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1350,14 +1384,14 @@
 <div class="fragment">
 <p>A user now believes that both spelling standards for function names <em>and</em> parameters are supported. And, since they prefer American spellings, they do this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
 <p><strong>That won’t work!</strong> Both functions support <strong>only</strong> the British spelling of parameters:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
-<span id="cb44-2"><a href=""></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="fu">guide_colourbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span>
+<span id="cb46-2"><a href=""></a><span class="fu">guide_colorbar</span>(<span class="at">ticks.colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is <strong>inconsistent</strong> and <strong>violates the user’s mental model</strong> about naming schema.</p>
 </div>
@@ -1366,7 +1400,7 @@
 <h2>Violation: Room for misunderstanding</h2>
 <p>In Python, <a href="https://www.w3schools.com/python/ref_func_filter.asp" target="_blank"><code>filter()</code></a> can be used to apply a function to an iterable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href=""></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">0</span>, [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>But <code>filter</code> is an ambiguous word. It could mean either of these:</p>
@@ -1411,12 +1445,12 @@
 <div class="callout-content">
 <p>Trying to find a name highlights that the function is doing more than one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="st">`</span><span class="at">???</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
-<span id="cb46-2"><a href=""></a>  <span class="co"># code to extract estimates from model</span></span>
-<span id="cb46-3"><a href=""></a>  ...</span>
-<span id="cb46-4"><a href=""></a>  <span class="co"># code to sort table</span></span>
-<span id="cb46-5"><a href=""></a>  ...</span>
-<span id="cb46-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a><span class="st">`</span><span class="at">???</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(model, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb48-2"><a href=""></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb48-3"><a href=""></a>  ...</span>
+<span id="cb48-4"><a href=""></a>  <span class="co"># code to sort table</span></span>
+<span id="cb48-5"><a href=""></a>  ...</span>
+<span id="cb48-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1433,15 +1467,15 @@
 <div class="callout-content">
 <p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
-<span id="cb47-2"><a href=""></a>  <span class="co"># code to extract estimates from model</span></span>
-<span id="cb47-3"><a href=""></a>  ...</span>
-<span id="cb47-4"><a href=""></a>}</span>
-<span id="cb47-5"><a href=""></a></span>
-<span id="cb47-6"><a href=""></a>sort_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(table, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
-<span id="cb47-7"><a href=""></a>  <span class="co"># code to sort table</span></span>
-<span id="cb47-8"><a href=""></a>  ...</span>
-<span id="cb47-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>extract_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
+<span id="cb49-2"><a href=""></a>  <span class="co"># code to extract estimates from model</span></span>
+<span id="cb49-3"><a href=""></a>  ...</span>
+<span id="cb49-4"><a href=""></a>}</span>
+<span id="cb49-5"><a href=""></a></span>
+<span id="cb49-6"><a href=""></a>sort_estimates <span class="ot">&lt;-</span> <span class="cf">function</span>(table, <span class="at">sort =</span> <span class="st">"asc"</span>) {</span>
+<span id="cb49-7"><a href=""></a>  <span class="co"># code to sort table</span></span>
+<span id="cb49-8"><a href=""></a>  ...</span>
+<span id="cb49-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1469,17 +1503,17 @@
 <div class="callout-content">
 <p>Doing more than one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href=""></a>convert_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">is_markdown =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb48-2"><a href=""></a>  <span class="cf">if</span> (is_markdown) {</span>
-<span id="cb48-3"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb48-4"><a href=""></a>    ...</span>
-<span id="cb48-5"><a href=""></a>  }</span>
-<span id="cb48-6"><a href=""></a></span>
-<span id="cb48-7"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span>is_markdown) {</span>
-<span id="cb48-8"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb48-9"><a href=""></a>    ...</span>
-<span id="cb48-10"><a href=""></a>  }</span>
-<span id="cb48-11"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>convert_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file, <span class="at">is_markdown =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb50-2"><a href=""></a>  <span class="cf">if</span> (is_markdown) {</span>
+<span id="cb50-3"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb50-4"><a href=""></a>    ...</span>
+<span id="cb50-5"><a href=""></a>  }</span>
+<span id="cb50-6"><a href=""></a></span>
+<span id="cb50-7"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span>is_markdown) {</span>
+<span id="cb50-8"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb50-9"><a href=""></a>    ...</span>
+<span id="cb50-10"><a href=""></a>  }</span>
+<span id="cb50-11"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1496,15 +1530,15 @@
 <div class="callout-content">
 <p>Doing one thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>convert_md_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
-<span id="cb49-2"><a href=""></a>  <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb49-3"><a href=""></a>  ...</span>
-<span id="cb49-4"><a href=""></a>}</span>
-<span id="cb49-5"><a href=""></a></span>
-<span id="cb49-6"><a href=""></a>convert_html_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
-<span id="cb49-7"><a href=""></a>  <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb49-8"><a href=""></a>  ...</span>
-<span id="cb49-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>convert_md_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb51-2"><a href=""></a>  <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb51-3"><a href=""></a>  ...</span>
+<span id="cb51-4"><a href=""></a>}</span>
+<span id="cb51-5"><a href=""></a></span>
+<span id="cb51-6"><a href=""></a>convert_html_to_pdf <span class="ot">&lt;-</span> <span class="cf">function</span>(file) {</span>
+<span id="cb51-7"><a href=""></a>  <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb51-8"><a href=""></a>  ...</span>
+<span id="cb51-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1606,54 +1640,58 @@
 <section id="session-information" class="slide level2 smaller">
 <h2>Session information</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href=""></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.3.3 (2024-02-29)
- os       Ubuntu 22.04.4 LTS
- system   x86_64, linux-gnu
+ os       macOS Sonoma 14.4.1
+ system   aarch64, darwin20
  ui       X11
  language (EN)
- collate  C.UTF-8
- ctype    C.UTF-8
- tz       UTC
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       Europe/Berlin
  date     2024-04-17
- pandoc   3.1.8 @ /opt/hostedtoolcache/pandoc/3.1.8/x64/ (via rmarkdown)
+ pandoc   3.1.9 @ /usr/local/bin/ (via rmarkdown)
+ quarto   1.5.29 @ /usr/local/bin/quarto
 
 ─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- base        * 4.3.3   2024-03-04 [3] local
- cli           3.6.2   2023-12-11 [1] RSPM
- compiler      4.3.3   2024-03-04 [3] local
- datasets    * 4.3.3   2024-03-04 [3] local
- digest        0.6.35  2024-03-11 [1] RSPM
- evaluate      0.23    2023-11-01 [1] RSPM
- fastmap       1.1.1   2023-02-24 [1] RSPM
- graphics    * 4.3.3   2024-03-04 [3] local
- grDevices   * 4.3.3   2024-03-04 [3] local
- grid          4.3.3   2024-03-04 [3] local
- htmltools     0.5.8.1 2024-04-04 [1] RSPM
- jsonlite      1.8.8   2023-12-04 [1] RSPM
- knitr         1.46    2024-04-06 [1] RSPM
- lattice       0.22-5  2023-10-24 [3] CRAN (R 4.3.3)
- Matrix        1.6-5   2024-01-11 [3] CRAN (R 4.3.3)
- methods     * 4.3.3   2024-03-04 [3] local
- png           0.1-8   2022-11-29 [1] RSPM
- Rcpp          1.0.12  2024-01-09 [1] RSPM
- reticulate    1.36.0  2024-04-15 [1] RSPM
- rlang         1.1.3   2024-01-10 [1] RSPM
- rmarkdown     2.26    2024-03-05 [1] RSPM
- sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)
- stats       * 4.3.3   2024-03-04 [3] local
- tools         4.3.3   2024-03-04 [3] local
- utils       * 4.3.3   2024-03-04 [3] local
- xfun          0.43    2024-03-25 [1] RSPM
- yaml          2.3.8   2023-12-11 [1] RSPM
+ ! package     * version    date (UTC) lib source
+   base        * 4.3.3      2024-03-01 [?] local
+   cli           3.6.2.9000 2024-04-14 [1] Github (r-lib/cli@bcb5c78)
+ P compiler      4.3.3      2024-03-01 [1] local
+ P datasets    * 4.3.3      2024-03-01 [1] local
+   digest        0.6.35     2024-03-11 [1] RSPM (R 4.3.0)
+   evaluate      0.23       2023-11-01 [1] CRAN (R 4.3.1)
+   fastmap       1.1.1      2023-02-24 [1] CRAN (R 4.3.0)
+ P graphics    * 4.3.3      2024-03-01 [1] local
+ P grDevices   * 4.3.3      2024-03-01 [1] local
+ P grid          4.3.3      2024-03-01 [1] local
+   htmltools     0.5.8.1    2024-04-04 [1] RSPM (R 4.3.0)
+   jpeg          0.1-10     2022-11-29 [1] CRAN (R 4.3.0)
+   jsonlite      1.8.8      2023-12-04 [1] RSPM (R 4.3.0)
+   knitr         1.46       2024-04-06 [1] RSPM (R 4.3.0)
+   lattice       0.22-6     2024-03-20 [1] RSPM (R 4.3.0)
+   Matrix        1.6-5      2024-01-11 [1] CRAN (R 4.3.3)
+ P methods     * 4.3.3      2024-03-01 [1] local
+   png           0.1-8      2022-11-29 [1] CRAN (R 4.3.0)
+   Rcpp          1.0.12     2024-01-09 [1] RSPM (R 4.3.0)
+   reticulate    1.36.0     2024-04-15 [1] RSPM (R 4.3.0)
+   rlang         1.1.3      2024-01-10 [1] RSPM (R 4.3.0)
+   rmarkdown     2.26       2024-03-05 [1] RSPM (R 4.3.2)
+   rstudioapi    0.16.0     2024-03-24 [1] RSPM (R 4.3.0)
+   sessioninfo   1.2.2.9000 2023-11-03 [1] local
+ P stats       * 4.3.3      2024-03-01 [1] local
+ P tools         4.3.3      2024-03-01 [1] local
+ P utils       * 4.3.3      2024-03-01 [1] local
+   xfun          0.43       2024-03-25 [1] RSPM (R 4.3.0)
+   yaml          2.3.8      2023-12-11 [1] RSPM (R 4.3.0)
 
- [1] /home/runner/work/_temp/Library
- [2] /opt/R/4.3.3/lib/R/site-library
- [3] /opt/R/4.3.3/lib/R/library
+ [1] /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library
+
+ * ── Packages attached to the search path.
+ P ── Loaded and on-disk path mismatch.
 
 ──────────────────────────────────────────────────────────────────────────────</code></pre>
 </div>
