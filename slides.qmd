@@ -576,22 +576,22 @@ class PlayerEntity
 
 :::
 
-## Names should clarify dependencies {.smaller}
+<!-- ## Names should clarify dependencies {.smaller} -->
 
-If a set of functions have dependencies (because they share the same data, e.g.), their names should clarify this dependence.
+<!-- If a set of functions have dependencies (because they share the same data, e.g.), their names should clarify this dependence. -->
 
-. . . 
+<!-- . . .  -->
 
-E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues.
+<!-- E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues. -->
 
-```{r}
-revenues <- compute_revenues_data(raw_revenues_data)
-revenues <- compute_monthly_revenues(revenues)
-revenues <- compute_quarterly_revenues(revenues)
-revenues <- compute_annual_revenues(revenues)
-```
+<!-- ```{r} -->
+<!-- revenues <- compute_revenues_data(raw_revenues_data) -->
+<!-- revenues <- compute_monthly_revenues(revenues) -->
+<!-- revenues <- compute_quarterly_revenues(revenues) -->
+<!-- revenues <- compute_annual_revenues(revenues) -->
+<!-- ``` -->
 
-Each of the function names makes clear the order in which they need to be run.
+<!-- Each of the function names makes clear the order in which they need to be run. -->
 
 ## Name Booleans with extra care {.smaller}
 
