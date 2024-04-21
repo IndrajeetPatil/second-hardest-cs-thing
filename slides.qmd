@@ -13,7 +13,9 @@ format:
 #affiliation: 
 execute:
   echo: true
+  eval: false
 keywords: ["naming", "software-engineering", "computer-science", "software-development"]
+license: "CC0 1.0 Universal"
 ---
 
 ```{r setup, include=FALSE}
@@ -213,6 +215,10 @@ Consistent names **reduce cognitive burden** because if the reader encounters a 
 
 For example, these names are inconsistent since the reader can't safely assume that the name *size* means the same thing throughout the program.
 
+:::: {.columns}
+
+::: {.column width='70%'}
+
 ```{js}
 // context-1: `size` stands for number of memory bytes
 {
@@ -225,6 +231,26 @@ For example, these names are inconsistent since the reader can't safely assume t
 }
 ```
 
+:::
+
+::: {.column width='30%'}
+
+```{js}
+// context-1:
+{
+  size = sizeof(x);
+}
+
+// context-2:
+{
+  length = strlen(a);
+}
+```
+
+:::
+
+::::
+
 . . .
 
 ::: {.callout-tip}
@@ -235,7 +261,7 @@ For example, these names are inconsistent since the reader can't safely assume t
 
 ## {.smaller}
 
-### Unnecessary details should be removed...
+### Unnecessary details in names should be removed...
 
 :::: {.columns}
 
@@ -384,6 +410,7 @@ You can typically find a middle ground between too short and too long names.
 ```{r}
 # not ideal - too imprecise
 d
+
 # okay - can use more precision
 days
 
@@ -519,7 +546,7 @@ arrayMap <- function(arr, fun) {
 
 ::::
 
-In the future, it won't be easy either to search for and/or to rename these parameters in the codebase because searching for `a` or `f` would flag **all** *a*s and *f*s (**a**pi, **f**ile, etc.).
+If needed, it wouldn't be easy either to search for and/or to rename these parameters in the codebase because searching for `a` or `f` would flag **all** *a*s and *f*s (**a**pi, **f**ile, etc.).
 
 Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.
 
@@ -665,11 +692,11 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 ## Avoid implementation details in names {.smaller}
 
-Names that encode implementation details (e.g., data structure) increase the maintenance cost. When implementation changes, identifier names need to change as well.
+Names with implementation details (e.g., data structure) have high maintenance cost. When implementation changes, identifiers need to change as well.
 
 . . .
 
-E.g., consider a variable that represents bonuses across company departments:
+E.g., consider variables that store data in different data structures or cloud services.:
 
 :::: {.columns}
 
@@ -679,6 +706,7 @@ E.g., consider a variable that represents bonuses across company departments:
 # bad
 bonuses_pd  # pandas DataFrame
 bonuses_pl  # polars DataFrame
+
 aws_s3_url  # AWS bucket
 gcp_url     # GCP bucket
 ```
@@ -690,7 +718,10 @@ gcp_url     # GCP bucket
 ```{python}
 # good
 bonuses    # data structure independent
+
 bucket_url # cloud service independent
+
+    
 ```
 
 :::
@@ -965,7 +996,7 @@ R is a programming language for statistical computing, and function names can be
 
 . . .
 
-Statistical distributions can be characterized by centrality measures, like mean, median, mode, etc., and R has functions with names that wouldn't surprise you, **except one**:
+Statistical distributions can be characterized by centrality measures, and R has functions with names that wouldn't surprise you, **except one**:
 
 ```{r, tidy=FALSE}
 x <- c(1, 2, 3, 4)
@@ -1111,7 +1142,8 @@ Finding a descriptive name for a function can inform us if we are following this
 
 . . .
 
-Consider a function to extract a table of regression estimates. For convenience, it also allows sorting the table by estimate.
+Consider a function to extract a table of regression estimates for a statistical model. 
+For convenience, it also allows sorting the table by estimate.
 
 :::: {.columns}
 
@@ -1233,6 +1265,8 @@ convert_html_to_pdf <- function(file) {
 
 ## *"What's in a name?"* Well, everything! {.smaller}
 
+. . .
+
 - Intent-revealing names make the **code easier to read**.
 
 . . .
@@ -1253,7 +1287,7 @@ convert_html_to_pdf <- function(file) {
 
 . . .
 
-- Consistent naming **reduces cognitive overload** for the developers and makes the code more readable and maintainable.
+- Consistent naming **reduces cognitive overload** for the developers and makes the code more maintainable.
 
 # Challenges
 
