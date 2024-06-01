@@ -50,6 +50,6 @@ jobs:
       - name: Build PDF using decktape
         run: |
           sudo npm install -g --unsafe-perm=true --allow-root decktape
-          docker run --rm -t -v `pwd`:/workdir -v ~:/home/user astefanutti/decktape /workdir/slides.html /workdir/slides.pdf
+          docker run --rm -t -v `pwd`:/workdir -v ~:/home/user --user $(id -u):$(id -g) astefanutti/decktape /workdir/slides.html /workdir/slides.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v5.0.1
