@@ -10,7 +10,7 @@
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.45">
+  <meta name="generator" content="quarto-1.5.47">
 
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>slides</title>
@@ -546,8 +546,7 @@
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href=""></a># crystal clear</span>
 <span id="cb5-2"><a href=""></a>exam_score[school][student]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <p><br></p>
 <p>All variables are temporary in some sense. Calling one <code>tmp</code> is inviting carelessness.</p>
@@ -570,8 +569,7 @@
 <span id="cb7-5"><a href=""></a>  left      <span class="op">=</span> old_right</span>
 <span id="cb7-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="fragment">
 <p><br></p>
@@ -620,8 +618,7 @@
 <span id="cb9-8"><a href=""></a>  length <span class="op">=</span> <span class="fu">strlen</span>(a)<span class="op">;</span></span>
 <span id="cb9-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -657,8 +654,7 @@
 <span id="cb11-3"><a href=""></a>file</span>
 <span id="cb11-4"><a href=""></a>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -693,8 +689,7 @@
 <span id="cb13-4"><a href=""></a>hex_id</span>
 <span id="cb13-5"><a href=""></a>ip_address</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -728,8 +723,7 @@
 <span id="cb15-3"><a href=""></a>FileHandler<span class="op">.</span><span class="fu">close</span>()</span>
 <span id="cb15-4"><a href=""></a>BeerShelf<span class="op">.</span><span class="at">count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <p>But, if doing so imposes ambiguity, then you can of course tolerate some redundancy.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -743,8 +737,7 @@
 <span id="cb17-2"><a href=""></a>MediaPlayer<span class="op">.</span><span class="fu">play_audio</span>()</span>
 <span id="cb17-3"><a href=""></a>MediaPlayer<span class="op">.</span><span class="fu">play_video</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -855,8 +848,7 @@
 <span id="cb22-3"><a href=""></a><span class="kw">let</span> nSquare <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb22-4"><a href=""></a><span class="kw">let</span> nCube   <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -894,8 +886,7 @@
 <span id="cb24-3"><a href=""></a>  ...</span>
 <span id="cb24-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <p>If needed, it wouldn’t be easy either to search for and/or to rename these parameters in the codebase because searching for <code>a</code> or <code>f</code> would flag <strong>all</strong> <em>a</em>s and <em>f</em>s (<strong>a</strong>pi, <strong>f</strong>ile, etc.).</p>
 <p>Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.</p>
 </div>
@@ -939,8 +930,7 @@
 <span id="cb26-5"><a href=""></a>    <span class="dt">std</span><span class="op">::</span>string hairColor<span class="op">;</span></span>
 <span id="cb26-6"><a href=""></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -991,8 +981,7 @@
 <span id="cb28-5"><a href=""></a>  }</span>
 <span id="cb28-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="fragment">
 <p>In general, use positive terms for Booleans since they are easier to process.</p>
 <div class="columns">
@@ -1081,8 +1070,7 @@
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="co"># good</span></span>
 <span id="cb34-2"><a href=""></a><span class="cf">function</span>(value1, value2) { ... }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 <p>Note that the good parameter names clarify the general purpose of the function, which is to compute difference between <em>any</em> two values, not just before and after values.</p>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -1117,8 +1105,7 @@
 <span id="cb36-3"><a href=""></a><span class="kw">def</span> test_multilinear_model</span>
 <span id="cb36-4"><a href=""></a><span class="kw">def</span> all_the_saved_commands_should_be_retrieved</span>
 <span id="cb36-5"><a href=""></a><span class="kw">def</span> should_serialize_the_formula_cache_if_required</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+</div></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1394,8 +1381,7 @@
 <span id="cb44-4"><a href=""></a><span class="co"># this works as well!</span></span>
 <span id="cb44-5"><a href=""></a><span class="fu">aes</span>(<span class="at">colour =</span> ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div class="fragment">
 <p>A user now believes that both spelling standards for function names <em>and</em> parameters are supported. And, since they prefer American spellings, they do this:</p>
@@ -1496,8 +1482,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 </section>
 <section id="function-parameter-names" class="slide level2 smaller">
@@ -1559,8 +1544,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 </section></section>
 <section id="in-your-name-i-will-hope-for-your-name-is-good." class="title-slide slide level1 center">
@@ -1671,14 +1655,14 @@
  collate  C.UTF-8
  ctype    C.UTF-8
  tz       UTC
- date     2024-06-16
+ date     2024-06-23
  pandoc   3.2 @ /opt/hostedtoolcache/pandoc/3.2/x64/ (via rmarkdown)
- quarto   1.5.45 @ /usr/local/bin/quarto
+ quarto   1.5.47 @ /usr/local/bin/quarto
 
 [1m[36m─ Packages ───────────────────────────────────────────────────────────────────[39m[22m
  [3m[90mpackage    [39m[23m [3m[90m*[39m[23m [3m[90mversion   [39m[23m [3m[90mdate (UTC)[39m[23m [3m[90mlib[39m[23m [3m[90msource[39m[23m
  base        * 4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
- cli           3.6.2      [90m2023-12-11[39m [90m[1][39m [1m[35mRSPM[39m[22m
+ cli           3.6.3      [90m2024-06-21[39m [90m[1][39m [1m[35mRSPM[39m[22m
  compiler      4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
  datasets    * 4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
  digest        0.6.35     [90m2024-03-11[39m [90m[1][39m [1m[35mRSPM[39m[22m
@@ -1695,14 +1679,14 @@
  methods     * 4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
  png           0.1-8      [90m2022-11-29[39m [90m[1][39m [1m[35mRSPM[39m[22m
  Rcpp          1.0.12     [90m2024-01-09[39m [90m[1][39m [1m[35mRSPM[39m[22m
- reticulate    1.37.0     [90m2024-05-21[39m [90m[1][39m [1m[35mRSPM[39m[22m
+ reticulate    1.38.0     [90m2024-06-19[39m [90m[1][39m [1m[35mRSPM[39m[22m
  rlang         1.1.4      [90m2024-06-04[39m [90m[1][39m [1m[35mRSPM[39m[22m
  rmarkdown     2.27       [90m2024-05-17[39m [90m[1][39m [1m[35mRSPM[39m[22m
  sessioninfo   [1m[35m1.2.2.9000[39m[22m [90m2024-06-16[39m [90m[1][39m [1m[35mGithub (r-lib/sessioninfo@064bc38)[39m[22m
  stats       * 4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
  tools         4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
  utils       * 4.4.1      [90m2024-06-14[39m [90m[3][39m [1m[35mlocal[39m[22m
- xfun          0.44       [90m2024-05-15[39m [90m[1][39m [1m[35mRSPM[39m[22m
+ xfun          0.45       [90m2024-06-16[39m [90m[1][39m [1m[35mRSPM[39m[22m
  yaml          2.3.8      [90m2023-12-11[39m [90m[1][39m [1m[35mRSPM[39m[22m
 
 [90m [1] /home/runner/work/_temp/Library[39m
