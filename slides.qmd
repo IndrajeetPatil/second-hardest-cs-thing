@@ -696,7 +696,7 @@ Names with implementation details (e.g., data structure) have high maintenance c
 
 . . .
 
-E.g., consider variables that store data in different data structures or cloud services.:
+E.g., consider variables that store data in different data structures or cloud services:
 
 :::: {.columns}
 
