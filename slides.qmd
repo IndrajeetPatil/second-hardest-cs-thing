@@ -5,6 +5,7 @@ format:
     theme: simple
     slide-number: true
     preview-links: auto
+    embed-resources: true
     footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
