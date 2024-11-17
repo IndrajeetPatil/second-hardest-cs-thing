@@ -17,6 +17,9 @@ execute:
   eval: false
 keywords: ["naming", "software-engineering", "computer-science", "software-development"]
 license: "CC0 1.0 Universal"
+pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
+author-meta: "Indrajeet Patil"
+date-meta: "`r Sys.time()`"
 ---
 
 ```{r setup, include=FALSE}
