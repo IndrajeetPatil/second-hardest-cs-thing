@@ -515,7 +515,7 @@ let nCube   = x ** 3;
 :::
 
 
-## Names should be easy to search {.smaller}
+## Names should be searchable {.smaller}
 
 While naming, always ask yourself how easy it would be to find and update the name.
 
@@ -553,6 +553,7 @@ arrayMap <- function(arr, fun) {
 If needed, it wouldn't be easy either to search for and/or to rename these parameters in the codebase because searching for `a` or `f` would flag **all** *a*s and *f*s (**a**pi, **f**ile, etc.).
 
 Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.
+In general, searchability of a name indexes how generic it is. 
 
 . . .
 
@@ -960,13 +961,13 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Avoid imprecise opposites**, since they can be [confusing](https://github.com/pomber/awesome-word-pairs). E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
 
-## {.smaller}
-
-- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
-
 . . .
 
 - **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, it can be hard to distinguish `firstl` from `firstI`.
+
+## {.smaller}
+
+- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
 
 . . .
 
@@ -975,6 +976,10 @@ You won't have to remember any of these rules if you follow the following princi
 . . .
 
 - **Don't use commonly misspelled words in English.** Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it `accumulate`, `accummulate`, `acumulate`, or `acummulate`?!
+
+. . .
+
+- **Don't use numeric suffixes in names to specify levels.** E.g. variable names `level1`, `level2`, `level3` are not as informative as `beginner`, `intermediate`, `advanced`.
 
 ## {.smaller}
 
