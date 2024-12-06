@@ -11,7 +11,7 @@ The slides can be seen here:<br>
 <https://indrajeetpatil.github.io/second-hardest-cs-thing/>
 
 <a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/" target="_blank">
-<img src="images/cat.png" alt="introductory slide" width="400"/>
+<img src="media/cat.png" alt="introductory slide" width="400"/>
 </a>
 
 # Feedback
