@@ -1307,11 +1307,16 @@ Adopt an investment mindset and remember that the little extra time invested in 
 
 And, after a while, you won't even need to think long and hard to come up with a good name. You will instinctively think of one.
 
+# "Using understandable names is a foundational step to producing quality software."
+\- Al Sweigart
+
 # Further Reading {.smaller}
 
 For a more detailed discussion about how to name things, see the following references.
 
 ## References {.smaller}
+
+:::{style="font-size: 25px;"}
 
 - McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
 
@@ -1330,6 +1335,8 @@ For a more detailed discussion about how to name things, see the following refer
 - [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/){target="_blank"}
 
 - For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming){target="_blank"}.
+
+:::
 
 # For more
 
