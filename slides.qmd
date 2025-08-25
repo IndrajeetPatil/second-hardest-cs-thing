@@ -64,7 +64,7 @@ Although all code examples are in Python, the following advice on naming is **la
 
 ### *Importance*: **Names are at the core of software design** 
 
-If you can't find a name that provides the right abstraction for the underlying entity, it is possible that the design isn't clear.
+If you can't find a name that provides the right abstraction for the underlying entity, the design may be unclear.
 
 :::
 
@@ -143,7 +143,7 @@ for j in range(len(arr)):
 
 ## Alternatives to generic names {.smaller}
 
-If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, and `k` because you will quickly lose track of what they mean.
+If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k`, etc. because you will quickly lose track of what they mean.
 
 :::: {.columns}
 
@@ -207,7 +207,7 @@ if right < left:
 
 ::: {.callout-tip}
 
-**Even when you *think* you need generic names, you are better off using descriptive names.**
+**Even when you *think* you need generic names, you are better off using more descriptive names.**
 
 :::
 
@@ -397,7 +397,7 @@ MediaPlayer.play_video()
 
 ## Names should be precise but not *too* long {.smaller}
 
-How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure the visual structure of a program.
+How precise (and thus long) the name should be is a **contextual decision**, but keep in mind that long names can obscure the visual structure of a program.
 
 . . .
 
@@ -679,6 +679,43 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 :::
 
+
+## Break English rules to improve clarity {.smaller}
+
+Some nouns have identical singular/plural forms, making "incorrect" plurals clearer.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# unclear - one fish or many fish?
+[f for f in fish if f.is_healthy()]
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# clearer - obviously plural
+[fish for fish in fishes if fish.is_healthy()]
+```
+
+:::
+
+::::
+
+Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than grammatically correct forms.
+
+. . . 
+
+::: {.callout-tip}
+
+**Helping readers understand the code more easily is often worth breaking grammatical rules.**
+
+:::
+
 ## Avoid implementation details in names {.smaller}
 
 Names with implementation details (e.g., data structure) have high maintenance cost. When implementation changes, identifiers need to change as well.
@@ -794,8 +831,8 @@ serialize_success
 # good
 test_array
 test_multilinear_model
-all_the_saved_commands_should_be_retrieved
-should_serialize_the_formula_cache_if_required
+test_all_the_saved_commands_should_be_retrieved
+test_should_serialize_the_formula_cache_if_required
 ```
 
 :::
@@ -861,7 +898,7 @@ Discussing entities named `waste` and `waist` is inevitably going to lead to con
 
 ## Use consistent lexicon in a project {.smaller}
 
-Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the code base*.
+Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
 
 . . .
 
@@ -933,7 +970,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 ## {.smaller}
 
-- **Don't use pop-culture references in names.** Not everyone can be expected to be familiar with them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
+- **Don't use pop-culture references in names.** Not everyone knows them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
 
 . . .
 
@@ -949,7 +986,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, it can be hard to distinguish `firstl` from `firstI`.
+- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, `firstl` and `firstI` look identical.
 
 ## {.smaller}
 
@@ -979,6 +1016,9 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
 
+. . .
+
+- **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
 
 # Naming and good design
 
@@ -1041,6 +1081,8 @@ def sort_estimates(table, sort="asc"):
 :::
 
 ::::
+
+Functions with `and` or `or` in their names are dead giveaways that they don't follow the Unix philosophy.
 
 ## Function parameter names {.smaller}
 
@@ -1122,7 +1164,7 @@ def convert_html_to_pdf(file):
 
 . . .
 
-- Naming precisely and consistently **reduces ambiguities and misunderstandings**, which in turn reduces the possibility of bugs.
+- Naming precisely and consistently **reduces ambiguities and misunderstandings**, reducing the possibility of bugs.
 
 . . .
 
