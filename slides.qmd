@@ -44,7 +44,7 @@ Indrajeet Patil
 
 # 
 
-The following advice on naming applies to all kinds of programming entities (variables, functions, packages, classes, etc.) and is **language-agnostic**.
+Although all code examples are in Python, the following advice on naming is **language-agnostic**.
 
 #
 
@@ -64,7 +64,7 @@ The following advice on naming applies to all kinds of programming entities (var
 
 ### *Importance*: **Names are at the core of software design** 
 
-If you can't find a name that provides the right abstraction for the underlying entity, it is possible that the design isn't clear.
+If you can't find a name that provides the right abstraction for the underlying entity, the design may be unclear.
 
 :::
 
@@ -89,18 +89,20 @@ How good a name is can be assessed by how detailed the accompanying comment need
 
 E.g., the function and parameter are named poorly here, and so comments need to do all the heavy lifting:
 
-```{js}
-// function to convert temperature from Fahrenheit to Celsius scale
-// temp is the temperature in Fahrenheit
-double unitConverter(double temp)
+```{python}
+# function to convert temperature from Fahrenheit to Celsius scale
+# temp is the temperature in Fahrenheit
+def unit_converter(temp: float) -> float:
+    pass
 ```
 
 . . .
 
 Contrast it with this:
 
-```{js}
-double fahrenheitToCelsius(double tempFahrenheit)
+```{python}
+def fahrenheit_to_celsius(temp_fahrenheit: float) -> float:
+    pass
 ```
 
 No need for a comment here!
@@ -123,9 +125,9 @@ Examples:
 
 - In a nested loop, using `j` for outer and `i` for inner loop index is confusing!
 
-```{js}
-  for (let j = 0; j < arr.length; j++) {
-    for (let i = 0; i < arr[j].length; i++) {
+```{python}
+for j in range(len(arr)):
+    for i in range(len(arr[j])):
 ```
 
 - `tmp` shouldn't be used to store objects that are not temporary
@@ -141,13 +143,13 @@ Examples:
 
 ## Alternatives to generic names {.smaller}
 
-If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, and `k` because you will quickly lose track of what they mean.
+If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k`, etc. because you will quickly lose track of what they mean.
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # abstruse
 exam_score[i][j]
 ```
@@ -156,7 +158,7 @@ exam_score[i][j]
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # crystal clear
 exam_score[school][student]
 ```
@@ -175,26 +177,24 @@ All variables are temporary in some sense. Calling one `tmp` is inviting careles
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # generic name
-if (right < left) {
-  tmp   = right
-  right = left
-  left  = tmp
-}
+if right < left:
+    tmp = right
+    right = left
+    left = tmp
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # more descriptive
-if (right < left) {
-  old_right = right
-  right     = left
-  left      = old_right
-}
+if right < left:
+    old_right = right
+    right = left
+    left = old_right
 ```
 
 :::
@@ -207,7 +207,7 @@ if (right < left) {
 
 ::: {.callout-tip}
 
-**Even when you *think* you need generic names, you are better off using descriptive names.**
+**Even when you *think* you need generic names, you are better off using more descriptive names.**
 
 :::
 
@@ -221,34 +221,26 @@ For example, these names are inconsistent since the reader can't safely assume t
 
 :::: {.columns}
 
-::: {.column width='70%'}
+::: {.column width='60%'}
 
-```{js}
-// context-1: `size` stands for number of memory bytes
-{
-  size = sizeof(x);
-}
+```{python}
+# context-1: `size` stands for number of memory bytes
+size = len(x.encode('utf-8'))  # bytes
 
-// context-2: `size` stands for number of elements
-{
-  size = strlen(a);
-}
+# context-2: `size` stands for number of elements
+size = len(a)  # length
 ```
 
 :::
 
-::: {.column width='30%'}
+::: {.column width='40%'}
 
-```{js}
-// context-1:
-{
-  size = sizeof(x);
-}
+```{python}
+# context-1:
+size = len(x.encode('utf-8'))
 
-// context-2:
-{
-  length = strlen(a);
-}
+# context-2:
+length = len(a)
 ```
 
 :::
@@ -271,18 +263,18 @@ For example, these names are inconsistent since the reader can't safely assume t
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # okay
 convert_to_string()
-fileObject
-strName # Hungarian notation
+file_object
+str_name  # type prefix notation
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # better
 to_string()
 file
@@ -308,7 +300,7 @@ name
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # okay
 child_height
 password
@@ -320,7 +312,7 @@ address
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # better
 child_height_cm
 plaintext_password
@@ -348,7 +340,7 @@ E.g. if you are defining a class, its methods and variables will be read in that
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # okay
 Router.run_router()
 FileHandler.close_file()
@@ -359,7 +351,7 @@ BeerShelf.beer_count
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # better
 Router.run()
 FileHandler.close()
@@ -376,7 +368,7 @@ But, if doing so imposes ambiguity, then you can of course tolerate some redunda
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # bad
 MediaPlayer.play()
 ```
@@ -385,7 +377,7 @@ MediaPlayer.play()
 
 ::: {.column width='50%'}
 
-```{js}
+```{python}
 # better
 MediaPlayer.play_audio()
 MediaPlayer.play_video()
@@ -405,13 +397,13 @@ MediaPlayer.play_video()
 
 ## Names should be precise but not *too* long {.smaller}
 
-How precise (and thus long) the name should be is a **subjective decision**, but keep in mind that long names can obscure the visual structure of a program.
+How precise (and thus long) the name should be is a **contextual decision**, but keep in mind that long names can obscure the visual structure of a program.
 
 . . .
 
 You can typically find a middle ground between too short and too long names.
 
-```{r}
+```{python}
 # not ideal - too imprecise
 d
 
@@ -424,7 +416,7 @@ days_since_last_accident
 # not ideal - unnecessarily precise
 days_since_last_accident_floor_4_lab_23
 
-...
+# ...
 ```
 
 . . .
@@ -441,10 +433,11 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 . . .
 
-E.g., here is a GUI text editor class method to get position of a character:
+E.g., here is a text editor class method to get position of a character:
 
-```{c}
-std::tuple<int, int> getCharPosition(int x, int y)
+```{python}
+def get_char_position(x: int, y: int):
+    pass
 ```
 
 . . .
@@ -459,8 +452,9 @@ In reality: *"`x` and `y` refer to line of text and character position in that l
 
 You can avoid such misinterpretation with better names:
 
-```{c}
-std::tuple<int, int> getCharPosition(int lineIndex, int charIndex)
+```{python}
+def get_char_position(line_index: int, char_index: int):
+    pass
 ```
 
 . . .
@@ -483,11 +477,11 @@ E.g. `nn` and `nnn` are easy to be confused and such confusion can lead to painf
 
 ::: {.column width='40%'}
 
-```{js}
-// bad
-let n   = x;
-let nn  = x ** 2;
-let nnn = x ** 3;
+```{python}
+# bad
+n = x
+nn = x ** 2
+nnn = x ** 3
 ```
 
 :::
@@ -495,11 +489,11 @@ let nnn = x ** 3;
 ::: {.column width='60%'}
 
 
-```{js}
-// good
-let n       = x;
-let nSquare = x ** 2;
-let nCube   = x ** 3;
+```{python}
+# good
+n = x
+n_square = x ** 2
+n_cube = x ** 3
 ```
 
 :::
@@ -527,11 +521,10 @@ E.g., this function uses `a` and `f` parameters to represent an array and a func
 
 ::: {.column width='40%'}
 
-```{r, tidy=FALSE}
+```{python}
 # bad
-arrayMap <- function(a, f) {
-  ...
-}
+def array_map(a, f):
+    pass
 ```
 
 :::
@@ -539,11 +532,10 @@ arrayMap <- function(a, f) {
 ::: {.column width='60%'}
 
 
-```{r, tidy=FALSE}
+```{python}
 # good
-arrayMap <- function(arr, fun) {
-  ...
-}
+def array_map(arr, fun):
+    pass
 ```
 
 :::
@@ -569,31 +561,27 @@ The names should respect the conventions adopted in a given project, organizatio
 
 . . .
 
-For example, C++ convention is to use PascalCase for class names and lowerCamel case for variables. 
+For example, Python convention is to use PascalCase for class names and snake_case for variables. 
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
-```{js}
-// non-conventional
-class playerEntity
-{
-  public:
-    std::string HairColor;
-};
+```{python}
+# non-conventional
+class playerentity:
+    def __init__(self):
+        self.HairColor = ""
 ```
 :::
 
 ::: {.column width='50%'}
 
-```{js}
-// conventional
-class PlayerEntity
-{
-  public:
-    std::string hairColor;
-};
+```{python}
+# conventional
+class PlayerEntity:
+    def __init__(self):
+        self.hair_color = ""
 ```
 
 :::
@@ -633,26 +621,22 @@ Names for Boolean variables or functions should make clear what true and false m
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # not great
-if (child) {
-  if (parentSupervision) {
-    watchHorrorMovie <- TRUE
-  }
-}
+if child:
+    if parent_supervision:
+        watch_horror_movie = True
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # better
-if (isChild) {
-  if (hasParentSupervision) {
-    canWatchHorrorMovie <- TRUE
-  }
-}
+if is_child:
+    if has_parent_supervision:
+        can_watch_horror_movie = True
 ```
 
 :::
@@ -667,18 +651,18 @@ In general, use positive terms for Booleans since they are easier to process.
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # double negation - difficult
-is_firewall_disabled <- FALSE
+is_firewall_disabled = False
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # better
-is_firewall_enabled <- TRUE
+is_firewall_enabled = True
 ```
 
 :::
@@ -692,6 +676,43 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 ::: {.callout-tip}
 
 **Boolean variable names should convey what true or false values represent.**
+
+:::
+
+
+## Break English rules to improve clarity {.smaller}
+
+Some nouns have identical singular/plural forms, making "incorrect" plurals clearer.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# unclear - one fish or many fish?
+[f for f in fish if f.is_healthy()]
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# clearer - obviously plural
+[fish for fish in fishes if fish.is_healthy()]
+```
+
+:::
+
+::::
+
+Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than grammatically correct forms.
+
+. . . 
+
+::: {.callout-tip}
+
+**Helping readers understand the code more easily is often worth breaking grammatical rules.**
 
 :::
 
@@ -753,18 +774,20 @@ E.g., if you are writing a function to compute difference between before and aft
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # bad
-function(value_before, value_after) { ... }
+def compare(value_before, value_after):
+    pass
 ```
 
 :::
 
 ::: {.column width='50%'}
 
-```{r}
+```{python}
 # good
-function(value1, value2) { ... }
+def compare(value1, value2):
+    pass
 ```
 
 :::
@@ -791,12 +814,12 @@ The test function names should effectively act as a comment.
 
 ::: {.column width='30%'}
 
-```{.python}
+```{python}
 # bad
-def test1
-def my_test
-def retrieve_commands
-def serialize_success
+test1
+my_test
+retrieve_commands
+serialize_success
 ```
 
 
@@ -804,12 +827,12 @@ def serialize_success
 
 ::: {.column width='70%'}
 
-```{.python}
+```{python}
 # good
-def test_array
-def test_multilinear_model
-def all_the_saved_commands_should_be_retrieved
-def should_serialize_the_formula_cache_if_required
+test_array
+test_multilinear_model
+test_all_the_saved_commands_should_be_retrieved
+test_should_serialize_the_formula_cache_if_required
 ```
 
 :::
@@ -833,12 +856,12 @@ To resist software entropy, not only should you name entities properly, but you 
 
 . . .
 
-For example, let's say your class has the `$getMeans()` method.
+For example, let's say your class has the `.get_means()` method.
 
 - In its initial implementation, it used to return *precomputed* mean values. 
 - In its current implementation, it *computes* the mean values on the fly. 
 
-Therefore, it is misleading to continue to call it a getter method, and it should be renamed to (e.g.) `$computeMeans()`.
+Therefore, it is misleading to continue to call it a getter method, and it should be renamed to (e.g.) `.compute_means()`.
 
 . . .
 
@@ -856,15 +879,15 @@ This is probably the weakest of the requirements, but one can't deny the ease of
 
 If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.
 
-```{r}
+```{python}
 # generate year month date hour minute second
 genymdhms()
 ```
 
 This is a much better (and pronounceable) alternative:
 
-```{r}
-generateTimeStamp()
+```{python}
+generate_timestamp()
 ```
 
 . . .
@@ -875,18 +898,18 @@ Discussing entities named `waste` and `waist` is inevitably going to lead to con
 
 ## Use consistent lexicon in a project {.smaller}
 
-Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the code base*.
+Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
 
 . . .
 
-E.g., two similar methods here have different names across `R6` classes:
+E.g., two similar methods here have different names across Python classes:
 
-```{r}
-CreditCardAccount$new()$retrieve_expenditure()
-DebitCardAccount$new()$fetch_expenditure()
+```{python}
+CreditCardAccount().retrieve_expenditure()
+DebitCardAccount().fetch_expenditure()
 ```
 
-Both of these methods should either be named `$retrieve_expenditure()` or `$fetch_expenditure()`.
+Both of these methods should either be named `.retrieve_expenditure()` or `.fetch_expenditure()`.
 
 . . .
 
@@ -902,14 +925,14 @@ Having different name formats for different entities **acts like syntax highligh
 
 :::{.callout-note}
 
-## Example of coding standards adopted in [OSP organization](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/CODING_STANDARDS.md){target="_blank"}
+## Example Python naming convention guidelines
 
-- Use all ALL_CAPS for constant variables (`public const double PI = 3.14;`)
-- Prefix private/protected member variable with `_` (`private int _currentDebt`)
-- Use Pascal Casing for class names (`public class GlobalAccounting`)
-- Use Pascal Casing for public and protected method name (`public void GetRevenues()`)
-- Use Camel Casing for private method name (`private int balanceBooks()`)
-- ...
+- Use UPPER_CASE for constants (`PI = 3.14159`, `MAX_RETRIES = 5`)
+- Use snake_case for variables and functions (`user_age = 25`, `def calculate_total():`)
+- Use PascalCase for class names (`class BankAccount:`, `class DataProcessor:`)
+- Prefix private attributes with single underscore (`self._balance = 0`)
+- Use trailing underscore to avoid keyword conflicts (`class_ = "math"`, `type_ = "int"`)
+- Use descriptive module names in lowercase (`utils.py`, `data_handler.py`)
 
 :::
 
@@ -947,7 +970,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 ## {.smaller}
 
-- **Don't use pop-culture references in names.** Not everyone can be expected to be familiar with them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
+- **Don't use pop-culture references in names.** Not everyone knows them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
 
 . . .
 
@@ -963,7 +986,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, it can be hard to distinguish `firstl` from `firstI`.
+- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, `firstl` and `firstI` look identical.
 
 ## {.smaller}
 
@@ -993,149 +1016,9 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
 
-# Case studies
-
-Looking at names in the wild that violate presented guidelines.
-
-This is **not** to be taken as criticisms, but as learning opportunities to drive home the importance of these guidelines.
-
-## Violation: Breaking (domain) conventions {.smaller}
-
-R is a programming language for statistical computing, and function names can be expected to respect the domain conventions.
-
 . . .
 
-Statistical distributions can be characterized by centrality measures, and R has functions with names that wouldn't surprise you, **except one**:
-
-```{r, tidy=FALSE}
-x <- c(1, 2, 3, 4)
-mean(x)   # expected output
-median(x) # expected output
-mode(x)   # unexpected output!
-```
-
-The `mode()` function actually returns the storage mode of an R object!
-
-. . .
-
-This function could have been named (e.g.) `storageMode()`, which is more precise and doesn't break domain-specific expectations.
-
-## Violation: Generic name {.smaller}
-
-The parameter `N` in `std::array` [definition](https://en.cppreference.com/w/cpp/container/array){target="_blank"} is too generic.
-
-```{js}
-template<
-    class T,
-    std::size_t N 
-> struct array;
-```
-
-. . .
-
-`size` is a bit better but still leaves room for misunderstanding:
-
-> "Does it mean length or memory bytes?"
-
-. . .
-
-Here is an alternative parameter name:
-
-```{js}
-template<
-    class T,
-    std::size_t numberOfElements
-> struct array;
-```
-
-`numberOfElements` is more precise and unmistakable.
-
-## Violation: Inconsistency in naming {.smaller}
-
-*ggplot2* is a [plotting framework](https://ggplot2.tidyverse.org/){target="_blank"} in R, and supports both **British** and **American** English spelling standards. But does it do so *consistently*?
-
-. . .
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-**Function names**
-
-```{r}
-# works
-guide_colorbar(...)
-
-# this works as well!
-guide_colourbar(...)
-```
-
-:::
-
-::: {.column width='50%'}
-
-**Function parameters**
-
-```{r}
-# works
-aes(color = ...)
-
-# this works as well!
-aes(colour = ...)
-```
-
-:::
-
-::::
-
-. . .
-
-A user now believes that both spelling standards for function names *and* parameters are supported. And, since they prefer American spellings, they do this:
-
-```{r}
-guide_colorbar(ticks.color = "black")
-```
-
-. . .
-
-**That won't work!** Both functions support **only** the British spelling of parameters:
-
-```{r}
-guide_colourbar(ticks.colour = "black")
-guide_colorbar(ticks.colour = "black")
-```
-
-This is **inconsistent** and **violates the user's mental model** about naming schema.
-
-## Violation: Room for misunderstanding {.smaller}
-
-In Python, [`filter()`](https://www.w3schools.com/python/ref_func_filter.asp){target="_blank"} can be used to apply a function to an iterable.
-
-```{python}
-list(filter(lambda x: x > 0, [-1, 1]))
-```
-
-. . .
-
-But `filter` is an ambiguous word. It could mean either of these:
-
-- to pick out elements that pass a condition (what *remains after filtering*)
-- to pick out elements that need to be removed (what *is filtered out*)
-
-If you've never used this function before, could you predict if it returns `1` or `-1`?
-
-. . .
-
-It returns `1`, so the intent is to pick out the elements that pass the condition. <br>
-In this case, **`keep()`** would be a better name.
-
-Had the intent been to find elements to remove, **`discard()`** would be a better name.
-
-# etc.
-
-It is easy to find such violations. 
-
-But, whenever you encounter one, make it a personal exercise to come up with a better name.
+- **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
 
 # Naming and good design
 
@@ -1164,13 +1047,11 @@ For convenience, it also allows sorting the table by estimate.
 
 Trying to find a name highlights that the function is doing more than one thing.
 
-```{r}
-`???` <- function(model, sort = "asc") {
-  # code to extract estimates from model
-  ...
-  # code to sort table
-  ...
-}
+```{python}
+def mystery_function(model, sort="asc"):
+    # code to extract estimates from model
+    # code to sort table
+    pass
 ```
 
 :::
@@ -1185,16 +1066,14 @@ Trying to find a name highlights that the function is doing more than one thing.
 
 These individual functions are easier to read, understand, and test.
 
-```{r}
-extract_estimates <- function(model) {
-  # code to extract estimates from model
-  ...
-}
+```{python}
+def extract_estimates(model):
+    # code to extract estimates from model
+    pass
 
-sort_estimates <- function(table, sort = "asc") {
-  # code to sort table
-  ...
-}
+def sort_estimates(table, sort="asc"):
+    # code to sort table
+    pass
 ```
 
 :::
@@ -1202,6 +1081,8 @@ sort_estimates <- function(table, sort = "asc") {
 :::
 
 ::::
+
+Functions with `and` or `or` in their names are dead giveaways that they don't follow the Unix philosophy.
 
 ## Function parameter names {.smaller}
 
@@ -1223,18 +1104,15 @@ Consider a function that converts Markdown or HTML documents to PDF.
 
 Doing more than one thing.
 
-```{r}
-convert_to_pdf <- function(file, is_markdown = FALSE) {
-  if (is_markdown) {
-    # code to convert Markdown to PDF
-    ...
-  }
-
-  if (!is_markdown) {
-    # code to convert HTML to PDF
-    ...
-  }
-}
+```{python}
+def convert_to_pdf(file, is_markdown=False):
+    if is_markdown:
+        # code to convert Markdown to PDF
+        pass
+    
+    if not is_markdown:
+        # code to convert HTML to PDF
+        pass
 ```
 
 :::
@@ -1249,16 +1127,14 @@ convert_to_pdf <- function(file, is_markdown = FALSE) {
 
 Doing one thing.
 
-```{r}
-convert_md_to_pdf <- function(file) {
-  # code to convert Markdown to PDF
-  ...
-}
+```{python}
+def convert_md_to_pdf(file):
+    # code to convert Markdown to PDF
+    pass
 
-convert_html_to_pdf <- function(file) {
-  # code to convert HTML to PDF
-  ...
-}
+def convert_html_to_pdf(file):
+    # code to convert HTML to PDF
+    pass
 ```
 
 :::
@@ -1288,7 +1164,7 @@ convert_html_to_pdf <- function(file) {
 
 . . .
 
-- Naming precisely and consistently **reduces ambiguities and misunderstandings**, which in turn reduces the possibility of bugs.
+- Naming precisely and consistently **reduces ambiguities and misunderstandings**, reducing the possibility of bugs.
 
 . . .
 
