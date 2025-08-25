@@ -44,7 +44,7 @@ Indrajeet Patil
 
 # 
 
-Although all code examples are in Python, the following advice on naming is **language-agnostic**
+Although all code examples are in Python, the following advice on naming is **language-agnostic**.
 
 #
 
