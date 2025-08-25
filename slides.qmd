@@ -555,6 +555,56 @@ In general, searchability of a name indexes how generic it is.
 
 :::
 
+## Names should be tab-friendly {.smaller}
+
+Choose names that allow related items to group together when using tab completion or auto-complete features in your IDE.
+
+. . .
+
+E.g., if you're creating functions for different statistical tests, prefix them consistently so they group together:
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# bad - scattered when tab-completing
+chi_square_test()
+fisher_exact()
+t_test_paired()
+wilcoxon_test()
+mann_whitney()
+anova_one_way()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# good - birds of a feather flock together
+test_chi_square()
+test_fisher_exact()
+test_t_paired()
+test_wilcoxon()
+test_mann_whitney()
+test_anova_one_way()
+```
+
+:::
+
+::::
+
+This principle also applies to variables, classes, and modules within the same domain.
+
+. . .
+
+::: {.callout-tip}
+
+**Use consistent prefixes or namespacing to group related functionality together.**
+
+:::
+
 ## Names should honour the conventions {.smaller}
 
 The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.
