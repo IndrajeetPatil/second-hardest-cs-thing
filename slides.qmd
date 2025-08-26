@@ -1257,6 +1257,111 @@ def convert_html_to_pdf(file):
 # "In your name I will hope, for your name is good."
 \- Psalms 52:9
 
+# Utilizing tools
+
+## Naming limitations of QA tools {.smaller}
+
+Static analysis tools can only do so much when it comes to naming.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+**What they CAN do:**
+
+- Enforce naming conventions
+- Check for reserved keywords
+- Detect naming pattern violations
+- Flag overly short or long names
+- Ensure consistent formatting
+
+:::
+
+::: {.column width='50%'}
+
+**What they CANNOT do:**
+
+- Understand the intent behind your code
+- Suggest meaningful names based on context
+- Assess whether names represent what entities do
+- Determine problem domain consistency
+- Evaluate clarity for future developers
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-note}
+
+## The fundamental limitation
+
+**Tools can enforce *syntax* but not *semantics*.** Good naming requires human understanding of both the problem and the solution.
+
+:::
+
+## Generative AI tools can be valuable allies {.smaller}
+
+AI tools have context of your entire codebase and can provide meaningful names.
+
+. . .
+
+**How AI tools can help:**
+
+- They see the whole function/class and understand relationships
+- They recognize patterns across different programming domains
+- They can spot inconsistent naming across your codebase
+- They propose multiple naming options with rationales
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```python
+# Your initial attempt
+def process_data(x):
+    pass
+
+def calc(a, b):
+    pass
+
+temp_var = get_info()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```python
+# AI suggestions
+def validate_user_input(user_data):
+    pass
+
+def calculate_compound_interest(principal, rate):
+    pass
+
+user_profile = get_user_info()
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+## Symbiotic Naming
+
+Try to come up with good names yourself. Then, ask AI tools to validate, assess, or suggest improvements.
+
+:::
+
 # Benefits of good names
 
 ## *"What's in a name?"* Well, everything! {.smaller}
