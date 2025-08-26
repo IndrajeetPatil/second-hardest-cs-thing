@@ -6,6 +6,9 @@ format:
     slide-number: true
     preview-links: auto
     embed-resources: true
+    keyboard: true
+    touch: true
+    help: true
     footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
@@ -16,10 +19,16 @@ execute:
   echo: true
   eval: false
 keywords: ["naming", "software-engineering", "computer-science", "software-development"]
+description-meta: "A comprehensive guide to naming conventions and best practices for software development. Learn how to choose meaningful, consistent, and maintainable names for variables, functions, and classes."
 license: "CC0 1.0 Universal"
 pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
 author-meta: "Indrajeet Patil"
 date-meta: "`r Sys.time()`"
+lang: "en"
+dir: "ltr"
+image: "media/social-media-card.png"
+image-alt: "Preview image for presentation about naming things in computer science"
+canonical-url: "https://indrajeetpatil.github.io/second-hardest-cs-thing/"
 ---
 
 ```{r setup, include=FALSE}
