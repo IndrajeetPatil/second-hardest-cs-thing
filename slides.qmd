@@ -766,6 +766,58 @@ Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than g
 
 :::
 
+## Choose names from problem domain {.smaller}
+
+Names should reflect **what** the code does (problem domain) rather than **how** it does it (implementation domain).
+
+. . .
+
+Examples of problem domain vs implementation domain naming:
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# implementation domain - how it works
+binary_search_users()
+hash_table_lookup()
+linked_list_add()
+sql_query_products()
+json_parse_config()
+thread_pool_execute()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# problem domain - what it does
+find_user()
+get_customer()
+add_item()
+fetch_products()
+load_config()
+process_request()
+```
+
+:::
+
+::::
+
+. . .
+
+The problem domain names remain meaningful even if you switch from binary search to linear search, from hash tables to arrays, or from SQL to NoSQL databases.
+
+. . .
+
+::: {.callout-tip}
+
+**Name based on the business purpose, not the technical mechanism.**
+
+:::
+
 ## Avoid implementation details in names {.smaller}
 
 Names with implementation details (e.g., data structure) have high maintenance cost. When implementation changes, identifiers need to change as well.
