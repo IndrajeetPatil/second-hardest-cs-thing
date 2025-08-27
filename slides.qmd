@@ -51,6 +51,72 @@ Indrajeet Patil
 \- Phil Karlton
 
 
+# Why naming matters
+
+## The hidden cost of poor naming {.smaller}
+
+Bad names create a cascade of problems that compound over time.
+
+. . .
+
+**Immediate consequences:**
+
+- Code reviews take longer as reviewers struggle to understand intent
+- Debugging becomes detective work instead of systematic analysis
+- New team members need extensive onboarding to decode the codebase
+
+. . .
+
+**Long-term impact:**
+
+- Technical debt accumulates as developers avoid touching poorly-named code
+- Bug introduction rates increase due to misunderstanding
+- Refactoring becomes risky when you can't trust what code actually does
+
+. . .
+
+::: {.callout-warning}
+
+## The multiplication effect
+
+**Poor naming doesn't just affect individual functions—it spreads confusion throughout the entire system.**
+
+:::
+
+## Good names pay dividends {.smaller}
+
+Well-chosen names transform code from puzzles into stories.
+
+. . .
+
+**Development velocity:**
+
+- Code reviews focus on logic rather than deciphering meaning
+- Debugging targets the right components faster
+- New features build confidently on existing foundations
+
+. . .
+
+**Maintenance benefits:**
+
+- Refactoring becomes safe and predictable
+- Bug fixes address root causes rather than symptoms  
+- Documentation writes itself when names are self-explanatory
+
+. . .
+
+::: {.callout-tip}
+
+## The investment mindset
+
+**Time spent on naming is not overhead—it's an investment that pays compound interest.**
+
+:::
+
+# Naming Strategies
+
+> "_The beginning of wisdom is to call things by their proper name._" - Confucius
+
 # 
 
 Although all code examples are in Python, the following advice on naming is **language-agnostic**.
@@ -86,9 +152,6 @@ If you can't find a name that provides the right abstraction for the underlying 
 If a name is good, it is difficult to miss out on critical information about the entity or to misunderstand what it represents.
 
 :::
-
-# "The beginning of wisdom is to call things by their proper name." 
-\- Confucius
 
 ## Good names are a form of documentation {.smaller}
 
