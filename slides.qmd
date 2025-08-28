@@ -9,7 +9,6 @@ format:
     keyboard: true
     touch: true
     help: true
-    footer: "Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}."
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
 #     subtitle: "Thoughts on naming things for software development"
@@ -64,6 +63,10 @@ Indrajeet Patil
 :::
 
 ::::
+
+::: {style="text-align: center; font-size: 0.7em; margin-top: 2em; color: #666;"}
+Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}.
+:::
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
 \- Phil Karlton
@@ -1111,6 +1114,49 @@ Both of these methods should either be named `.retrieve_expenditure()` or `.fetc
 
 :::
 
+## Naming molds: Templates for consistency {.smaller}
+
+Feitelson's research reveals that developers use **naming molds**—consistent templates for constructing identifiers.
+
+. . .
+
+::: {.callout-note}
+
+## Examples of Different Naming Molds
+
+| **Concept** | **Mold A** | **Mold B** | **Mold C** |
+|-------------|------------|------------|------------|
+| Maximum user connections | `max_user_connections` | `user_connection_limit` | `peak_user_count` |
+| Total file size in bytes | `total_file_size_bytes` | `file_byte_count` | `accumulated_file_bytes` |
+| Minimum password length | `min_password_length` | `password_length_floor` | `shortest_password_chars` |
+| Current active sessions | `current_active_sessions` | `active_session_count` | `live_session_tally` |
+
+:::
+
+. . .
+
+::: {.callout-tip}
+
+## The Consistency Advantage
+
+**Pick one mold and use it consistently.** Mixed molds in the same codebase force readers to decode different patterns, increasing cognitive load.
+
+:::
+
+. . .
+
+::: {.callout-important collapse="true"}
+
+## Feitelson's Three-Step Model
+
+1. **Select concepts** to include in the name
+2. **Choose words** to represent each concept  
+3. **Construct the name** using a consistent mold
+
+This deliberate process produces names that are more precise and maintainable.
+
+:::
+
 ## Choose informative naming conventions {.smaller}
 
 Having different name formats for different entities **acts like syntax highlighting**. That is, a name not only represents an entity but also provides hints about its nature.
@@ -1445,7 +1491,7 @@ Try to come up with good names yourself. Then, ask AI tools to validate, assess,
 
 ## Code Review: A fresh perspective {.smaller}
 
-When coding, we operate at peak cognitive load—juggling logic, syntax, and implementation details simultaneously. This mental overload makes it the worst time to choose thoughtful names.
+When coding, we operate at peak cognitive load and this mental overload makes it the worst time to choose thoughtful names.
 
 . . .
 
@@ -1544,6 +1590,8 @@ For a more detailed discussion about how to name things, see the following refer
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
 - Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
+
+- Hermans, F. (2021). *The Programmer's Brain*. Manning Publications. (**pp. 127-146**)
 
 - Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
 
