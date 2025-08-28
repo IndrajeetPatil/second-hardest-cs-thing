@@ -39,13 +39,31 @@ knitr::opts_chunk$set(eval = FALSE)
 
 <!-- Don't render this file locally Run `renderer.R` script instead. -->
 
-::: {style="margin-top: 1em; margin-bottom: 1em; font-size: 1em"}
+:::: {.columns}
 
+::: {.column width="60%"}
+
+::: {style="margin-top: 1em; margin-bottom: 1em;"}
+
+::: {style="font-size: 0.9em; font-weight: bold;"}
+Thoughts on naming things for software development
+:::
+
+::: {style="font-size: 0.8em; margin-top: 1em;"}
 Indrajeet Patil
-
-![](media/cat.png){.absolute width="500" height="350" right="40" top="100"}
+:::
 
 :::
+
+:::
+
+::: {.column width="40%"}
+
+![](media/cat.png){width="400" height="300"}
+
+:::
+
+::::
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
 \- Phil Karlton
