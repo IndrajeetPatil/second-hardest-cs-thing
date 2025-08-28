@@ -1443,6 +1443,49 @@ Try to come up with good names yourself. Then, ask AI tools to validate, assess,
 
 :::
 
+## Code Review: A fresh perspective {.smaller}
+
+When coding, we operate at peak cognitive load—juggling logic, syntax, and implementation details simultaneously. This mental overload makes it the worst time to choose thoughtful names.
+
+. . .
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Coding Phase] --> B[High Cognitive Load]
+    B --> C[Managing Multiple Concerns]
+    C --> D[Algorithm Logic]
+    C --> E[Syntax Details]
+    C --> F[Memory Management]
+    C --> G[Quick Name Choices]
+    
+    H[Code Review Phase] --> I[Lower Cognitive Load]
+    I --> J[Focus on Clarity]
+    J --> K[Fresh Perspective]
+    J --> L[Name Evaluation]
+    J --> M[Better Abstractions]
+    
+    G -.->|Improved by| L
+    
+    style A fill:#ffebee
+    style B fill:#ffcdd2
+    style G fill:#ef9a9a
+    style H fill:#e8f5e8
+    style I fill:#c8e6c9
+    style M fill:#81c784
+```
+
+. . .
+
+::: {.callout-tip}
+
+## The Review Advantage
+
+Code review provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of your code.
+
+:::
+
 # Benefits of good names
 
 ## *"What's in a name?"* Well, everything! {.smaller}
