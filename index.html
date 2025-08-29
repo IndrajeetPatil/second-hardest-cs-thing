@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-08-29 08:06:30.618341">
+  <meta name="dcterms.date" content="2025-08-29 12:59:43.534106">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -376,21 +376,24 @@
 <h2>Good names are a form of documentation</h2>
 <p>How good a name is can be assessed by how detailed the accompanying comment needs to be.</p>
 <div class="fragment">
-<p>Poor names require heavy commenting:</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Poor names require more comments:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># function to convert temperature from Fahrenheit to Celsius scale</span></span>
-<span id="cb1-2"><a href=""></a><span class="co"># temp is the temperature in Fahrenheit</span></span>
-<span id="cb1-3"><a href=""></a><span class="kw">def</span> unit_converter(temp: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-4"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># function to convert temperature </span></span>
+<span id="cb1-2"><a href=""></a><span class="co"># from Fahrenheit to Celsius scale</span></span>
+<span id="cb1-3"><a href=""></a><span class="co"># temp is the temperature in Fahrenheit</span></span>
+<span id="cb1-4"><a href=""></a><span class="kw">def</span> unit_converter(temp: <span class="bu">float</span>):</span>
+<span id="cb1-5"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-<div class="fragment">
-<p>Contrast it with this:</p>
+</div><div class="column" style="width:55%;">
+<p>Good names are self-documenting:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> fahrenheit_to_celsius(temp_fahrenheit: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> fahrenheit_to_celsius(temp_fahrenheit: <span class="bu">float</span>):</span>
 <span id="cb2-2"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>No need for a comment here!</p>
+<p><br></p>
+</div></div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -408,52 +411,19 @@
 </div>
 </div>
 </section>
-<section id="generic-names-should-follow-conventions" class="slide level2 smaller">
-<h2>Generic names should follow conventions</h2>
-<p>Generic names work <em>only if</em> you follow established conventions.</p>
-<div class="fragment">
-<p>Examples:</p>
-<ul>
-<li>In a nested loop, using <code>j</code> for outer and <code>i</code> for inner loop index is confusing!</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
-<span id="cb3-2"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[j])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li><code>tmp</code> shouldn’t be used to store objects that are not temporary</li>
-<li><code>retVal</code> shouldn’t be used for objects not returned from a function</li>
-</ul>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Don’t violate reader assumptions about what generic names represent.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="alternatives-to-generic-names" class="slide level2 smaller">
 <h2>Alternatives to generic names</h2>
 <p>For longer loops, use meaningful names instead of <code>i</code>, <code>j</code>, <code>k</code>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># abstruse</span></span>
-<span id="cb4-2"><a href=""></a>exam_score[i][j]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># abstruse</span></span>
+<span id="cb3-2"><a href=""></a>exam_score[i][j]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># crystal clear</span></span>
-<span id="cb5-2"><a href=""></a>exam_score[school][student]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># crystal clear</span></span>
+<span id="cb4-2"><a href=""></a>exam_score[school][student]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="fragment">
@@ -462,19 +432,19 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># generic name</span></span>
-<span id="cb6-2"><a href=""></a><span class="cf">if</span> right <span class="op">&lt;</span> left:</span>
-<span id="cb6-3"><a href=""></a>    tmp <span class="op">=</span> right</span>
-<span id="cb6-4"><a href=""></a>    right <span class="op">=</span> left</span>
-<span id="cb6-5"><a href=""></a>    left <span class="op">=</span> tmp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># generic name</span></span>
+<span id="cb5-2"><a href=""></a><span class="cf">if</span> right <span class="op">&lt;</span> left:</span>
+<span id="cb5-3"><a href=""></a>    tmp <span class="op">=</span> right</span>
+<span id="cb5-4"><a href=""></a>    right <span class="op">=</span> left</span>
+<span id="cb5-5"><a href=""></a>    left <span class="op">=</span> tmp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="co"># more descriptive</span></span>
-<span id="cb7-2"><a href=""></a><span class="cf">if</span> right <span class="op">&lt;</span> left:</span>
-<span id="cb7-3"><a href=""></a>    old_right <span class="op">=</span> right</span>
-<span id="cb7-4"><a href=""></a>    right <span class="op">=</span> left</span>
-<span id="cb7-5"><a href=""></a>    left <span class="op">=</span> old_right</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># more descriptive</span></span>
+<span id="cb6-2"><a href=""></a><span class="cf">if</span> right <span class="op">&lt;</span> left:</span>
+<span id="cb6-3"><a href=""></a>    old_right <span class="op">=</span> right</span>
+<span id="cb6-4"><a href=""></a>    right <span class="op">=</span> left</span>
+<span id="cb6-5"><a href=""></a>    left <span class="op">=</span> old_right</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
@@ -495,29 +465,78 @@
 </div>
 </div>
 </section>
-<section id="names-should-be-consistent" class="slide level2 smaller">
-<h2>Names should be consistent</h2>
-<p>Consistent names <strong>reduce cognitive burden</strong> by allowing readers to safely reuse knowledge across contexts.</p>
+<section id="maintain-consistency-across-codebase" class="slide level2 smaller">
+<h2>Maintain consistency across codebase</h2>
+<p>Consistent naming <strong>reduces cognitive burden</strong> by allowing readers to safely reuse knowledge across contexts.</p>
 <div class="fragment">
-<p>These names are inconsistent—<em>size</em> means different things in different contexts:</p>
+<p><strong>Avoid conflicting meanings for the same word:</strong></p>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># context-1: `size` stands for number of memory bytes</span></span>
-<span id="cb8-2"><a href=""></a>size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))  <span class="co"># bytes</span></span>
-<span id="cb8-3"><a href=""></a></span>
-<span id="cb8-4"><a href=""></a><span class="co"># context-2: `size` stands for number of elements</span></span>
-<span id="cb8-5"><a href=""></a>size <span class="op">=</span> <span class="bu">len</span>(a)  <span class="co"># length</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="co"># inconsistent - size means different things</span></span>
+<span id="cb7-2"><a href=""></a>size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))  <span class="co"># bytes</span></span>
+<span id="cb7-3"><a href=""></a>size <span class="op">=</span> <span class="bu">len</span>(a)  <span class="co"># elements</span></span>
+<span id="cb7-4"><a href=""></a></span>
+<span id="cb7-5"><a href=""></a><span class="co"># inconsistent - different words, same concept</span></span>
+<span id="cb7-6"><a href=""></a>CreditCardAccount().retrieve_expenditure()</span>
+<span id="cb7-7"><a href=""></a>DebitCardAccount().fetch_expenditure()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="co"># context-1:</span></span>
-<span id="cb9-2"><a href=""></a>size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))</span>
-<span id="cb9-3"><a href=""></a></span>
-<span id="cb9-4"><a href=""></a><span class="co"># context-2:</span></span>
-<span id="cb9-5"><a href=""></a>length <span class="op">=</span> <span class="bu">len</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># consistent - clear distinctions</span></span>
+<span id="cb8-2"><a href=""></a>byte_size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))</span>
+<span id="cb8-3"><a href=""></a>length <span class="op">=</span> <span class="bu">len</span>(a)</span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a><span class="co"># consistent - same word, same concept</span></span>
+<span id="cb8-6"><a href=""></a>CreditCardAccount().retrieve_expenditure()</span>
+<span id="cb8-7"><a href=""></a>DebitCardAccount().retrieve_expenditure()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
+</div>
+<div class="fragment">
+<p><strong>Use naming molds (templates) consistently:</strong></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Common Naming Patterns (Pick One and Use Consistently)</strong></p>
+</div>
+<div class="callout-content">
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Concept</strong></th>
+<th><strong>Adjective-Noun Pattern</strong></th>
+<th><strong>Noun-Descriptor Pattern</strong></th>
+<th><strong>Action-Object Pattern</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maximum user connections</td>
+<td><code>max_user_connections</code></td>
+<td><code>user_connection_limit</code></td>
+<td><code>track_user_peak</code></td>
+</tr>
+<tr class="even">
+<td>Total file size in bytes</td>
+<td><code>total_file_size_bytes</code></td>
+<td><code>file_byte_count</code></td>
+<td><code>calculate_file_bytes</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -529,7 +548,7 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Enable safe assumptions about names across different contexts.</strong></p>
+<p><strong>Enable safe assumptions about names across different contexts. Mixed patterns force readers to decode different templates, increasing cognitive load.</strong></p>
 </div>
 </div>
 </div>
@@ -541,17 +560,17 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># okay</span></span>
-<span id="cb10-2"><a href=""></a>convert_to_string()</span>
-<span id="cb10-3"><a href=""></a>file_object</span>
-<span id="cb10-4"><a href=""></a>str_name  <span class="co"># type prefix notation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="co"># okay</span></span>
+<span id="cb9-2"><a href=""></a>convert_to_string()</span>
+<span id="cb9-3"><a href=""></a>file_object</span>
+<span id="cb9-4"><a href=""></a>str_name  <span class="co"># type prefix notation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb11-2"><a href=""></a>to_string()</span>
-<span id="cb11-3"><a href=""></a><span class="bu">file</span></span>
-<span id="cb11-4"><a href=""></a>name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># better</span></span>
+<span id="cb10-2"><a href=""></a>to_string()</span>
+<span id="cb10-3"><a href=""></a><span class="bu">file</span></span>
+<span id="cb10-4"><a href=""></a>name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -574,19 +593,19 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># okay</span></span>
-<span id="cb12-2"><a href=""></a>child_height</span>
-<span id="cb12-3"><a href=""></a>password</span>
-<span id="cb12-4"><a href=""></a><span class="bu">id</span></span>
-<span id="cb12-5"><a href=""></a>address</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># okay</span></span>
+<span id="cb11-2"><a href=""></a>child_height</span>
+<span id="cb11-3"><a href=""></a>password</span>
+<span id="cb11-4"><a href=""></a><span class="bu">id</span></span>
+<span id="cb11-5"><a href=""></a>address</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb13-2"><a href=""></a>child_height_cm</span>
-<span id="cb13-3"><a href=""></a>plaintext_password</span>
-<span id="cb13-4"><a href=""></a>hex_id</span>
-<span id="cb13-5"><a href=""></a>ip_address</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># better</span></span>
+<span id="cb12-2"><a href=""></a>child_height_cm</span>
+<span id="cb12-3"><a href=""></a>plaintext_password</span>
+<span id="cb12-4"><a href=""></a>hex_id</span>
+<span id="cb12-5"><a href=""></a>ip_address</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -603,76 +622,51 @@
 </div>
 </div>
 </section>
-<section id="names-should-utilize-the-context" class="slide level2 smaller">
-<h2>Names should utilize the context</h2>
-<p>When naming, avoid redundant words by exploiting the context.</p>
-<p>E.g. if you are defining a class, its methods and variables will be read in that context.</p>
+<section id="balance-precision-with-conciseness" class="slide level2 smaller">
+<h2>Balance precision with conciseness</h2>
+<p>Find the right level of detail for your context—precise enough to be clear, concise enough to be readable.</p>
+<div class="fragment">
+<p><strong>Use context to eliminate redundancy:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># okay</span></span>
-<span id="cb14-2"><a href=""></a>Router.run_router()</span>
-<span id="cb14-3"><a href=""></a>FileHandler.close_file()</span>
-<span id="cb14-4"><a href=""></a>BeerShelf.beer_count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># redundant in context</span></span>
+<span id="cb13-2"><a href=""></a>Router.run_router()</span>
+<span id="cb13-3"><a href=""></a>BeerShelf.beer_count</span>
+<span id="cb13-4"><a href=""></a>child_height  <span class="co"># missing units</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb15-2"><a href=""></a>Router.run()</span>
-<span id="cb15-3"><a href=""></a>FileHandler.close()</span>
-<span id="cb15-4"><a href=""></a>BeerShelf.count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># leverages context</span></span>
+<span id="cb14-2"><a href=""></a>Router.run()</span>
+<span id="cb14-3"><a href=""></a>BeerShelf.count</span>
+<span id="cb14-4"><a href=""></a>child_height_cm  <span class="co"># critical detail</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<p>But, if doing so imposes ambiguity, then you can of course tolerate some redundancy.</p>
+</div>
+<div class="fragment">
+<p><strong>Find the precision sweet spot:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># too imprecise → okay → good → unnecessarily precise</span></span>
+<span id="cb15-2"><a href=""></a>d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Match abstraction level to purpose:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb16-2"><a href=""></a>MediaPlayer.play()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co"># too specific for general function</span></span>
+<span id="cb16-2"><a href=""></a><span class="kw">def</span> compare(value_before, value_after):</span>
+<span id="cb16-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb17-2"><a href=""></a>MediaPlayer.play_audio()</span>
-<span id="cb17-3"><a href=""></a>MediaPlayer.play_video()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># right abstraction level</span></span>
+<span id="cb17-2"><a href=""></a><span class="kw">def</span> compare(value1, value2):</span>
+<span id="cb17-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Shorten names with the help of context.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="names-should-be-precise-but-not-too-long" class="slide level2 smaller">
-<h2>Names should be precise but not <em>too</em> long</h2>
-<p>How precise (and thus long) the name should be is a <strong>contextual decision</strong>, but keep in mind that long names can obscure the visual structure of a program.</p>
-<div class="fragment">
-<p>You can typically find a middle ground between too short and too long names.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="co"># not ideal - too imprecise</span></span>
-<span id="cb18-2"><a href=""></a>d</span>
-<span id="cb18-3"><a href=""></a></span>
-<span id="cb18-4"><a href=""></a><span class="co"># okay - can use more precision</span></span>
-<span id="cb18-5"><a href=""></a>days</span>
-<span id="cb18-6"><a href=""></a></span>
-<span id="cb18-7"><a href=""></a><span class="co"># good - middle ground</span></span>
-<span id="cb18-8"><a href=""></a>days_since_last_accident</span>
-<span id="cb18-9"><a href=""></a></span>
-<span id="cb18-10"><a href=""></a><span class="co"># not ideal - unnecessarily precise</span></span>
-<span id="cb18-11"><a href=""></a>days_since_last_accident_floor_4_lab_23</span>
-<span id="cb18-12"><a href=""></a></span>
-<span id="cb18-13"><a href=""></a><span class="co"># ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -684,7 +678,7 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Don’t go too far with making names precise.</strong></p>
+<p><strong>Include critical information, exclude redundant details, and choose names that reflect the right level of abstraction for their purpose.</strong></p>
 </div>
 </div>
 </div>
@@ -696,8 +690,8 @@
 <div class="fragment">
 <p>E.g., here is a text editor class method to get position of a character:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">def</span> get_char_position(x: <span class="bu">int</span>, y: <span class="bu">int</span>):</span>
-<span id="cb19-2"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="kw">def</span> get_char_position(x: <span class="bu">int</span>, y: <span class="bu">int</span>):</span>
+<span id="cb18-2"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -709,8 +703,8 @@
 <div class="fragment">
 <p>You can avoid such misinterpretation with better names:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="kw">def</span> get_char_position(line_index: <span class="bu">int</span>, char_index: <span class="bu">int</span>):</span>
-<span id="cb20-2"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">def</span> get_char_position(line_index: <span class="bu">int</span>, char_index: <span class="bu">int</span>):</span>
+<span id="cb19-2"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -737,17 +731,17 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb21-2"><a href=""></a>n <span class="op">=</span> x</span>
-<span id="cb21-3"><a href=""></a>nn <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb21-4"><a href=""></a>nnn <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="co"># bad</span></span>
+<span id="cb20-2"><a href=""></a>n <span class="op">=</span> x</span>
+<span id="cb20-3"><a href=""></a>nn <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb20-4"><a href=""></a>nnn <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb22-2"><a href=""></a>n <span class="op">=</span> x</span>
-<span id="cb22-3"><a href=""></a>n_square <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb22-4"><a href=""></a>n_cube <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># good</span></span>
+<span id="cb21-2"><a href=""></a>n <span class="op">=</span> x</span>
+<span id="cb21-3"><a href=""></a>n_square <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb21-4"><a href=""></a>n_cube <span class="op">=</span> x <span class="op">**</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
@@ -775,15 +769,15 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb23-2"><a href=""></a><span class="kw">def</span> array_map(a, f):</span>
-<span id="cb23-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="co"># bad</span></span>
+<span id="cb22-2"><a href=""></a><span class="kw">def</span> array_map(a, f):</span>
+<span id="cb22-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb24-2"><a href=""></a><span class="kw">def</span> array_map(arr, fun):</span>
-<span id="cb24-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href=""></a><span class="co"># good</span></span>
+<span id="cb23-2"><a href=""></a><span class="kw">def</span> array_map(arr, fun):</span>
+<span id="cb23-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>If needed, it wouldn’t be easy either to search for and/or to rename these parameters in the codebase because searching for <code>a</code> or <code>f</code> would flag <strong>all</strong> <em>a</em>s and <em>f</em>s (<strong>a</strong>pi, <strong>f</strong>ile, etc.).</p>
@@ -813,23 +807,23 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># bad - scattered when tab-completing</span></span>
-<span id="cb25-2"><a href=""></a>chi_square_test()</span>
-<span id="cb25-3"><a href=""></a>fisher_exact()</span>
-<span id="cb25-4"><a href=""></a>t_test_paired()</span>
-<span id="cb25-5"><a href=""></a>wilcoxon_test()</span>
-<span id="cb25-6"><a href=""></a>mann_whitney()</span>
-<span id="cb25-7"><a href=""></a>anova_one_way()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="co"># bad - scattered when tab-completing</span></span>
+<span id="cb24-2"><a href=""></a>chi_square_test()</span>
+<span id="cb24-3"><a href=""></a>fisher_exact()</span>
+<span id="cb24-4"><a href=""></a>t_test_paired()</span>
+<span id="cb24-5"><a href=""></a>wilcoxon_test()</span>
+<span id="cb24-6"><a href=""></a>mann_whitney()</span>
+<span id="cb24-7"><a href=""></a>anova_one_way()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="co"># good - birds of a feather flock together</span></span>
-<span id="cb26-2"><a href=""></a>test_chi_square()</span>
-<span id="cb26-3"><a href=""></a>test_fisher_exact()</span>
-<span id="cb26-4"><a href=""></a>test_t_paired()</span>
-<span id="cb26-5"><a href=""></a>test_wilcoxon()</span>
-<span id="cb26-6"><a href=""></a>test_mann_whitney()</span>
-<span id="cb26-7"><a href=""></a>test_anova_one_way()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># good - birds of a feather flock together</span></span>
+<span id="cb25-2"><a href=""></a>test_chi_square()</span>
+<span id="cb25-3"><a href=""></a>test_fisher_exact()</span>
+<span id="cb25-4"><a href=""></a>test_t_paired()</span>
+<span id="cb25-5"><a href=""></a>test_wilcoxon()</span>
+<span id="cb25-6"><a href=""></a>test_mann_whitney()</span>
+<span id="cb25-7"><a href=""></a>test_anova_one_way()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>This principle also applies to variables, classes, and modules within the same domain.</p>
@@ -845,44 +839,6 @@
 </div>
 <div class="callout-content">
 <p><strong>Use consistent prefixes or namespacing to group related functionality together.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="names-should-honour-the-conventions" class="slide level2 smaller">
-<h2>Names should honour the conventions</h2>
-<p>The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.</p>
-<div class="fragment">
-<p>For example, Python convention is to use PascalCase for class names and snake_case for variables.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># non-conventional</span></span>
-<span id="cb27-2"><a href=""></a><span class="kw">class</span> playerentity:</span>
-<span id="cb27-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb27-4"><a href=""></a>        <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># conventional</span></span>
-<span id="cb28-2"><a href=""></a><span class="kw">class</span> PlayerEntity:</span>
-<span id="cb28-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb28-4"><a href=""></a>        <span class="va">self</span>.hair_color <span class="op">=</span> <span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div></div>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Don’t break conventions unless other guidelines require overriding them for consistency.</strong></p>
 </div>
 </div>
 </div>
@@ -905,17 +861,17 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="co"># not great</span></span>
-<span id="cb29-2"><a href=""></a><span class="cf">if</span> child:</span>
-<span id="cb29-3"><a href=""></a>    <span class="cf">if</span> parent_supervision:</span>
-<span id="cb29-4"><a href=""></a>        watch_horror_movie <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="co"># not great</span></span>
+<span id="cb26-2"><a href=""></a><span class="cf">if</span> child:</span>
+<span id="cb26-3"><a href=""></a>    <span class="cf">if</span> parent_supervision:</span>
+<span id="cb26-4"><a href=""></a>        watch_horror_movie <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb30-2"><a href=""></a><span class="cf">if</span> is_child:</span>
-<span id="cb30-3"><a href=""></a>    <span class="cf">if</span> has_parent_supervision:</span>
-<span id="cb30-4"><a href=""></a>        can_watch_horror_movie <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="co"># better</span></span>
+<span id="cb27-2"><a href=""></a><span class="cf">if</span> is_child:</span>
+<span id="cb27-3"><a href=""></a>    <span class="cf">if</span> has_parent_supervision:</span>
+<span id="cb27-4"><a href=""></a>        can_watch_horror_movie <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="fragment">
@@ -923,13 +879,13 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="co"># double negation - difficult</span></span>
-<span id="cb31-2"><a href=""></a>is_firewall_disabled <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="co"># double negation - difficult</span></span>
+<span id="cb28-2"><a href=""></a>is_firewall_disabled <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="co"># better</span></span>
-<span id="cb32-2"><a href=""></a>is_firewall_enabled <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="co"># better</span></span>
+<span id="cb29-2"><a href=""></a>is_firewall_enabled <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><p>But if the variable is only ever used in its false version (e.g.&nbsp;<code>is_volcano_inactive</code>), the negative version can be easier to work with.</p>
 </div>
@@ -956,13 +912,13 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="co"># unclear - one fish or many fish?</span></span>
-<span id="cb33-2"><a href=""></a>[f <span class="cf">for</span> f <span class="kw">in</span> fish <span class="cf">if</span> f.is_healthy()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="co"># unclear - one fish or many fish?</span></span>
+<span id="cb30-2"><a href=""></a>[f <span class="cf">for</span> f <span class="kw">in</span> fish <span class="cf">if</span> f.is_healthy()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># clearer - obviously plural</span></span>
-<span id="cb34-2"><a href=""></a>[fish <span class="cf">for</span> fish <span class="kw">in</span> fishes <span class="cf">if</span> fish.is_healthy()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="co"># clearer - obviously plural</span></span>
+<span id="cb31-2"><a href=""></a>[fish <span class="cf">for</span> fish <span class="kw">in</span> fishes <span class="cf">if</span> fish.is_healthy()]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <p>Similarly: <code>peoples</code>, <code>sheeps</code>, <code>deers</code>, <code>feedbacks</code>, etc. can be clearer than grammatically correct forms.</p>
@@ -982,36 +938,43 @@
 </div>
 </div>
 </section>
-<section id="choose-names-from-problem-domain" class="slide level2 smaller">
-<h2>Choose names from problem domain</h2>
+<section id="focus-on-problem-domain" class="slide level2 smaller">
+<h2>Focus on problem domain</h2>
 <p>Names should reflect <strong>what</strong> the code does (problem domain) rather than <strong>how</strong> it does it (implementation domain).</p>
 <div class="fragment">
-<p>Examples of problem domain vs implementation domain naming:</p>
+<p><strong>Choose business purpose over technical mechanism:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="co"># implementation domain - how it works</span></span>
-<span id="cb35-2"><a href=""></a>binary_search_users()</span>
-<span id="cb35-3"><a href=""></a>hash_table_lookup()</span>
-<span id="cb35-4"><a href=""></a>linked_list_add()</span>
-<span id="cb35-5"><a href=""></a>sql_query_products()</span>
-<span id="cb35-6"><a href=""></a>json_parse_config()</span>
-<span id="cb35-7"><a href=""></a>thread_pool_execute()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="co"># implementation domain - how it works</span></span>
+<span id="cb32-2"><a href=""></a>binary_search_users()</span>
+<span id="cb32-3"><a href=""></a>hash_table_lookup()</span>
+<span id="cb32-4"><a href=""></a>sql_query_products()</span>
+<span id="cb32-5"><a href=""></a></span>
+<span id="cb32-6"><a href=""></a><span class="co"># data structure in name</span></span>
+<span id="cb32-7"><a href=""></a>bonuses_pd  <span class="co"># pandas DataFrame</span></span>
+<span id="cb32-8"><a href=""></a>aws_s3_url  <span class="co"># AWS bucket</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># problem domain - what it does</span></span>
-<span id="cb36-2"><a href=""></a>find_user()</span>
-<span id="cb36-3"><a href=""></a>get_customer()</span>
-<span id="cb36-4"><a href=""></a>add_item()</span>
-<span id="cb36-5"><a href=""></a>fetch_products()</span>
-<span id="cb36-6"><a href=""></a>load_config()</span>
-<span id="cb36-7"><a href=""></a>process_request()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="co"># problem domain - what it does</span></span>
+<span id="cb33-2"><a href=""></a>find_user()</span>
+<span id="cb33-3"><a href=""></a>get_customer()</span>
+<span id="cb33-4"><a href=""></a>fetch_products()</span>
+<span id="cb33-5"><a href=""></a></span>
+<span id="cb33-6"><a href=""></a><span class="co"># implementation independent</span></span>
+<span id="cb33-7"><a href=""></a>bonuses     <span class="co"># any data structure</span></span>
+<span id="cb33-8"><a href=""></a>bucket_url  <span class="co"># any cloud service</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
 <div class="fragment">
-<p>The problem domain names remain meaningful even if you switch from binary search to linear search, from hash tables to arrays, or from SQL to NoSQL databases.</p>
+<p><strong>Benefits of problem domain names:</strong></p>
+<ul>
+<li>Remain meaningful when implementations change</li>
+<li>Reduce maintenance cost (no rename needed when switching technologies)</li>
+<li>Focus on business logic rather than technical details</li>
+</ul>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -1023,83 +986,7 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Name based on the business purpose, not the technical mechanism.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="avoid-implementation-details-in-names" class="slide level2 smaller">
-<h2>Avoid implementation details in names</h2>
-<p>Names with implementation details (e.g., data structure) have high maintenance cost. When implementation changes, identifiers need to change as well.</p>
-<div class="fragment">
-<p>E.g., consider variables that store data in different data structures or cloud services:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb37-2"><a href=""></a>bonuses_pd  <span class="co"># pandas DataFrame</span></span>
-<span id="cb37-3"><a href=""></a>bonuses_pl  <span class="co"># polars DataFrame</span></span>
-<span id="cb37-4"><a href=""></a></span>
-<span id="cb37-5"><a href=""></a>aws_s3_url  <span class="co"># AWS bucket</span></span>
-<span id="cb37-6"><a href=""></a>gcp_url     <span class="co"># GCP bucket</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb38-2"><a href=""></a>bonuses    <span class="co"># data structure independent</span></span>
-<span id="cb38-3"><a href=""></a></span>
-<span id="cb38-4"><a href=""></a>bucket_url <span class="co"># cloud service independent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div><p>Note that good names don’t need to change even if the implementation details change.</p>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Names should be independent of implementation details.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="find-correct-abstraction-level-for-names" class="slide level2 smaller">
-<h2>Find correct abstraction level for names</h2>
-<p>Don’t select names at a lower level of abstraction just because that’s where the corresponding objects were defined.</p>
-<p>E.g., if you are writing a function to compute difference between before and after values, the parameter names should reflect the higher-level concept.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb39-2"><a href=""></a><span class="kw">def</span> compare(value_before, value_after):</span>
-<span id="cb39-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb40-2"><a href=""></a><span class="kw">def</span> compare(value1, value2):</span>
-<span id="cb40-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div></div>
-<p>Note that the good parameter names clarify the general purpose of the function, which is to compute difference between <em>any</em> two values, not just before and after values.</p>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Choose names that reflect the higher-level concept.</strong></p>
+<p><strong>Good names don’t need to change when implementation details change.</strong></p>
 </div>
 </div>
 </div>
@@ -1112,19 +999,19 @@
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="co"># bad</span></span>
-<span id="cb41-2"><a href=""></a>test1</span>
-<span id="cb41-3"><a href=""></a>my_test</span>
-<span id="cb41-4"><a href=""></a>retrieve_commands</span>
-<span id="cb41-5"><a href=""></a>serialize_success</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># bad</span></span>
+<span id="cb34-2"><a href=""></a>test1</span>
+<span id="cb34-3"><a href=""></a>my_test</span>
+<span id="cb34-4"><a href=""></a>retrieve_commands</span>
+<span id="cb34-5"><a href=""></a>serialize_success</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:70%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="co"># good</span></span>
-<span id="cb42-2"><a href=""></a>test_array</span>
-<span id="cb42-3"><a href=""></a>test_multilinear_model</span>
-<span id="cb42-4"><a href=""></a>test_all_the_saved_commands_should_be_retrieved</span>
-<span id="cb42-5"><a href=""></a>test_should_serialize_the_formula_cache_if_required</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="co"># good</span></span>
+<span id="cb35-2"><a href=""></a>test_array</span>
+<span id="cb35-3"><a href=""></a>test_multilinear_model</span>
+<span id="cb35-4"><a href=""></a>test_all_the_saved_commands_should_be_retrieved</span>
+<span id="cb35-5"><a href=""></a>test_should_serialize_the_formula_cache_if_required</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -1179,12 +1066,12 @@
 <div class="fragment">
 <p>If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="co"># generate year month date hour minute second</span></span>
-<span id="cb43-2"><a href=""></a>genymdhms()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># generate year month date hour minute second</span></span>
+<span id="cb36-2"><a href=""></a>genymdhms()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is a much better (and pronounceable) alternative:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>generate_timestamp()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>generate_timestamp()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -1192,36 +1079,36 @@
 <p>Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</p>
 </div>
 </section>
-<section id="use-consistent-lexicon-in-a-project" class="slide level2 smaller">
-<h2>Use consistent lexicon in a project</h2>
-<p>Once you settle down on a mapping from an abstraction to a name, use it consistently <em>throughout the codebase</em>.</p>
+<section id="follow-and-respect-naming-conventions" class="slide level2 smaller">
+<h2>Follow and respect naming conventions</h2>
+<p>Conventions create predictable patterns that reduce cognitive load and enable safe assumptions.</p>
 <div class="fragment">
-<p>E.g., two similar methods here have different names across Python classes:</p>
+<p><strong>Language and domain conventions matter:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>CreditCardAccount().retrieve_expenditure()</span>
-<span id="cb45-2"><a href=""></a>DebitCardAccount().fetch_expenditure()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="co"># violates Python conventions</span></span>
+<span id="cb38-2"><a href=""></a><span class="kw">class</span> playerentity:</span>
+<span id="cb38-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb38-4"><a href=""></a>        <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb38-5"><a href=""></a>        </span>
+<span id="cb38-6"><a href=""></a><span class="co"># violates loop conventions</span></span>
+<span id="cb38-7"><a href=""></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb38-8"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[j])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Both of these methods should either be named <code>.retrieve_expenditure()</code> or <code>.fetch_expenditure()</code>.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># follows Python conventions</span></span>
+<span id="cb39-2"><a href=""></a><span class="kw">class</span> PlayerEntity:</span>
+<span id="cb39-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb39-4"><a href=""></a>        <span class="va">self</span>.hair_color <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb39-5"><a href=""></a>        </span>
+<span id="cb39-6"><a href=""></a><span class="co"># follows loop conventions</span></span>
+<span id="cb39-7"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb39-8"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[i])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</div></div>
 </div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Consistency of naming conventions should be respected at both narrow and broad scopes.</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="naming-molds-templates-for-consistency" class="slide level2 smaller">
-<h2>Naming molds: Templates for consistency</h2>
-<p>Feitelson’s research reveals that developers use <strong>naming molds</strong>—consistent templates for constructing identifiers.</p>
 <div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -1229,112 +1116,16 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Examples of Different Naming Molds</strong></p>
-</div>
-<div class="callout-content">
-<table class="caption-top">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 24%">
-<col style="width: 24%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Concept</strong></th>
-<th><strong>Mold A</strong></th>
-<th><strong>Mold B</strong></th>
-<th><strong>Mold C</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Maximum user connections</td>
-<td><code>max_user_connections</code></td>
-<td><code>user_connection_limit</code></td>
-<td><code>peak_user_count</code></td>
-</tr>
-<tr class="even">
-<td>Total file size in bytes</td>
-<td><code>total_file_size_bytes</code></td>
-<td><code>file_byte_count</code></td>
-<td><code>accumulated_file_bytes</code></td>
-</tr>
-<tr class="odd">
-<td>Minimum password length</td>
-<td><code>min_password_length</code></td>
-<td><code>password_length_floor</code></td>
-<td><code>shortest_password_chars</code></td>
-</tr>
-<tr class="even">
-<td>Current active sessions</td>
-<td><code>current_active_sessions</code></td>
-<td><code>active_session_count</code></td>
-<td><code>live_session_tally</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>The Consistency Advantage</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Pick one mold and use it consistently.</strong> Mixed molds in the same codebase force readers to decode different patterns, increasing cognitive load.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Feitelson’s Three-Step Model</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li><strong>Select concepts</strong> to include in the name</li>
-<li><strong>Choose words</strong> to represent each concept<br>
-</li>
-<li><strong>Construct the name</strong> using a consistent mold</li>
-</ol>
-<p>This deliberate process produces names that are more precise and maintainable.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="choose-informative-naming-conventions" class="slide level2 smaller">
-<h2>Choose informative naming conventions</h2>
-<p>Having different name formats for different entities <strong>acts like syntax highlighting</strong>. That is, a name not only represents an entity but also provides hints about its nature.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Example Python naming convention guidelines</strong></p>
+<p><strong>Informative conventions act like syntax highlighting</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Use UPPER_CASE for constants (<code>PI = 3.14159</code>, <code>MAX_RETRIES = 5</code>)</li>
-<li>Use snake_case for variables and functions (<code>user_age = 25</code>, <code>def calculate_total():</code>)</li>
-<li>Use PascalCase for class names (<code>class BankAccount:</code>, <code>class DataProcessor:</code>)</li>
-<li>Prefix private attributes with single underscore (<code>self._balance = 0</code>)</li>
-<li>Use trailing underscore to avoid keyword conflicts (<code>class_ = "math"</code>, <code>type_ = "int"</code>)</li>
-<li>Use descriptive module names in lowercase (<code>utils.py</code>, <code>data_handler.py</code>)</li>
+<li>UPPER_CASE for constants (<code>MAX_RETRIES = 5</code>)</li>
+<li>snake_case for variables/functions (<code>user_age</code>, <code>calculate_total()</code>)</li>
+<li>PascalCase for classes (<code>BankAccount</code>, <code>DataProcessor</code>)</li>
+<li>Prefix private attributes (<code>self._balance</code>)</li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -1460,10 +1251,10 @@
 <div class="callout-content">
 <p>Trying to find a name highlights that the function is doing more than one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href=""></a><span class="kw">def</span> mystery_function(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb46-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
-<span id="cb46-3"><a href=""></a>    <span class="co"># code to sort table</span></span>
-<span id="cb46-4"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="kw">def</span> mystery_function(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb40-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
+<span id="cb40-3"><a href=""></a>    <span class="co"># code to sort table</span></span>
+<span id="cb40-4"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1480,13 +1271,13 @@
 <div class="callout-content">
 <p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href=""></a><span class="kw">def</span> extract_estimates(model):</span>
-<span id="cb47-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
-<span id="cb47-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb47-4"><a href=""></a></span>
-<span id="cb47-5"><a href=""></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb47-6"><a href=""></a>    <span class="co"># code to sort table</span></span>
-<span id="cb47-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="kw">def</span> extract_estimates(model):</span>
+<span id="cb41-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
+<span id="cb41-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb41-4"><a href=""></a></span>
+<span id="cb41-5"><a href=""></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb41-6"><a href=""></a>    <span class="co"># code to sort table</span></span>
+<span id="cb41-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1514,14 +1305,14 @@
 <div class="callout-content">
 <p>Doing more than one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href=""></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb48-2"><a href=""></a>    <span class="cf">if</span> is_markdown:</span>
-<span id="cb48-3"><a href=""></a>        <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb48-4"><a href=""></a>        <span class="cf">pass</span></span>
-<span id="cb48-5"><a href=""></a>    </span>
-<span id="cb48-6"><a href=""></a>    <span class="cf">if</span> <span class="kw">not</span> is_markdown:</span>
-<span id="cb48-7"><a href=""></a>        <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb48-8"><a href=""></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb42-2"><a href=""></a>    <span class="cf">if</span> is_markdown:</span>
+<span id="cb42-3"><a href=""></a>        <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb42-4"><a href=""></a>        <span class="cf">pass</span></span>
+<span id="cb42-5"><a href=""></a>    </span>
+<span id="cb42-6"><a href=""></a>    <span class="cf">if</span> <span class="kw">not</span> is_markdown:</span>
+<span id="cb42-7"><a href=""></a>        <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb42-8"><a href=""></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1538,13 +1329,13 @@
 <div class="callout-content">
 <p>Doing one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href=""></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb49-2"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb49-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb49-4"><a href=""></a></span>
-<span id="cb49-5"><a href=""></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb49-6"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb49-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb43-2"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb43-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb43-4"><a href=""></a></span>
+<span id="cb43-5"><a href=""></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb43-6"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb43-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1552,11 +1343,6 @@
 </div></div>
 </div>
 </section></section>
-<section id="in-your-name-i-will-hope-for-your-name-is-good." class="title-slide slide level1 center">
-<h1>“In your name I will hope, for your name is good.”</h1>
-<p>- Psalms 52:9</p>
-</section>
-
 <section>
 <section id="utilizing-tools" class="title-slide slide level1 center">
 <h1>Utilizing tools</h1>
@@ -1618,23 +1404,23 @@
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="co"># Your initial attempt</span></span>
-<span id="cb50-2"><a href=""></a><span class="kw">def</span> process_data(x):</span>
-<span id="cb50-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb50-4"><a href=""></a></span>
-<span id="cb50-5"><a href=""></a><span class="kw">def</span> calc(a, b):</span>
-<span id="cb50-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb50-7"><a href=""></a></span>
-<span id="cb50-8"><a href=""></a>temp_var <span class="op">=</span> get_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a><span class="co"># Your initial attempt</span></span>
+<span id="cb44-2"><a href=""></a><span class="kw">def</span> process_data(x):</span>
+<span id="cb44-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb44-4"><a href=""></a></span>
+<span id="cb44-5"><a href=""></a><span class="kw">def</span> calc(a, b):</span>
+<span id="cb44-6"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb44-7"><a href=""></a></span>
+<span id="cb44-8"><a href=""></a>temp_var <span class="op">=</span> get_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href=""></a><span class="co"># AI suggestions</span></span>
-<span id="cb51-2"><a href=""></a><span class="kw">def</span> validate_user_input(user_data):</span>
-<span id="cb51-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb51-4"><a href=""></a></span>
-<span id="cb51-5"><a href=""></a><span class="kw">def</span> calculate_compound_interest(principal, rate):</span>
-<span id="cb51-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb51-7"><a href=""></a></span>
-<span id="cb51-8"><a href=""></a>user_profile <span class="op">=</span> get_user_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="co"># AI suggestions</span></span>
+<span id="cb45-2"><a href=""></a><span class="kw">def</span> validate_user_input(user_data):</span>
+<span id="cb45-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb45-4"><a href=""></a></span>
+<span id="cb45-5"><a href=""></a><span class="kw">def</span> calculate_compound_interest(principal, rate):</span>
+<span id="cb45-6"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb45-7"><a href=""></a></span>
+<span id="cb45-8"><a href=""></a>user_profile <span class="op">=</span> get_user_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </div>
 <div class="fragment">
@@ -1698,10 +1484,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>The Review Advantage</strong></p>
+<p><strong>The Code Review Advantage</strong></p>
 </div>
 <div class="callout-content">
-<p>Code review provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of your code.</p>
+<p>It provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of code.</p>
 </div>
 </div>
 </div>
@@ -1710,7 +1496,9 @@
 <section>
 <section id="benefits-of-good-names" class="title-slide slide level1 center">
 <h1>Benefits of good names</h1>
-
+<blockquote>
+<p>“<em>In your name I will hope, for your name is good.</em>” - Psalms 52:9</p>
+</blockquote>
 </section>
 <section id="whats-in-a-name-well-everything" class="slide level2 smaller">
 <h2><em>“What’s in a name?”</em> Well, everything!</h2>
@@ -1755,11 +1543,14 @@
 <h2>Worth the struggle</h2>
 <p>Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing the accumulation of complexity in the system.</p>
 <p><strong>The more you do it, the easier it will get!</strong></p>
-<p>And, after a while, you won’t even need to think long and hard to come up with a good name. You will instinctively think of one.</p>
+<p><br></p>
+<div style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;">
+<p>“<em>Using understandable names is a foundational step to producing quality software.</em>” - Al Sweigart</p>
+</div>
 </section></section>
-<section id="using-understandable-names-is-a-foundational-step-to-producing-quality-software." class="title-slide slide level1 center">
-<h1>“Using understandable names is a foundational step to producing quality software.”</h1>
-<p>- Al Sweigart</p>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You</h1>
+<p>And Happy Naming! 😊</p>
 </section>
 
 <section>
@@ -1796,72 +1587,8 @@
 <p><i class="fa-brands fa-github" aria-label="github"></i> <a href="http://github.com/IndrajeetPatil" target="_blank">GitHub</a></p>
 <p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/" target="_blank">Website</a></p>
 <p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:patilindrajeet.science@gmail.com" target="_blank">E-mail</a></p>
+
 </section>
-
-<section>
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>Thank You</h1>
-<p>And Happy Naming! 😊</p>
-</section>
-<section id="session-information" class="slide level2 smaller">
-<h2>Session information</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">include_base =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.5.1 (2025-06-13)
- os       Ubuntu 24.04.3 LTS
- system   x86_64, linux-gnu
- ui       X11
- language (EN)
- collate  C.UTF-8
- ctype    C.UTF-8
- tz       UTC
- date     2025-08-29
- pandoc   3.7.0.2 @ /opt/hostedtoolcache/pandoc/3.7.0.2/x64/ (via rmarkdown)
- quarto   1.8.21 @ /usr/local/bin/quarto
-
-─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- base        * 4.5.1   2025-06-13 [3] local
- cli           3.6.5   2025-04-23 [1] RSPM
- compiler      4.5.1   2025-06-13 [3] local
- datasets    * 4.5.1   2025-06-13 [3] local
- digest        0.6.37  2024-08-19 [1] RSPM
- evaluate      1.0.5   2025-08-27 [1] RSPM
- fastmap       1.2.0   2024-05-15 [1] RSPM
- graphics    * 4.5.1   2025-06-13 [3] local
- grDevices   * 4.5.1   2025-06-13 [3] local
- grid          4.5.1   2025-06-13 [3] local
- htmltools     0.5.8.1 2024-04-04 [1] RSPM
- jsonlite      2.0.0   2025-03-27 [1] RSPM
- knitr         1.50    2025-03-16 [1] RSPM
- lattice       0.22-7  2025-04-02 [3] CRAN (R 4.5.1)
- Matrix        1.7-4   2025-08-28 [1] CRAN (R 4.5.1)
- methods     * 4.5.1   2025-06-13 [3] local
- png           0.1-8   2022-11-29 [1] RSPM
- Rcpp          1.1.0   2025-07-02 [1] RSPM
- reticulate    1.43.0  2025-07-21 [1] RSPM
- rlang         1.1.6   2025-04-11 [1] RSPM
- rmarkdown     2.29    2024-11-04 [1] RSPM
- sessioninfo   1.2.3   2025-02-05 [1] any (@1.2.3)
- stats       * 4.5.1   2025-06-13 [3] local
- tools         4.5.1   2025-06-13 [3] local
- utils       * 4.5.1   2025-06-13 [3] local
- xfun          0.53    2025-08-19 [1] RSPM
- yaml          2.3.10  2024-07-26 [1] RSPM
-
- [1] /home/runner/work/_temp/Library
- [2] /opt/R/4.5.1/lib/R/site-library
- [3] /opt/R/4.5.1/lib/R/library
- * ── Packages attached to the search path.
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
-</div>
-</div>
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
