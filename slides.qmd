@@ -100,7 +100,7 @@ Bad names create a cascade of problems that compound over time.
 
 ## The multiplication effect
 
-**Poor naming doesn't just affect individual functions—it spreads confusion throughout the entire system.**
+**Poor naming spreads confusion throughout the entire system.**
 
 :::
 
@@ -180,7 +180,7 @@ How good a name is can be assessed by how detailed the accompanying comment need
 
 . . .
 
-E.g., the function and parameter are named poorly here, and so comments need to do all the heavy lifting:
+Poor names require heavy commenting:
 
 ```{python}
 # function to convert temperature from Fahrenheit to Celsius scale
@@ -210,7 +210,7 @@ No need for a comment here!
 
 ## Generic names should follow conventions {.smaller}
 
-Using generic names can improve code readability, but *only if* language or domain customs are followed.
+Generic names work *only if* you follow established conventions.
 
 . . .
 
@@ -236,7 +236,7 @@ for j in range(len(arr)):
 
 ## Alternatives to generic names {.smaller}
 
-If a loop is longer than a few lines, use more meaningful loop variable names than `i`, `j`, `k`, etc. because you will quickly lose track of what they mean.
+For longer loops, use meaningful names instead of `i`, `j`, `k`:
 
 :::: {.columns}
 
@@ -306,11 +306,11 @@ if right < left:
 
 ## Names should be consistent {.smaller}
 
-Consistent names **reduce cognitive burden** because if the reader encounters a name in one context, they can safely reuse that knowledge in another context.
+Consistent names **reduce cognitive burden** by allowing readers to safely reuse knowledge across contexts.
 
 . . .
 
-For example, these names are inconsistent since the reader can't safely assume that the name *size* means the same thing throughout the program.
+These names are inconsistent—*size* means different things in different contexts:
 
 :::: {.columns}
 
@@ -344,7 +344,7 @@ length = len(a)
 
 ::: {.callout-tip}
 
-**Allow users to make safe assumptions about what the names represent across different scopes/contexts.**
+**Enable safe assumptions about names across different contexts.**
 
 :::
 
