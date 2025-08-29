@@ -5,7 +5,6 @@ format:
     theme: simple
     slide-number: true
     preview-links: auto
-    embed-resources: true
     keyboard: true
     touch: true
     help: true
