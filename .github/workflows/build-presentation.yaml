@@ -36,7 +36,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          upgrade: 'TRUE'
+          upgrade: "TRUE"
 
       - name: Render slides
         run: |
@@ -55,4 +55,4 @@ jobs:
         run: |
           cp slides/slides.pdf . && rm -rf slides
 
-      - uses: stefanzweifel/git-auto-commit-action@v5.1.0
+      - uses: stefanzweifel/git-auto-commit-action@v6
