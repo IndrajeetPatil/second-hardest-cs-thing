@@ -9,6 +9,7 @@ format:
     keyboard: true
     touch: true
     help: true
+    include-in-header: meta-tags.html
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
 #     subtitle: "Thoughts on naming things for software development"
