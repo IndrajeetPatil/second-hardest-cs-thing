@@ -180,25 +180,35 @@ How good a name is can be assessed by how detailed the accompanying comment need
 
 . . .
 
-Poor names require heavy commenting:
+:::: {.columns}
+
+::: {.column width='45%'}
+
+Poor names require more comments:
 
 ```{python}
-# function to convert temperature from Fahrenheit to Celsius scale
+# function to convert temperature 
+# from Fahrenheit to Celsius scale
 # temp is the temperature in Fahrenheit
-def unit_converter(temp: float) -> float:
+def unit_converter(temp: float):
     pass
 ```
 
-. . .
+:::
 
-Contrast it with this:
+::: {.column width='55%'}
+
+Good names are self-documenting:
 
 ```{python}
-def fahrenheit_to_celsius(temp_fahrenheit: float) -> float:
+def fahrenheit_to_celsius(temp_fahrenheit: float):
     pass
 ```
+<br>
 
-No need for a comment here!
+:::
+
+::::
 
 . . .
 
@@ -208,31 +218,6 @@ No need for a comment here!
 
 :::
 
-## Generic names should follow conventions {.smaller}
-
-Generic names work *only if* you follow established conventions.
-
-. . .
-
-Examples:
-
-- In a nested loop, using `j` for outer and `i` for inner loop index is confusing!
-
-```{python}
-for j in range(len(arr)):
-    for i in range(len(arr[j])):
-```
-
-- `tmp` shouldn't be used to store objects that are not temporary
-- `retVal` shouldn't be used for objects not returned from a function
-
-. . .
-
-::: {.callout-tip}
-
-**Don't violate reader assumptions about what generic names represent.**
-
-:::
 
 ## Alternatives to generic names {.smaller}
 
@@ -304,36 +289,40 @@ if right < left:
 
 :::
 
-## Names should be consistent {.smaller}
+## Maintain consistency across codebase {.smaller}
 
-Consistent names **reduce cognitive burden** by allowing readers to safely reuse knowledge across contexts.
+Consistent naming **reduces cognitive burden** by allowing readers to safely reuse knowledge across contexts.
 
 . . .
 
-These names are inconsistent—*size* means different things in different contexts:
+**Avoid conflicting meanings for the same word:**
 
 :::: {.columns}
 
-::: {.column width='60%'}
+::: {.column width='50%'}
 
 ```{python}
-# context-1: `size` stands for number of memory bytes
+# inconsistent - size means different things
 size = len(x.encode('utf-8'))  # bytes
+size = len(a)  # elements
 
-# context-2: `size` stands for number of elements
-size = len(a)  # length
+# inconsistent - different words, same concept
+CreditCardAccount().retrieve_expenditure()
+DebitCardAccount().fetch_expenditure()
 ```
 
 :::
 
-::: {.column width='40%'}
+::: {.column width='50%'}
 
 ```{python}
-# context-1:
-size = len(x.encode('utf-8'))
-
-# context-2:
+# consistent - clear distinctions
+byte_size = len(x.encode('utf-8'))
 length = len(a)
+
+# consistent - same word, same concept
+CreditCardAccount().retrieve_expenditure()
+DebitCardAccount().retrieve_expenditure()
 ```
 
 :::
@@ -342,9 +331,25 @@ length = len(a)
 
 . . .
 
+**Use naming molds (templates) consistently:**
+
+::: {.callout-note}
+
+## Common Naming Patterns (Pick One and Use Consistently)
+
+| **Concept** | **Adjective-Noun Pattern** | **Noun-Descriptor Pattern** | **Action-Object Pattern** |
+|-------------|------------|------------|------------|
+| Maximum user connections | `max_user_connections` | `user_connection_limit` | `track_user_peak` |
+| Total file size in bytes | `total_file_size_bytes` | `file_byte_count` | `calculate_file_bytes` |
+
+:::
+
+
+. . .
+
 ::: {.callout-tip}
 
-**Enable safe assumptions about names across different contexts.**
+**Enable safe assumptions about names across different contexts. Mixed patterns force readers to decode different templates, increasing cognitive load.**
 
 :::
 
@@ -423,21 +428,23 @@ ip_address
 
 :::
 
-## Names should utilize the context {.smaller}
+## Balance precision with conciseness {.smaller}
 
-When naming, avoid redundant words by exploiting the context.
+Find the right level of detail for your context—precise enough to be clear, concise enough to be readable.
 
-E.g. if you are defining a class, its methods and variables will be read in that context.
+. . .
+
+**Use context to eliminate redundancy:**
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
 ```{python}
-# okay
+# redundant in context
 Router.run_router()
-FileHandler.close_file()
 BeerShelf.beer_count
+child_height  # missing units
 ```
 
 :::
@@ -445,25 +452,37 @@ BeerShelf.beer_count
 ::: {.column width='50%'}
 
 ```{python}
-# better
+# leverages context
 Router.run()
-FileHandler.close()
 BeerShelf.count
+child_height_cm  # critical detail
 ```
 
 :::
 
 ::::
 
-But, if doing so imposes ambiguity, then you can of course tolerate some redundancy.
+. . .
+
+**Find the precision sweet spot:**
+
+```{python}
+# too imprecise → okay → good → unnecessarily precise
+d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23
+```
+
+. . .
+
+**Match abstraction level to purpose:**
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
 ```{python}
-# bad
-MediaPlayer.play()
+# too specific for general function
+def compare(value_before, value_after):
+    pass
 ```
 
 :::
@@ -471,9 +490,9 @@ MediaPlayer.play()
 ::: {.column width='50%'}
 
 ```{python}
-# better
-MediaPlayer.play_audio()
-MediaPlayer.play_video()
+# right abstraction level
+def compare(value1, value2):
+    pass
 ```
 
 :::
@@ -484,41 +503,10 @@ MediaPlayer.play_video()
 
 ::: {.callout-tip}
 
-**Shorten names with the help of context.**
+**Include critical information, exclude redundant details, and choose names that reflect the right level of abstraction for their purpose.**
 
 :::
 
-## Names should be precise but not *too* long {.smaller}
-
-How precise (and thus long) the name should be is a **contextual decision**, but keep in mind that long names can obscure the visual structure of a program.
-
-. . .
-
-You can typically find a middle ground between too short and too long names.
-
-```{python}
-# not ideal - too imprecise
-d
-
-# okay - can use more precision
-days
-
-# good - middle ground
-days_since_last_accident
-
-# not ideal - unnecessarily precise
-days_since_last_accident_floor_4_lab_23
-
-# ...
-```
-
-. . .
-
-::: {.callout-tip}
-
-**Don't go too far with making names precise.**
-
-:::
 
 ## Names should be difficult to misinterpret {.smaller}
 
@@ -698,46 +686,6 @@ This principle also applies to variables, classes, and modules within the same d
 
 :::
 
-## Names should honour the conventions {.smaller}
-
-The names should respect the conventions adopted in a given project, organization, programming language, domain of knowledge, etc.
-
-. . .
-
-For example, Python convention is to use PascalCase for class names and snake_case for variables. 
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# non-conventional
-class playerentity:
-    def __init__(self):
-        self.HairColor = ""
-```
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# conventional
-class PlayerEntity:
-    def __init__(self):
-        self.hair_color = ""
-```
-
-:::
-
-::::
-
-. . .
-
-::: {.callout-tip}
-
-**Don't break conventions unless other guidelines require overriding them for consistency.**
-
-:::
 
 <!-- ## Names should clarify dependencies {.smaller} -->
 
@@ -859,13 +807,13 @@ Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than g
 
 :::
 
-## Choose names from problem domain {.smaller}
+## Focus on problem domain {.smaller}
 
 Names should reflect **what** the code does (problem domain) rather than **how** it does it (implementation domain).
 
 . . .
 
-Examples of problem domain vs implementation domain naming:
+**Choose business purpose over technical mechanism:**
 
 :::: {.columns}
 
@@ -875,10 +823,11 @@ Examples of problem domain vs implementation domain naming:
 # implementation domain - how it works
 binary_search_users()
 hash_table_lookup()
-linked_list_add()
 sql_query_products()
-json_parse_config()
-thread_pool_execute()
+
+# data structure in name
+bonuses_pd  # pandas DataFrame
+aws_s3_url  # AWS bucket
 ```
 
 :::
@@ -889,10 +838,11 @@ thread_pool_execute()
 # problem domain - what it does
 find_user()
 get_customer()
-add_item()
 fetch_products()
-load_config()
-process_request()
+
+# implementation independent
+bonuses     # any data structure
+bucket_url  # any cloud service
 ```
 
 :::
@@ -901,103 +851,21 @@ process_request()
 
 . . .
 
-The problem domain names remain meaningful even if you switch from binary search to linear search, from hash tables to arrays, or from SQL to NoSQL databases.
+**Benefits of problem domain names:**
+
+- Remain meaningful when implementations change
+- Reduce maintenance cost (no rename needed when switching technologies)
+- Focus on business logic rather than technical details
 
 . . .
 
 ::: {.callout-tip}
 
-**Name based on the business purpose, not the technical mechanism.**
+**Good names don't need to change when implementation details change.**
 
 :::
 
-## Avoid implementation details in names {.smaller}
 
-Names with implementation details (e.g., data structure) have high maintenance cost. When implementation changes, identifiers need to change as well.
-
-. . .
-
-E.g., consider variables that store data in different data structures or cloud services:
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# bad
-bonuses_pd  # pandas DataFrame
-bonuses_pl  # polars DataFrame
-
-aws_s3_url  # AWS bucket
-gcp_url     # GCP bucket
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# good
-bonuses    # data structure independent
-
-bucket_url # cloud service independent
-
-    
-```
-
-:::
-
-Note that good names don't need to change even if the implementation details change.
-
-::::
-
-. . . 
-
-::: {.callout-tip}
-
-**Names should be independent of implementation details.**
-
-:::
-
-## Find correct abstraction level for names {.smaller}
-
-Don't select names at a lower level of abstraction just because that's where the corresponding objects were defined.
-
-E.g., if you are writing a function to compute difference between before and after values, the parameter names should reflect the higher-level concept.
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# bad
-def compare(value_before, value_after):
-    pass
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# good
-def compare(value1, value2):
-    pass
-```
-
-:::
-
-::::
-
-Note that the good parameter names clarify the general purpose of the function, which is to compute difference between *any* two values, not just before and after values.
-
-. . .
-
-::: {.callout-tip}
-
-**Choose names that reflect the higher-level concept.**
-
-:::
 
 ## Test function names should be detailed {.smaller}
 
@@ -1091,86 +959,60 @@ Additionally, avoid naming separate entities with homonyms.
 
 Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
 
-## Use consistent lexicon in a project {.smaller}
 
-Once you settle down on a mapping from an abstraction to a name, use it consistently *throughout the codebase*.
+
+## Follow and respect naming conventions {.smaller}
+
+Conventions create predictable patterns that reduce cognitive load and enable safe assumptions.
 
 . . .
 
-E.g., two similar methods here have different names across Python classes:
+**Language and domain conventions matter:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
 
 ```{python}
-CreditCardAccount().retrieve_expenditure()
-DebitCardAccount().fetch_expenditure()
+# violates Python conventions
+class playerentity:
+    def __init__(self):
+        self.HairColor = ""
+        
+# violates loop conventions
+for j in range(len(arr)):
+    for i in range(len(arr[j])):
 ```
-
-Both of these methods should either be named `.retrieve_expenditure()` or `.fetch_expenditure()`.
-
-. . .
-
-::: {.callout-tip}
-
-**Consistency of naming conventions should be respected at both narrow and broad scopes.**
 
 :::
 
-## Naming molds: Templates for consistency {.smaller}
+::: {.column width='50%'}
 
-Feitelson's research reveals that developers use **naming molds**—consistent templates for constructing identifiers.
+```{python}
+# follows Python conventions
+class PlayerEntity:
+    def __init__(self):
+        self.hair_color = ""
+        
+# follows loop conventions
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+```
+
+:::
+
+::::
 
 . . .
 
 ::: {.callout-note}
 
-## Examples of Different Naming Molds
+## Informative conventions act like syntax highlighting
 
-| **Concept** | **Mold A** | **Mold B** | **Mold C** |
-|-------------|------------|------------|------------|
-| Maximum user connections | `max_user_connections` | `user_connection_limit` | `peak_user_count` |
-| Total file size in bytes | `total_file_size_bytes` | `file_byte_count` | `accumulated_file_bytes` |
-| Minimum password length | `min_password_length` | `password_length_floor` | `shortest_password_chars` |
-| Current active sessions | `current_active_sessions` | `active_session_count` | `live_session_tally` |
-
-:::
-
-. . .
-
-::: {.callout-tip}
-
-## The Consistency Advantage
-
-**Pick one mold and use it consistently.** Mixed molds in the same codebase force readers to decode different patterns, increasing cognitive load.
-
-:::
-
-. . .
-
-::: {.callout-important collapse="true"}
-
-## Feitelson's Three-Step Model
-
-1. **Select concepts** to include in the name
-2. **Choose words** to represent each concept  
-3. **Construct the name** using a consistent mold
-
-This deliberate process produces names that are more precise and maintainable.
-
-:::
-
-## Choose informative naming conventions {.smaller}
-
-Having different name formats for different entities **acts like syntax highlighting**. That is, a name not only represents an entity but also provides hints about its nature.
-
-:::{.callout-note}
-
-## Example Python naming convention guidelines
-
-- Use UPPER_CASE for constants (`PI = 3.14159`, `MAX_RETRIES = 5`)
-- Use snake_case for variables and functions (`user_age = 25`, `def calculate_total():`)
-- Use PascalCase for class names (`class BankAccount:`, `class DataProcessor:`)
-- Prefix private attributes with single underscore (`self._balance = 0`)
-- Use trailing underscore to avoid keyword conflicts (`class_ = "math"`, `type_ = "int"`)
-- Use descriptive module names in lowercase (`utils.py`, `data_handler.py`)
+- UPPER_CASE for constants (`MAX_RETRIES = 5`)
+- snake_case for variables/functions (`user_age`, `calculate_total()`)
+- PascalCase for classes (`BankAccount`, `DataProcessor`)
+- Prefix private attributes (`self._balance`)
 
 :::
 
@@ -1381,9 +1223,6 @@ def convert_html_to_pdf(file):
 
 ::::
 
-# "In your name I will hope, for your name is good."
-\- Psalms 52:9
-
 # Utilizing tools
 
 ## Naming limitations of QA tools {.smaller}
@@ -1526,13 +1365,16 @@ flowchart TD
 
 ::: {.callout-tip}
 
-## The Review Advantage
+## The Code Review Advantage
 
-Code review provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of your code.
+It provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of code.
 
 :::
 
 # Benefits of good names
+
+> "_In your name I will hope, for your name is good._" 
+- Psalms 52:9
 
 ## *"What's in a name?"* Well, everything! {.smaller}
 
@@ -1572,10 +1414,17 @@ Adopt an investment mindset and remember that the little extra time invested in 
 
 **The more you do it, the easier it will get!**
 
-And, after a while, you won't even need to think long and hard to come up with a good name. You will instinctively think of one.
+<br>
 
-# "Using understandable names is a foundational step to producing quality software."
-\- Al Sweigart
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
+
+"_Using understandable names is a foundational step to producing quality software._" - Al Sweigart
+
+:::
+
+# Thank You 
+
+And Happy Naming! 😊
 
 # Further Reading {.smaller}
 
@@ -1623,12 +1472,3 @@ If you are interested in good programming and software development practices, ch
 
 {{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com){target="_blank"}
 
-# Thank You 
-
-And Happy Naming! 😊
-
-## Session information {.smaller}
-
-```{r, eval=TRUE}
-sessioninfo::session_info(include_base = TRUE)
-```
