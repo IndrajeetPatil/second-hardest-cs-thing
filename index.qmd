@@ -934,32 +934,6 @@ Therefore, it is misleading to continue to call it a getter method, and it shoul
 
 :::
 
-## Names should be pronounceable {.smaller}
-
-This is probably the weakest of the requirements, but one can't deny the ease of communication when names are pronounceable.
-
-. . .
-
-If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.
-
-```{python}
-# generate year month date hour minute second
-genymdhms()
-```
-
-This is a much better (and pronounceable) alternative:
-
-```{python}
-generate_timestamp()
-```
-
-. . .
-
-Additionally, avoid naming separate entities with homonyms.
-
-Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
-
-
 
 ## Follow and respect naming conventions {.smaller}
 
@@ -1084,6 +1058,10 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't use numeric suffixes in names to specify levels.** E.g. variable names `level1`, `level2`, `level3` are not as informative as `beginner`, `intermediate`, `advanced`.
 
+. . .
+
+- **Don't use unpronounceable names.** While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. `generate_timestamp()` is better than `genymdhms()`.
+
 ## {.smaller}
 
 - **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter removes (`rm`) missing values (`NA`). Using it to mean "remove (`rm`) non-authorized (`NA`) entries" for a function parameter will be misleading.
@@ -1095,6 +1073,10 @@ You won't have to remember any of these rules if you follow the following princi
 . . .
 
 - **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
+
+. . .
+
+- **Avoid naming separate entities with homonyms.** Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
 
 . . .
 
