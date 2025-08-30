@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-08-29 12:59:43.534106">
+  <meta name="dcterms.date" content="2025-08-30 12:52:10.706643">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1060,25 +1060,6 @@
 </div>
 </div>
 </section>
-<section id="names-should-be-pronounceable" class="slide level2 smaller">
-<h2>Names should be pronounceable</h2>
-<p>This is probably the weakest of the requirements, but one can’t deny the ease of communication when names are pronounceable.</p>
-<div class="fragment">
-<p>If you are writing a function to generate a time-stamp, discussing the following function verbally would be challenging.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># generate year month date hour minute second</span></span>
-<span id="cb36-2"><a href=""></a>genymdhms()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This is a much better (and pronounceable) alternative:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>generate_timestamp()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p>Additionally, avoid naming separate entities with homonyms.</p>
-<p>Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</p>
-</div>
-</section>
 <section id="follow-and-respect-naming-conventions" class="slide level2 smaller">
 <h2>Follow and respect naming conventions</h2>
 <p>Conventions create predictable patterns that reduce cognitive load and enable safe assumptions.</p>
@@ -1087,25 +1068,25 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="co"># violates Python conventions</span></span>
-<span id="cb38-2"><a href=""></a><span class="kw">class</span> playerentity:</span>
-<span id="cb38-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb38-4"><a href=""></a>        <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb38-5"><a href=""></a>        </span>
-<span id="cb38-6"><a href=""></a><span class="co"># violates loop conventions</span></span>
-<span id="cb38-7"><a href=""></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
-<span id="cb38-8"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[j])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># violates Python conventions</span></span>
+<span id="cb36-2"><a href=""></a><span class="kw">class</span> playerentity:</span>
+<span id="cb36-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb36-4"><a href=""></a>        <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb36-5"><a href=""></a>        </span>
+<span id="cb36-6"><a href=""></a><span class="co"># violates loop conventions</span></span>
+<span id="cb36-7"><a href=""></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb36-8"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[j])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># follows Python conventions</span></span>
-<span id="cb39-2"><a href=""></a><span class="kw">class</span> PlayerEntity:</span>
-<span id="cb39-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb39-4"><a href=""></a>        <span class="va">self</span>.hair_color <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb39-5"><a href=""></a>        </span>
-<span id="cb39-6"><a href=""></a><span class="co"># follows loop conventions</span></span>
-<span id="cb39-7"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
-<span id="cb39-8"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[i])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a><span class="co"># follows Python conventions</span></span>
+<span id="cb37-2"><a href=""></a><span class="kw">class</span> PlayerEntity:</span>
+<span id="cb37-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb37-4"><a href=""></a>        <span class="va">self</span>.hair_color <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb37-5"><a href=""></a>        </span>
+<span id="cb37-6"><a href=""></a><span class="co"># follows loop conventions</span></span>
+<span id="cb37-7"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb37-8"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr[i])):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
@@ -1205,6 +1186,11 @@
 <li><strong>Don’t use numeric suffixes in names to specify levels.</strong> E.g. variable names <code>level1</code>, <code>level2</code>, <code>level3</code> are not as informative as <code>beginner</code>, <code>intermediate</code>, <code>advanced</code>.</li>
 </ul>
 </div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use unpronounceable names.</strong> While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. <code>generate_timestamp()</code> is better than <code>genymdhms()</code>.</li>
+</ul>
+</div>
 </section>
 <section id="section-5" class="slide level2 smaller">
 <h2></h2>
@@ -1219,6 +1205,11 @@
 <div class="fragment">
 <ul>
 <li><strong>Don’t use similar names for entities with different meanings.</strong> E.g. <code>patientRecs</code> and <code>patientReps</code> are easily confused because they are so similar. There should be at least two-letter difference: <code>patientRecords</code> and <code>patientReports</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Avoid naming separate entities with homonyms.</strong> Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1251,10 +1242,10 @@
 <div class="callout-content">
 <p>Trying to find a name highlights that the function is doing more than one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="kw">def</span> mystery_function(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb40-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
-<span id="cb40-3"><a href=""></a>    <span class="co"># code to sort table</span></span>
-<span id="cb40-4"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="kw">def</span> mystery_function(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb38-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
+<span id="cb38-3"><a href=""></a>    <span class="co"># code to sort table</span></span>
+<span id="cb38-4"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1271,13 +1262,13 @@
 <div class="callout-content">
 <p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="kw">def</span> extract_estimates(model):</span>
-<span id="cb41-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
-<span id="cb41-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb41-4"><a href=""></a></span>
-<span id="cb41-5"><a href=""></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb41-6"><a href=""></a>    <span class="co"># code to sort table</span></span>
-<span id="cb41-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="kw">def</span> extract_estimates(model):</span>
+<span id="cb39-2"><a href=""></a>    <span class="co"># code to extract estimates from model</span></span>
+<span id="cb39-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb39-4"><a href=""></a></span>
+<span id="cb39-5"><a href=""></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb39-6"><a href=""></a>    <span class="co"># code to sort table</span></span>
+<span id="cb39-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1305,14 +1296,14 @@
 <div class="callout-content">
 <p>Doing more than one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb42-2"><a href=""></a>    <span class="cf">if</span> is_markdown:</span>
-<span id="cb42-3"><a href=""></a>        <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb42-4"><a href=""></a>        <span class="cf">pass</span></span>
-<span id="cb42-5"><a href=""></a>    </span>
-<span id="cb42-6"><a href=""></a>    <span class="cf">if</span> <span class="kw">not</span> is_markdown:</span>
-<span id="cb42-7"><a href=""></a>        <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb42-8"><a href=""></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb40-2"><a href=""></a>    <span class="cf">if</span> is_markdown:</span>
+<span id="cb40-3"><a href=""></a>        <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb40-4"><a href=""></a>        <span class="cf">pass</span></span>
+<span id="cb40-5"><a href=""></a>    </span>
+<span id="cb40-6"><a href=""></a>    <span class="cf">if</span> <span class="kw">not</span> is_markdown:</span>
+<span id="cb40-7"><a href=""></a>        <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb40-8"><a href=""></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1329,13 +1320,13 @@
 <div class="callout-content">
 <p>Doing one thing.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb43-2"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
-<span id="cb43-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb43-4"><a href=""></a></span>
-<span id="cb43-5"><a href=""></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb43-6"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb43-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb41-2"><a href=""></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb41-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb41-4"><a href=""></a></span>
+<span id="cb41-5"><a href=""></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb41-6"><a href=""></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb41-7"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1404,23 +1395,23 @@
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a><span class="co"># Your initial attempt</span></span>
-<span id="cb44-2"><a href=""></a><span class="kw">def</span> process_data(x):</span>
-<span id="cb44-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb44-4"><a href=""></a></span>
-<span id="cb44-5"><a href=""></a><span class="kw">def</span> calc(a, b):</span>
-<span id="cb44-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb44-7"><a href=""></a></span>
-<span id="cb44-8"><a href=""></a>temp_var <span class="op">=</span> get_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="co"># Your initial attempt</span></span>
+<span id="cb42-2"><a href=""></a><span class="kw">def</span> process_data(x):</span>
+<span id="cb42-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb42-4"><a href=""></a></span>
+<span id="cb42-5"><a href=""></a><span class="kw">def</span> calc(a, b):</span>
+<span id="cb42-6"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb42-7"><a href=""></a></span>
+<span id="cb42-8"><a href=""></a>temp_var <span class="op">=</span> get_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="co"># AI suggestions</span></span>
-<span id="cb45-2"><a href=""></a><span class="kw">def</span> validate_user_input(user_data):</span>
-<span id="cb45-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb45-4"><a href=""></a></span>
-<span id="cb45-5"><a href=""></a><span class="kw">def</span> calculate_compound_interest(principal, rate):</span>
-<span id="cb45-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb45-7"><a href=""></a></span>
-<span id="cb45-8"><a href=""></a>user_profile <span class="op">=</span> get_user_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="co"># AI suggestions</span></span>
+<span id="cb43-2"><a href=""></a><span class="kw">def</span> validate_user_input(user_data):</span>
+<span id="cb43-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb43-4"><a href=""></a></span>
+<span id="cb43-5"><a href=""></a><span class="kw">def</span> calculate_compound_interest(principal, rate):</span>
+<span id="cb43-6"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb43-7"><a href=""></a></span>
+<span id="cb43-8"><a href=""></a>user_profile <span class="op">=</span> get_user_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </div>
 <div class="fragment">
