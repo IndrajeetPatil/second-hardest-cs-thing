@@ -5,7 +5,8 @@
       "WebFetch(domain:quarto.org)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:arxiv.org)"
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:revealjs.com)"
     ],
     "deny": [],
     "ask": []

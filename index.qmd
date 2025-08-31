@@ -1376,7 +1376,7 @@ Adopt an investment mindset and remember that the little extra time invested in 
 
 And Happy Naming! 😊
 
-## TL;DR Summary {.smaller}
+## TL;DR Summary {.smaller data-visibility="uncounted"}
 
 ::: {.callout-important}
 
@@ -1409,11 +1409,11 @@ If a name is good, it is difficult to miss out on critical information about the
 :::
 
 
-# Further Reading {.smaller}
+# Further Reading {.smaller data-visibility="uncounted"}
 
 For a more detailed discussion about how to name things, see the following references.
 
-## References {.smaller}
+## References {.smaller data-visibility="uncounted"}
 
 :::{style="font-size: 25px;"}
 
@@ -1439,13 +1439,11 @@ For a more detailed discussion about how to name things, see the following refer
 
 :::
 
-# For more
+# For more {data-visibility="uncounted"}
 
 If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"}.
 
-# Find me at...
-
-{{< fa brands twitter >}} [Twitter](http://twitter.com/patilindrajeets){target="_blank"}
+# Find me at... {data-visibility="uncounted"}
 
 {{< fa brands linkedin >}} [LikedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/){target="_blank"}
 
