@@ -1013,7 +1013,7 @@ Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blan
 
 You won't have to remember any of these rules if you follow the following principle:
 
-"Names must be readable for the *reader*, not *writer*, of code."
+**Names must be readable for the *reader*, not *author*, of code.**
 
 ## {.smaller}
 
@@ -1377,15 +1377,11 @@ It provides the mental space needed to evaluate whether names truly capture the 
 
 - Consistent naming **reduces cognitive overload** for the developers and makes the code more maintainable.
 
-# Challenges
-
-Initially, you may struggle to find good names and settle down for the first serviceable name that pops into your head. 
-
-**Resist the urge!**
-
 ## Worth the struggle 
 
-Adopt an investment mindset and remember that the little extra time invested in finding good names early on will pay dividends in the long run by reducing the accumulation of complexity in the system.
+Naming is hard, but worth it.
+
+Invest time in good names early—they pay dividends by reducing system complexity.
 
 **The more you do it, the easier it will get!**
 
