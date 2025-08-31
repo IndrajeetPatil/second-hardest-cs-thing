@@ -74,6 +74,24 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 
 # Why naming matters
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="display: flex; align-items: center; height: 300px; font-size: 0.85em; color: #555; font-style: italic;">
+Navigating the codebase ocean with good names as beacons of clarity
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+![](media/code_ocean.png){width="450" height="350"}
+
+:::
+
+::::
+
 ## The hidden cost of poor naming {.smaller}
 
 Bad names create a cascade of problems that compound over time.
