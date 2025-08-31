@@ -68,6 +68,25 @@ Indrajeet Patil
 Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}.
 :::
 
+## What you'll learn today {.smaller}
+
+- Understand why naming significantly impacts code quality and maintainability
+- Master practical strategies for choosing clear, consistent, and meaningful names
+- Learn to avoid common naming pitfalls that lead to confusion and bugs
+- Discover how thoughtful naming improves software design and architecture
+- Explore tools and techniques (AI, code review) that help with better naming
+
+<br>
+<br>
+
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
+
+🎯 **Goal**
+
+Transform naming from an afterthought into a deliberate practice that enhances code clarity and software maintainability.
+
+:::
+
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
 \- Phil Karlton
 
