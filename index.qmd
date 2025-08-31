@@ -142,38 +142,6 @@ Well-chosen names transform code from puzzles into stories.
 
 Although all code examples are in Python, the following advice on naming is **language-agnostic**.
 
-#
-
-::: {.callout-important}
-
-## *Principle*: **Names are a form of abstraction**
-
-"[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important."
-
-\- John Ousterhout
-
-:::
-
-. . .
-
-::: {.callout-tip}
-
-### *Importance*: **Names are at the core of software design** 
-
-If you can't find a name that provides the right abstraction for the underlying entity, the design may be unclear.
-
-:::
-
-. . .
-
-::: {.callout-note}
-
-## *Properties*: **Good names are precise and consistent**
-
-If a name is good, it is difficult to miss out on critical information about the entity or to misunderstand what it represents.
-
-:::
-
 ## Good names are a form of documentation {.smaller}
 
 How good a name is can be assessed by how detailed the accompanying comment needs to be.
@@ -1407,6 +1375,39 @@ Adopt an investment mindset and remember that the little extra time invested in 
 # Thank You 
 
 And Happy Naming! 😊
+
+## TL;DR Summary {.smaller}
+
+::: {.callout-important}
+
+### *Principle*: **Names are a form of abstraction**
+
+"[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important."
+
+\- John Ousterhout
+
+:::
+
+. . .
+
+::: {.callout-tip}
+
+### *Importance*: **Names are at the core of software design** 
+
+If you can't find a name that provides the right abstraction for the underlying entity, the design may be unclear.
+
+:::
+
+. . .
+
+::: {.callout-note}
+
+### *Properties*: **Good names are precise and consistent**
+
+If a name is good, it is difficult to miss out on critical information about the entity or to misunderstand what it represents.
+
+:::
+
 
 # Further Reading {.smaller}
 
