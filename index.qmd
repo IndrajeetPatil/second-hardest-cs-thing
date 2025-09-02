@@ -384,7 +384,7 @@ You won't have to remember any of these rules if you follow the following princi
 # The Do's
 
 
-## Good names are a form of documentation {.smaller}
+## Names should be self-documenting {.smaller}
 
 How good a name is can be assessed by how detailed the accompanying comment needs to be.
 
@@ -429,7 +429,11 @@ def fahrenheit_to_celsius(temp_fahrenheit: float):
 :::
 
 
-## Alternatives to generic names {.smaller}
+## Names should be specific {.smaller}
+
+Generic names like `i`, `j`, `k`, `temp`, and `data` are widely used and acceptable for simple, short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.
+
+. . .
 
 For longer loops, use meaningful names instead of `i`, `j`, `k`:
 
@@ -456,8 +460,6 @@ exam_score[school][student]
 ::::
 
 . . .
-
-<br>
 
 All variables are temporary in some sense. Calling one `tmp` is inviting carelessness.
 
@@ -499,7 +501,7 @@ if right < left:
 
 :::
 
-## Maintain consistency across codebase {.smaller}
+## Names should be consistent {.smaller}
 
 Consistent naming **reduces cognitive burden** by allowing readers to safely reuse knowledge across contexts.
 
@@ -559,7 +561,7 @@ DebitCardAccount().retrieve_expenditure()
 
 ::: {.callout-tip}
 
-**Enable safe assumptions about names across different contexts. Mixed patterns force readers to decode different templates, increasing cognitive load.**
+**Enable safe assumptions about names across different contexts.**
 
 :::
 
@@ -575,7 +577,7 @@ DebitCardAccount().retrieve_expenditure()
 # okay
 convert_to_string()
 file_object
-str_name  # type prefix notation
+str_name  # Hungarian notation
 ```
 
 :::
@@ -638,7 +640,7 @@ ip_address
 
 :::
 
-## Balance precision with conciseness {.smaller}
+## Names should be precise and concise {.smaller}
 
 Find the right level of detail for your context—precise enough to be clear, concise enough to be readable.
 
@@ -896,7 +898,7 @@ This principle also applies to variables, classes, and modules within the same d
 
 :::
 
-## Name Booleans with extra care {.smaller}
+## Boolean names should be clear {.smaller}
 
 Names for Boolean variables or functions should make clear what true and false mean. This can be done using prefixes (**is**, **has**, **can**, etc.).
 
@@ -963,7 +965,7 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 :::
 
 
-## Break English rules to improve clarity {.smaller}
+## Names should prioritize clarity over grammar {.smaller}
 
 Some nouns have identical singular/plural forms, making "incorrect" plurals clearer.
 
@@ -999,7 +1001,7 @@ Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than g
 
 :::
 
-## Focus on problem domain {.smaller}
+## Names should focus on problem domain {.smaller}
 
 Names should reflect **what** the code does (problem domain) rather than **how** it does it (implementation domain).
 
@@ -1127,7 +1129,7 @@ Therefore, it is misleading to continue to call it a getter method, and it shoul
 :::
 
 
-## Follow and respect naming conventions {.smaller}
+## Names should follow conventions {.smaller}
 
 Conventions create predictable patterns that reduce cognitive load and enable safe assumptions.
 
@@ -1187,24 +1189,6 @@ for i in range(len(arr)):
 ::: {.callout-tip}
 
 **Following *a* convention consistently is more important than *which* convention you adopt.**
-
-:::
-
-## ICYMI: Available casing conventions {.smaller}
-
-There are various casing conventions used for software development.
-
-```{r}
-#| echo: false
-#| eval: true
-#| fig-align: "center"
-#| fig-alt: "An illustration showing casing conventions used for software development."
-knitr::include_graphics("media/horst_cases.jpeg")
-```
-
-:::{style="text-align: center; font-size: 0.9rem;"}
-
-Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blank"}
 
 :::
 
@@ -1431,6 +1415,23 @@ If a name is good, it is difficult to miss out on critical information about the
 
 :::
 
+## ICYMI: Available casing conventions {.smaller data-visibility="uncounted"}
+
+There are various casing conventions used for software development.
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "An illustration showing casing conventions used for software development."
+knitr::include_graphics("media/horst_cases.jpeg")
+```
+
+:::{style="text-align: center; font-size: 0.9rem;"}
+
+Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+
+:::
 
 # Further Reading {.smaller data-visibility="uncounted"}
 
