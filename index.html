@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-08-31 11:23:50.466698">
+  <meta name="dcterms.date" content="2025-09-02 07:53:38.723262">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -234,11 +234,11 @@
 <section id="what-youll-learn-today" class="slide level2 smaller">
 <h2>What you’ll learn today</h2>
 <ul>
-<li>Understand why naming significantly impacts code quality and maintainability</li>
-<li>Master practical strategies for choosing clear, consistent, and meaningful names</li>
-<li>Learn to avoid common naming pitfalls that lead to confusion and bugs</li>
-<li>Discover how thoughtful naming improves software design and architecture</li>
-<li>Explore tools and techniques (AI, code review) that help with better naming</li>
+<li>Why naming impacts code quality and maintainability</li>
+<li>Practical strategies for clear, consistent, and meaningful names</li>
+<li>Common naming pitfalls to avoid</li>
+<li>How naming improves software design and architecture</li>
+<li>Tools and techniques for better naming (AI, code review)</li>
 </ul>
 <p><br> <br></p>
 <div style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;">
@@ -1312,9 +1312,9 @@
 <h1>Utilizing tools</h1>
 
 </section>
-<section id="naming-limitations-of-qa-tools" class="slide level2 smaller">
-<h2>Naming limitations of QA tools</h2>
-<p>Static analysis tools can only do so much when it comes to naming.</p>
+<section id="naming-limitations-of-linters" class="slide level2 smaller">
+<h2>Naming limitations of linters</h2>
+<p>Linters can only do so much when it comes to naming.</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1347,7 +1347,7 @@
 <p><strong>The fundamental limitation</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Tools can enforce <em>syntax</em> but not <em>semantics</em>.</strong> Good naming requires human understanding of both the problem and the solution.</p>
+<p><strong>Linters can enforce <em>syntax</em> but not <em>semantics</em>.</strong> Good naming requires human understanding of both the problem and the solution.</p>
 </div>
 </div>
 </div>
@@ -1357,6 +1357,8 @@
 <h2>Generative AI tools can be valuable allies</h2>
 <p>AI tools have context of your entire codebase and can provide meaningful names.</p>
 <div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>How AI tools can help:</strong></p>
 <ul>
 <li>They see the whole function/class and understand relationships</li>
@@ -1364,27 +1366,29 @@
 <li>They can spot inconsistent naming across your codebase</li>
 <li>They propose multiple naming options with rationales</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    H[Human] --&gt; L[Linter]
+    A[AI] --&gt; L[Linter]
+    H -.-&gt;|Collaborates| A
+    A -.-&gt;|Feedback| H
+    L --&gt; S[Standardized Names]
+    
+    style H fill:#e3f2fd
+    style A fill:#f3e5f5
+    style L fill:#fff3e0
+    style S fill:#e8f5e8
+</pre>
 </div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="co"># Your initial attempt</span></span>
-<span id="cb42-2"><a href=""></a><span class="kw">def</span> process_data(x):</span>
-<span id="cb42-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb42-4"><a href=""></a></span>
-<span id="cb42-5"><a href=""></a><span class="kw">def</span> calc(a, b):</span>
-<span id="cb42-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb42-7"><a href=""></a></span>
-<span id="cb42-8"><a href=""></a>temp_var <span class="op">=</span> get_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="co"># AI suggestions</span></span>
-<span id="cb43-2"><a href=""></a><span class="kw">def</span> validate_user_input(user_data):</span>
-<span id="cb43-3"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb43-4"><a href=""></a></span>
-<span id="cb43-5"><a href=""></a><span class="kw">def</span> calculate_compound_interest(principal, rate):</span>
-<span id="cb43-6"><a href=""></a>    <span class="cf">pass</span></span>
-<span id="cb43-7"><a href=""></a></span>
-<span id="cb43-8"><a href=""></a>user_profile <span class="op">=</span> get_user_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </div></div>
 </div>
 <div class="fragment">
