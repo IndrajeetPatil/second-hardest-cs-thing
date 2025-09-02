@@ -251,7 +251,7 @@ Consider a function that converts Markdown or HTML documents to PDF.
 
 :::{.callout-caution}
 
-## Boolean parameter name
+## Boolean parameter necessary
 
 Doing more than one thing.
 
@@ -274,7 +274,7 @@ def convert_to_pdf(file, is_markdown=False):
 
 :::{.callout-tip}
 
-## Non-boolean parameter name
+## Boolean parameter unnecessary
 
 Doing one thing.
 
@@ -294,7 +294,7 @@ def convert_html_to_pdf(file):
 
 ::::
 
-# Naming Strategies*
+# Naming: The Do's and Don'ts*
 
 > "_The beginning of wisdom is to call things by their proper name._" - Confucius
 
@@ -308,6 +308,79 @@ def convert_html_to_pdf(file):
 \* Despite Python examples, all the mentioned strategies are **language-agnostic**.
 
 :::
+
+
+
+# A sundry of don'ts
+
+You won't have to remember any of these rules if you follow the following principle:
+
+::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
+
+**Names must be readable for the *reader*, not *author*, of code.**
+
+:::
+
+## {.smaller}
+
+- **Don't use pop-culture references in names.** Not everyone knows them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
+
+. . .
+
+- **Don't use slang.** You can't assume current or future developers to be familiar with them. E.g. `exit()` is better than `hit_the_road()`.
+
+. . .
+
+- **Avoid imprecise opposites**, since they can be [confusing](https://github.com/pomber/awesome-word-pairs). E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
+
+. . .
+
+- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, `firstl` and `firstI` look identical.
+
+. . .
+
+- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html){target="_blank"}.
+
+
+## {.smaller}
+
+- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
+
+. . .
+
+- **Don't misspell to save a few characters.** Remembering spelling is difficult, and remembering *correct misspelling* even more so. E.g. don't use `hilite` instead of `highlight`. The benefit is not worth the cost here.
+
+. . .
+
+- **Don't use commonly misspelled words in English.** Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it `accumulate`, `accummulate`, `acumulate`, or `acummulate`?!
+
+. . .
+
+- **Don't use numeric suffixes in names to specify levels.** E.g. variable names `level1`, `level2`, `level3` are not as informative as `beginner`, `intermediate`, `advanced`.
+
+. . .
+
+- **Don't use unpronounceable names.** While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. `generate_timestamp()` is better than `genymdhms()`.
+
+## {.smaller}
+
+- **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter removes (`rm`) missing values (`NA`). Using it to mean "remove (`rm`) non-authorized (`NA`) entries" for a function parameter will be misleading.
+
+. . .
+
+- **Don't allow multiple English standards.** E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
+
+. . .
+
+- **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
+
+. . .
+
+- **Avoid naming separate entities with homonyms.** Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
+
+. . .
+
+- **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
 
 ## Good names are a form of documentation {.smaller}
 
@@ -1150,72 +1223,6 @@ knitr::include_graphics("media/horst_cases.jpeg")
 Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blank"}
 
 :::
-
-# A sundry of don'ts
-
-You won't have to remember any of these rules if you follow the following principle:
-
-**Names must be readable for the *reader*, not *author*, of code.**
-
-## {.smaller}
-
-- **Don't use pop-culture references in names.** Not everyone knows them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
-
-. . .
-
-- **Don't use slang.** You can't assume current or future developers to be familiar with them. E.g. `exit()` is better than `hit_the_road()`.
-
-. . .
-
-- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html){target="_blank"}.
-
-. . .
-
-- **Avoid imprecise opposites**, since they can be [confusing](https://github.com/pomber/awesome-word-pairs). E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
-
-. . .
-
-- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, `firstl` and `firstI` look identical.
-
-## {.smaller}
-
-- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
-
-. . .
-
-- **Don't misspell to save a few characters.** Remembering spelling is difficult, and remembering *correct misspelling* even more so. E.g. don't use `hilite` instead of `highlight`. The benefit is not worth the cost here.
-
-. . .
-
-- **Don't use commonly misspelled words in English.** Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it `accumulate`, `accummulate`, `acumulate`, or `acummulate`?!
-
-. . .
-
-- **Don't use numeric suffixes in names to specify levels.** E.g. variable names `level1`, `level2`, `level3` are not as informative as `beginner`, `intermediate`, `advanced`.
-
-. . .
-
-- **Don't use unpronounceable names.** While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. `generate_timestamp()` is better than `genymdhms()`.
-
-## {.smaller}
-
-- **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter removes (`rm`) missing values (`NA`). Using it to mean "remove (`rm`) non-authorized (`NA`) entries" for a function parameter will be misleading.
-
-. . .
-
-- **Don't allow multiple English standards.** E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
-
-. . .
-
-- **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
-
-. . .
-
-- **Avoid naming separate entities with homonyms.** Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
-
-. . .
-
-- **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
 
 # Utilizing tools
 
