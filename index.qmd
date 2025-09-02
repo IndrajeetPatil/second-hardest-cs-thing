@@ -364,7 +364,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 ## {.smaller}
 
-- **Don't use misleading abbreviations.** E.g., in R, `na.rm` parameter removes (`rm`) missing values (`NA`). Using it to mean "remove (`rm`) non-authorized (`NA`) entries" for a function parameter will be misleading.
+- **Don't use misleading abbreviations.** E.g., in Python, `str` conventionally refers to string type. Using `str` to mean "structure" in a function parameter will be misleading to other developers.
 
 . . .
 
@@ -372,7 +372,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't use similar names for entities with different meanings.** E.g. `patientRecs` and `patientReps` are easily confused because they are so similar. There should be at least two-letter difference: `patientRecords` and `patientReports`.
+- **Don't use similar names for entities with different meanings.** E.g. `PatientRecs` and `PatientReps` are easily confused because they are so similar. There should be at least two-letter difference: `PatientRecords` and `PatientReports`.
 
 . . .
 
