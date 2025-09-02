@@ -392,6 +392,10 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't prioritize grammar over clarity.** Breaking grammatical rules can improve code readability. E.g. use `fishes`, `peoples`, `feedbacks` when the plural form aids comprehension.
 
+. . .
+
+- **Don't let names become outdated.** Update names when functionality changes to avoid misleading future developers. E.g. if `get_means()` changes from returning precomputed values to computing on-the-fly, rename it to `compute_means()`.
+
 
 # The Do's
 
@@ -443,7 +447,7 @@ def fahrenheit_to_celsius(temp_fahrenheit: float):
 
 ## Names should be specific {.smaller}
 
-Generic names like `i`, `j`, `k`, `temp`, and `data` are widely used and acceptable for simple, short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.
+Generic names are widely used and acceptable for short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.
 
 . . .
 
@@ -455,7 +459,7 @@ For longer loops, use meaningful names instead of `i`, `j`, `k`:
 
 ```{python}
 # abstruse
-exam_score[i][j]
+inventory[i][j]
 ```
 
 :::
@@ -464,7 +468,7 @@ exam_score[i][j]
 
 ```{python}
 # crystal clear
-exam_score[school][student]
+inventory[warehouse][product]
 ```
 
 :::
@@ -481,10 +485,8 @@ All variables are temporary in some sense. Calling one `tmp` is inviting careles
 
 ```{python}
 # generic name
-if right < left:
-    tmp = right
-    right = left
-    left = tmp
+tmp = a + b
+result = tmp * 2
 ```
 
 :::
@@ -493,10 +495,8 @@ if right < left:
 
 ```{python}
 # more descriptive
-if right < left:
-    old_right = right
-    right = left
-    left = old_right
+sum_values = a + b
+result = sum_values * 2
 ```
 
 :::
@@ -505,21 +505,32 @@ if right < left:
 
 . . .
 
-<br>
-
 ::: {.callout-tip}
 
 **Even when you *think* you need generic names, you are better off using more descriptive names.**
 
 :::
 
-## Names should be consistent {.smaller}
+::: {.callout-note title="Test function naming"}
 
-Consistent naming **reduces cognitive burden** by allowing readers to safely reuse knowledge across contexts.
+Test function names should describe the details of the test and act as a comment:
+
+```python
+# bad: test1, my_test, retrieve_commands
+# good: test_all_saved_commands_should_be_retrieved
+```
+
+Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.
+
+:::
+
+## Names should maintain standards {.smaller}
+
+Standards **reduce cognitive burden**: readers can reuse knowledge across contexts.
 
 . . .
 
-**Avoid conflicting meanings for the same word:**
+**Avoid conflicting meanings and maintain consistency:**
 
 :::: {.columns}
 
@@ -528,7 +539,7 @@ Consistent naming **reduces cognitive burden** by allowing readers to safely reu
 ```{python}
 # inconsistent - size means different things
 size = len(x.encode('utf-8'))  # bytes
-size = len(a)  # elements
+size = len(a)                  # elements
 
 # inconsistent - different words, same concept
 CreditCardAccount().retrieve_expenditure()
@@ -555,25 +566,67 @@ DebitCardAccount().retrieve_expenditure()
 
 . . .
 
-**Use naming molds (templates) consistently:**
+**Follow language and domain conventions:**
 
-::: {.callout-note}
+:::: {.columns}
 
-## Common Naming Patterns (Pick One and Use Consistently)
+::: {.column width='50%'}
 
-| **Concept** | **Adjective-Noun Pattern** | **Noun-Descriptor Pattern** | **Action-Object Pattern** |
-|-------------|------------|------------|------------|
-| Maximum user connections | `max_user_connections` | `user_connection_limit` | `track_user_peak` |
-| Total file size in bytes | `total_file_size_bytes` | `file_byte_count` | `calculate_file_bytes` |
+```{python}
+# violates conventions
+class playerentity:
+    self.HairColor = ""
+```
 
 :::
 
+::: {.column width='50%'}
+
+```{python}
+# follows conventions
+class PlayerEntity:
+    self.hair_color = ""
+```
+
+:::
+
+::::
+
+. . .
+
+**Use consistent prefixes for IDE tab completion:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# bad - scattered when tab-completing
+parse_json()
+xml_reader()
+csv_processor()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# good - groups related functions
+parse_json()
+parse_xml()
+parse_csv()
+```
+
+:::
+
+::::
 
 . . .
 
 ::: {.callout-tip}
 
-**Enable safe assumptions about names across different contexts.**
+**Following *a* convention consistently is more important than *which* convention you adopt.**
 
 :::
 
@@ -652,9 +705,9 @@ ip_address
 
 :::
 
-## Names should be precise and concise {.smaller}
+## Names should be appropriately abstract {.smaller}
 
-Find the right level of detail for your context—precise enough to be clear, concise enough to be readable.
+Find the right level of detail and domain focus—precise enough to be clear, concise enough to be readable, and focused on ***what*** rather than ***how***.
 
 . . .
 
@@ -668,7 +721,6 @@ Find the right level of detail for your context—precise enough to be clear, co
 # redundant in context
 Router.run_router()
 BeerShelf.beer_count
-child_height  # missing units
 ```
 
 :::
@@ -679,7 +731,40 @@ child_height  # missing units
 # leverages context
 Router.run()
 BeerShelf.count
-child_height_cm  # critical detail
+```
+
+:::
+
+::::
+
+. . .
+
+**Choose problem domain over implementation details:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# implementation domain - how it works
+binary_search_users()
+sql_query_products()
+
+# data structure in name
+bonuses_pd  # pandas DataFrame
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# problem domain - what it does
+find_user()
+fetch_products()
+
+# implementation independent
+bonuses     # any data structure
 ```
 
 :::
@@ -697,37 +782,9 @@ d → days → days_since_last_accident → days_since_last_accident_floor_4_lab
 
 . . .
 
-**Match abstraction level to purpose:**
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# too specific for general function
-def compare(value_before, value_after):
-    pass
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# right abstraction level
-def compare(value1, value2):
-    pass
-```
-
-:::
-
-::::
-
-. . .
-
 ::: {.callout-tip}
 
-**Include critical information, exclude redundant details, and choose names that reflect the right level of abstraction for their purpose.**
+**Good names focus on business purpose, include critical information, exclude redundant details, and remain meaningful when implementations change.**
 
 :::
 
@@ -777,55 +834,6 @@ In reality: <br>
 :::
 
 
-## Names should be tab-friendly {.smaller}
-
-Choose names that allow related items to group together when using tab completion or auto-complete features in your IDE.
-
-. . .
-
-E.g., if you're creating functions for different statistical tests, prefix them consistently so they group together:
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# bad - scattered when tab-completing
-chi_square_test()
-fisher_exact()
-t_test_paired()
-wilcoxon_test()
-mann_whitney()
-anova_one_way()
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# good - birds of a feather flock together
-test_chi_square()
-test_fisher_exact()
-test_t_paired()
-test_wilcoxon()
-test_mann_whitney()
-test_anova_one_way()
-```
-
-:::
-
-::::
-
-This principle also applies to variables, classes, and modules within the same domain.
-
-. . .
-
-::: {.callout-tip}
-
-**Use consistent prefixes or namespacing to group related functionality together.**
-
-:::
 
 ## Boolean names should be clear {.smaller}
 
@@ -895,196 +903,12 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 
 
-## Names should focus on problem domain {.smaller}
 
-Names should reflect **what** the code does (problem domain) rather than **how** it does it (implementation domain).
 
-. . .
 
-**Choose business purpose over technical mechanism:**
 
-:::: {.columns}
 
-::: {.column width='50%'}
 
-```{python}
-# implementation domain - how it works
-binary_search_users()
-hash_table_lookup()
-sql_query_products()
-
-# data structure in name
-bonuses_pd  # pandas DataFrame
-aws_s3_url  # AWS bucket
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# problem domain - what it does
-find_user()
-get_customer()
-fetch_products()
-
-# implementation independent
-bonuses     # any data structure
-bucket_url  # any cloud service
-```
-
-:::
-
-::::
-
-. . .
-
-**Benefits of problem domain names:**
-
-- Remain meaningful when implementations change
-- Reduce maintenance cost (no rename needed when switching technologies)
-- Focus on business logic rather than technical details
-
-. . .
-
-::: {.callout-tip}
-
-**Good names don't need to change when implementation details change.**
-
-:::
-
-
-
-## Test function names should be detailed {.smaller}
-
-If unit testing in a given programming language requires writing test functions, choose names that describe the details of the test.
-
-The test function names should effectively act as a comment.
-
-:::: {.columns}
-
-::: {.column width='30%'}
-
-```{python}
-# bad
-test1
-my_test
-retrieve_commands
-serialize_success
-```
-
-
-:::
-
-::: {.column width='70%'}
-
-```{python}
-# good
-test_array
-test_multilinear_model
-test_all_the_saved_commands_should_be_retrieved
-test_should_serialize_the_formula_cache_if_required
-```
-
-:::
-
-::::
-
-:::{.callout-note}
-
-Don't hesitate to choose lengthy names for **test** functions.
-
-Unlike regular functions, long names are less problematic for test functions because
-
-- they are not visible or accessible to the users
-- they are not called repeatedly throughout the codebase 
-
-:::
-
-## Names should be kept up-to-date {.smaller}
-
-To resist software entropy, not only should you name entities properly, but you should also update them. Otherwise, names will become something worse than meaningless or confusing: **misleading**.
-
-. . .
-
-For example, let's say your class has the `.get_means()` method.
-
-- In its initial implementation, it used to return *precomputed* mean values. 
-- In its current implementation, it *computes* the mean values on the fly. 
-
-Therefore, it is misleading to continue to call it a getter method, and it should be renamed to (e.g.) `.compute_means()`.
-
-. . .
-
-::: {.callout-tip}
-
-**Keep an eye out for API changes that make names misleading.**
-
-:::
-
-
-## Names should follow conventions {.smaller}
-
-Conventions create predictable patterns that reduce cognitive load and enable safe assumptions.
-
-. . .
-
-**Language and domain conventions matter:**
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# violates Python conventions
-class playerentity:
-    def __init__(self):
-        self.HairColor = ""
-        
-# violates loop conventions
-for j in range(len(arr)):
-    for i in range(len(arr[j])):
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# follows Python conventions
-class PlayerEntity:
-    def __init__(self):
-        self.hair_color = ""
-        
-# follows loop conventions
-for i in range(len(arr)):
-    for j in range(len(arr[i])):
-```
-
-:::
-
-::::
-
-. . .
-
-::: {.callout-note}
-
-## Informative conventions act like syntax highlighting
-
-- UPPER_CASE for constants (`MAX_RETRIES = 5`)
-- snake_case for variables/functions (`user_age`, `calculate_total()`)
-- PascalCase for classes (`BankAccount`, `DataProcessor`)
-- Prefix private attributes (`self._balance`)
-
-:::
-
-. . .
-
-::: {.callout-tip}
-
-**Following *a* convention consistently is more important than *which* convention you adopt.**
-
-:::
 
 # Utilizing tools
 
