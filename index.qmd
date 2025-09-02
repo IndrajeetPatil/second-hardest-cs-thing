@@ -511,16 +511,14 @@ result = sum_values * 2
 
 :::
 
-::: {.callout-note title="Test function naming"}
+::: {.callout-note title="Test function names should act as a comment"}
 
-Test function names should describe the details of the test and act as a comment:
+Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.
 
 ```python
 # bad: test1, my_test, retrieve_commands
 # good: test_all_saved_commands_should_be_retrieved
 ```
-
-Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.
 
 :::
 
