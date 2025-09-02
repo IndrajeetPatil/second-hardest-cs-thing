@@ -70,11 +70,11 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 
 ## What you'll learn today {.smaller}
 
-- Understand why naming significantly impacts code quality and maintainability
-- Master practical strategies for choosing clear, consistent, and meaningful names
-- Learn to avoid common naming pitfalls that lead to confusion and bugs
-- Discover how thoughtful naming improves software design and architecture
-- Explore tools and techniques (AI, code review) that help with better naming
+- Why naming impacts code quality and maintainability
+- Practical strategies for clear, consistent, and meaningful names
+- Common naming pitfalls to avoid
+- How naming improves software design and architecture
+- Tools and techniques for better naming (AI, code review)
 
 <br>
 <br>
@@ -1219,9 +1219,9 @@ def convert_html_to_pdf(file):
 
 # Utilizing tools
 
-## Naming limitations of QA tools {.smaller}
+## Naming limitations of linters {.smaller}
 
-Static analysis tools can only do so much when it comes to naming.
+Linters can only do so much when it comes to naming.
 
 . . .
 
@@ -1259,7 +1259,7 @@ Static analysis tools can only do so much when it comes to naming.
 
 ## The fundamental limitation
 
-**Tools can enforce *syntax* but not *semantics*.** Good naming requires human understanding of both the problem and the solution.
+**Linters can enforce *syntax* but not *semantics*.** Good naming requires human understanding of both the problem and the solution.
 
 :::
 
@@ -1269,6 +1269,10 @@ AI tools have context of your entire codebase and can provide meaningful names.
 
 . . .
 
+:::: {.columns}
+
+::: {.column width='60%'}
+
 **How AI tools can help:**
 
 - They see the whole function/class and understand relationships
@@ -1276,36 +1280,24 @@ AI tools have context of your entire codebase and can provide meaningful names.
 - They can spot inconsistent naming across your codebase
 - They propose multiple naming options with rationales
 
-. . .
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```python
-# Your initial attempt
-def process_data(x):
-    pass
-
-def calc(a, b):
-    pass
-
-temp_var = get_info()
-```
-
 :::
 
-::: {.column width='50%'}
+::: {.column width='40%'}
 
-```python
-# AI suggestions
-def validate_user_input(user_data):
-    pass
-
-def calculate_compound_interest(principal, rate):
-    pass
-
-user_profile = get_user_info()
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    H[Human] --> L[Linter]
+    A[AI] --> L[Linter]
+    H -.->|Collaborates| A
+    A -.->|Feedback| H
+    L --> S[Standardized Names]
+    
+    style H fill:#e3f2fd
+    style A fill:#f3e5f5
+    style L fill:#fff3e0
+    style S fill:#e8f5e8
 ```
 
 :::
