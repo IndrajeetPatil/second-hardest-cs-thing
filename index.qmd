@@ -522,6 +522,133 @@ Unlike regular functions, long names are less problematic for test functions bec
 
 :::
 
+## Names should be difficult to misinterpret {.smaller}
+
+Try your best to misinterpret candidate names and see if you succeed.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='40%'}
+
+```{python}
+# ambiguous - pixel positions?
+def get_char_position(x: int, y: int):
+    pass
+```
+
+How I interpret: <br>
+*"`x`, `y`: pixel positions for a character"*
+
+:::
+
+::: {.column width='60%'}
+
+```{python}
+# clear - text positions!
+def get_char_position(line_index: int, char_index: int):
+    pass
+```
+
+In reality: <br>
+*"`x`, `y`: line of text and character position in that line"*
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Precise and unambiguous names leave little room for misconstrual.**
+
+:::
+
+## Names should be appropriately abstract {.smaller}
+
+Find the right level of detail and domain focus—precise enough to be clear, concise enough to be readable, and focused on ***what*** rather than ***how***.
+
+. . .
+
+**Use context to eliminate redundancy:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# redundant in context
+Router.run_router()
+BeerShelf.beer_count
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# leverages context
+Router.run()
+BeerShelf.count
+```
+
+:::
+
+::::
+
+. . .
+
+**Choose problem domain over implementation details:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# implementation domain - how it works
+binary_search_users()
+sql_query_products()
+
+# data structure in name
+bonuses_pd  # pandas DataFrame
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# problem domain - what it does
+find_user()
+fetch_products()
+
+# implementation independent
+bonuses     # any data structure
+```
+
+:::
+
+::::
+
+. . .
+
+**Find the precision sweet spot:**
+
+```{python}
+# too imprecise → okay → good → unnecessarily precise
+d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23
+```
+
+. . .
+
+::: {.callout-tip}
+
+**Good names focus on purpose, include critical details, and remain meaningful across implementations.**
+
+:::
+
 ## Names should maintain standards {.smaller}
 
 Standards **reduce cognitive burden**: readers can reuse knowledge across contexts.
@@ -702,135 +829,6 @@ ip_address
 **If some information is critical to know, it should be part of the name.**
 
 :::
-
-## Names should be appropriately abstract {.smaller}
-
-Find the right level of detail and domain focus—precise enough to be clear, concise enough to be readable, and focused on ***what*** rather than ***how***.
-
-. . .
-
-**Use context to eliminate redundancy:**
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# redundant in context
-Router.run_router()
-BeerShelf.beer_count
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# leverages context
-Router.run()
-BeerShelf.count
-```
-
-:::
-
-::::
-
-. . .
-
-**Choose problem domain over implementation details:**
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# implementation domain - how it works
-binary_search_users()
-sql_query_products()
-
-# data structure in name
-bonuses_pd  # pandas DataFrame
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# problem domain - what it does
-find_user()
-fetch_products()
-
-# implementation independent
-bonuses     # any data structure
-```
-
-:::
-
-::::
-
-. . .
-
-**Find the precision sweet spot:**
-
-```{python}
-# too imprecise → okay → good → unnecessarily precise
-d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23
-```
-
-. . .
-
-::: {.callout-tip}
-
-**Good names focus on purpose, include critical details, and remain meaningful across implementations.**
-
-:::
-
-
-## Names should be difficult to misinterpret {.smaller}
-
-Try your best to misinterpret candidate names and see if you succeed.
-
-. . .
-
-:::: {.columns}
-
-::: {.column width='40%'}
-
-```{python}
-# ambiguous - pixel positions?
-def get_char_position(x: int, y: int):
-    pass
-```
-
-How I interpret: <br>
-*"`x`, `y`: pixel positions for a character"*
-
-:::
-
-::: {.column width='60%'}
-
-```{python}
-# clear - text positions!
-def get_char_position(line_index: int, char_index: int):
-    pass
-```
-
-In reality: <br>
-*"`x`, `y`: line of text and character position in that line"*
-
-:::
-
-::::
-
-. . .
-
-::: {.callout-tip}
-
-**Precise and unambiguous names leave little room for misconstrual.**
-
-:::
-
 
 
 ## Boolean names should be clear {.smaller}
