@@ -388,6 +388,10 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't use unsearchable names.** Single letters and very generic terms are hard to find and replace in a codebase. E.g. parameters `a` and `f` should be `arr` and `fun`.
 
+. . .
+
+- **Don't prioritize grammar over clarity.** Breaking grammatical rules can improve code readability. E.g. use `fishes`, `peoples`, `feedbacks` when the plural form aids comprehension.
+
 
 # The Do's
 
@@ -734,29 +738,35 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 . . .
 
-E.g., here is a text editor class method to get position of a character:
+:::: {.columns}
+
+::: {.column width='40%'}
 
 ```{python}
+# ambiguous - pixel positions?
 def get_char_position(x: int, y: int):
     pass
 ```
 
-. . .
+How I interpret: <br>
+*"`x`, `y`: pixel positions for a character"*
 
-How I interpret: *"`x` and `y` refer to pixel positions for a character."*
+:::
 
-. . .
-
-In reality: *"`x` and `y` refer to line of text and character position in that line."*
-
-. . .
-
-You can avoid such misinterpretation with better names:
+::: {.column width='60%'}
 
 ```{python}
+# clear - text positions!
 def get_char_position(line_index: int, char_index: int):
     pass
 ```
+
+In reality: <br>
+*"`x`, `y`: line of text and character position in that line"*
+
+:::
+
+::::
 
 . . .
 
@@ -884,41 +894,6 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 :::
 
 
-## Names should prioritize clarity over grammar {.smaller}
-
-Some nouns have identical singular/plural forms, making "incorrect" plurals clearer.
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-```{python}
-# unclear - one fish or many fish?
-[f for f in fish if f.is_healthy()]
-```
-
-:::
-
-::: {.column width='50%'}
-
-```{python}
-# clearer - obviously plural
-[fish for fish in fishes if fish.is_healthy()]
-```
-
-:::
-
-::::
-
-Similarly: `peoples`, `sheeps`, `deers`, `feedbacks`, etc. can be clearer than grammatically correct forms.
-
-. . . 
-
-::: {.callout-tip}
-
-**Helping readers understand the code more easily is often worth breaking grammatical rules.**
-
-:::
 
 ## Names should focus on problem domain {.smaller}
 
