@@ -309,9 +309,7 @@ def convert_html_to_pdf(file):
 
 :::
 
-
-
-# A sundry of don'ts
+# The Don'ts
 
 You won't have to remember any of these rules if you follow the following principle:
 
@@ -381,6 +379,10 @@ You won't have to remember any of these rules if you follow the following princi
 . . .
 
 - **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
+
+
+# The Do's
+
 
 ## Good names are a form of documentation {.smaller}
 
@@ -893,24 +895,6 @@ This principle also applies to variables, classes, and modules within the same d
 **Use consistent prefixes or namespacing to group related functionality together.**
 
 :::
-
-
-<!-- ## Names should clarify dependencies {.smaller} -->
-
-<!-- If a set of functions have dependencies (because they share the same data, e.g.), their names should clarify this dependence. -->
-
-<!-- . . .  -->
-
-<!-- E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues. -->
-
-<!-- ```{r} -->
-<!-- revenues <- compute_revenues_data(raw_revenues_data) -->
-<!-- revenues <- compute_monthly_revenues(revenues) -->
-<!-- revenues <- compute_quarterly_revenues(revenues) -->
-<!-- revenues <- compute_annual_revenues(revenues) -->
-<!-- ``` -->
-
-<!-- Each of the function names makes clear the order in which they need to be run. -->
 
 ## Name Booleans with extra care {.smaller}
 
