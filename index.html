@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.22">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-02 18:53:33.776532">
+  <meta name="dcterms.date" content="2025-09-02 19:25:40.697067">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -407,7 +407,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Boolean parameter name</strong></p>
+<p><strong>Boolean parameter necessary</strong></p>
 </div>
 <div class="callout-content">
 <p>Doing more than one thing.</p>
@@ -431,7 +431,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Non-boolean parameter name</strong></p>
+<p><strong>Boolean parameter unnecessary</strong></p>
 </div>
 <div class="callout-content">
 <p>Doing one thing.</p>
@@ -450,9 +450,8 @@
 </div></div>
 </div>
 </section></section>
-<section>
-<section id="naming-strategies" class="title-slide slide level1 center">
-<h1>Naming Strategies*</h1>
+<section id="naming-the-dos-and-donts" class="title-slide slide level1 center">
+<h1>Naming: The Do’s and Don’ts*</h1>
 <blockquote>
 <p>“<em>The beginning of wisdom is to call things by their proper name.</em>” - Confucius</p>
 </blockquote>
@@ -461,6 +460,98 @@
 <aside><div>
 <p>* Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
 </div></aside></section>
+
+<section>
+<section id="the-donts" class="title-slide slide level1 center">
+<h1>The Don’ts</h1>
+<p>You won’t have to remember any of these rules if you follow the following principle:</p>
+<div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
+<p><strong>Names must be readable for the <em>reader</em>, not <em>author</em>, of code.</strong></p>
+</div>
+</section>
+<section id="section" class="slide level2 smaller">
+<h2></h2>
+<ul>
+<li><strong>Don’t use pop-culture references in names.</strong> Not everyone knows them. E.g. <code>female_birdsong_recording</code> is a better variable name than <code>thats_what_she_said</code>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use slang.</strong> You can’t assume current or future developers to be familiar with them. E.g. <code>exit()</code> is better than <code>hit_the_road()</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Avoid imprecise opposites</strong>, since they can be <a href="https://github.com/pomber/awesome-word-pairs">confusing</a>. E.g. parameter combination <code>begin</code>/<code>last</code> is worse than either <code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use hard-to-distinguish character pairs in names</strong> (e.g., <code>l</code> and <code>I</code>, <code>O</code> and <code>0</code>, etc.). With certain fonts, <code>firstl</code> and <code>firstI</code> look identical.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Avoid unintended meanings.</strong> Do your due diligence to check dictionaries (especially <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a>!) if the word has unintended meaning. E.g. <code>cumulative_sum()</code> is a better function name than <a href="https://rdrr.io/r/base/cumsum.html" target="_blank"><code>cumsum()</code></a>.</li>
+</ul>
+</div>
+</section>
+<section id="section-1" class="slide level2 smaller">
+<h2></h2>
+<ul>
+<li><strong>Don’t use inconsistent abbreviations.</strong> E.g. instead of using <code>numColumns</code> (<em>number</em> of columns) in one function and <code>noRows</code> (<em>number</em> of rows) in another, choose one abbreviation as a prefix and use it consistently.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Don’t misspell to save a few characters.</strong> Remembering spelling is difficult, and remembering <em>correct misspelling</em> even more so. E.g. don’t use <code>hilite</code> instead of <code>highlight</code>. The benefit is not worth the cost here.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use commonly misspelled words in English.</strong> Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it <code>accumulate</code>, <code>accummulate</code>, <code>acumulate</code>, or <code>acummulate</code>?!</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use numeric suffixes in names to specify levels.</strong> E.g. variable names <code>level1</code>, <code>level2</code>, <code>level3</code> are not as informative as <code>beginner</code>, <code>intermediate</code>, <code>advanced</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use unpronounceable names.</strong> While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. <code>generate_timestamp()</code> is better than <code>genymdhms()</code>.</li>
+</ul>
+</div>
+</section>
+<section id="section-2" class="slide level2 smaller">
+<h2></h2>
+<ul>
+<li><strong>Don’t use misleading abbreviations.</strong> E.g., in Python, <code>str</code> conventionally refers to string type. Using <code>str</code> to mean “structure” in a function parameter will be misleading to other developers.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Don’t allow multiple English standards.</strong> E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) <code>centre</code> or <code>center</code>. Adopt one standard and stick to it.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use similar names for entities with different meanings.</strong> E.g. <code>PatientRecs</code> and <code>PatientReps</code> are easily confused because they are so similar. There should be at least two-letter difference: <code>PatientRecords</code> and <code>PatientReports</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Avoid naming separate entities with homonyms.</strong> Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Don’t use uncommon English words.</strong> Stick to common parlance that most developers understand. E.g. <code>start_process()</code> is better than <code>commence_process()</code>, <code>get_list()</code> is better than <code>procure_list()</code>, <code>find_user()</code> is better than <code>ascertain_user()</code>.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="the-dos" class="title-slide slide level1 center">
+<h1>The Do’s</h1>
+
+</section>
 <section id="good-names-are-a-form-of-documentation" class="slide level2 smaller">
 <h2>Good names are a form of documentation</h2>
 <p>How good a name is can be assessed by how detailed the accompanying comment needs to be.</p>
@@ -643,7 +734,7 @@
 </div>
 </div>
 </section>
-<section id="section" class="slide level2 smaller">
+<section id="section-3" class="slide level2 smaller">
 <h2></h2>
 <h3 id="unnecessary-details-in-names-should-be-removed">Unnecessary details in names should be removed…</h3>
 <div class="columns">
@@ -931,17 +1022,6 @@
 </div>
 </div>
 </div>
-<!-- ## Names should clarify dependencies {.smaller} -->
-<!-- If a set of functions have dependencies (because they share the same data, e.g.), their names should clarify this dependence. -->
-<!-- . . .  -->
-<!-- E.g., computing annual revenues involves computing quarterly revenues, which in turn requires computing monthly revenues. -->
-<!-- ```{r} -->
-<!-- revenues <- compute_revenues_data(raw_revenues_data) -->
-<!-- revenues <- compute_monthly_revenues(revenues) -->
-<!-- revenues <- compute_quarterly_revenues(revenues) -->
-<!-- revenues <- compute_annual_revenues(revenues) -->
-<!-- ``` -->
-<!-- Each of the function names makes clear the order in which they need to be run. -->
 </div>
 </section>
 <section id="name-booleans-with-extra-care" class="slide level2 smaller">
@@ -1221,90 +1301,6 @@
 
 <img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development."><div style="text-align: center; font-size: 0.9rem;">
 <p>Illustration (CC-BY) by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
-</div>
-</section></section>
-<section>
-<section id="a-sundry-of-donts" class="title-slide slide level1 center">
-<h1>A sundry of don’ts</h1>
-<p>You won’t have to remember any of these rules if you follow the following principle:</p>
-<p><strong>Names must be readable for the <em>reader</em>, not <em>author</em>, of code.</strong></p>
-</section>
-<section id="section-1" class="slide level2 smaller">
-<h2></h2>
-<ul>
-<li><strong>Don’t use pop-culture references in names.</strong> Not everyone knows them. E.g. <code>female_birdsong_recording</code> is a better variable name than <code>thats_what_she_said</code>.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use slang.</strong> You can’t assume current or future developers to be familiar with them. E.g. <code>exit()</code> is better than <code>hit_the_road()</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid unintended meanings.</strong> Do your due diligence to check dictionaries (especially <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a>!) if the word has unintended meaning. E.g. <code>cumulative_sum()</code> is a better function name than <a href="https://rdrr.io/r/base/cumsum.html" target="_blank"><code>cumsum()</code></a>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid imprecise opposites</strong>, since they can be <a href="https://github.com/pomber/awesome-word-pairs">confusing</a>. E.g. parameter combination <code>begin</code>/<code>last</code> is worse than either <code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use hard-to-distinguish character pairs in names</strong> (e.g., <code>l</code> and <code>I</code>, <code>O</code> and <code>0</code>, etc.). With certain fonts, <code>firstl</code> and <code>firstI</code> look identical.</li>
-</ul>
-</div>
-</section>
-<section id="section-2" class="slide level2 smaller">
-<h2></h2>
-<ul>
-<li><strong>Don’t use inconsistent abbreviations.</strong> E.g. instead of using <code>numColumns</code> (<em>number</em> of columns) in one function and <code>noRows</code> (<em>number</em> of rows) in another, choose one abbreviation as a prefix and use it consistently.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t misspell to save a few characters.</strong> Remembering spelling is difficult, and remembering <em>correct misspelling</em> even more so. E.g. don’t use <code>hilite</code> instead of <code>highlight</code>. The benefit is not worth the cost here.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use commonly misspelled words in English.</strong> Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it <code>accumulate</code>, <code>accummulate</code>, <code>acumulate</code>, or <code>acummulate</code>?!</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use numeric suffixes in names to specify levels.</strong> E.g. variable names <code>level1</code>, <code>level2</code>, <code>level3</code> are not as informative as <code>beginner</code>, <code>intermediate</code>, <code>advanced</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use unpronounceable names.</strong> While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. <code>generate_timestamp()</code> is better than <code>genymdhms()</code>.</li>
-</ul>
-</div>
-</section>
-<section id="section-3" class="slide level2 smaller">
-<h2></h2>
-<ul>
-<li><strong>Don’t use misleading abbreviations.</strong> E.g., in R, <code>na.rm</code> parameter removes (<code>rm</code>) missing values (<code>NA</code>). Using it to mean “remove (<code>rm</code>) non-authorized (<code>NA</code>) entries” for a function parameter will be misleading.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t allow multiple English standards.</strong> E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) <code>centre</code> or <code>center</code>. Adopt one standard and stick to it.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use similar names for entities with different meanings.</strong> E.g. <code>patientRecs</code> and <code>patientReps</code> are easily confused because they are so similar. There should be at least two-letter difference: <code>patientRecords</code> and <code>patientReports</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid naming separate entities with homonyms.</strong> Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use uncommon English words.</strong> Stick to common parlance that most developers understand. E.g. <code>start_process()</code> is better than <code>commence_process()</code>, <code>get_list()</code> is better than <code>procure_list()</code>, <code>find_user()</code> is better than <code>ascertain_user()</code>.</li>
-</ul>
 </div>
 </section></section>
 <section>
