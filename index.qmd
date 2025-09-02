@@ -782,7 +782,7 @@ d → days → days_since_last_accident → days_since_last_accident_floor_4_lab
 
 ::: {.callout-tip}
 
-**Good names focus on business purpose, include critical information, exclude redundant details, and remain meaningful when implementations change.**
+**Good names focus on purpose, include critical details, and remain meaningful across implementations.**
 
 :::
 
