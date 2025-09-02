@@ -380,6 +380,14 @@ You won't have to remember any of these rules if you follow the following princi
 
 - **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
 
+## {.smaller}
+
+- **Don't use easily confused names.** Names that are too similar make great candidates for mistaken identity. E.g. `nn` and `nnn` are easily confused; use `n_square` and `n_cube` instead.
+
+. . .
+
+- **Don't use unsearchable names.** Single letters and very generic terms are hard to find and replace in a codebase. E.g. parameters `a` and `f` should be `arr` and `fun`.
+
 
 # The Do's
 
@@ -758,95 +766,6 @@ def get_char_position(line_index: int, char_index: int):
 
 :::
 
-## Names should be distinguishable {.smaller}
-
-Names that are too similar make great candidates for mistaken identity.
-
-. . .
-
-E.g. `nn` and `nnn` are easy to be confused and such confusion can lead to painful bugs.
-
-:::: {.columns}
-
-::: {.column width='40%'}
-
-```{python}
-# bad
-n = x
-nn = x ** 2
-nnn = x ** 3
-```
-
-:::
-
-::: {.column width='60%'}
-
-
-```{python}
-# good
-n = x
-n_square = x ** 2
-n_cube = x ** 3
-```
-
-:::
-
-::::
-
-. . .
-
-::: {.callout-tip}
-
-**Any pair of names should be difficult to be mistaken for each other.**
-
-:::
-
-
-## Names should be searchable {.smaller}
-
-While naming, always ask yourself how easy it would be to find and update the name.
-
-. . .
-
-E.g., this function uses `a` and `f` parameters to represent an array and a function.
-
-:::: {.columns}
-
-::: {.column width='40%'}
-
-```{python}
-# bad
-def array_map(a, f):
-    pass
-```
-
-:::
-
-::: {.column width='60%'}
-
-
-```{python}
-# good
-def array_map(arr, fun):
-    pass
-```
-
-:::
-
-::::
-
-If needed, it wouldn't be easy either to search for and/or to rename these parameters in the codebase because searching for `a` or `f` would flag **all** *a*s and *f*s (**a**pi, **f**ile, etc.).
-
-Instead, if more descriptive identifiers are used, both search and replace operations will be straightforward.
-In general, searchability of a name indexes how generic it is. 
-
-. . .
-
-::: {.callout-tip}
-
-**Choose names that can be searched and, if needed, replaced.**
-
-:::
 
 ## Names should be tab-friendly {.smaller}
 
@@ -1363,9 +1282,7 @@ It provides the mental space needed to evaluate whether names truly capture the 
 
 - Consistent naming **reduces cognitive overload** for the developers and makes the code more maintainable.
 
-## Worth the struggle 
-
-Naming is hard, but worth it.
+## Naming is hard, but worth it
 
 Invest time in good names early—they pay dividends by reducing system complexity.
 
