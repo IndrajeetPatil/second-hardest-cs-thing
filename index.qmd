@@ -98,7 +98,7 @@ Transform naming from an afterthought into a deliberate practice that enhances c
 ::: {.column width="50%"}
 
 <div style="display: flex; align-items: center; height: 300px; font-size: 0.85em; color: #555; font-style: italic;">
-Navigating the codebase ocean with good names as beacons of clarity
+Navigating the codebase with good names as beacons of clarity
 </div>
 
 :::
@@ -170,6 +170,129 @@ Well-chosen names transform code from puzzles into stories.
 **Time spent on naming is not overhead—it's an investment that pays compound interest.**
 
 :::
+
+
+# Naming and good design
+
+Illustrating benefits of thoughtful naming for software design using ***function*** as an example
+
+## Following Unix philosophy {.smaller}
+
+Unix philosophy specifies the golden rule for writing good a function: <br>
+_"Do One Thing And Do It Well."_
+
+Finding a descriptive name for a function can inform us if we are following this rule.
+
+. . .
+
+Consider a function to extract a table of regression estimates for a statistical model. 
+For convenience, it also allows sorting the table by estimate.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution}
+
+## Naming is hard
+
+Trying to find a name highlights that the function is doing more than one thing.
+
+```{python}
+def extract_and_sort_estimates(model, sort="asc"):
+    # code to extract estimates from model
+    # code to sort table
+    pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip}
+
+## Naming is easy
+
+These individual functions are easier to read, understand, and test.
+
+```{python}
+def extract_estimates(model):
+    # code to extract estimates from model
+    pass
+
+def sort_estimates(table, sort="asc"):
+    # code to sort table
+    pass
+```
+
+:::
+
+:::
+
+::::
+
+Functions with `and` or `or` in their names are dead giveaways that they don't follow the Unix philosophy.
+
+## Function parameter names {.smaller}
+
+When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.
+
+E.g. a boolean or flag parameter name means function is doing more than one thing.
+
+. . .
+
+Consider a function that converts Markdown or HTML documents to PDF.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution}
+
+## Boolean parameter name
+
+Doing more than one thing.
+
+```{python}
+def convert_to_pdf(file, is_markdown=False):
+    if is_markdown:
+        # code to convert Markdown to PDF
+        pass
+    
+    if not is_markdown:
+        # code to convert HTML to PDF
+        pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip}
+
+## Non-boolean parameter name
+
+Doing one thing.
+
+```{python}
+def convert_md_to_pdf(file):
+    # code to convert Markdown to PDF
+    pass
+
+def convert_html_to_pdf(file):
+    # code to convert HTML to PDF
+    pass
+```
+
+:::
+
+:::
+
+::::
 
 # Naming Strategies*
 
@@ -1093,129 +1216,6 @@ You won't have to remember any of these rules if you follow the following princi
 . . .
 
 - **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`, `get_list()` is better than `procure_list()`, `find_user()` is better than `ascertain_user()`.
-
-# Naming and good design
-
-Deep dive into benefits of thoughtful naming for an entity at the heart of all software:
-***function***
-
-## Following Unix philosophy {.smaller}
-
-Unix philosophy specifies the golden rule for writing good a function: <br>
-_"Do One Thing And Do It Well."_
-
-Finding a descriptive name for a function can inform us if we are following this rule.
-
-. . .
-
-Consider a function to extract a table of regression estimates for a statistical model. 
-For convenience, it also allows sorting the table by estimate.
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-:::{.callout-caution}
-
-## Naming is hard
-
-Trying to find a name highlights that the function is doing more than one thing.
-
-```{python}
-def mystery_function(model, sort="asc"):
-    # code to extract estimates from model
-    # code to sort table
-    pass
-```
-
-:::
-
-:::
-
-::: {.column width='50%'}
-
-:::{.callout-tip}
-
-## Naming is easy
-
-These individual functions are easier to read, understand, and test.
-
-```{python}
-def extract_estimates(model):
-    # code to extract estimates from model
-    pass
-
-def sort_estimates(table, sort="asc"):
-    # code to sort table
-    pass
-```
-
-:::
-
-:::
-
-::::
-
-Functions with `and` or `or` in their names are dead giveaways that they don't follow the Unix philosophy.
-
-## Function parameter names {.smaller}
-
-When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.
-
-E.g. a boolean or flag parameter name means function is doing more than one thing.
-
-. . .
-
-Consider a function that converts Markdown or HTML documents to PDF.
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-:::{.callout-caution}
-
-## Boolean parameter name
-
-Doing more than one thing.
-
-```{python}
-def convert_to_pdf(file, is_markdown=False):
-    if is_markdown:
-        # code to convert Markdown to PDF
-        pass
-    
-    if not is_markdown:
-        # code to convert HTML to PDF
-        pass
-```
-
-:::
-
-:::
-
-::: {.column width='50%'}
-
-:::{.callout-tip}
-
-## Non-boolean parameter name
-
-Doing one thing.
-
-```{python}
-def convert_md_to_pdf(file):
-    # code to convert Markdown to PDF
-    pass
-
-def convert_html_to_pdf(file):
-    # code to convert HTML to PDF
-    pass
-```
-
-:::
-
-:::
-
-::::
 
 # Utilizing tools
 
