@@ -139,9 +139,7 @@ Bad names create a cascade of problems that compound over time.
 
 . . .
 
-::: {.callout-warning}
-
-## The multiplication effect
+::: {.callout-warning title="The multiplication effect"}
 
 **Poor naming spreads confusion throughout the entire system.**
 
@@ -169,9 +167,7 @@ Well-chosen names transform code from puzzles into stories.
 
 . . .
 
-::: {.callout-tip}
-
-## The investment mindset
+::: {.callout-tip title="The investment mindset"}
 
 **Time spent on naming is not overhead—it's an investment that pays compound interest.**
 
@@ -198,9 +194,7 @@ For convenience, it also allows sorting the table by estimate.
 
 ::: {.column width='50%'}
 
-:::{.callout-caution}
-
-## Naming is hard
+:::{.callout-caution title="Naming is hard"}
 
 Trying to find a name highlights that the function is doing more than one thing.
 
@@ -217,9 +211,7 @@ def extract_and_sort_estimates(model, sort="asc"):
 
 ::: {.column width='50%'}
 
-:::{.callout-tip}
-
-## Naming is easy
+:::{.callout-tip title="Naming is easy"}
 
 These individual functions are easier to read, understand, and test.
 
@@ -255,9 +247,7 @@ Consider a function that converts Markdown or HTML documents to PDF.
 
 ::: {.column width='50%'}
 
-:::{.callout-caution}
-
-## Boolean parameter necessary
+:::{.callout-caution title="Boolean parameter necessary"}
 
 Doing more than one thing.
 
@@ -278,9 +268,7 @@ def convert_to_pdf(file, is_markdown=False):
 
 ::: {.column width='50%'}
 
-:::{.callout-tip}
-
-## Boolean parameter unnecessary
+:::{.callout-tip title="Boolean parameter unnecessary"}
 
 Doing one thing.
 
@@ -945,9 +933,7 @@ Linters can only do so much when it comes to naming.
 
 . . .
 
-::: {.callout-note}
-
-## The fundamental limitation
+::: {.callout-note title="The fundamental limitation"}
 
 **Linters can enforce *syntax* but not *semantics*.** Good naming requires human understanding of both the problem and the solution.
 
@@ -996,9 +982,7 @@ flowchart TD
 
 . . .
 
-::: {.callout-tip}
-
-## Symbiotic Naming
+::: {.callout-tip title="Symbiotic Naming"}
 
 Try to come up with good names yourself. Then, ask AI tools to validate, assess, or suggest improvements.
 
@@ -1039,9 +1023,7 @@ flowchart TD
 
 . . .
 
-::: {.callout-tip}
-
-## The Code Review Advantage
+::: {.callout-tip title="The Code Review Advantage"}
 
 It provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of code.
 
