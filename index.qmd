@@ -82,7 +82,7 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 
 🎯 **Goal**
 
-Transform naming from an afterthought into a deliberate practice that enhances code clarity and software maintainability.
+Transform naming from an afterthought into a deliberate practice.
 
 :::
 
