@@ -71,12 +71,11 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 ## What you'll learn today {.smaller}
 
 - Why naming impacts code quality and maintainability
-- Practical strategies for clear, consistent, and meaningful names
+- Practical strategies for clear, consistent, and meaningful names*
 - Common naming pitfalls to avoid
 - How naming improves software design and architecture
 - Tools and techniques for better naming (AI, code review)
 
-<br>
 <br>
 
 ::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
@@ -84,6 +83,13 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 🎯 **Goal**
 
 Transform naming from an afterthought into a deliberate practice that enhances code clarity and software maintainability.
+
+:::
+
+
+::: {.aside style="font-size: 0.6em; position: absolute; bottom: 10px; left: 50px;"}
+
+*Despite Python examples, all the mentioned strategies are **language-agnostic**.
 
 :::
 
@@ -294,20 +300,10 @@ def convert_html_to_pdf(file):
 
 ::::
 
-# Naming: The Do's and Don'ts*
+# Naming: The Do's and Don'ts
 
 > "_The beginning of wisdom is to call things by their proper name._" - Confucius
 
-<br>
-<br>
-<br>
-<br>
-
-::: {.aside style="font-size: 0.6em; position: absolute; bottom: 10px; left: 50px;"}
-
-\* Despite Python examples, all the mentioned strategies are **language-agnostic**.
-
-:::
 
 # The Don'ts
 
@@ -399,6 +395,13 @@ You won't have to remember any of these rules if you follow the following princi
 
 # The Do's
 
+You won't have to remember any of these rules if you follow the following principle:
+
+::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
+
+**Good names reveal intention and eliminate guesswork.**
+
+:::
 
 ## Names should be self-documenting {.smaller}
 
@@ -516,7 +519,7 @@ result = sum_values * 2
 Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.
 
 ```python
-# bad: test1, my_test, retrieve_commands
+# bad: test_retrieve_commands
 # good: test_all_saved_commands_should_be_retrieved
 ```
 
@@ -751,7 +754,7 @@ parse_csv()
 
 ::: {.callout-tip}
 
-**Following *a* convention consistently is more important than *which* convention you adopt.**
+**Following *a* standard consistently is more important than *which* standard you adopt.**
 
 :::
 
