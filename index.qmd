@@ -333,7 +333,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `cumulative_sum()` is a better function name than [`cumsum()`](https://rdrr.io/r/base/cumsum.html){target="_blank"}.
+- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `export_data()` is a better function name than `dump()`.
 
 
 ## {.smaller}
