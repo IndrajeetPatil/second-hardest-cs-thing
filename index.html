@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-03 06:55:28.21551">
+  <meta name="dcterms.date" content="2025-09-03 09:12:46.795063">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -235,9 +235,9 @@
 <h2>What you’ll learn today</h2>
 <ul>
 <li>Why naming impacts code quality and maintainability</li>
-<li>Practical strategies for clear, consistent, and meaningful names*</li>
-<li>Common naming pitfalls to avoid</li>
 <li>How naming improves software design and architecture</li>
+<li>Common naming pitfalls to avoid</li>
+<li>Practical strategies for clear, consistent, and meaningful names*</li>
 <li>Tools and techniques for better naming (AI, code review)</li>
 </ul>
 <p><br></p>
@@ -687,14 +687,14 @@
 <p>Try your best to misinterpret candidate names and see if you succeed.</p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:45%;">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># ambiguous - pixel positions?</span></span>
 <span id="cb12-2"><a href=""></a><span class="kw">def</span> get_char_position(x: <span class="bu">int</span>, y: <span class="bu">int</span>):</span>
 <span id="cb12-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>How I interpret: <br> <em>“<code>x</code>, <code>y</code>: pixel positions for a character”</em></p>
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># clear - text positions!</span></span>
 <span id="cb13-2"><a href=""></a><span class="kw">def</span> get_char_position(line_index: <span class="bu">int</span>, char_index: <span class="bu">int</span>):</span>
@@ -819,7 +819,7 @@
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># violates conventions</span></span>
-<span id="cb21-2"><a href=""></a><span class="kw">class</span> playerentity:</span>
+<span id="cb21-2"><a href=""></a><span class="kw">class</span> playerEntity:</span>
 <span id="cb21-3"><a href=""></a>    <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -884,6 +884,7 @@
 <span id="cb26-4"><a href=""></a>name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
+<div title="Avoid redundancy">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -897,6 +898,7 @@
 <li>In type names, avoid using <em>class</em>, <em>data</em>, <em>object</em>, and <em>type</em> (e.g.&nbsp;bad: <code>classShape</code>, good: <code>Shape</code>)</li>
 <li>In function names, avoid using <em>be</em>, <em>do</em>, <em>perform</em>, etc. (e.g.&nbsp;bad: <code>doAddition()</code>, good: <code>add()</code>)</li>
 </ul>
+</div>
 </div>
 </div>
 </div>
