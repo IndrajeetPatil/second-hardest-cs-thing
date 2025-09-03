@@ -6,13 +6,13 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-cd7454b418030687c631a6a7286fbe16.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.22">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-02 21:56:10.912002">
+  <meta name="dcterms.date" content="2025-09-03 06:50:55.879582">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -235,17 +235,20 @@
 <h2>What you’ll learn today</h2>
 <ul>
 <li>Why naming impacts code quality and maintainability</li>
-<li>Practical strategies for clear, consistent, and meaningful names</li>
+<li>Practical strategies for clear, consistent, and meaningful names*</li>
 <li>Common naming pitfalls to avoid</li>
 <li>How naming improves software design and architecture</li>
 <li>Tools and techniques for better naming (AI, code review)</li>
 </ul>
-<p><br> <br></p>
+<p><br></p>
 <div style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;">
 <p>🎯 <strong>Goal</strong></p>
 <p>Transform naming from an afterthought into a deliberate practice that enhances code clarity and software maintainability.</p>
 </div>
-</section>
+
+<aside><div>
+<p>*Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
+</div></aside></section>
 <section id="there-are-only-two-hard-things-in-computer-science-cache-invalidation-and-naming-things." class="title-slide slide level1 center">
 <h1>“There are only two hard things in Computer Science: cache invalidation and naming things.”</h1>
 <p>- Phil Karlton</p>
@@ -451,15 +454,11 @@
 </div>
 </section></section>
 <section id="naming-the-dos-and-donts" class="title-slide slide level1 center">
-<h1>Naming: The Do’s and Don’ts*</h1>
+<h1>Naming: The Do’s and Don’ts</h1>
 <blockquote>
 <p>“<em>The beginning of wisdom is to call things by their proper name.</em>” - Confucius</p>
 </blockquote>
-<p><br> <br> <br> <br></p>
-
-<aside><div>
-<p>* Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
-</div></aside></section>
+</section>
 
 <section>
 <section id="the-donts" class="title-slide slide level1 center">
@@ -571,7 +570,10 @@
 <section>
 <section id="the-dos" class="title-slide slide level1 center">
 <h1>The Do’s</h1>
-
+<p>You won’t have to remember any of these rules if you follow the following principle:</p>
+<div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
+<p><strong>Good names reveal intention and eliminate guesswork.</strong></p>
+</div>
 </section>
 <section id="names-should-be-self-documenting" class="slide level2 smaller">
 <h2>Names should be self-documenting</h2>
@@ -672,7 +674,7 @@
 </div>
 <div class="callout-content">
 <p>Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># bad: test1, my_test, retrieve_commands</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># bad: test_retrieve_commands</span></span>
 <span id="cb11-2"><a href=""></a><span class="co"># good: test_all_saved_commands_should_be_retrieved</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -857,7 +859,7 @@
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Following <em>a</em> convention consistently is more important than <em>which</em> convention you adopt.</strong></p>
+<p><strong>Following <em>a</em> standard consistently is more important than <em>which</em> standard you adopt.</strong></p>
 </div>
 </div>
 </div>
@@ -1581,13 +1583,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
