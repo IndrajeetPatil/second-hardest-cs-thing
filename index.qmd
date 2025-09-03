@@ -71,9 +71,9 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 ## What you'll learn today {.smaller}
 
 - Why naming impacts code quality and maintainability
-- Practical strategies for clear, consistent, and meaningful names*
-- Common naming pitfalls to avoid
 - How naming improves software design and architecture
+- Common naming pitfalls to avoid
+- Practical strategies for clear, consistent, and meaningful names*
 - Tools and techniques for better naming (AI, code review)
 
 <br>
@@ -533,7 +533,7 @@ Try your best to misinterpret candidate names and see if you succeed.
 
 :::: {.columns}
 
-::: {.column width='40%'}
+::: {.column width='45%'}
 
 ```{python}
 # ambiguous - pixel positions?
@@ -546,7 +546,7 @@ How I interpret: <br>
 
 :::
 
-::: {.column width='60%'}
+::: {.column width='55%'}
 
 ```{python}
 # clear - text positions!
@@ -702,7 +702,7 @@ DebitCardAccount().retrieve_expenditure()
 
 ```{python}
 # violates conventions
-class playerentity:
+class playerEntity:
     self.HairColor = ""
 ```
 
@@ -788,9 +788,7 @@ name
 
 ::::
 
-:::{.callout-note}
-
-## Avoid redundancy
+:::{.callout-note title="Avoid redundancy"}
 
 - In type names, avoid using *class*, *data*, *object*, and *type* (e.g. bad: `classShape`, good: `Shape`)
 - In function names, avoid using *be*, *do*, *perform*, etc. (e.g. bad: `doAddition()`, good: `add()`)
