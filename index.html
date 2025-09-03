@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-03 09:18:39.04402">
+  <meta name="dcterms.date" content="2025-09-03 09:46:46.784324">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -243,7 +243,7 @@
 <p><br></p>
 <div style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;">
 <p>🎯 <strong>Goal</strong></p>
-<p>Transform naming from an afterthought into a deliberate practice that enhances code clarity and software maintainability.</p>
+<p>Transform naming from an afterthought into a deliberate practice.</p>
 </div>
 
 <aside><div>
@@ -699,19 +699,21 @@
 <p>Try your best to misinterpret candidate names and see if you succeed.</p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:45%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># ambiguous - pixel positions?</span></span>
-<span id="cb12-2"><a href=""></a><span class="kw">def</span> get_char_position(x: <span class="bu">int</span>, y: <span class="bu">int</span>):</span>
-<span id="cb12-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="1,3,4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># ambiguous - pixel positions?</span></span>
+<span id="cb12-2"><a href=""></a><span class="kw">def</span> get_char_position(</span>
+<span id="cb12-3"><a href=""></a>    x: <span class="bu">int</span>,</span>
+<span id="cb12-4"><a href=""></a>    y: <span class="bu">int</span>,</span>
+<span id="cb12-5"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]:</span>
+<span id="cb12-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>How I interpret: <br> <em>“<code>x</code>, <code>y</code>: pixel positions for a character”</em></p>
-</div><div class="column" style="width:55%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># clear - text positions!</span></span>
-<span id="cb13-2"><a href=""></a><span class="kw">def</span> get_char_position(line_index: <span class="bu">int</span>, char_index: <span class="bu">int</span>):</span>
-<span id="cb13-3"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+</div><div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-code-line-numbers="1,3,4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># clear - text positions!</span></span>
+<span id="cb13-2"><a href=""></a><span class="kw">def</span> get_char_position(</span>
+<span id="cb13-3"><a href=""></a>    line_index: <span class="bu">int</span>,</span>
+<span id="cb13-4"><a href=""></a>    char_index: <span class="bu">int</span>,</span>
+<span id="cb13-5"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]:</span>
+<span id="cb13-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In reality: <br> <em>“<code>x</code>, <code>y</code>: line of text and character position in that line”</em></p>
 </div></div>
 </div>
@@ -862,18 +864,8 @@
 </div></div>
 </div>
 <div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
+<div style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;">
 <p><strong>Following <em>a</em> standard consistently is more important than <em>which</em> standard you adopt.</strong></p>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -1223,8 +1215,7 @@
 <p><strong><em>Principle</em>: <strong>Names are a form of abstraction</strong></strong></p>
 </div>
 <div class="callout-content">
-<p>“[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.”</p>
-<p>- John Ousterhout</p>
+<p>“*[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.” - John Ousterhout</p>
 </div>
 </div>
 </div>
