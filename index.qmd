@@ -125,17 +125,17 @@ Bad names create a cascade of problems that compound over time.
 
 **Immediate consequences:**
 
-- Code reviews take longer as reviewers struggle to understand intent
-- Debugging becomes detective work instead of systematic analysis
-- New team members need extensive onboarding to decode the codebase
+- Longer code reviews due to unclear intent
+- Debugging becomes detective work
+- Extensive onboarding needed for new team members
 
 . . .
 
 **Long-term impact:**
 
-- Technical debt accumulates as developers avoid touching poorly-named code
-- Bug introduction rates increase due to misunderstanding
-- Refactoring becomes risky when you can't trust what code actually does
+- Technical debt accumulation from avoidance
+- Higher bug introduction rates
+- Risky refactoring due to uncertainty
 
 . . .
 
@@ -153,17 +153,17 @@ Well-chosen names transform code from puzzles into stories.
 
 **Development velocity:**
 
-- Code reviews focus on logic rather than deciphering meaning
-- Debugging targets the right components faster
-- New features build confidently on existing foundations
+- Code reviews focus on logic, not deciphering
+- Faster component targeting during debugging
+- Confident feature development
 
 . . .
 
 **Maintenance benefits:**
 
-- Refactoring becomes safe and predictable
-- Bug fixes address root causes rather than symptoms  
-- Documentation writes itself when names are self-explanatory
+- Safe and predictable refactoring
+- Root cause fixes over symptom patches  
+- Self-documenting code
 
 . . .
 
@@ -955,12 +955,12 @@ AI tools have context of your entire codebase and can provide meaningful names.
 
 ::: {.column width='60%'}
 
-**How AI tools can help:**
+**Why AI tools can help:**
 
-- They see the whole function/class and understand relationships
-- They recognize patterns across different programming domains
-- They can spot inconsistent naming across your codebase
-- They propose multiple naming options with rationales
+- Full context understanding of functions/classes
+- Cross-domain pattern recognition
+- Inconsistency detection across codebase
+- Multiple naming suggestions with rationales
 
 :::
 
