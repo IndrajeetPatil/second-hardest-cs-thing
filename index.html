@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-04 19:56:04.305015">
+  <meta name="dcterms.date" content="2025-09-05 11:05:30.763433">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -700,21 +700,19 @@
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="1,3,4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># ambiguous - pixel positions?</span></span>
-<span id="cb12-2"><a href=""></a><span class="kw">def</span> get_char_position(</span>
-<span id="cb12-3"><a href=""></a>    x: <span class="bu">int</span>,</span>
-<span id="cb12-4"><a href=""></a>    y: <span class="bu">int</span>,</span>
-<span id="cb12-5"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]:</span>
-<span id="cb12-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>How I interpret: <br> <em>“<code>x</code>, <code>y</code>: pixel positions for a character”</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-code-line-numbers="1,3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># ambiguous - what kind of size?</span></span>
+<span id="cb12-2"><a href=""></a><span class="kw">def</span> get_size(</span>
+<span id="cb12-3"><a href=""></a>    file_path: <span class="bu">str</span>,</span>
+<span id="cb12-4"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb12-5"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>How I interpret: <br> <em>“File size in bytes on disk”</em></p>
 </div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-code-line-numbers="1,3,4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># clear - text positions!</span></span>
-<span id="cb13-2"><a href=""></a><span class="kw">def</span> get_char_position(</span>
-<span id="cb13-3"><a href=""></a>    line_index: <span class="bu">int</span>,</span>
-<span id="cb13-4"><a href=""></a>    char_index: <span class="bu">int</span>,</span>
-<span id="cb13-5"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]:</span>
-<span id="cb13-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In reality: <br> <em>“<code>x</code>, <code>y</code>: line of text and character position in that line”</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-code-line-numbers="1,3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># clear - character count!</span></span>
+<span id="cb13-2"><a href=""></a><span class="kw">def</span> get_character_count(</span>
+<span id="cb13-3"><a href=""></a>    file_path: <span class="bu">str</span>,</span>
+<span id="cb13-4"><a href=""></a>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-5"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In reality: <br> <em>“Number of characters in the file content”</em></p>
 </div></div>
 </div>
 <div class="fragment">
