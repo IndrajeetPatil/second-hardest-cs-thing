@@ -1,3 +1,5 @@
+name: Build Presentation
+
 on:
   push:
     branches: [main, master]
@@ -8,32 +10,37 @@ on:
     # Trigger once a week, on a Sunday (0)
     - cron: "0 0 * * 0"
 
-name: Build Presentation
-
 jobs:
   build-presentation:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: "latest"
 
-      - uses: quarto-dev/quarto-actions/setup@v2
-        run: |
-          quarto --version
-          quarto install extension quarto-ext/fontawesome --no-prompt
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: pre-release
 
-      - uses: r-lib/actions/setup-r@v2
+      - name: Install Quarto extensions
+        run: |
+          quarto --version
+          quarto install extension quarto-ext/fontawesome --no-prompt
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
           upgrade: "TRUE"
@@ -55,4 +62,5 @@ jobs:
         run: |
           cp slides/slides.pdf . && rm -rf slides
 
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v6
