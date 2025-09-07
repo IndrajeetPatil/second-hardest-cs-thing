@@ -337,7 +337,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 . . .
 
-- **Don't let names become outdated.** Update names when functionality changes to avoid misleading future developers. E.g. if `get_means()` changes from returning precomputed values to computing on-the-fly, rename it to `compute_means()`.
+- **Avoid misleading names.** Names that imply wrong information are worse than no names. Update names when functionality changes. E.g. `accounts_list` should not be used for a dictionary; if `get_means()` changes to computing on-the-fly, rename it to `compute_means()`.
 
 ## Clarity & Communication Issues {.smaller}
 
@@ -594,19 +594,18 @@ BeerShelf.count
 
 . . .
 
-**Choose problem domain over implementation details:**
+**Avoid encoding implementation details in names:**
 
 :::: {.columns}
 
 ::: {.column width='50%'}
 
 ```{python}
-# implementation domain - how it works
+# implementation details encoded
 binary_search_users()
 sql_query_products()
-
-# data structure in name
 bonuses_pd  # pandas DataFrame
+hash_map_cache
 ```
 
 :::
@@ -614,12 +613,11 @@ bonuses_pd  # pandas DataFrame
 ::: {.column width='50%'}
 
 ```{python}
-# problem domain - what it does
+# implementation independent
 find_user()
 fetch_products()
-
-# implementation independent
-bonuses     # any data structure
+bonuses
+cache
 ```
 
 :::
@@ -889,13 +887,149 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 :::
 
+## Choose domain-appropriate names {.smaller}
 
+Select terminology that matches your context: computer science terms for technical concepts, problem domain terms for business logic.
 
+. . .
 
+**Use computer science terms for technical concepts:**
 
+:::: {.columns}
 
+::: {.column width='50%'}
 
+```{python}
+# vague business language
+process_items_sequentially()
+store_thing_temporarily()
+```
 
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# precise CS terminology
+traverse_list()
+push_to_stack()
+```
+
+:::
+
+::::
+
+. . .
+
+**Use problem domain terms for business concepts:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# generic technical terms
+validate_input_data()
+process_financial_records()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# domain-specific terms
+validate_loan_application()
+calculate_mortgage_payment()
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Choose names that are meaningful to both developers and domain experts.**
+
+:::
+
+## Use appropriate grammatical forms {.smaller}
+
+Follow consistent patterns: nouns for entities and data, verbs for actions.
+
+. . .
+
+**Classes and objects should use nouns:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# verb-based - confusing
+class ProcessPayment:
+    pass
+
+class HandleError:
+    pass
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# noun-based - clear
+class PaymentProcessor:
+    pass
+
+class ErrorHandler:
+    pass
+```
+
+:::
+
+::::
+
+. . .
+
+**Methods that return values use nouns, action methods use verbs:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# inconsistent grammar
+user.get_name()     # returns name
+user.save()         # performs action
+user.validate_age() # returns boolean
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# consistent grammar
+user.name()         # returns name
+user.save()         # performs action
+user.is_adult()     # returns boolean
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Grammatical consistency helps readers predict what methods do without reading documentation.**
+
+:::
 
 
 # Utilizing tools

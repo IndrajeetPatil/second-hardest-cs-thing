@@ -6,7 +6,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:arxiv.org)",
-      "WebFetch(domain:revealjs.com)"
+      "WebFetch(domain:revealjs.com)",
+      "Bash(rg:*)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []
