@@ -12,7 +12,7 @@ format:
     include-in-header: meta-tags.html
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
-#     subtitle: "Thoughts on naming things for software development"
+#     subtitle: "Transforming Code Clarity Through Better Names"
 # author: "Indrajeet Patil"
 #affiliation: 
 execute:
@@ -44,7 +44,7 @@ knitr::opts_chunk$set(eval = FALSE)
 ::: {style="margin-top: 1em; margin-bottom: 1em;"}
 
 ::: {style="font-size: 0.9em; font-weight: bold;"}
-Thoughts on naming things for software development
+Transforming Code Clarity Through Better Names
 :::
 
 ::: {style="font-size: 0.8em; margin-top: 1em;"}
