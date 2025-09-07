@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 16:00:46.292413">
+  <meta name="dcterms.date" content="2025-09-07 16:13:11.83984">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -932,6 +932,145 @@
 <div class="fragment">
 <div style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;">
 <p><strong>Following <em>a</em> standard consistently is more important than <em>which</em> standard you adopt.</strong></p>
+</div>
+</div>
+</section>
+<section id="aside-examples-of-convention" class="slide level2 smaller" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;">
+<h2>Aside: Examples of Convention</h2>
+<div style="font-size: 0.55em; line-height: 1.3;">
+<div style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+<p><strong>Programming Languages</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Variables</th>
+<th>Functions</th>
+<th>Classes</th>
+<th>Constants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scala</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr class="even">
+<td><strong>Kotlin</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Go</strong></td>
+<td><code>camelCase</code></td>
+<td><code>CamelCase</code>/<code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>CamelCase</code></td>
+</tr>
+<tr class="even">
+<td><strong>Rust</strong></td>
+<td><code>snake_case</code></td>
+<td><code>snake_case</code></td>
+<td><code>PascalCase</code></td>
+<td><code>SCREAMING_SNAKE_CASE</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Swift</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>camelCase</code></td>
+</tr>
+<tr class="even">
+<td><strong>Elixir</strong></td>
+<td><code>snake_case</code></td>
+<td><code>snake_case</code></td>
+<td><code>PascalCase</code></td>
+<td><code>@upper_snake_case</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Dart</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>lowerCamelCase</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+<p><strong>Stack Layer</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 41%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Convention</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Database</strong></td>
+<td><code>snake_case</code></td>
+<td><code>user_profiles</code>, <code>created_at</code></td>
+</tr>
+<tr class="even">
+<td><strong>REST APIs</strong></td>
+<td><code>kebab-case</code>/<code>snake_case</code></td>
+<td><code>/user-profiles</code>, <code>user_name</code></td>
+</tr>
+<tr class="odd">
+<td><strong>GraphQL</strong></td>
+<td><code>camelCase</code></td>
+<td><code>userProfile</code>, <code>orderItems</code></td>
+</tr>
+<tr class="even">
+<td><strong>CSS/HTML</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>.nav-menu</code>, <code>#main-content</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Environment</strong></td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+<td><code>DATABASE_URL</code>, <code>API_KEY</code></td>
+</tr>
+<tr class="even">
+<td><strong>DevOps</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>my-app-deployment</code></td>
+</tr>
+<tr class="odd">
+<td><strong>JSON</strong></td>
+<td><code>camelCase</code>/<code>snake_case</code></td>
+<td><code>firstName</code>, <code>user_id</code></td>
+</tr>
+<tr class="even">
+<td><strong>Configuration</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>app-config.yml</code>, <code>docker-compose.yml</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 10px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;">
+<p><strong>Consistency within each layer matters more than uniformity across layers</strong></p>
 </div>
 </div>
 </section>
