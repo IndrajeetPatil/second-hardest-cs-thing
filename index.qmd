@@ -10,6 +10,7 @@ format:
     touch: true
     help: true
     include-in-header: meta-tags.html
+    link-external-newwindow: true
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
 #     subtitle: "Transforming Code Clarity Through Better Names"
@@ -64,7 +65,7 @@ Indrajeet Patil
 ::::
 
 ::: {style="text-align: center; font-size: 0.7em; margin-top: 2em; color: #666;"}
-Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){target='_blank'}.
+Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
 :::
 
 ## What you'll learn today {.smaller}
@@ -351,7 +352,7 @@ Follow this principle instead of memorizing rules:
 | <span style="background-color: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Communication & Clarity**</span> |  |  |  |
 | Don't use pop-culture references | Not everyone knows them | `thats_what_she_said` | `female_birdsong_recording` |
 | Don't use slang | Can't assume familiarity | `hit_the_road()` | `exit()` |
-| Avoid unintended meanings | Check [Urban dictionary](https://www.urbandictionary.com/){target="_blank"} | `dump()` | `export_data()` |
+| Avoid unintended meanings | Check [Urban dictionary](https://www.urbandictionary.com/) | `dump()` | `export_data()` |
 | Don't use uncommon English words | Stick to common parlance | `commence_process()` | `start_process()` |
 | Don't use unpronounceable names | Enables easier verbal communication | `genymdhms()` | `generate_timestamp()` |
 | <span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
@@ -1303,7 +1304,7 @@ knitr::include_graphics("media/horst_cases.jpeg")
 
 :::{style="text-align: center; font-size: 0.9rem;"}
 
-Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/){target="_blank"}
+Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 
 :::
 
@@ -1331,23 +1332,23 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
 
-- [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/){target="_blank"}
+- [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/)
 
-- For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming){target="_blank"}.
+- For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming).
 
 :::
 
 # For more {data-visibility="uncounted"}
 
-If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations){target="_blank"}.
+If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
 
 # Find me at... {data-visibility="uncounted"}
 
-{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/){target="_blank"}
+{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/)
 
-{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil){target="_blank"}
+{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil)
 
-{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/){target="_blank"}
+{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/)
 
-{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com){target="_blank"}
+{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com)
 
