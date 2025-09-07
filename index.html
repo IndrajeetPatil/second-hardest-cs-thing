@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 19:27:46.971162">
+  <meta name="dcterms.date" content="2025-09-07 19:35:29.399306">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -267,7 +267,7 @@
 </section>
 <section id="why-naming-is-hard" class="slide level2 smaller">
 <h2>Why naming is hard</h2>
-<p>Multiple cognitive demands exhaust mental capacity, leaving little for thoughtful naming.</p>
+<p>Multiple cognitive demands exhaust mental capacity, leaving little for naming.</p>
 <div class="fragment">
 <div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -313,7 +313,7 @@
 <ul>
 <li>Longer code reviews due to unclear intent</li>
 <li>Debugging becomes detective work</li>
-<li>Extensive onboarding needed for new team members</li>
+<li>Extended onboarding for new team members</li>
 </ul>
 </div>
 <div class="fragment">
@@ -382,7 +382,7 @@
 <section>
 <section id="naming-and-good-design" class="title-slide slide level1 center">
 <h1>Naming and good design</h1>
-<p>Illustrating benefits of thoughtful naming for software design using <strong><em>function</em></strong> as an example</p>
+<p>Illustrating naming benefits for software design using <strong><em>functions</em></strong> as examples</p>
 </section>
 <section id="following-unix-philosophy" class="slide level2 smaller">
 <h2>Following Unix philosophy</h2>
@@ -446,7 +446,7 @@
 <div style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;">
 <p><strong>Parameter Naming Rule</strong>: Boolean/flag parameters often signal functions doing multiple things</p>
 </div>
-<p>Parameter names can reveal design problems.</p>
+<p>Parameter names reveal design problems.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div title="Multiple behaviors">
@@ -511,7 +511,7 @@
 <section>
 <section id="the-donts" class="title-slide slide level1 center">
 <h1>The Don’ts</h1>
-<p>You won’t have to remember any of these rules if you follow the following principle:</p>
+<p>Follow this principle instead of memorizing rules:</p>
 <div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
 <p><strong>Names must be readable for the <em>reader</em>, not <em>author</em>, of code.</strong></p>
 </div>
@@ -691,14 +691,14 @@
 <section>
 <section id="the-dos" class="title-slide slide level1 center">
 <h1>The Do’s</h1>
-<p>You won’t have to remember any of these rules if you follow the following principle:</p>
+<p>Follow this principle instead of memorizing rules:</p>
 <div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
 <p><strong>Good names reveal intention and eliminate guesswork.</strong></p>
 </div>
 </section>
 <section id="names-should-be-self-documenting" class="slide level2 smaller">
 <h2>Names should be self-documenting</h2>
-<p>How good a name is can be assessed by how detailed the accompanying comment needs to be.</p>
+<p>Name quality correlates inversely with comment detail needed.</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:45%;">
@@ -754,7 +754,7 @@
 </div></div>
 </div>
 <div class="fragment">
-<p>All variables are temporary in some sense. Calling one <code>tmp</code> is inviting carelessness.</p>
+<p>All variables are temporary. Calling one <code>tmp</code> invites carelessness.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -805,7 +805,7 @@
 </section>
 <section id="names-should-be-difficult-to-misinterpret" class="slide level2 smaller">
 <h2>Names should be difficult to misinterpret</h2>
-<p>Try your best to misinterpret candidate names and see if you succeed.</p>
+<p>Try to misinterpret candidate names.</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -906,7 +906,7 @@
 </section>
 <section id="names-should-maintain-standards" class="slide level2 smaller">
 <h2>Names should maintain standards</h2>
-<p>Standards <strong>reduce cognitive burden</strong>: readers can reuse knowledge across contexts.</p>
+<p>Standards <strong>reduce cognitive burden</strong> by enabling knowledge reuse across contexts.</p>
 <div class="fragment">
 <p><strong>Avoid conflicting meanings and maintain consistency:</strong></p>
 <div class="columns">
