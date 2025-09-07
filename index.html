@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 14:07:09.247904">
+  <meta name="dcterms.date" content="2025-09-07 16:00:46.292413">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -477,103 +477,176 @@
 <p><strong>Names must be readable for the <em>reader</em>, not <em>author</em>, of code.</strong></p>
 </div>
 </section>
-<section id="confusion-similarity" class="slide level2 smaller">
-<h2>Confusion &amp; Similarity</h2>
-<ul>
-<li><strong>Avoid imprecise opposites</strong>, since they can be <a href="https://github.com/pomber/awesome-word-pairs">confusing</a>. E.g. parameter combination <code>begin</code>/<code>last</code> is worse than either <code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code>.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use hard-to-distinguish character pairs in names</strong> (e.g., <code>l</code> and <code>I</code>, <code>O</code> and <code>0</code>, etc.). With certain fonts, <code>count0</code> and <code>counto</code> look identical.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use similar names for entities with different meanings.</strong> E.g. <code>PatientRecs</code> and <code>PatientReps</code> are easily confused because they are so similar. There should be at least two-letter difference: <code>PatientRecords</code> and <code>PatientReports</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid naming separate entities with homonyms.</strong> Discussing entities named <code>waste</code> and <code>waist</code> is inevitably going to lead to confusion.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use easily confused names.</strong> Names that are too similar make great candidates for mistaken identity. E.g. <code>nn</code> and <code>nnn</code> are easily confused; use <code>n_square</code> and <code>n_cube</code> instead.</li>
-</ul>
+<section id="section" class="slide level2 smaller">
+<h2></h2>
+<div style="font-size: 0.65em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tip</th>
+<th>Why</th>
+<th>Bad</th>
+<th>Good</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span style="background-color: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Confusion &amp; Similarity</strong></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Avoid imprecise opposites</td>
+<td>Can be <a href="https://github.com/pomber/awesome-word-pairs">confusing</a></td>
+<td><code>begin</code>/<code>last</code></td>
+<td><code>begin</code>/<code>end</code> or <code>first</code>/<code>last</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t use hard-to-distinguish characters</td>
+<td>Look identical with certain fonts</td>
+<td><code>count0</code>, <code>counto</code></td>
+<td><code>count_zero</code>, <code>count_letter</code></td>
+</tr>
+<tr class="even">
+<td>Don’t use similar names for different meanings</td>
+<td>Easily confused, need 2+ letter difference</td>
+<td><code>PatientRecs</code>, <code>PatientReps</code></td>
+<td><code>PatientRecords</code>, <code>PatientReports</code></td>
+</tr>
+<tr class="odd">
+<td>Avoid naming entities with homonyms</td>
+<td>Leads to confusion in discussion</td>
+<td><code>waste</code>, <code>waist</code></td>
+<td><code>garbage</code>, <code>body_circumference</code></td>
+</tr>
+<tr class="even">
+<td>Don’t use easily confused names</td>
+<td>Too similar, mistaken identity</td>
+<td><code>nn</code>, <code>nnn</code></td>
+<td><code>n_square</code>, <code>n_cube</code></td>
+</tr>
+<tr class="odd">
+<td><span style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Consistency &amp; Standards</strong></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Don’t use inconsistent abbreviations</td>
+<td>Choose one prefix and use consistently</td>
+<td><code>numColumns</code>, <code>noRows</code></td>
+<td><code>numColumns</code>, <code>numRows</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t allow multiple English standards</td>
+<td>Causes constant guessing</td>
+<td><code>centre</code>, <code>center</code> (mixed)</td>
+<td><code>center</code> (consistent)</td>
+</tr>
+<tr class="even">
+<td>Don’t use misleading abbreviations</td>
+<td>Conflicts with language conventions</td>
+<td><code>str</code> (for “structure”)</td>
+<td><code>structure</code></td>
+</tr>
+<tr class="odd">
+<td>Avoid misleading names</td>
+<td>Wrong info is worse than no info</td>
+<td><code>get_means()</code> (incorrectly implies precomputed)</td>
+<td><code>compute_means()</code> (correctly indicates computation)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="consistency-standards" class="slide level2 smaller">
-<h2>Consistency &amp; Standards</h2>
-<ul>
-<li><strong>Don’t use inconsistent abbreviations.</strong> E.g. instead of using <code>numColumns</code> (<em>number</em> of columns) in one function and <code>noRows</code> (<em>number</em> of rows) in another, choose one abbreviation as a prefix and use it consistently.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t allow multiple English standards.</strong> E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) <code>centre</code> or <code>center</code>. Adopt one standard and stick to it.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use misleading abbreviations.</strong> E.g., in Python, <code>str</code> conventionally refers to string type. Using <code>str</code> to mean “structure” in a function parameter will be misleading to other developers.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid misleading names.</strong> Names that imply wrong information are worse than no names. Update names when functionality changes. E.g. <code>accounts_list</code> should not be used for a dictionary; if <code>get_means()</code> changes to computing on-the-fly, rename it to <code>compute_means()</code>.</li>
-</ul>
-</div>
-</section>
-<section id="clarity-communication-issues" class="slide level2 smaller">
-<h2>Clarity &amp; Communication Issues</h2>
-<ul>
-<li><strong>Don’t use pop-culture references in names.</strong> Not everyone knows them. E.g. <code>female_birdsong_recording</code> is a better variable name than <code>thats_what_she_said</code>.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use slang.</strong> You can’t assume current or future developers to be familiar with them. E.g. <code>exit()</code> is better than <code>hit_the_road()</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Avoid unintended meanings.</strong> Do your due diligence to check dictionaries (especially <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a>!) if the word has unintended meaning. E.g. <code>export_data()</code> is a better function name than <code>dump()</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use uncommon English words.</strong> Stick to common parlance that most developers understand. E.g. <code>start_process()</code> is better than <code>commence_process()</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use unpronounceable names.</strong> While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. <code>generate_timestamp()</code> is better than <code>genymdhms()</code>.</li>
-</ul>
-</div>
-</section>
-<section id="technical-maintainability-issues" class="slide level2 smaller">
-<h2>Technical &amp; Maintainability Issues</h2>
-<ul>
-<li><strong>Don’t misspell to save a few characters.</strong> Remembering spelling is difficult, and remembering <em>correct misspelling</em> even more so. E.g. don’t use <code>hilite</code> instead of <code>highlight</code>. The benefit is not worth the cost here.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use commonly misspelled words in English.</strong> Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it <code>accumulate</code>, <code>accummulate</code>, <code>acumulate</code>, or <code>acummulate</code>?!</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use numeric suffixes in names to specify levels.</strong> E.g. variable names <code>level1</code>, <code>level2</code>, <code>level3</code> are not as informative as <code>beginner</code>, <code>intermediate</code>, <code>advanced</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t use unsearchable names.</strong> Single letters and very generic terms are hard to find and replace in a codebase. E.g. parameters <code>a</code> and <code>f</code> should be <code>arr</code> and <code>fun</code>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Don’t prioritize grammar over clarity.</strong> Breaking grammatical rules can improve code readability. E.g. use <code>fishes</code>, <code>peoples</code>, <code>feedbacks</code> when the plural form aids comprehension.</li>
-</ul>
+<section id="section-1" class="slide level2 smaller">
+<h2></h2>
+<div style="font-size: 0.65em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tip</th>
+<th>Why</th>
+<th>Bad</th>
+<th>Good</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span style="background-color: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Communication &amp; Clarity</strong></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Don’t use pop-culture references</td>
+<td>Not everyone knows them</td>
+<td><code>thats_what_she_said</code></td>
+<td><code>female_birdsong_recording</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t use slang</td>
+<td>Can’t assume familiarity</td>
+<td><code>hit_the_road()</code></td>
+<td><code>exit()</code></td>
+</tr>
+<tr class="even">
+<td>Avoid unintended meanings</td>
+<td>Check <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a></td>
+<td><code>dump()</code></td>
+<td><code>export_data()</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t use uncommon English words</td>
+<td>Stick to common parlance</td>
+<td><code>commence_process()</code></td>
+<td><code>start_process()</code></td>
+</tr>
+<tr class="even">
+<td>Don’t use unpronounceable names</td>
+<td>Enables easier verbal communication</td>
+<td><code>genymdhms()</code></td>
+<td><code>generate_timestamp()</code></td>
+</tr>
+<tr class="odd">
+<td><span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Technical &amp; Maintainability</strong></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Don’t misspell to save characters</td>
+<td>Correct misspelling is harder to remember</td>
+<td><code>hilite</code></td>
+<td><code>highlight</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t use commonly misspelled words</td>
+<td>Slows you down, increases errors</td>
+<td><code>accumulate</code> variants</td>
+<td><code>sum</code>, <code>collect</code></td>
+</tr>
+<tr class="even">
+<td>Don’t use numeric suffixes for levels</td>
+<td>Not informative</td>
+<td><code>level1</code>, <code>level2</code>, <code>level3</code></td>
+<td><code>beginner</code>, <code>intermediate</code>, <code>advanced</code></td>
+</tr>
+<tr class="odd">
+<td>Don’t use unsearchable names</td>
+<td>Hard to find and replace</td>
+<td><code>a</code>, <code>f</code></td>
+<td><code>arr</code>, <code>fun</code></td>
+</tr>
+<tr class="even">
+<td>Don’t prioritize grammar over clarity</td>
+<td>Plural forms aid comprehension</td>
+<td><code>fish</code> (for multiple)</td>
+<td><code>fishes</code>, <code>peoples</code>, <code>feedbacks</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section></section>
 <section>
@@ -862,7 +935,7 @@
 </div>
 </div>
 </section>
-<section id="section" class="slide level2 smaller">
+<section id="section-2" class="slide level2 smaller">
 <h2></h2>
 <h3 id="unnecessary-details-in-names-should-be-removed">Unnecessary details in names should be removed…</h3>
 <div class="columns">
