@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 19:21:30.653447">
+  <meta name="dcterms.date" content="2025-09-07 19:27:46.971162">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -236,7 +236,7 @@
 <li>Why naming impacts code quality and maintainability</li>
 <li>How naming improves software design and architecture</li>
 <li>Common naming pitfalls to avoid</li>
-<li>Practical strategies for clear, consistent, and meaningful names*</li>
+<li>Practical strategies for clear, consistent, and meaningful names<sup>†</sup></li>
 <li>Tools and techniques for better naming (AI, code review)</li>
 </ul>
 <p><br></p>
@@ -246,7 +246,7 @@
 </div>
 
 <aside><div>
-<p>*Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
+<p><sup>†</sup>Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
 </div></aside></section>
 <section id="there-are-only-two-hard-things-in-computer-science-cache-invalidation-and-naming-things." class="title-slide slide level1 center">
 <h1>“There are only two hard things in Computer Science: cache invalidation and naming things.”</h1>
@@ -737,7 +737,7 @@
 </section>
 <section id="names-should-be-specific" class="slide level2 smaller">
 <h2>Names should be specific</h2>
-<p>Generic names are widely used and acceptable for short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.</p>
+<p>Generic names are widely used and acceptable in short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.</p>
 <div class="fragment">
 <p>For longer loops, use meaningful names instead of <code>i</code>, <code>j</code>, <code>k</code>:</p>
 <div class="columns">
@@ -1196,7 +1196,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># better</span></span>
 <span id="cb32-2"><a href="" aria-hidden="true" tabindex="-1"></a>is_firewall_enabled <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div><p>But if the variable is only ever used in its false version (e.g.&nbsp;<code>is_volcano_inactive</code>), the negative version can be easier to work with.</p>
+</div><p>However, if the variable is primarily used in its false state (e.g., <code>is_volcano_inactive</code>), the negative version can be easier to work with.</p>
 </div>
 </div>
 <div class="fragment">
@@ -1566,7 +1566,7 @@
 <p><strong><em>Principle</em>: <strong>Names are a form of abstraction</strong></strong></p>
 </div>
 <div class="callout-content">
-<p>“*[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.” - John Ousterhout</p>
+<p>“<em>[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.</em>” - John Ousterhout</p>
 </div>
 </div>
 </div>
@@ -1638,7 +1638,7 @@
 
 <section id="find-me-at" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Find me at…</h1>
-<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/" target="_blank">LikedIn</a></p>
+<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/" target="_blank">LinkedIn</a></p>
 <p><i class="fa-brands fa-github" aria-label="github"></i> <a href="http://github.com/IndrajeetPatil" target="_blank">GitHub</a></p>
 <p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/" target="_blank">Website</a></p>
 <p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:patilindrajeet.science@gmail.com" target="_blank">E-mail</a></p>
