@@ -703,6 +703,45 @@ parse_csv()
 
 :::
 
+## Aside: Examples of Convention {.smaller style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
+
+::: {style="font-size: 0.55em; line-height: 1.3;"}
+
+::: {style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Programming Languages**
+
+| Language | Variables | Functions | Classes | Constants |
+|----------|-----------|-----------|---------|-----------|
+| **Scala** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Kotlin** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Go** | `camelCase` | `CamelCase`/`camelCase` | `PascalCase` | `CamelCase` |
+| **Rust** | `snake_case` | `snake_case` | `PascalCase` | `SCREAMING_SNAKE_CASE` |
+| **Swift** | `camelCase` | `camelCase` | `PascalCase` | `camelCase` |
+| **Elixir** | `snake_case` | `snake_case` | `PascalCase` | `@upper_snake_case` |
+| **Dart** | `camelCase` | `camelCase` | `PascalCase` | `lowerCamelCase` |
+:::
+
+::: {style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Stack Layer**
+
+| Layer | Convention | Examples |
+|-------|------------|----------|
+| **Database** | `snake_case` | `user_profiles`, `created_at` |
+| **REST APIs** | `kebab-case`/`snake_case` | `/user-profiles`, `user_name` |
+| **GraphQL** | `camelCase` | `userProfile`, `orderItems` |
+| **CSS/HTML** | `kebab-case` | `.nav-menu`, `#main-content` |
+| **Environment** | `UPPER_SNAKE_CASE` | `DATABASE_URL`, `API_KEY` |
+| **DevOps** | `kebab-case` | `my-app-deployment` |
+| **JSON** | `camelCase`/`snake_case` | `firstName`, `user_id` |
+| **Configuration** | `kebab-case` | `app-config.yml`, `docker-compose.yml` |
+:::
+
+::: {style="margin-top: 10px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;"}
+**Consistency within each layer matters more than uniformity across layers**
+:::
+
+:::
+
 ## {.smaller}
 
 ### Unnecessary details in names should be removed...
