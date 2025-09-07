@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 17:27:48.277192">
+  <meta name="dcterms.date" content="2025-09-07 17:39:45.393796">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -264,6 +264,52 @@
 </div><div class="column" style="width:50%;">
 <p><img data-src="media/code_ocean.png" width="450" height="350"></p>
 </div></div>
+</section>
+<section id="why-naming-is-hard" class="slide level2 smaller">
+<h2>Why naming is hard</h2>
+<p>Programming requires managing multiple cognitive demands simultaneously, leaving little mental capacity for thoughtful naming.</p>
+<div class="fragment">
+<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Programming Task] --&gt; B[High Cognitive Load]
+    B --&gt; C[Algorithm Design]
+    B --&gt; D[Syntax &amp; Language Rules]
+    B --&gt; E[Memory Management]
+    B --&gt; F[Error Handling]
+    B --&gt; G[Performance Considerations]
+    B --&gt; H[Quick Naming Decisions]
+    
+    H --&gt; I[Generic Names]
+    H --&gt; J[Shortened Names]  
+    H --&gt; K[Context-Dependent Names]
+    
+    style A fill:#e3f2fd,color:#000
+    style B fill:#fff3e0,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#f8f9fa,color:#000
+    style E fill:#f8f9fa,color:#000
+    style F fill:#f8f9fa,color:#000
+    style G fill:#f8f9fa,color:#000
+    style H fill:#ffebee,color:#000
+    style I fill:#ffcdd2,color:#000
+    style J fill:#ffcdd2,color:#000
+    style K fill:#ffcdd2,color:#000
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div style="background-color: #fff3e0; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;">
+<p><strong>The Reality</strong>: When juggling complex logic, naming becomes an afterthought rather than a deliberate choice</p>
+</div>
+</div>
 </section>
 <section id="the-hidden-cost-of-poor-naming" class="slide level2 smaller">
 <h2>The hidden cost of poor naming</h2>
@@ -1438,7 +1484,7 @@
 </section>
 <section id="code-review-a-fresh-perspective" class="slide level2 smaller">
 <h2>Code Review: A fresh perspective</h2>
-<p>When coding, we operate at peak cognitive load and this mental overload makes it the worst time to choose thoughtful names.</p>
+<p>Lower cognitive load + fresh perspective = ideal conditions for better naming.</p>
 <div class="fragment">
 <div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -1446,27 +1492,29 @@
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-    A[Coding Phase] --&gt; B[High Cognitive Load]
-    B --&gt; C[Managing Multiple Concerns]
-    C --&gt; D[Algorithm Logic]
-    C --&gt; E[Syntax Details]
-    C --&gt; F[Memory Management]
-    C --&gt; G[Quick Name Choices]
+    A[Code Review] --&gt; B[Lower Cognitive Load]
+    B --&gt; C[Fresh Perspective]
+    B --&gt; D[Focus on Clarity]
     
-    H[Code Review Phase] --&gt; I[Lower Cognitive Load]
-    I --&gt; J[Focus on Clarity]
-    J --&gt; K[Fresh Perspective]
-    J --&gt; L[Name Evaluation]
-    J --&gt; M[Better Abstractions]
+    C --&gt; E[Question Assumptions]
+    C --&gt; F[Spot Unclear Names]
+    D --&gt; G[Evaluate Intent]
+    D --&gt; H[Assess Abstractions]
     
-    G -.-&gt;|Improved by| L
+    E --&gt; I[Better Names]
+    F --&gt; I
+    G --&gt; I
+    H --&gt; I
     
-    style A fill:#ffebee
-    style B fill:#ffcdd2
-    style G fill:#ef9a9a
-    style H fill:#e8f5e8
-    style I fill:#c8e6c9
-    style M fill:#81c784
+    style A fill:#e3f2fd,color:#000
+    style B fill:#f3e5f5,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#f8f9fa,color:#000
+    style E fill:#fff3e0,color:#000
+    style F fill:#fff3e0,color:#000
+    style G fill:#fff3e0,color:#000
+    style H fill:#fff3e0,color:#000
+    style I fill:#e8f5e8,color:#000
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -1475,17 +1523,17 @@
 </div>
 </div>
 <div class="fragment">
-<div title="The Code Review Advantage">
+<div title="Key Insight">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>The Code Review Advantage</strong></p>
+<p><strong>Key Insight</strong></p>
 </div>
 <div class="callout-content">
-<p>It provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of code.</p>
+<p><strong>Code review transforms naming from reactive to deliberate</strong></p>
 </div>
 </div>
 </div>
