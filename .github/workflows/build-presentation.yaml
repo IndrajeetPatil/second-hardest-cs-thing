@@ -47,9 +47,7 @@ jobs:
 
       - name: Render slides
         run: |
-          options(crayon.enabled = FALSE)
           quarto render index.qmd
-        shell: Rscript {0}
 
       - name: Build PDF using decktape
         run: |
