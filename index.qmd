@@ -116,6 +116,47 @@ Navigating the codebase with good names as beacons of clarity
 
 ::::
 
+## Why naming is hard {.smaller}
+
+Programming requires managing multiple cognitive demands simultaneously, leaving little mental capacity for thoughtful naming.
+
+. . .
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Programming Task] --> B[High Cognitive Load]
+    B --> C[Algorithm Design]
+    B --> D[Syntax & Language Rules]
+    B --> E[Memory Management]
+    B --> F[Error Handling]
+    B --> G[Performance Considerations]
+    B --> H[Quick Naming Decisions]
+    
+    H --> I[Generic Names]
+    H --> J[Shortened Names]  
+    H --> K[Context-Dependent Names]
+    
+    style A fill:#e3f2fd,color:#000
+    style B fill:#fff3e0,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#f8f9fa,color:#000
+    style E fill:#f8f9fa,color:#000
+    style F fill:#f8f9fa,color:#000
+    style G fill:#f8f9fa,color:#000
+    style H fill:#ffebee,color:#000
+    style I fill:#ffcdd2,color:#000
+    style J fill:#ffcdd2,color:#000
+    style K fill:#ffcdd2,color:#000
+```
+
+. . .
+
+::: {style="background-color: #fff3e0; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**The Reality**: When juggling complex logic, naming becomes an afterthought rather than a deliberate choice
+:::
+
 ## The hidden cost of poor naming {.smaller}
 
 . . .
@@ -1140,7 +1181,7 @@ Try to come up with good names yourself. Then, ask AI tools to validate, assess,
 
 ## Code Review: A fresh perspective {.smaller}
 
-When coding, we operate at peak cognitive load and this mental overload makes it the worst time to choose thoughtful names.
+Lower cognitive load + fresh perspective = ideal conditions for better naming.
 
 . . .
 
@@ -1148,34 +1189,36 @@ When coding, we operate at peak cognitive load and this mental overload makes it
 %%| eval: true
 %%| echo: false
 flowchart TD
-    A[Coding Phase] --> B[High Cognitive Load]
-    B --> C[Managing Multiple Concerns]
-    C --> D[Algorithm Logic]
-    C --> E[Syntax Details]
-    C --> F[Memory Management]
-    C --> G[Quick Name Choices]
+    A[Code Review] --> B[Lower Cognitive Load]
+    B --> C[Fresh Perspective]
+    B --> D[Focus on Clarity]
     
-    H[Code Review Phase] --> I[Lower Cognitive Load]
-    I --> J[Focus on Clarity]
-    J --> K[Fresh Perspective]
-    J --> L[Name Evaluation]
-    J --> M[Better Abstractions]
+    C --> E[Question Assumptions]
+    C --> F[Spot Unclear Names]
+    D --> G[Evaluate Intent]
+    D --> H[Assess Abstractions]
     
-    G -.->|Improved by| L
+    E --> I[Better Names]
+    F --> I
+    G --> I
+    H --> I
     
-    style A fill:#ffebee
-    style B fill:#ffcdd2
-    style G fill:#ef9a9a
-    style H fill:#e8f5e8
-    style I fill:#c8e6c9
-    style M fill:#81c784
+    style A fill:#e3f2fd,color:#000
+    style B fill:#f3e5f5,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#f8f9fa,color:#000
+    style E fill:#fff3e0,color:#000
+    style F fill:#fff3e0,color:#000
+    style G fill:#fff3e0,color:#000
+    style H fill:#fff3e0,color:#000
+    style I fill:#e8f5e8,color:#000
 ```
 
 . . .
 
-::: {.callout-tip title="The Code Review Advantage"}
+::: {.callout-tip title="Key Insight"}
 
-It provides the mental space needed to evaluate whether names truly capture the intent and abstraction level of code.
+**Code review transforms naming from reactive to deliberate**
 
 :::
 
