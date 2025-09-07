@@ -298,81 +298,42 @@ You won't have to remember any of these rules if you follow the following princi
 
 :::
 
-## Confusion & Similarity {.smaller}
+## {.smaller}
 
-- **Avoid imprecise opposites**, since they can be [confusing](https://github.com/pomber/awesome-word-pairs). E.g. parameter combination `begin`/`last` is worse than either `begin`/`end` or `first`/`last`.
+::: {style="font-size: 0.65em;"}
+| Tip | Why | Bad | Good |
+|-----|-----|-----|------|
+| <span style="background-color: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Confusion & Similarity**</span> |  |  |  |
+| Avoid imprecise opposites | Can be [confusing](https://github.com/pomber/awesome-word-pairs) | `begin`/`last` | `begin`/`end` or `first`/`last` |
+| Don't use hard-to-distinguish characters | Look identical with certain fonts | `count0`, `counto` | `count_zero`, `count_letter` |
+| Don't use similar names for different meanings | Easily confused, need 2+ letter difference | `PatientRecs`, `PatientReps` | `PatientRecords`, `PatientReports` |
+| Avoid naming entities with homonyms | Leads to confusion in discussion | `waste`, `waist` | `garbage`, `body_circumference` |
+| Don't use easily confused names | Too similar, mistaken identity | `nn`, `nnn` | `n_square`, `n_cube` |
+| <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Consistency & Standards**</span> |  |  |  |
+| Don't use inconsistent abbreviations | Choose one prefix and use consistently | `numColumns`, `noRows` | `numColumns`, `numRows` |
+| Don't allow multiple English standards | Causes constant guessing | `centre`, `center` (mixed) | `center` (consistent) |
+| Don't use misleading abbreviations | Conflicts with language conventions | `str` (for "structure") | `structure` |
+| Avoid misleading names | Wrong info is worse than no info | `get_means()` (incorrectly implies precomputed) | `compute_means()` (correctly indicates computation) |
+:::
 
-. . .
+## {.smaller}
 
-- **Don't use hard-to-distinguish character pairs in names** (e.g., `l` and `I`, `O` and `0`, etc.). With certain fonts, `count0` and `counto` look identical.
-
-. . .
-
-- **Don't use similar names for entities with different meanings.** E.g. `PatientRecs` and `PatientReps` are easily confused because they are so similar. There should be at least two-letter difference: `PatientRecords` and `PatientReports`.
-
-. . .
-
-- **Avoid naming separate entities with homonyms.** Discussing entities named `waste` and `waist` is inevitably going to lead to confusion.
-
-. . .
-
-- **Don't use easily confused names.** Names that are too similar make great candidates for mistaken identity. E.g. `nn` and `nnn` are easily confused; use `n_square` and `n_cube` instead.
-
-## Consistency & Standards {.smaller}
-
-- **Don't use inconsistent abbreviations.** E.g. instead of using `numColumns` (*number* of columns) in one function and `noRows` (*number* of rows) in another, choose one abbreviation as a prefix and use it consistently.
-
-. . .
-
-- **Don't allow multiple English standards.** E.g. using both American and British English standards would have you constantly guessing if the variable is named (e.g.) `centre` or `center`. Adopt one standard and stick to it.
-
-. . .
-
-- **Don't use misleading abbreviations.** E.g., in Python, `str` conventionally refers to string type. Using `str` to mean "structure" in a function parameter will be misleading to other developers.
-
-. . .
-
-- **Avoid misleading names.** Names that imply wrong information are worse than no names. Update names when functionality changes. E.g. `accounts_list` should not be used for a dictionary; if `get_means()` changes to computing on-the-fly, rename it to `compute_means()`.
-
-## Clarity & Communication Issues {.smaller}
-
-- **Don't use pop-culture references in names.** Not everyone knows them. E.g. `female_birdsong_recording` is a better variable name than `thats_what_she_said`.
-
-. . .
-
-- **Don't use slang.** You can't assume current or future developers to be familiar with them. E.g. `exit()` is better than `hit_the_road()`.
-
-. . .
-
-- **Avoid unintended meanings.** Do your due diligence to check dictionaries (especially [Urban dictionary](https://www.urbandictionary.com/){target="_blank"}!) if the word has unintended meaning. E.g. `export_data()` is a better function name than `dump()`.
-
-. . .
-
-- **Don't use uncommon English words.** Stick to common parlance that most developers understand. E.g. `start_process()` is better than `commence_process()`.
-
-. . .
-
-- **Don't use unpronounceable names.** While this is the weakest requirement, pronounceable names enable easier verbal communication. E.g. `generate_timestamp()` is better than `genymdhms()`.
-
-## Technical & Maintainability Issues {.smaller}
-
-- **Don't misspell to save a few characters.** Remembering spelling is difficult, and remembering *correct misspelling* even more so. E.g. don't use `hilite` instead of `highlight`. The benefit is not worth the cost here.
-
-. . .
-
-- **Don't use commonly misspelled words in English.** Using such names for variables can, at minimum, slow you down, or, at worst, increase the possibility of making an error. E.g. is it `accumulate`, `accummulate`, `acumulate`, or `acummulate`?!
-
-. . .
-
-- **Don't use numeric suffixes in names to specify levels.** E.g. variable names `level1`, `level2`, `level3` are not as informative as `beginner`, `intermediate`, `advanced`.
-
-. . .
-
-- **Don't use unsearchable names.** Single letters and very generic terms are hard to find and replace in a codebase. E.g. parameters `a` and `f` should be `arr` and `fun`.
-
-. . .
-
-- **Don't prioritize grammar over clarity.** Breaking grammatical rules can improve code readability. E.g. use `fishes`, `peoples`, `feedbacks` when the plural form aids comprehension.
+::: {style="font-size: 0.65em;"}
+| Tip | Why | Bad | Good |
+|-----|-----|-----|------|
+| <span style="background-color: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Communication & Clarity**</span> |  |  |  |
+| Don't use pop-culture references | Not everyone knows them | `thats_what_she_said` | `female_birdsong_recording` |
+| Don't use slang | Can't assume familiarity | `hit_the_road()` | `exit()` |
+| Avoid unintended meanings | Check [Urban dictionary](https://www.urbandictionary.com/){target="_blank"} | `dump()` | `export_data()` |
+| Don't use uncommon English words | Stick to common parlance | `commence_process()` | `start_process()` |
+| Don't use unpronounceable names | Enables easier verbal communication | `genymdhms()` | `generate_timestamp()` |
+| <span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
+| Don't misspell to save characters | Correct misspelling is harder to remember | `hilite` | `highlight` |
+| Don't use commonly misspelled words | Slows you down, increases errors | `accumulate` variants | `sum`, `collect` |
+| Don't use numeric suffixes for levels | Not informative | `level1`, `level2`, `level3` | `beginner`, `intermediate`, `advanced` |
+| Don't use unsearchable names | Hard to find and replace | `a`, `f` | `arr`, `fun` |
+| Don't prioritize grammar over clarity | Plural forms aid comprehension | `fish` (for multiple) | `fishes`, `peoples`, `feedbacks` |
+:::
 
 
 # The Do's
