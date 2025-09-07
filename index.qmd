@@ -37,8 +37,6 @@ knitr::opts_chunk$set(eval = FALSE)
 
 ## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
-<!-- Don't render this file locally Run `renderer.R` script instead. -->
-
 :::: {.columns}
 
 ::: {.column width="60%"}
