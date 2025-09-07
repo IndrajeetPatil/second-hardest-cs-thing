@@ -118,7 +118,7 @@ Navigating the codebase with good names as beacons of clarity
 
 ## Why naming is hard {.smaller}
 
-Multiple cognitive demands exhaust mental capacity, leaving little for thoughtful naming.
+Multiple cognitive demands exhaust mental capacity, leaving little for naming.
 
 . . .
 
@@ -160,7 +160,7 @@ flowchart TD
 
 - Longer code reviews due to unclear intent
 - Debugging becomes detective work
-- Extensive onboarding needed for new team members
+- Extended onboarding for new team members
 
 . . .
 
@@ -207,7 +207,7 @@ flowchart TD
 
 # Naming and good design
 
-Illustrating benefits of thoughtful naming for software design using ***function*** as an example
+Illustrating naming benefits for software design using ***functions*** as examples
 
 ## Following Unix philosophy {.smaller}
 
@@ -264,7 +264,7 @@ def sort_estimates(table, sort="asc"):
 **Parameter Naming Rule**: Boolean/flag parameters often signal functions doing multiple things
 :::
 
-Parameter names can reveal design problems.
+Parameter names reveal design problems.
 
 :::: {.columns}
 
@@ -317,7 +317,7 @@ def convert_html_to_pdf(file):
 
 # The Don'ts
 
-You won't have to remember any of these rules if you follow the following principle:
+Follow this principle instead of memorizing rules:
 
 ::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
 
@@ -365,7 +365,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 # The Do's
 
-You won't have to remember any of these rules if you follow the following principle:
+Follow this principle instead of memorizing rules:
 
 ::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
 
@@ -375,7 +375,7 @@ You won't have to remember any of these rules if you follow the following princi
 
 ## Names should be self-documenting {.smaller}
 
-How good a name is can be assessed by how detailed the accompanying comment needs to be.
+Name quality correlates inversely with comment detail needed.
 
 . . .
 
@@ -450,7 +450,7 @@ inventory[warehouse][product]
 
 . . .
 
-All variables are temporary in some sense. Calling one `tmp` is inviting carelessness.
+All variables are temporary. Calling one `tmp` invites carelessness.
 
 :::: {.columns}
 
@@ -497,7 +497,7 @@ Unlike regular functions, long names are less problematic for test functions bec
 
 ## Names should be difficult to misinterpret {.smaller}
 
-Try your best to misinterpret candidate names and see if you succeed.
+Try to misinterpret candidate names.
 
 . . .
 
@@ -626,7 +626,7 @@ d → days → days_since_last_accident → days_since_last_accident_floor_4_lab
 
 ## Names should maintain standards {.smaller}
 
-Standards **reduce cognitive burden**: readers can reuse knowledge across contexts.
+Standards **reduce cognitive burden** by enabling knowledge reuse across contexts.
 
 . . .
 
