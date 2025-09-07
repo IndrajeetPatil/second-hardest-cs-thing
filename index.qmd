@@ -118,8 +118,6 @@ Navigating the codebase with good names as beacons of clarity
 
 ## The hidden cost of poor naming {.smaller}
 
-Bad names create a cascade of problems that compound over time.
-
 . . .
 
 **Immediate consequences:**
@@ -145,8 +143,6 @@ Bad names create a cascade of problems that compound over time.
 :::
 
 ## Good names pay dividends {.smaller}
-
-Well-chosen names transform code from puzzles into stories.
 
 . . .
 
