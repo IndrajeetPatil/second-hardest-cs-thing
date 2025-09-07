@@ -12,7 +12,7 @@ format:
     include-in-header: meta-tags.html
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
-#     subtitle: "Thoughts on naming things for software development"
+#     subtitle: "Transforming Code Clarity Through Better Names"
 # author: "Indrajeet Patil"
 #affiliation: 
 execute:
@@ -44,7 +44,7 @@ knitr::opts_chunk$set(eval = FALSE)
 ::: {style="margin-top: 1em; margin-bottom: 1em;"}
 
 ::: {style="font-size: 0.9em; font-weight: bold;"}
-Thoughts on naming things for software development
+Transforming Code Clarity Through Better Names
 :::
 
 ::: {style="font-size: 0.8em; margin-top: 1em;"}
@@ -118,7 +118,7 @@ Navigating the codebase with good names as beacons of clarity
 
 ## Why naming is hard {.smaller}
 
-Programming requires managing multiple cognitive demands simultaneously, leaving little mental capacity for thoughtful naming.
+Multiple cognitive demands exhaust mental capacity, leaving little for thoughtful naming.
 
 . . .
 
@@ -126,35 +126,30 @@ Programming requires managing multiple cognitive demands simultaneously, leaving
 %%| eval: true
 %%| echo: false
 flowchart TD
-    A[Programming Task] --> B[High Cognitive Load]
-    B --> C[Algorithm Design]
-    B --> D[Syntax & Language Rules]
-    B --> E[Memory Management]
-    B --> F[Error Handling]
-    B --> G[Performance Considerations]
-    B --> H[Quick Naming Decisions]
+    A[Programming Syntax] --> D[High Cognitive Load]
+    B[Algorithmic Design] --> D
+    C[Implementation Complexity] --> D
     
-    H --> I[Generic Names]
-    H --> J[Shortened Names]  
-    H --> K[Context-Dependent Names]
+    D --> E[Quick Naming Decisions]
     
-    style A fill:#e3f2fd,color:#000
-    style B fill:#fff3e0,color:#000
+    E --> F[Generic Names]
+    E --> G[Shortened Names]  
+    E --> H[Context-Dependent Names]
+    
+    style A fill:#f8f9fa,color:#000
+    style B fill:#f8f9fa,color:#000
     style C fill:#f8f9fa,color:#000
-    style D fill:#f8f9fa,color:#000
-    style E fill:#f8f9fa,color:#000
-    style F fill:#f8f9fa,color:#000
-    style G fill:#f8f9fa,color:#000
-    style H fill:#ffebee,color:#000
-    style I fill:#ffcdd2,color:#000
-    style J fill:#ffcdd2,color:#000
-    style K fill:#ffcdd2,color:#000
+    style D fill:#fff3e0,color:#000
+    style E fill:#ffebee,color:#000
+    style F fill:#ffcdd2,color:#000
+    style G fill:#ffcdd2,color:#000
+    style H fill:#ffcdd2,color:#000
 ```
 
 . . .
 
 ::: {style="background-color: #fff3e0; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;"}
-**The Reality**: When juggling complex logic, naming becomes an afterthought rather than a deliberate choice
+**Result**: Naming becomes reactive rather than deliberate
 :::
 
 ## The hidden cost of poor naming {.smaller}
@@ -1090,15 +1085,11 @@ user.is_adult()     # returns boolean
 
 ## Naming limitations of linters {.smaller}
 
-Linters can only do so much when it comes to naming.
-
-. . .
-
 :::: {.columns}
 
 ::: {.column width='50%'}
 
-**What they CAN do:**
+**What they <span style="background-color: #c8e6c9; padding: 2px 6px; border-radius: 4px;">CAN</span> do:**
 
 - Enforce naming conventions
 - Check for reserved keywords
@@ -1110,7 +1101,7 @@ Linters can only do so much when it comes to naming.
 
 ::: {.column width='50%'}
 
-**What they CANNOT do:**
+**What they <span style="background-color: #ffcdd2; padding: 2px 6px; border-radius: 4px;">CANNOT</span> do:**
 
 - Understand the intent behind your code
 - Suggest meaningful names based on context
@@ -1216,9 +1207,9 @@ flowchart TD
 
 . . .
 
-::: {.callout-tip title="Key Insight"}
+::: {style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;"}
 
-**Code review transforms naming from reactive to deliberate**
+**Code review transforms naming from reactive to deliberate!**
 
 :::
 
