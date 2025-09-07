@@ -8,7 +8,8 @@
       "WebFetch(domain:arxiv.org)",
       "WebFetch(domain:revealjs.com)",
       "Bash(rg:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "WebFetch(domain:pandoc.org)"
     ],
     "deny": [],
     "ask": []

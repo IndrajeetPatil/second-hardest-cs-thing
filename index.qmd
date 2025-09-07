@@ -4,6 +4,7 @@ format:
     css: style.css
     theme: simple
     slide-number: true
+    code-line-numbers: false
     preview-links: auto
     keyboard: true
     touch: true
@@ -891,13 +892,15 @@ But if the variable is only ever used in its false version (e.g. `is_volcano_ina
 
 Select terminology that matches your context: computer science terms for technical concepts, problem domain terms for business logic.
 
-. . .
+:::: {.columns}
+
+::: {.column width='80%'}
 
 **Use computer science terms for technical concepts:**
 
 :::: {.columns}
 
-::: {.column width='50%'}
+::: {.column width='40%'}
 
 ```{python}
 # vague business language
@@ -907,7 +910,7 @@ store_thing_temporarily()
 
 :::
 
-::: {.column width='50%'}
+::: {.column width='40%'}
 
 ```{python}
 # precise CS terminology
@@ -919,13 +922,11 @@ push_to_stack()
 
 ::::
 
-. . .
-
 **Use problem domain terms for business concepts:**
 
 :::: {.columns}
 
-::: {.column width='50%'}
+::: {.column width='40%'}
 
 ```{python}
 # generic technical terms
@@ -935,12 +936,39 @@ process_financial_records()
 
 :::
 
-::: {.column width='50%'}
+::: {.column width='40%'}
 
 ```{python}
 # domain-specific terms
 validate_loan_application()
 calculate_mortgage_payment()
+```
+
+:::
+
+::::
+
+:::
+
+::: {.column width='20%'}
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    Title["Layered Architecture"]
+    UI["Presentation<br/>(Controllers)"]
+    BL["Business Logic<br/>(Services)"]
+    DA["Data Access<br/>(Repository)"]
+    
+    Title -.-> UI
+    UI --> BL
+    BL --> DA
+    
+    style Title fill:none,stroke:none,color:#666
+    style UI fill:#e3f2fd,color:#000
+    style BL fill:#fff3e0,color:#000
+    style DA fill:#f3e5f5,color:#000
 ```
 
 :::
