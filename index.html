@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 19:45:33.225132">
+  <meta name="dcterms.date" content="2025-09-07 20:07:15.509323">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -227,7 +227,7 @@
 <p><img data-src="media/cat.png" width="400" height="300"></p>
 </div></div>
 <div style="text-align: center; font-size: 0.7em; margin-top: 2em; color: #666;">
-<p>Source code for these slides can be found <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/" target="_blank">on GitHub</a>.</p>
+<p>Source code for these slides can be found <a href="https://github.com/IndrajeetPatil/second-hardest-cs-thing/">on GitHub</a>.</p>
 </div>
 </section>
 <section id="what-youll-learn-today" class="slide level2 smaller">
@@ -632,7 +632,7 @@
 </tr>
 <tr class="even">
 <td>Avoid unintended meanings</td>
-<td>Check <a href="https://www.urbandictionary.com/" target="_blank">Urban dictionary</a></td>
+<td>Check <a href="https://www.urbandictionary.com/">Urban dictionary</a></td>
 <td><code>dump()</code></td>
 <td><code>export_data()</code></td>
 </tr>
@@ -1606,7 +1606,7 @@
 <p>There are various casing conventions used for software development.</p>
 
 <img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development."><div style="text-align: center; font-size: 0.9rem;">
-<p>Illustration (CC-BY) by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></p>
+<p>Illustration (CC-BY) by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
 </section></section>
 <section>
@@ -1626,22 +1626,22 @@
 <li><p>Goodliffe, P. (2007). <em>Code Craft</em>. No Starch Press. (<strong>pp.&nbsp;39-56</strong>)</p></li>
 <li><p>Padolsey, J. (2020). <em>Clean Code in JavaScript</em>. Packt Publishing. (<strong>pp.&nbsp;93-111</strong>)</p></li>
 <li><p>Thomas, D., &amp; Hunt, A. (2019). <em>The Pragmatic Programmer</em>. Addison-Wesley Professional. (<strong>pp.&nbsp;238-242</strong>)</p></li>
-<li><p><a href="https://exelearning.org/wiki/OttingersNaming/" target="_blank">Ottinger’s Rules for Variable and Class Naming</a></p></li>
-<li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming" target="_blank">Google C++ Style Guide</a>.</p></li>
+<li><p><a href="https://exelearning.org/wiki/OttingersNaming/">Ottinger’s Rules for Variable and Class Naming</a></p></li>
+<li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming">Google C++ Style Guide</a>.</p></li>
 </ul>
 </div>
 </section></section>
 <section id="for-more" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>For more</h1>
-<p>If you are interested in good programming and software development practices, check out my other <a href="https://sites.google.com/site/indrajeetspatilmorality/presentations" target="_blank">slide decks</a>.</p>
+<p>If you are interested in good programming and software development practices, check out my other <a href="https://sites.google.com/site/indrajeetspatilmorality/presentations">slide decks</a>.</p>
 </section>
 
 <section id="find-me-at" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Find me at…</h1>
-<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/" target="_blank">LinkedIn</a></p>
-<p><i class="fa-brands fa-github" aria-label="github"></i> <a href="http://github.com/IndrajeetPatil" target="_blank">GitHub</a></p>
-<p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/" target="_blank">Website</a></p>
-<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:patilindrajeet.science@gmail.com" target="_blank">E-mail</a></p>
+<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/indrajeet-patil-397865174/">LinkedIn</a></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> <a href="http://github.com/IndrajeetPatil">GitHub</a></p>
+<p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://sites.google.com/site/indrajeetspatilmorality/">Website</a></p>
+<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:patilindrajeet.science@gmail.com">E-mail</a></p>
 
 </section>
     </div>
@@ -1981,6 +1981,11 @@
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
             }
           }
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
