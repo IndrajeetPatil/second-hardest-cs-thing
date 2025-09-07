@@ -1275,7 +1275,7 @@ And Happy Naming! 😊
 
 ### *Importance*: **Names are at the core of software design** 
 
-If you can't find a name that provides the right abstraction for the underlying entity, the design may be unclear.
+If you can't name something well, the design may be unclear.
 
 :::
 
@@ -1285,7 +1285,7 @@ If you can't find a name that provides the right abstraction for the underlying 
 
 ### *Properties*: **Good names are precise and consistent**
 
-If a name is good, it is difficult to miss out on critical information about the entity or to misunderstand what it represents.
+Good names prevent missing critical information or misunderstanding what entities represent.
 
 :::
 
