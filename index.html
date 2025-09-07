@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 16:13:11.83984">
+  <meta name="dcterms.date" content="2025-09-07 17:27:48.277192">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -345,27 +345,26 @@
 </section>
 <section id="following-unix-philosophy" class="slide level2 smaller">
 <h2>Following Unix philosophy</h2>
-<p>Unix philosophy specifies the golden rule for writing good a function: <br> <em>“Do One Thing And Do It Well.”</em></p>
-<p>Finding a descriptive name for a function can inform us if we are following this rule.</p>
-<div class="fragment">
-<p>Consider a function to extract a table of regression estimates for a statistical model. For convenience, it also allows sorting the table by estimate.</p>
+<div style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;">
+<p><strong>Unix Golden Rule</strong>: <em>“Do One Thing And Do It Well”</em></p>
+</div>
+<p>Naming reveals if you’re following this rule.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div title="Naming is hard">
+<div title="Doing multiple things">
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Naming is hard</strong></p>
+<p><strong>Doing multiple things</strong></p>
 </div>
 <div class="callout-content">
-<p>Trying to find a name highlights that the function is doing more than one thing.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_and_sort_estimates(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to extract estimates from model</span></span>
-<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to sort table</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
 <span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -373,24 +372,23 @@
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div title="Naming is easy">
+<div title="Doing one thing each">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Naming is easy</strong></p>
+<p><strong>Doing one thing each</strong></p>
 </div>
 <div class="callout-content">
-<p>These individual functions are easier to read, understand, and test.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_estimates(model):</span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to extract estimates from model</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
 <span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to sort table</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table  </span></span>
 <span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -398,61 +396,59 @@
 </div>
 </div>
 </div></div>
-<p>Functions with <code>and</code> or <code>or</code> in their names are dead giveaways that they don’t follow the Unix philosophy.</p>
+<div style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;">
+<p><strong>Warning</strong>: Functions with <code>and</code> or <code>or</code> in names likely violate this principle!</p>
 </div>
 </section>
 <section id="function-parameter-names" class="slide level2 smaller">
 <h2>Function parameter names</h2>
-<p>When it comes to writing a good function, finding a good name for a parameter can also reveal design problems.</p>
-<p>E.g. a boolean or flag parameter name means function is doing more than one thing.</p>
-<div class="fragment">
-<p>Consider a function that converts Markdown or HTML documents to PDF.</p>
+<div style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;">
+<p><strong>Parameter Naming Rule</strong>: Boolean/flag parameters often signal functions doing multiple things</p>
+</div>
+<p>Parameter names can reveal design problems.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div title="Boolean parameter necessary">
+<div title="Multiple behaviors">
 <div class="callout callout-caution callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Boolean parameter necessary</strong></p>
+<p><strong>Multiple behaviors</strong></p>
 </div>
 <div class="callout-content">
-<p>Doing more than one thing.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> is_markdown:</span>
-<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert Markdown</span></span>
 <span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> is_markdown:</span>
-<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># code to convert HTML to PDF</span></span>
-<span id="cb3-8"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert HTML</span></span>
+<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div title="Boolean parameter unnecessary">
+<div title="Single purpose each">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Boolean parameter unnecessary</strong></p>
+<p><strong>Single purpose each</strong></p>
 </div>
 <div class="callout-content">
-<p>Doing one thing.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to convert Markdown to PDF</span></span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert Markdown</span></span>
 <span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to convert HTML to PDF</span></span>
+<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert HTML</span></span>
 <span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -460,6 +456,8 @@
 </div>
 </div>
 </div></div>
+<div style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;">
+<p><strong>Insight</strong>: If you need a flag parameter, consider splitting into separate functions</p>
 </div>
 </section></section>
 <section id="naming-the-dos-and-donts" class="title-slide slide level1 center">
