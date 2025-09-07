@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-09-07 00:35:53.411252">
+  <meta name="dcterms.date" content="2025-09-07 07:51:48.848487">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -523,7 +523,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Don’t let names become outdated.</strong> Update names when functionality changes to avoid misleading future developers. E.g. if <code>get_means()</code> changes from returning precomputed values to computing on-the-fly, rename it to <code>compute_means()</code>.</li>
+<li><strong>Avoid misleading names.</strong> Names that imply wrong information are worse than no names. Update names when functionality changes. E.g. <code>accounts_list</code> should not be used for a dictionary; if <code>get_means()</code> changes to computing on-the-fly, rename it to <code>compute_means()</code>.</li>
 </ul>
 </div>
 </section>
@@ -752,25 +752,23 @@
 </div></div>
 </div>
 <div class="fragment">
-<p><strong>Choose problem domain over implementation details:</strong></p>
+<p><strong>Avoid encoding implementation details in names:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co"># implementation domain - how it works</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co"># implementation details encoded</span></span>
 <span id="cb16-2"><a href=""></a>binary_search_users()</span>
 <span id="cb16-3"><a href=""></a>sql_query_products()</span>
-<span id="cb16-4"><a href=""></a></span>
-<span id="cb16-5"><a href=""></a><span class="co"># data structure in name</span></span>
-<span id="cb16-6"><a href=""></a>bonuses_pd  <span class="co"># pandas DataFrame</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-4"><a href=""></a>bonuses_pd  <span class="co"># pandas DataFrame</span></span>
+<span id="cb16-5"><a href=""></a>hash_map_cache</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># problem domain - what it does</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># implementation independent</span></span>
 <span id="cb17-2"><a href=""></a>find_user()</span>
 <span id="cb17-3"><a href=""></a>fetch_products()</span>
-<span id="cb17-4"><a href=""></a></span>
-<span id="cb17-5"><a href=""></a><span class="co"># implementation independent</span></span>
-<span id="cb17-6"><a href=""></a>bonuses     <span class="co"># any data structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-4"><a href=""></a>bonuses</span>
+<span id="cb17-5"><a href=""></a>cache</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
@@ -983,6 +981,120 @@
 </div>
 <div class="callout-content">
 <p><strong>Boolean variable names should convey what true or false values represent.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="choose-domain-appropriate-names" class="slide level2 smaller">
+<h2>Choose domain-appropriate names</h2>
+<p>Select terminology that matches your context: computer science terms for technical concepts, problem domain terms for business logic.</p>
+<div class="fragment">
+<p><strong>Use computer science terms for technical concepts:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a><span class="co"># vague business language</span></span>
+<span id="cb33-2"><a href=""></a>process_items_sequentially()</span>
+<span id="cb33-3"><a href=""></a>store_thing_temporarily()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># precise CS terminology</span></span>
+<span id="cb34-2"><a href=""></a>traverse_list()</span>
+<span id="cb34-3"><a href=""></a>push_to_stack()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<p><strong>Use problem domain terms for business concepts:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="co"># generic technical terms</span></span>
+<span id="cb35-2"><a href=""></a>validate_input_data()</span>
+<span id="cb35-3"><a href=""></a>process_financial_records()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="co"># domain-specific terms</span></span>
+<span id="cb36-2"><a href=""></a>validate_loan_application()</span>
+<span id="cb36-3"><a href=""></a>calculate_mortgage_payment()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Choose names that are meaningful to both developers and domain experts.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-appropriate-grammatical-forms" class="slide level2 smaller">
+<h2>Use appropriate grammatical forms</h2>
+<p>Follow consistent patterns: nouns for entities and data, verbs for actions.</p>
+<div class="fragment">
+<p><strong>Classes and objects should use nouns:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a><span class="co"># verb-based - confusing</span></span>
+<span id="cb37-2"><a href=""></a><span class="kw">class</span> ProcessPayment:</span>
+<span id="cb37-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb37-4"><a href=""></a></span>
+<span id="cb37-5"><a href=""></a><span class="kw">class</span> HandleError:</span>
+<span id="cb37-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="co"># noun-based - clear</span></span>
+<span id="cb38-2"><a href=""></a><span class="kw">class</span> PaymentProcessor:</span>
+<span id="cb38-3"><a href=""></a>    <span class="cf">pass</span></span>
+<span id="cb38-4"><a href=""></a></span>
+<span id="cb38-5"><a href=""></a><span class="kw">class</span> ErrorHandler:</span>
+<span id="cb38-6"><a href=""></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<p><strong>Methods that return values use nouns, action methods use verbs:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="co"># inconsistent grammar</span></span>
+<span id="cb39-2"><a href=""></a>user.get_name()     <span class="co"># returns name</span></span>
+<span id="cb39-3"><a href=""></a>user.save()         <span class="co"># performs action</span></span>
+<span id="cb39-4"><a href=""></a>user.validate_age() <span class="co"># returns boolean</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="co"># consistent grammar</span></span>
+<span id="cb40-2"><a href=""></a>user.name()         <span class="co"># returns name</span></span>
+<span id="cb40-3"><a href=""></a>user.save()         <span class="co"># performs action</span></span>
+<span id="cb40-4"><a href=""></a>user.is_adult()     <span class="co"># returns boolean</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Grammatical consistency helps readers predict what methods do without reading documentation.</strong></p>
 </div>
 </div>
 </div>
