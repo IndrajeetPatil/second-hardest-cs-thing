@@ -11,6 +11,7 @@ format:
     help: true
     include-in-header: meta-tags.html
     link-external-newwindow: true
+    google-analytics: "G-LWDD71YD15"
 #   pdf: 
 #     title: "Dealing with the Second Hardest Thing in Computer Science"
 #     subtitle: "Transforming Code Clarity Through Better Names"
