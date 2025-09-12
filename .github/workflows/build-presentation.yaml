@@ -61,7 +61,7 @@ jobs:
           cp slides/slides.pdf . && rm -rf slides
 
       - name: Deploy to GitHub pages 🚀
-        #if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           branch: docs
