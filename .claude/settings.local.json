@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:quarto.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:revealjs.com)",
+      "Bash(rg:*)",
+      "Bash(sed:*)",
+      "WebFetch(domain:pandoc.org)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,1355 @@
+---
+format:
+  revealjs:
+    css: style.css
+    theme: simple
+    slide-number: true
+    code-line-numbers: false
+    preview-links: auto
+    keyboard: true
+    touch: true
+    help: true
+    include-in-header: meta-tags.html
+    link-external-newwindow: true
+    google-analytics: "G-LWDD71YD15"
+#   pdf: 
+#     title: "Dealing with the Second Hardest Thing in Computer Science"
+#     subtitle: "Transforming Code Clarity Through Better Names"
+# author: "Indrajeet Patil"
+#affiliation: 
+execute:
+  echo: true
+  eval: false
+keywords: ["naming", "software-engineering", "computer-science", "software-development"]
+description-meta: "A comprehensive guide to naming conventions and best practices for software development. Learn how to choose meaningful, consistent, and maintainable names for variables, functions, and classes."
+license: "CC0 1.0 Universal"
+pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
+author-meta: "Indrajeet Patil"
+date-meta: "`r Sys.time()`"
+lang: "en"
+dir: "ltr"
+image: "media/social-media-card.png"
+image-alt: "Preview image for presentation about naming things in computer science"
+canonical-url: "https://indrajeetpatil.github.io/second-hardest-cs-thing/"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {style="margin-top: 1em; margin-bottom: 1em;"}
+
+::: {style="font-size: 0.9em; font-weight: bold;"}
+Transforming Code Clarity Through Better Names
+:::
+
+::: {style="font-size: 0.8em; margin-top: 1em;"}
+Indrajeet Patil
+:::
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
+![](media/cat.png){width="400" height="300"}
+
+:::
+
+::::
+
+::: {style="text-align: center; font-size: 0.7em; margin-top: 2em; color: #666;"}
+Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
+:::
+
+## What you'll learn today {.smaller}
+
+- Why naming impacts code quality and maintainability
+- How naming improves software design and architecture
+- Common naming pitfalls to avoid
+- Practical strategies for clear, consistent, and meaningful names^†^
+- Tools and techniques for better naming (AI, code review)
+
+<br>
+
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
+
+🎯 **Goal**
+
+Transform naming from an afterthought into a deliberate practice.
+
+:::
+
+
+::: {.aside style="font-size: 0.6em; position: absolute; bottom: 10px; left: 50px;"}
+
+^†^Despite Python examples, all the mentioned strategies are **language-agnostic**.
+
+:::
+
+# "There are only two hard things in Computer Science: cache invalidation and naming things." 
+\- Phil Karlton
+
+
+# Why naming matters
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<div style="display: flex; align-items: center; height: 300px; font-size: 0.85em; color: #555; font-style: italic;">
+Navigating the codebase with good names as beacons of clarity
+</div>
+
+:::
+
+::: {.column width="50%"}
+
+![](media/code_ocean.png){width="450" height="350"}
+
+:::
+
+::::
+
+## Why naming is hard {.smaller}
+
+Multiple cognitive demands exhaust mental capacity, leaving little for naming.
+
+. . .
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Programming Syntax] --> D[High Cognitive Load]
+    B[Algorithmic Design] --> D
+    C[Implementation Complexity] --> D
+    
+    D --> E[Quick Naming Decisions]
+    
+    E --> F[Generic Names]
+    E --> G[Shortened Names]  
+    E --> H[Context-Dependent Names]
+    
+    style A fill:#f8f9fa,color:#000
+    style B fill:#f8f9fa,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#fff3e0,color:#000
+    style E fill:#ffebee,color:#000
+    style F fill:#ffcdd2,color:#000
+    style G fill:#ffcdd2,color:#000
+    style H fill:#ffcdd2,color:#000
+```
+
+. . .
+
+::: {style="background-color: #fff3e0; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**Result**: Naming becomes reactive rather than deliberate
+:::
+
+## The hidden cost of poor naming {.smaller}
+
+. . .
+
+**Immediate consequences:**
+
+- Longer code reviews due to unclear intent
+- Debugging becomes detective work
+- Extended onboarding for new team members
+
+. . .
+
+**Long-term impact:**
+
+- Technical debt accumulation from avoidance
+- Higher bug introduction rates
+- Risky refactoring due to uncertainty
+
+. . .
+
+::: {.callout-warning title="The multiplication effect"}
+
+**Poor naming spreads confusion throughout the entire system.**
+
+:::
+
+## Good names pay dividends {.smaller}
+
+. . .
+
+**Development velocity:**
+
+- Code reviews focus on logic, not deciphering
+- Faster component targeting during debugging
+- Confident feature development
+
+. . .
+
+**Maintenance benefits:**
+
+- Safe and predictable refactoring
+- Root cause fixes over symptom patches  
+- Self-documenting code
+
+. . .
+
+::: {.callout-tip title="The investment mindset"}
+
+**Time spent on naming is not overhead—it's an investment that pays compound interest.**
+
+:::
+
+
+# Naming and good design
+
+Illustrating naming benefits for software design using ***functions*** as examples
+
+## Following Unix philosophy {.smaller}
+
+::: {style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;"}
+**Unix Golden Rule**: _"Do One Thing And Do It Well"_
+:::
+
+Naming reveals if you're following this rule.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution title="Doing multiple things"}
+
+```{python}
+def extract_and_sort_estimates(model, sort="asc"):
+    # extract estimates
+    # sort table
+    pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip title="Doing one thing each"}
+
+```{python}
+def extract_estimates(model):
+    # extract estimates
+    pass
+
+def sort_estimates(table, sort="asc"):
+    # sort table  
+    pass
+```
+
+:::
+
+:::
+
+::::
+
+::: {style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**Warning**: Functions with `and` or `or` in names likely violate this principle!
+:::
+
+## Function parameter names {.smaller}
+
+::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;"}
+**Parameter Naming Rule**: Boolean/flag parameters often signal functions doing multiple things
+:::
+
+Parameter names reveal design problems.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution title="Multiple behaviors"}
+
+```{python}
+def convert_to_pdf(file, is_markdown=False):
+    if is_markdown:
+        # convert Markdown
+        pass
+    else:
+        # convert HTML
+        pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip title="Single purpose each"}
+
+```{python}
+def convert_md_to_pdf(file):
+    # convert Markdown
+    pass
+
+def convert_html_to_pdf(file):
+    # convert HTML
+    pass
+```
+
+:::
+
+:::
+
+::::
+
+::: {style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**Insight**: If you need a flag parameter, consider splitting into separate functions
+:::
+
+# Naming: The Do's and Don'ts
+
+> "_The beginning of wisdom is to call things by their proper name._" - Confucius
+
+
+# The Don'ts
+
+Follow this principle instead of memorizing rules:
+
+::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
+
+**Names must be readable for the *reader*, not *author*, of code.**
+
+:::
+
+## {.smaller}
+
+::: {style="font-size: 0.65em;"}
+| Tip | Why | Bad | Good |
+|-----|-----|-----|------|
+| <span style="background-color: #e3f2fd; color: #1565c0; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Confusion & Similarity**</span> |  |  |  |
+| Avoid imprecise opposites | Can be [confusing](https://github.com/pomber/awesome-word-pairs) | `begin`/`last` | `begin`/`end` or `first`/`last` |
+| Don't use hard-to-distinguish characters | Look identical with certain fonts | `count0`, `counto` | `count_zero`, `count_letter` |
+| Don't use similar names for different meanings | Easily confused, need 2+ letter difference | `PatientRecs`, `PatientReps` | `PatientRecords`, `PatientReports` |
+| Avoid naming entities with homonyms | Leads to confusion in discussion | `waste`, `waist` | `garbage`, `body_circumference` |
+| Don't use easily confused names | Too similar, mistaken identity | `nn`, `nnn` | `n_square`, `n_cube` |
+| <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Consistency & Standards**</span> |  |  |  |
+| Don't use inconsistent abbreviations | Choose one prefix and use consistently | `numColumns`, `noRows` | `numColumns`, `numRows` |
+| Don't allow multiple English standards | Causes constant guessing | `centre`, `center` (mixed) | `center` (consistent) |
+| Don't use misleading abbreviations | Conflicts with language conventions | `str` (for "structure") | `structure` |
+| Avoid misleading names | Wrong info is worse than no info | `get_means()` (incorrectly implies precomputed) | `compute_means()` (correctly indicates computation) |
+:::
+
+## {.smaller}
+
+::: {style="font-size: 0.65em;"}
+| Tip | Why | Bad | Good |
+|-----|-----|-----|------|
+| <span style="background-color: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Communication & Clarity**</span> |  |  |  |
+| Don't use pop-culture references | Not everyone knows them | `thats_what_she_said` | `female_birdsong_recording` |
+| Don't use slang | Can't assume familiarity | `hit_the_road()` | `exit()` |
+| Avoid unintended meanings | Check [Urban dictionary](https://www.urbandictionary.com/) | `dump()` | `export_data()` |
+| Don't use uncommon English words | Stick to common parlance | `commence_process()` | `start_process()` |
+| Don't use unpronounceable names | Enables easier verbal communication | `genymdhms()` | `generate_timestamp()` |
+| <span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
+| Don't misspell to save characters | Correct misspelling is harder to remember | `hilite` | `highlight` |
+| Don't use commonly misspelled words | Slows you down, increases errors | `accumulate` variants | `sum`, `collect` |
+| Don't use numeric suffixes for levels | Not informative | `level1`, `level2`, `level3` | `beginner`, `intermediate`, `advanced` |
+| Don't use unsearchable names | Hard to find and replace | `a`, `f` | `arr`, `fun` |
+| Don't prioritize grammar over clarity | Plural forms aid comprehension | `fish` (for multiple) | `fishes`, `peoples`, `feedbacks` |
+:::
+
+
+# The Do's
+
+Follow this principle instead of memorizing rules:
+
+::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
+
+**Good names reveal intention and eliminate guesswork.**
+
+:::
+
+## Names should be self-documenting {.smaller}
+
+Name quality correlates inversely with comment detail needed.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='45%'}
+
+Poor names require more comments:
+
+```{python}
+# function to convert temperature 
+# from Fahrenheit to Celsius scale
+# temp is the temperature in Fahrenheit
+def unit_converter(temp: float):
+    pass
+```
+
+:::
+
+::: {.column width='55%'}
+
+Good names are self-documenting:
+
+```{python}
+def fahrenheit_to_celsius(temp_fahrenheit: float):
+    pass
+```
+<br>
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Good names rarely require readers to read the documentation to understand what they represent.**
+
+:::
+
+
+## Names should be specific {.smaller}
+
+Generic names are widely used and acceptable in short-lived contexts. However, as scope and complexity increase, specific names become essential for clarity.
+
+. . .
+
+For longer loops, use meaningful names instead of `i`, `j`, `k`:
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# abstruse
+inventory[i][j]
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# crystal clear
+inventory[warehouse][product]
+```
+
+:::
+
+::::
+
+. . .
+
+All variables are temporary. Calling one `tmp` invites carelessness.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# generic name
+tmp = a + b
+result = tmp * 2
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# more descriptive
+sum_values = a + b
+result = sum_values * 2
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Even when you *think* you need generic names, you are better off using more descriptive names.**
+
+:::
+
+::: {.callout-note title="Test function names should act as a comment"}
+
+Unlike regular functions, long names are less problematic for test functions because they are not visible to users or called repeatedly throughout the codebase.
+
+```python
+# bad: test_retrieve_commands
+# good: test_all_saved_commands_should_be_retrieved
+```
+
+:::
+
+## Names should be difficult to misinterpret {.smaller}
+
+Try to misinterpret candidate names.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{.python code-line-numbers="1,3"}
+# ambiguous - what kind of size?
+def get_size(
+    file_path: str,
+) -> int:
+    pass
+```
+
+How I interpret: <br>
+*"File size in bytes on disk"*
+
+:::
+
+::: {.column width='50%'}
+
+```{.python code-line-numbers="1,3"}
+# clear - character count!
+def get_character_count(
+    file_path: str,
+) -> int:
+    pass
+```
+
+In reality: <br>
+*"Number of characters in the file content"*
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Precise and unambiguous names leave little room for misconstrual.**
+
+:::
+
+## Names should be appropriately abstract {.smaller}
+
+Find the right level of detail and domain focus—precise enough to be clear, concise enough to be readable, and focused on ***what*** rather than ***how***.
+
+. . .
+
+**Use context to eliminate redundancy:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# redundant in context
+Router.run_router()
+BeerShelf.beer_count
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# leverages context
+Router.run()
+BeerShelf.count
+```
+
+:::
+
+::::
+
+. . .
+
+**Avoid encoding implementation details in names:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# implementation details encoded
+binary_search_users()
+sql_query_products()
+bonuses_pd  # pandas DataFrame
+hash_map_cache
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# implementation independent
+find_user()
+fetch_products()
+bonuses
+cache
+```
+
+:::
+
+::::
+
+. . .
+
+**Find the precision sweet spot:**
+
+```{python}
+# too imprecise → okay → good → unnecessarily precise
+d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23
+```
+
+. . .
+
+::: {.callout-tip}
+
+**Good names focus on purpose, include critical details, and remain meaningful across implementations.**
+
+:::
+
+## Names should maintain standards {.smaller}
+
+Standards **reduce cognitive burden** by enabling knowledge reuse across contexts.
+
+. . .
+
+**Avoid conflicting meanings and maintain consistency:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# inconsistent - size means different things
+size = len(x.encode('utf-8'))  # bytes
+size = len(a)                  # elements
+
+# inconsistent - different words, same concept
+CreditCardAccount().retrieve_expenditure()
+DebitCardAccount().fetch_expenditure()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# consistent - clear distinctions
+byte_size = len(x.encode('utf-8'))
+length = len(a)
+
+# consistent - same word, same concept
+CreditCardAccount().retrieve_expenditure()
+DebitCardAccount().retrieve_expenditure()
+```
+
+:::
+
+::::
+
+. . .
+
+**Follow language and domain conventions:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# violates conventions
+class playerEntity:
+    self.HairColor = ""
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# follows conventions
+class PlayerEntity:
+    self.hair_color = ""
+```
+
+:::
+
+::::
+
+. . .
+
+**Use consistent prefixes for IDE tab completion:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# bad - scattered when tab-completing
+parse_json()
+xml_reader()
+csv_processor()
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# good - groups related functions
+parse_json()
+parse_xml()
+parse_csv()
+```
+
+:::
+
+::::
+
+. . .
+
+::: {style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;"}
+
+**Following *a* standard consistently is more important than *which* standard you adopt.**
+
+:::
+
+## Aside: Examples of Conventions {.smaller style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
+
+::: {style="font-size: 0.55em; line-height: 1.3;"}
+
+::: {style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Programming Language specific**
+
+| Language | Variables | Functions | Classes | Constants |
+|----------|-----------|-----------|---------|-----------|
+| **Scala** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Kotlin** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Rust** | `snake_case` | `snake_case` | `PascalCase` | `SCREAMING_SNAKE_CASE` |
+| **Swift** | `camelCase` | `camelCase` | `PascalCase` | `camelCase` |
+| **Elixir** | `snake_case` | `snake_case` | `PascalCase` | `@upper_snake_case` |
+:::
+
+::: {style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Technology Stack specific**
+
+| Layer | Convention | Examples |
+|-------|------------|----------|
+| **Database** | `snake_case` | `user_profiles`, `created_at` |
+| **REST APIs** | `kebab-case`/`snake_case` | `/user-profiles`, `user_name` |
+| **GraphQL** | `camelCase` | `userProfile`, `orderItems` |
+| **CSS/HTML** | `kebab-case` | `.nav-menu`, `#main-content` |
+| **DevOps** | `kebab-case` | `my-app-deployment` |
+| **URLs/Routes** | `kebab-case` | `/api/user-accounts`, `/admin/user-settings` |
+| **Event Names** | `camelCase`/`kebab-case` | `userSignedIn`, `order-completed` |
+:::
+
+::: {style="margin-top: 15px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;"}
+**Consistency within each layer matters more than uniformity across layers**
+:::
+
+:::
+
+## {.smaller}
+
+### Unnecessary details in names should be removed...
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# okay
+convert_to_string()
+file_object
+str_name  # Hungarian notation
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+to_string()
+file
+name
+```
+
+:::
+
+::::
+
+:::{.callout-note title="Avoid redundancy"}
+
+- In type names, avoid using *class*, *data*, *object*, and *type* (e.g. bad: `classShape`, good: `Shape`)
+- In function names, avoid using *be*, *do*, *perform*, etc. (e.g. bad: `doAddition()`, good: `add()`)
+
+:::
+
+### **but** important details should be kept!
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# okay
+child_height
+password
+id
+address
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+child_height_cm
+plaintext_password
+hex_id
+ip_address
+```
+
+:::
+
+::::
+
+::: {.callout-tip}
+
+**If some information is critical to know, it should be part of the name.**
+
+:::
+
+
+## Boolean names should be clear {.smaller}
+
+Names for Boolean variables or functions should make clear what true and false mean. This can be done using prefixes (**is**, **has**, **can**, etc.).
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# not great
+if child:
+    if parent_supervision:
+        watch_horror_movie = True
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+if is_child:
+    if has_parent_supervision:
+        can_watch_horror_movie = True
+```
+
+:::
+
+::::
+
+. . .
+
+In general, use positive terms for Booleans since they are easier to process.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# double negation - difficult
+is_firewall_disabled = False
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# better
+is_firewall_enabled = True
+```
+
+:::
+
+However, if the variable is primarily used in its false state (e.g., `is_volcano_inactive`), the negative version can be easier to work with.
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Boolean variable names should convey what true or false values represent.**
+
+:::
+
+## Choose domain-appropriate names {.smaller}
+
+Select terminology that matches your context: computer science terms for technical concepts, problem domain terms for business logic.
+
+:::: {.columns}
+
+::: {.column width='80%'}
+
+**Use computer science terms for technical concepts:**
+
+:::: {.columns}
+
+::: {.column width='40%'}
+
+```{python}
+# vague business language
+process_items_sequentially()
+store_thing_temporarily()
+```
+
+:::
+
+::: {.column width='40%'}
+
+```{python}
+# precise CS terminology
+traverse_list()
+push_to_stack()
+```
+
+:::
+
+::::
+
+**Use problem domain terms for business concepts:**
+
+:::: {.columns}
+
+::: {.column width='40%'}
+
+```{python}
+# generic technical terms
+validate_input_data()
+process_financial_records()
+```
+
+:::
+
+::: {.column width='40%'}
+
+```{python}
+# domain-specific terms
+validate_loan_application()
+calculate_mortgage_payment()
+```
+
+:::
+
+::::
+
+:::
+
+::: {.column width='20%'}
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    Title["Layered Architecture"]
+    UI["Presentation<br/>(Controllers)"]
+    BL["Business Logic<br/>(Services)"]
+    DA["Data Access<br/>(Repository)"]
+    
+    Title -.-> UI
+    UI --> BL
+    BL --> DA
+    
+    style Title fill:none,stroke:none,color:#666
+    style UI fill:#e3f2fd,color:#000
+    style BL fill:#fff3e0,color:#000
+    style DA fill:#f3e5f5,color:#000
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Choose names that are meaningful to both developers and domain experts.**
+
+:::
+
+## Use appropriate grammatical forms {.smaller}
+
+Follow consistent patterns: nouns for entities and data, verbs for actions.
+
+. . .
+
+**Classes and objects should use nouns:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# verb-based - confusing
+class ProcessPayment:
+    pass
+
+class HandleError:
+    pass
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# noun-based - clear
+class PaymentProcessor:
+    pass
+
+class ErrorHandler:
+    pass
+```
+
+:::
+
+::::
+
+. . .
+
+**Methods that return values use nouns, action methods use verbs:**
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# inconsistent grammar
+user.get_name()     # returns name
+user.save()         # performs action
+user.validate_age() # returns boolean
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# consistent grammar
+user.name()         # returns name
+user.save()         # performs action
+user.is_adult()     # returns boolean
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip}
+
+**Grammatical consistency helps readers predict what methods do without reading documentation.**
+
+:::
+
+
+# Utilizing tools
+
+## Naming limitations of linters {.smaller}
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+**What they <span style="background-color: #c8e6c9; padding: 2px 6px; border-radius: 4px;">CAN</span> do:**
+
+- Enforce naming conventions
+- Check for reserved keywords
+- Detect naming pattern violations
+- Flag overly short or long names
+- Ensure consistent formatting
+
+:::
+
+::: {.column width='50%'}
+
+**What they <span style="background-color: #ffcdd2; padding: 2px 6px; border-radius: 4px;">CANNOT</span> do:**
+
+- Understand the intent behind your code
+- Suggest meaningful names based on context
+- Assess whether names represent what entities do
+- Determine problem domain consistency
+- Evaluate clarity for future developers
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-note title="The fundamental limitation"}
+
+**Linters can enforce *syntax* but not *semantics*.** Good naming requires human understanding of both the problem and the solution.
+
+:::
+
+## Generative AI tools can be valuable allies {.smaller}
+
+AI tools have context of your entire codebase and can provide meaningful names.
+
+. . .
+
+:::: {.columns}
+
+::: {.column width='60%'}
+
+**Why AI tools can help:**
+
+- Full context understanding of functions/classes
+- Cross-domain pattern recognition
+- Inconsistency detection across codebase
+- Multiple naming suggestions with rationales
+
+:::
+
+::: {.column width='40%'}
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    H[Human] --> L[Linter]
+    A[AI] --> L[Linter]
+    H -.->|Collaborates| A
+    A -.->|Feedback| H
+    L --> S[Standardized Names]
+    
+    style H fill:#e3f2fd
+    style A fill:#f3e5f5
+    style L fill:#fff3e0
+    style S fill:#e8f5e8
+```
+
+:::
+
+::::
+
+. . .
+
+::: {.callout-tip title="Symbiotic Naming"}
+
+Try to come up with good names yourself. Then, ask AI tools to validate, assess, or suggest improvements.
+
+:::
+
+## Code Review: A fresh perspective {.smaller}
+
+Lower cognitive load + fresh perspective = ideal conditions for better naming.
+
+. . .
+
+```{mermaid}
+%%| eval: true
+%%| echo: false
+flowchart TD
+    A[Code Review] --> B[Lower Cognitive Load]
+    B --> C[Fresh Perspective]
+    B --> D[Focus on Clarity]
+    
+    C --> E[Question Assumptions]
+    C --> F[Spot Unclear Names]
+    D --> G[Evaluate Intent]
+    D --> H[Assess Abstractions]
+    
+    E --> I[Better Names]
+    F --> I
+    G --> I
+    H --> I
+    
+    style A fill:#e3f2fd,color:#000
+    style B fill:#f3e5f5,color:#000
+    style C fill:#f8f9fa,color:#000
+    style D fill:#f8f9fa,color:#000
+    style E fill:#fff3e0,color:#000
+    style F fill:#fff3e0,color:#000
+    style G fill:#fff3e0,color:#000
+    style H fill:#fff3e0,color:#000
+    style I fill:#e8f5e8,color:#000
+```
+
+. . .
+
+::: {style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;"}
+
+**Code review transforms naming from reactive to deliberate!**
+
+:::
+
+# Benefits of good names
+
+> "_In your name I will hope, for your name is good._" 
+- Psalms 52:9
+
+## *"What's in a name?"* Well, everything! {.smaller}
+
+. . .
+
+- Intent-revealing names make the **code easier to read**.
+
+. . .
+
+- Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** that motivates this change. This is critical for thoughtful software design.
+
+. . .
+
+- Searching for precise names requires clarity, and seeking such clarity **improves your own understanding** of the code.
+
+. . .
+
+- Naming precisely and consistently **reduces ambiguities and misunderstandings**, reducing the possibility of bugs.
+
+. . .
+
+- Good names **reduce the need for documentation**.
+
+. . .
+
+- Consistent naming **reduces cognitive overload** for the developers and makes the code more maintainable.
+
+## Naming is hard, but worth it
+
+Invest time in good names early—they pay dividends by reducing system complexity.
+
+**The more you do it, the easier it will get!**
+
+<br>
+
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
+
+"_Using understandable names is a foundational step to producing quality software._" - Al Sweigart
+
+:::
+
+# Thank You 
+
+And Happy Naming! 😊
+
+## TL;DR Summary {.smaller data-visibility="uncounted"}
+
+::: {.callout-important}
+
+### *Principle*: **Names are a form of abstraction**
+
+"*[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.*" - John Ousterhout
+
+:::
+
+. . .
+
+::: {.callout-tip}
+
+### *Importance*: **Names are at the core of software design** 
+
+If you can't name something well, the design may be unclear.
+
+:::
+
+. . .
+
+::: {.callout-note}
+
+### *Properties*: **Good names are precise and consistent**
+
+Good names prevent missing critical information or misunderstanding what entities represent.
+
+:::
+
+## ICYMI: Available casing conventions {.smaller data-visibility="uncounted"}
+
+There are various casing conventions used for software development.
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "An illustration showing casing conventions used for software development."
+knitr::include_graphics("media/horst_cases.jpeg")
+```
+
+:::{style="text-align: center; font-size: 0.9rem;"}
+
+Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
+
+:::
+
+# Further Reading {.smaller data-visibility="uncounted"}
+
+For a more detailed discussion about how to name things, see the following references.
+
+## References {.smaller data-visibility="uncounted"}
+
+:::{style="font-size: 25px;"}
+
+- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
+
+- Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
+
+- Martin, R. C. (2009). *Clean Code*. Pearson Education. (**pp. 17-52**)
+
+- Hermans, F. (2021). *The Programmer's Brain*. Manning Publications. (**pp. 127-146**)
+
+- Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
+
+- Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
+
+- Padolsey, J. (2020). *Clean Code in JavaScript*. Packt Publishing. (**pp. 93-111**)
+
+- Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
+
+- [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/)
+
+- For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming).
+
+:::
+
+# For more {data-visibility="uncounted"}
+
+If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
+
+# Find me at... {data-visibility="uncounted"}
+
+{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/)
+
+{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil)
+
+{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/)
+
+{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com)
+
