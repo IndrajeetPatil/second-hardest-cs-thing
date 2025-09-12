@@ -4,3 +4,9 @@
 .Ruserdata
 README.html
 .DS_Store
+
+docs/
+index.html
+index_files/
+slides.html
+slides.pdf
