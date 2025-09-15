@@ -51,17 +51,6 @@ jobs:
         run: |
           quarto render index.qmd
 
-      - name: Build PDF using decktape
-        run: |
-          rm -rf slides
-          mkdir slides && sudo chmod 777 slides
-          sudo npm install -g --unsafe-perm=true --allow-root decktape
-          docker run --rm -t -v `pwd`:/slides -v ~:/home/user astefanutti/decktape index.html slides/slides.pdf
-
-      - name: Copy PDF slides to top-level directory
-        run: |
-          cp slides/slides.pdf . && rm -rf slides
-
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.7.3
