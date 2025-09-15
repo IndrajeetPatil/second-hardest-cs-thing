@@ -13,11 +13,13 @@ on:
 jobs:
   build-presentation:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Pandoc
         uses: r-lib/actions/setup-pandoc@v2
