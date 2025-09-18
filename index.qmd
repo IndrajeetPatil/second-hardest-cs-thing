@@ -1086,7 +1086,7 @@ user.is_adult()     # returns boolean
 
 :::: {.columns}
 
-::: {.column width='50%'}
+::: {.column width='50%' .fragment}
 
 **What they <span style="background-color: #c8e6c9; padding: 2px 6px; border-radius: 4px;">CAN</span> do:**
 
@@ -1098,7 +1098,7 @@ user.is_adult()     # returns boolean
 
 :::
 
-::: {.column width='50%'}
+::: {.column width='50%' .fragment}
 
 **What they <span style="background-color: #ffcdd2; padding: 2px 6px; border-radius: 4px;">CANNOT</span> do:**
 
