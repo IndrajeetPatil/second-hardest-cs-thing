@@ -1345,7 +1345,7 @@ If you are interested in good programming and software development practices, ch
 
 # Find me at... {data-visibility="uncounted"}
 
-{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-397865174/)
+{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/)
 
 {{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil)
 
