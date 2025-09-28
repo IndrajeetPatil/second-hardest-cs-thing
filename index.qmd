@@ -12,11 +12,6 @@ format:
     include-in-header: meta-tags.html
     link-external-newwindow: true
     google-analytics: "G-LWDD71YD15"
-#   pdf: 
-#     title: "Dealing with the Second Hardest Thing in Computer Science"
-#     subtitle: "Transforming Code Clarity Through Better Names"
-# author: "Indrajeet Patil"
-#affiliation: 
 execute:
   echo: true
   eval: false
@@ -25,7 +20,7 @@ description-meta: "A comprehensive guide to naming conventions and best practice
 license: "CC0 1.0 Universal"
 pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
 author-meta: "Indrajeet Patil"
-date-meta: "`r Sys.time()`"
+date-meta: "now"
 lang: "en"
 dir: "ltr"
 image: "media/social-media-card.png"
