@@ -20,7 +20,7 @@ description-meta: "A comprehensive guide to naming conventions and best practice
 license: "CC0 1.0 Universal"
 pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
 author-meta: "Indrajeet Patil"
-date-meta: "now"
+date-meta: "`r Sys.time()`"
 lang: "en"
 dir: "ltr"
 image: "media/social-media-card.png"
