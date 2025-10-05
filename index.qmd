@@ -84,7 +84,7 @@ Transform naming from an afterthought into a deliberate practice.
 
 ::: {.aside style="font-size: 0.6em; position: absolute; bottom: 10px; left: 50px;"}
 
-^†^Despite Python examples, all the mentioned strategies are **language-agnostic**.
+^†^Despite Python examples, all strategies are **language-agnostic**. These are guidelines, not dogma—conventions and context may justify exceptions.
 
 :::
 
