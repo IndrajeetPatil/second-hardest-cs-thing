@@ -1259,90 +1259,13 @@ Invest time in good names early—they pay dividends by reducing system complexi
 
 :::
 
-# Thank You 
+# Thank You
 
 And Happy Naming! 😊
-
-## TL;DR Summary {.smaller data-visibility="uncounted"}
-
-::: {.callout-important}
-
-### *Principle*: **Names are a form of abstraction**
-
-"*[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.*" - John Ousterhout
-
-:::
-
-. . .
-
-::: {.callout-tip}
-
-### *Importance*: **Names are at the core of software design** 
-
-If you can't name something well, the design may be unclear.
-
-:::
-
-. . .
-
-::: {.callout-note}
-
-### *Properties*: **Good names are precise and consistent**
-
-Good names prevent missing critical information or misunderstanding what entities represent.
-
-:::
-
-## ICYMI: Available casing conventions {.smaller data-visibility="uncounted"}
-
-There are various casing conventions used for software development.
-
-```{r}
-#| echo: false
-#| eval: true
-#| fig-align: "center"
-#| fig-alt: "An illustration showing casing conventions used for software development."
-knitr::include_graphics("media/horst_cases.jpeg")
-```
-
-:::{style="text-align: center; font-size: 0.9rem;"}
-
-Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
-
-:::
 
 # Further Reading {.smaller data-visibility="uncounted"}
 
 For a more detailed discussion about how to name things, see the following references.
-
-## Popular Naming Conventions {.smaller data-visibility="uncounted"}
-
-:::{style="font-size: 0.7em;"}
-
-Various domains have established naming conventions that provide consistency and clarity:
-
-- **BEM (Block Element Modifier)** - CSS class naming methodology
-  [getbem.com](http://getbem.com/)
-
-- **REST API Naming Conventions** - Guidelines for RESTful resource naming
-  [restfulapi.net/resource-naming](https://restfulapi.net/resource-naming/)
-
-- **Semantic Versioning (SemVer)** - Version number naming scheme
-  [semver.org](https://semver.org/)
-
-- **Conventional Commits** - Git commit message naming standard
-  [conventionalcommits.org](https://www.conventionalcommits.org/)
-
-- **PEP 8** - Python naming conventions
-  [pep8.org/#naming-conventions](https://pep8.org/#naming-conventions)
-
-- **Kubernetes Resource Naming** - Cloud-native resource naming
-  [kubernetes.io/docs/concepts/overview/working-with-objects/names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
-
-- **Database Naming Conventions** - SQL table and column naming
-  [sqlstyle.guide](https://www.sqlstyle.guide/)
-
-:::
 
 ## References {.smaller data-visibility="uncounted"}
 
@@ -1367,6 +1290,52 @@ Various domains have established naming conventions that provide consistency and
 - [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/)
 
 - For a good example of organizational naming guidelines, see [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming).
+
+:::
+
+## Popular Naming Conventions {.smaller data-visibility="uncounted"}
+
+:::{style="font-size: 0.7em;"}
+
+Various domains have established naming conventions that provide consistency and clarity:
+
+- **[BEM (Block Element Modifier)](http://getbem.com/)** - CSS class naming methodology
+
+- **[REST API Naming Conventions](https://restfulapi.net/resource-naming/)** - Guidelines for RESTful resource naming
+
+- **[PEP 8](https://pep8.org/#naming-conventions)** - Python naming conventions
+
+- **[Google Java Style Guide](https://google.github.io/styleguide/javaguide.html#s5-naming)** - Java naming conventions
+
+- **[Rust Naming Conventions](https://rust-lang.github.io/api-guidelines/naming.html)** - Rust API naming guidelines
+
+- **[Go Code Review Comments](https://go.dev/wiki/CodeReviewComments#variable-names)** - Go naming best practices
+
+- **[Kubernetes Resource Naming](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)** - Cloud-native resource naming
+
+- **[Database Naming Conventions](https://www.sqlstyle.guide/#naming-conventions)** - SQL table and column naming
+
+- **[Microsoft .NET Naming Guidelines](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)** - .NET framework naming conventions
+
+- **[Ruby Style Guide](https://rubystyle.guide/#naming-conventions)** - Ruby naming conventions
+
+:::
+
+## ICYMI: Available casing conventions {.smaller data-visibility="uncounted"}
+
+There are various casing conventions used for software development.
+
+```{r}
+#| echo: false
+#| eval: true
+#| fig-align: "center"
+#| fig-alt: "An illustration showing casing conventions used for software development."
+knitr::include_graphics("media/horst_cases.jpeg")
+```
+
+:::{style="text-align: center; font-size: 0.9rem;"}
+
+Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 
 :::
 
