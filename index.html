@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.2">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-10-05 00:13:52.192254">
+  <meta name="dcterms.date" content="2025-10-05 12:22:31.46025">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -258,7 +258,7 @@
 </div>
 
 <aside><div>
-<p><sup>†</sup>Despite Python examples, all the mentioned strategies are <strong>language-agnostic</strong>.</p>
+<p><sup>†</sup>Despite Python examples, all strategies are <strong>language-agnostic</strong>. These are guidelines, not dogma—conventions and context may justify exceptions.</p>
 </div></aside></section>
 <section id="there-are-only-two-hard-things-in-computer-science-cache-invalidation-and-naming-things." class="title-slide slide level1 center">
 <h1>“There are only two hard things in Computer Science: cache invalidation and naming things.”</h1>
@@ -1466,6 +1466,23 @@
 </div>
 </div>
 </div>
+<div class="fragment">
+<div title="Cross-LLM Review">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Cross-LLM Review</strong></p>
+</div>
+<div class="callout-content">
+<p>Use a different LLM to evaluate names than the one used to write the code.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="code-review-a-fresh-perspective" class="slide level2 smaller">
 <h2>Code Review: A fresh perspective</h2>
@@ -1562,65 +1579,11 @@
 <p>“<em>Using understandable names is a foundational step to producing quality software.</em>” - Al Sweigart</p>
 </div>
 </section></section>
-<section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
 <p>And Happy Naming! 😊</p>
 </section>
-<section id="tldr-summary" class="slide level2 smaller" data-visibility="uncounted">
-<h2>TL;DR Summary</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><em>Principle</em>: <strong>Names are a form of abstraction</strong></strong></p>
-</div>
-<div class="callout-content">
-<p>“<em>[T]he best names are those that focus attention on what is most important about the underlying entity, while omitting details that are less important.</em>” - John Ousterhout</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><em>Importance</em>: <strong>Names are at the core of software design</strong></strong></p>
-</div>
-<div class="callout-content">
-<p>If you can’t name something well, the design may be unclear.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><em>Properties</em>: <strong>Good names are precise and consistent</strong></strong></p>
-</div>
-<div class="callout-content">
-<p>Good names prevent missing critical information or misunderstanding what entities represent.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="icymi-available-casing-conventions" class="slide level2 smaller" data-visibility="uncounted">
-<h2>ICYMI: Available casing conventions</h2>
-<p>There are various casing conventions used for software development.</p>
 
-<img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development."><div style="text-align: center; font-size: 0.9rem;">
-<p>Illustration (CC-BY) by <a href="https://allisonhorst.com/">Allison Horst</a></p>
-</div>
-</section></section>
 <section>
 <section id="further-reading" class="title-slide slide level1 smaller center" data-visibility="uncounted">
 <h1>Further Reading</h1>
@@ -1641,6 +1604,32 @@
 <li><p><a href="https://exelearning.org/wiki/OttingersNaming/">Ottinger’s Rules for Variable and Class Naming</a></p></li>
 <li><p>For a good example of organizational naming guidelines, see <a href="https://google.github.io/styleguide/cppguide.html#Naming">Google C++ Style Guide</a>.</p></li>
 </ul>
+</div>
+</section>
+<section id="popular-naming-conventions" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Popular Naming Conventions</h2>
+<div style="font-size: 0.7em;">
+<p>Various domains have established naming conventions that provide consistency and clarity:</p>
+<ul>
+<li><p><strong><a href="http://getbem.com/">BEM (Block Element Modifier)</a></strong> - CSS class naming methodology</p></li>
+<li><p><strong><a href="https://restfulapi.net/resource-naming/">REST API Naming Conventions</a></strong> - Guidelines for RESTful resource naming</p></li>
+<li><p><strong><a href="https://pep8.org/#naming-conventions">PEP 8</a></strong> - Python naming conventions</p></li>
+<li><p><strong><a href="https://google.github.io/styleguide/javaguide.html#s5-naming">Google Java Style Guide</a></strong> - Java naming conventions</p></li>
+<li><p><strong><a href="https://rust-lang.github.io/api-guidelines/naming.html">Rust Naming Conventions</a></strong> - Rust API naming guidelines</p></li>
+<li><p><strong><a href="https://go.dev/wiki/CodeReviewComments#variable-names">Go Code Review Comments</a></strong> - Go naming best practices</p></li>
+<li><p><strong><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes Resource Naming</a></strong> - Cloud-native resource naming</p></li>
+<li><p><strong><a href="https://www.sqlstyle.guide/#naming-conventions">Database Naming Conventions</a></strong> - SQL table and column naming</p></li>
+<li><p><strong><a href="https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines">Microsoft .NET Naming Guidelines</a></strong> - .NET framework naming conventions</p></li>
+<li><p><strong><a href="https://rubystyle.guide/#naming-conventions">Ruby Style Guide</a></strong> - Ruby naming conventions</p></li>
+</ul>
+</div>
+</section>
+<section id="icymi-available-casing-conventions" class="slide level2 smaller" data-visibility="uncounted">
+<h2>ICYMI: Available casing conventions</h2>
+<p>There are various casing conventions used for software development.</p>
+
+<img data-src="media/horst_cases.jpeg" class="quarto-figure quarto-figure-center r-stretch" alt="An illustration showing casing conventions used for software development."><div style="text-align: center; font-size: 0.9rem;">
+<p>Illustration (CC-BY) by <a href="https://allisonhorst.com/">Allison Horst</a></p>
 </div>
 </section></section>
 <section id="for-more" class="title-slide slide level1 center" data-visibility="uncounted">
