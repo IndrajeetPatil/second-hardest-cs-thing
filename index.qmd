@@ -11,7 +11,6 @@ format:
     help: true
     include-in-header: meta-tags.html
     link-external-newwindow: true
-    google-analytics: "G-LWDD71YD15"
 execute:
   echo: true
   eval: false
@@ -1164,6 +1163,14 @@ Try to come up with good names yourself. Then, ask AI tools to validate, assess,
 
 :::
 
+. . .
+
+::: {.callout-tip title="Cross-LLM Review"}
+
+Use a different LLM to evaluate names than the one used to write the code.
+
+:::
+
 ## Code Review: A fresh perspective {.smaller}
 
 Lower cognitive load + fresh perspective = ideal conditions for better naming.
@@ -1307,6 +1314,35 @@ Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 # Further Reading {.smaller data-visibility="uncounted"}
 
 For a more detailed discussion about how to name things, see the following references.
+
+## Popular Naming Conventions {.smaller data-visibility="uncounted"}
+
+:::{style="font-size: 0.7em;"}
+
+Various domains have established naming conventions that provide consistency and clarity:
+
+- **BEM (Block Element Modifier)** - CSS class naming methodology
+  [getbem.com](http://getbem.com/)
+
+- **REST API Naming Conventions** - Guidelines for RESTful resource naming
+  [restfulapi.net/resource-naming](https://restfulapi.net/resource-naming/)
+
+- **Semantic Versioning (SemVer)** - Version number naming scheme
+  [semver.org](https://semver.org/)
+
+- **Conventional Commits** - Git commit message naming standard
+  [conventionalcommits.org](https://www.conventionalcommits.org/)
+
+- **PEP 8** - Python naming conventions
+  [pep8.org/#naming-conventions](https://pep8.org/#naming-conventions)
+
+- **Kubernetes Resource Naming** - Cloud-native resource naming
+  [kubernetes.io/docs/concepts/overview/working-with-objects/names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+
+- **Database Naming Conventions** - SQL table and column naming
+  [sqlstyle.guide](https://www.sqlstyle.guide/)
+
+:::
 
 ## References {.smaller data-visibility="uncounted"}
 
