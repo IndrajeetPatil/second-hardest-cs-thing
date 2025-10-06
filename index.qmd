@@ -1271,7 +1271,7 @@ For a more detailed discussion about how to name things, see the following refer
 
 :::{style="font-size: 25px;"}
 
-- McConnell, S. (2004). *Code Complete*. Microsoft Press. (**pp. 259-290**)
+- McConnell, S. (2004). *Code Complete* (2nd ed.). Microsoft Press. (**pp. 259-290**)
 
 - Boswell, D., & Foucher, T. (2011). *The Art of Readable Code*. O'Reilly Media, Inc. (**pp. 7-31**)
 
