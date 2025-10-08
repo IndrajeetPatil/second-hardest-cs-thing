@@ -66,14 +66,11 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 ## What you'll learn today {.smaller}
 
 - Why naming impacts code quality and maintainability
-- How naming improves software design and architecture
 - Common naming pitfalls to avoid
-- Practical strategies for clear, consistent, and meaningful names^†^
+- Practical strategies for clear, consistent, and meaningful names
 - Tools and techniques for better naming (AI, code review)
 
-<br>
-
-::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px;text-align: center;"}
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px; text-align: center;"}
 
 🎯 **Goal**
 
@@ -81,10 +78,12 @@ Transform naming from an afterthought into a deliberate practice.
 
 :::
 
+<br>
 
-::: {.aside style="font-size: 0.6em; position: absolute; bottom: 10px; left: 50px;"}
+::: {style="background-color: #e3f2fd; padding: 20px; border-radius: 25px; text-align: center;"}
 
-^†^Despite Python examples, all strategies are **language-agnostic**. These are guidelines, not dogma—conventions and context may justify exceptions.
+Despite Python examples, all the mentioned strategies are **language-agnostic**.<br>
+None of this advice is **dogma**; there can be valid reasons and conventions to break these rules.
 
 :::
 
