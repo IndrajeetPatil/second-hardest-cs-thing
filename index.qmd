@@ -1278,7 +1278,7 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Hermans, F. (2021). *The Programmer's Brain*. Manning Publications. (**pp. 127-146**)
 
-- Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Palo Alto: Yaknyam Press. (**pp. 121-129**)
+- Ousterhout, J. K. (2018). *A Philosophy of Software Design*. Yaknyam Press. (**pp. 121-129**)
 
 - Goodliffe, P. (2007). *Code Craft*.  No Starch Press. (**pp. 39-56**)
 
