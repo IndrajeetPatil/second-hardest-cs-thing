@@ -1284,7 +1284,9 @@ For a more detailed discussion about how to name things, see the following refer
 
 - Padolsey, J. (2020). *Clean Code in JavaScript*. Packt Publishing. (**pp. 93-111**)
 
-- Thomas, D., & Hunt, A. (2019). *The Pragmatic Programmer*. Addison-Wesley Professional. (**pp. 238-242**)
+- Contieri, M. (2023). *Clean Code Cookbook*. O'Reilly Media, Inc. (**pp. 89-110**)
+
+- Zimmerman, C. (2024). *The Rules of Programming*. O'Reilly Media, Inc. (**pp. 31-42**)
 
 - [Ottinger's Rules for Variable and Class Naming](https://exelearning.org/wiki/OttingersNaming/)
 
