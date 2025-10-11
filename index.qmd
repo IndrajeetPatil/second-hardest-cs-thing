@@ -209,112 +209,6 @@ Good names pay dividends
 
 ::::
 
-
-# Naming and good design
-
-Illustrating naming benefits for software design using ***functions*** as examples
-
-## Following Unix philosophy {.smaller}
-
-::: {style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;"}
-_"Do One Thing And Do It Well"_
-:::
-
-Naming reveals if you're following this rule.
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-:::{.callout-caution title="Doing multiple things"}
-
-```{python}
-def extract_and_sort_estimates(model, sort="asc"):
-    # extract estimates
-    # sort table
-    pass
-```
-
-:::
-
-:::
-
-::: {.column width='50%'}
-
-:::{.callout-tip title="Doing one thing each"}
-
-```{python}
-def extract_estimates(model):
-    # extract estimates
-    pass
-
-def sort_estimates(table, sort="asc"):
-    # sort table  
-    pass
-```
-
-:::
-
-:::
-
-::::
-
-::: {style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
-**Warning**: Functions with `and` or `or` in names likely violate this principle!
-:::
-
-## Function Parameter Names {.smaller}
-
-Parameter names reveal design problems.
-
-::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;"}
-Boolean/flag parameters often signal functions doing multiple things
-:::
-
-:::: {.columns}
-
-::: {.column width='50%'}
-
-:::{.callout-caution title="Multiple behaviors"}
-
-```{python}
-def convert_to_pdf(file, is_markdown=False):
-    if is_markdown:
-        # convert Markdown
-        pass
-    else:
-        # convert HTML
-        pass
-```
-
-:::
-
-:::
-
-::: {.column width='50%'}
-
-:::{.callout-tip title="Single purpose each"}
-
-```{python}
-def convert_md_to_pdf(file):
-    # convert Markdown
-    pass
-
-def convert_html_to_pdf(file):
-    # convert HTML
-    pass
-```
-
-:::
-
-:::
-
-::::
-
-::: {style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
-**Insight**: If you need a flag parameter, consider splitting into separate functions
-:::
-
 # Naming: The Do's and Don'ts
 
 > "_The beginning of wisdom is to call things by their proper name._" - Confucius
@@ -1421,6 +1315,115 @@ knitr::include_graphics("media/horst_cases.jpeg")
 
 Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 
+:::
+
+# *Extra*: Naming and good design {data-visibility="uncounted"}
+
+Illustrating naming benefits for software design using ***functions*** as examples
+
+## Following Unix philosophy {.smaller}
+
+::: {style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;"}
+_"Do One Thing And Do It Well"_
+:::
+
+Naming reveals if you're following this rule.
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution title="Doing multiple things"}
+
+```{python}
+def extract_and_sort_estimates(model, sort="asc"):
+    # extract estimates
+    # sort table
+    pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip title="Doing one thing each"}
+
+```{python}
+def extract_estimates(model):
+    # extract estimates
+    pass
+
+def sort_estimates(table, sort="asc"):
+    # sort table
+    pass
+```
+
+:::
+
+:::
+
+::::
+
+::: {style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**Warning**: Functions with `and` or `or` in names likely violate this principle!
+:::
+
+## Function Parameter Names {.smaller}
+
+Parameter names reveal design problems.
+
+::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;"}
+Boolean/flag parameters often signal functions doing multiple things
+:::
+
+:::: {.columns}
+
+::: {.column width='50%'}
+
+:::{.callout-caution title="Multiple behaviours"}
+
+```{python}
+def convert_to_pdf(file, is_markdown=False):
+    if is_markdown:
+        # convert Markdown
+        pass
+    else:
+        # convert HTML
+        pass
+```
+
+:::
+
+:::
+
+::: {.column width='50%'}
+
+:::{.callout-tip title="Single purpose each"}
+
+```{python}
+def convert_md_to_pdf(file):
+    # convert Markdown
+    pass
+
+def convert_html_to_pdf(file):
+    # convert HTML
+    pass
+```
+
+:::
+
+:::
+
+::::
+
+::: {style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+**Insight**: If you need a flag parameter, consider splitting into separate functions
+:::
+
+::: {style="background-color: #fff3e0; padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.85em;"}
+**Caveat**: Flag parameters are acceptable when they modify behaviour rather than switch between different operations (e.g., `sort_ascending=True`, `verbose=False`, `case_sensitive=True`).
 :::
 
 # For more {data-visibility="uncounted"}
