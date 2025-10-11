@@ -1,3 +1,8 @@
 .footer > p {
   font-size: 15px;
 }
+
+/* Increase font size for code blocks inside callouts */
+.reveal .slides section div.callout pre.sourceCode {
+  font-size: 0.75em !important;
+}

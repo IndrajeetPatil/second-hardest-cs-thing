@@ -207,7 +207,7 @@ Illustrating naming benefits for software design using ***functions*** as exampl
 ## Following Unix philosophy {.smaller}
 
 ::: {style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;"}
-**Unix Golden Rule**: _"Do One Thing And Do It Well"_
+_"Do One Thing And Do It Well"_
 :::
 
 Naming reveals if you're following this rule.
@@ -253,13 +253,13 @@ def sort_estimates(table, sort="asc"):
 **Warning**: Functions with `and` or `or` in names likely violate this principle!
 :::
 
-## Function parameter names {.smaller}
-
-::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;"}
-**Parameter Naming Rule**: Boolean/flag parameters often signal functions doing multiple things
-:::
+## Function Parameter Names {.smaller}
 
 Parameter names reveal design problems.
+
+::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;"}
+Boolean/flag parameters often signal functions doing multiple things
+:::
 
 :::: {.columns}
 
@@ -1034,6 +1034,10 @@ class ErrorHandler:
 
 ::::
 
+::: {style="background-color: #e8f5e8; padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;"}
+Class represents a concept and should use singular nouns (e.g. `User` and not `Users`).
+:::
+
 . . .
 
 **Methods that return values use nouns, action methods use verbs:**
@@ -1115,10 +1119,6 @@ user.is_adult()     # returns boolean
 
 ## Generative AI tools can be valuable allies {.smaller}
 
-AI tools have context of your entire codebase and can provide meaningful names.
-
-. . .
-
 :::: {.columns}
 
 ::: {.column width='60%'}
@@ -1126,9 +1126,22 @@ AI tools have context of your entire codebase and can provide meaningful names.
 **Why AI tools can help:**
 
 - Full context understanding of functions/classes
-- Cross-domain pattern recognition
 - Inconsistency detection across codebase
 - Multiple naming suggestions with rationales
+
+::: {style="background-color: rgba(117, 112, 179, 0.15); border-left: 5px solid #7570B3FF; padding: 15px; border-radius: 8px; margin-top: 20px;"}
+
+**LLM-Generated Names**
+
+LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones.
+
+::: {style="background-color: #ffffff; text-align: center; font-size: 1.2em; margin-top: 10px;"}
+
+*Always review LLM-generated names critically.*
+
+:::
+
+:::
 
 :::
 
@@ -1138,37 +1151,34 @@ AI tools have context of your entire codebase and can provide meaningful names.
 %%| eval: true
 %%| echo: false
 flowchart TD
-    H[Human] --> L[Linter]
-    A[AI] --> L[Linter]
-    H -.->|Collaborates| A
+    H[Human] -.->|Collaborates| A[AI]
     A -.->|Feedback| H
-    L --> S[Standardized Names]
-    
+    A --> L[Linter]
+    L -->|Approves| S[Standardized Names]
+
     style H fill:#e3f2fd
     style A fill:#f3e5f5
     style L fill:#fff3e0
     style S fill:#e8f5e8
 ```
 
+::: {style="background-color: #ffffff; padding: 15px; border-radius: 8px; margin-top: 20px;"}
+
+```{.diff}
+Human-generated name:
+
+- def process_data(x):
+
+LLM-suggested improvement:
+
++ def calculate_average(sales_data):
+```
+
+:::
+
 :::
 
 ::::
-
-. . .
-
-::: {.callout-tip title="Symbiotic Naming"}
-
-Try to come up with good names yourself. Then, ask AI tools to validate, assess, or suggest improvements.
-
-:::
-
-. . .
-
-::: {.callout-tip title="Cross-LLM Review"}
-
-Use a different LLM to evaluate names than the one used to write the code.
-
-:::
 
 ## Code Review: A fresh perspective {.smaller}
 
