@@ -309,16 +309,19 @@ def convert_html_to_pdf(file):
 
 > "_The beginning of wisdom is to call things by their proper name._" - Confucius
 
+# Core principle
+
+::: {style="background-color: #FFFBC1; padding: 20px; border-radius: 25px; text-align: center; margin: 20px 0;"}
+
+**Names must serve the *reader*, not the *author*, of code.**
+
+Good names reveal intention and eliminate guesswork.
+
+:::
 
 # The Don'ts
 
-Follow this principle instead of memorizing rules:
-
-::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
-
-**Names must be readable for the *reader*, not *author*, of code.**
-
-:::
+*Common pitfalls that make names harder to understand*
 
 ## {.smaller}
 
@@ -331,6 +334,7 @@ Follow this principle instead of memorizing rules:
 | Don't use similar names for different meanings | Easily confused, need 2+ letter difference | `PatientRecs`, `PatientReps` | `PatientRecords`, `PatientReports` |
 | Avoid naming entities with homonyms | Leads to confusion in discussion | `waste`, `waist` | `garbage`, `body_circumference` |
 | Don't use easily confused names | Too similar, mistaken identity | `nn`, `nnn` | `n_square`, `n_cube` |
+| Avoid ambiguous acronyms | Meaning varies by context | `NA` (North America vs Not Available) | `north_america`, `not_available` |
 | <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Consistency & Standards**</span> |  |  |  |
 | Don't use inconsistent abbreviations | Choose one prefix and use consistently | `numColumns`, `noRows` | `numColumns`, `numRows` |
 | Don't allow multiple English standards | Causes constant guessing | `centre`, `center` (mixed) | `center` (consistent) |
@@ -349,6 +353,7 @@ Follow this principle instead of memorizing rules:
 | Avoid unintended meanings | Check [Urban dictionary](https://www.urbandictionary.com/) | `dump()` | `export_data()` |
 | Don't use uncommon English words | Stick to common parlance | `commence_process()` | `start_process()` |
 | Don't use unpronounceable names | Enables easier verbal communication | `genymdhms()` | `generate_timestamp()` |
+| Don't use region-specific terminology | Prefer international English | `lorry_capacity`, `boot_storage` | `truck_capacity`, `trunk_storage` |
 | <span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
 | Don't misspell to save characters | Correct misspelling is harder to remember | `hilite` | `highlight` |
 | Don't use commonly misspelled words | Slows you down, increases errors | `accumulate` variants | `sum`, `collect` |
@@ -360,13 +365,7 @@ Follow this principle instead of memorizing rules:
 
 # The Do's
 
-Follow this principle instead of memorizing rules:
-
-::: {style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;"}
-
-**Good names reveal intention and eliminate guesswork.**
-
-:::
+*Actionable strategies for creating clear, maintainable names*
 
 ## Names should be self-documenting {.smaller}
 
@@ -722,42 +721,6 @@ parse_csv()
 ::: {style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;"}
 
 **Following *a* standard consistently is more important than *which* standard you adopt.**
-
-:::
-
-## Aside: Examples of Conventions {.smaller style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
-
-::: {style="font-size: 0.55em; line-height: 1.3;"}
-
-::: {style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
-**Programming Language specific**
-
-| Language | Variables | Functions | Classes | Constants |
-|----------|-----------|-----------|---------|-----------|
-| **Scala** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
-| **Kotlin** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
-| **Rust** | `snake_case` | `snake_case` | `PascalCase` | `SCREAMING_SNAKE_CASE` |
-| **Swift** | `camelCase` | `camelCase` | `PascalCase` | `camelCase` |
-| **Elixir** | `snake_case` | `snake_case` | `PascalCase` | `@upper_snake_case` |
-:::
-
-::: {style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
-**Technology Stack specific**
-
-| Layer | Convention | Examples |
-|-------|------------|----------|
-| **Database** | `snake_case` | `user_profiles`, `created_at` |
-| **REST APIs** | `kebab-case`/`snake_case` | `/user-profiles`, `user_name` |
-| **GraphQL** | `camelCase` | `userProfile`, `orderItems` |
-| **CSS/HTML** | `kebab-case` | `.nav-menu`, `#main-content` |
-| **DevOps** | `kebab-case` | `my-app-deployment` |
-| **URLs/Routes** | `kebab-case` | `/api/user-accounts`, `/admin/user-settings` |
-| **Event Names** | `camelCase`/`kebab-case` | `userSignedIn`, `order-completed` |
-:::
-
-::: {style="margin-top: 15px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;"}
-**Consistency within each layer matters more than uniformity across layers**
-:::
 
 :::
 
@@ -1215,11 +1178,55 @@ flowchart TD
     style I fill:#e8f5e8,color:#000
 ```
 
+## Renaming in legacy code {.smaller}
+
+Improving names in existing codebases requires careful strategy to avoid breaking changes.
+
 . . .
 
-::: {style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;"}
+**Safe refactoring approaches:**
 
-**Code review transforms naming from reactive to deliberate!**
+:::: {.columns}
+
+::: {.column width='50%'}
+
+```{python}
+# Step 1: Add new name with deprecation
+@deprecated("Use calculate_total() instead")
+def calc_tot(items):
+    return calculate_total(items)
+
+def calculate_total(items):
+    # implementation
+    pass
+```
+
+:::
+
+::: {.column width='50%'}
+
+```{python}
+# Step 2: Update all internal calls
+# Use IDE refactoring tools:
+# - "Find All References"
+# - "Rename Symbol"
+# Commit after each successful rename
+```
+
+:::
+
+::::
+
+. . .
+
+::: {style="background-color: #fff3e0; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
+
+**Version control best practices:**
+
+- Create feature branch for naming changes
+- Make one logical naming change per commit
+- Use descriptive commit messages: `"Rename calc_tot to calculate_total"`
+- Run full test suite after each rename
 
 :::
 
@@ -1232,27 +1239,39 @@ flowchart TD
 
 . . .
 
-- Intent-revealing names make the **code easier to read**.
+::: {style="background-color: #e3f2fd; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
+
+**For development velocity:**
+
+- Easier reading and faster comprehension
+- Reduced need for documentation
+- Confident feature development without fear
+
+:::
 
 . . .
 
-- Trying to find good names forces you to detach from the problem-solving mindset and to **focus on the bigger picture** that motivates this change. This is critical for thoughtful software design.
+::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
+
+**For design quality:**
+
+- Forces focus on bigger picture and thoughtful design
+- Improves your own understanding through clarity-seeking
+- Reduces ambiguities and bugs
+
+:::
 
 . . .
 
-- Searching for precise names requires clarity, and seeking such clarity **improves your own understanding** of the code.
+::: {style="background-color: #e8f5e9; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
 
-. . .
+**For team collaboration:**
 
-- Naming precisely and consistently **reduces ambiguities and misunderstandings**, reducing the possibility of bugs.
+- Reduces cognitive overload across the team
+- Makes code more maintainable for future developers
+- Enables effective knowledge transfer
 
-. . .
-
-- Good names **reduce the need for documentation**.
-
-. . .
-
-- Consistent naming **reduces cognitive overload** for the developers and makes the code more maintainable.
+:::
 
 ## Naming is hard, but worth it
 
@@ -1325,6 +1344,42 @@ Various domains have established naming conventions that provide consistency and
 - **[Microsoft .NET Naming Guidelines](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)** - .NET framework naming conventions
 
 - **[Ruby Style Guide](https://rubystyle.guide/#naming-conventions)** - Ruby naming conventions
+
+:::
+
+## *Extra* : Examples of Conventions {.smaller data-visibility="uncounted" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
+
+::: {style="font-size: 0.55em; line-height: 1.3;"}
+
+::: {style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Programming Language specific**
+
+| Language | Variables | Functions | Classes | Constants |
+|----------|-----------|-----------|---------|-----------|
+| **Scala** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Kotlin** | `camelCase` | `camelCase` | `PascalCase` | `UPPER_SNAKE_CASE` |
+| **Rust** | `snake_case` | `snake_case` | `PascalCase` | `SCREAMING_SNAKE_CASE` |
+| **Swift** | `camelCase` | `camelCase` | `PascalCase` | `camelCase` |
+| **Elixir** | `snake_case` | `snake_case` | `PascalCase` | `@upper_snake_case` |
+:::
+
+::: {style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;"}
+**Technology Stack specific**
+
+| Layer | Convention | Examples |
+|-------|------------|----------|
+| **Database** | `snake_case` | `user_profiles`, `created_at` |
+| **REST APIs** | `kebab-case`/`snake_case` | `/user-profiles`, `user_name` |
+| **GraphQL** | `camelCase` | `userProfile`, `orderItems` |
+| **CSS/HTML** | `kebab-case` | `.nav-menu`, `#main-content` |
+| **DevOps** | `kebab-case` | `my-app-deployment` |
+| **URLs/Routes** | `kebab-case` | `/api/user-accounts`, `/admin/user-settings` |
+| **Event Names** | `camelCase`/`kebab-case` | `userSignedIn`, `order-completed` |
+:::
+
+::: {style="margin-top: 15px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;"}
+**Consistency within each layer matters more than uniformity across layers**
+:::
 
 :::
 

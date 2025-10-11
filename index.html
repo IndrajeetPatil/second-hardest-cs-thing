@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.4">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-10-11 08:36:45.828615">
+  <meta name="dcterms.date" content="2025-10-11 11:41:58.947784">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -519,13 +519,18 @@
 </blockquote>
 </section>
 
+<section id="core-principle" class="title-slide slide level1 center">
+<h1>Core principle</h1>
+<div style="background-color: #FFFBC1; padding: 20px; border-radius: 25px; text-align: center; margin: 20px 0;">
+<p><strong>Names must serve the <em>reader</em>, not the <em>author</em>, of code.</strong></p>
+<p>Good names reveal intention and eliminate guesswork.</p>
+</div>
+</section>
+
 <section>
 <section id="the-donts" class="title-slide slide level1 center">
 <h1>The Don’ts</h1>
-<p>Follow this principle instead of memorizing rules:</p>
-<div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
-<p><strong>Names must be readable for the <em>reader</em>, not <em>author</em>, of code.</strong></p>
-</div>
+<p><em>Common pitfalls that make names harder to understand</em></p>
 </section>
 <section id="section" class="slide level2 smaller">
 <h2></h2>
@@ -577,30 +582,36 @@
 <td><code>n_square</code>, <code>n_cube</code></td>
 </tr>
 <tr class="odd">
+<td>Avoid ambiguous acronyms</td>
+<td>Meaning varies by context</td>
+<td><code>NA</code> (North America vs Not Available)</td>
+<td><code>north_america</code>, <code>not_available</code></td>
+</tr>
+<tr class="even">
 <td><span style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Consistency &amp; Standards</strong></span></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Don’t use inconsistent abbreviations</td>
 <td>Choose one prefix and use consistently</td>
 <td><code>numColumns</code>, <code>noRows</code></td>
 <td><code>numColumns</code>, <code>numRows</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Don’t allow multiple English standards</td>
 <td>Causes constant guessing</td>
 <td><code>centre</code>, <code>center</code> (mixed)</td>
 <td><code>center</code> (consistent)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Don’t use misleading abbreviations</td>
 <td>Conflicts with language conventions</td>
 <td><code>str</code> (for “structure”)</td>
 <td><code>structure</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Avoid misleading names</td>
 <td>Wrong info is worse than no info</td>
 <td><code>get_means()</code> (incorrectly implies precomputed)</td>
@@ -660,36 +671,42 @@
 <td><code>generate_timestamp()</code></td>
 </tr>
 <tr class="odd">
+<td>Don’t use region-specific terminology</td>
+<td>Prefer international English</td>
+<td><code>lorry_capacity</code>, <code>boot_storage</code></td>
+<td><code>truck_capacity</code>, <code>trunk_storage</code></td>
+</tr>
+<tr class="even">
 <td><span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;"><strong>Technical &amp; Maintainability</strong></span></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Don’t misspell to save characters</td>
 <td>Correct misspelling is harder to remember</td>
 <td><code>hilite</code></td>
 <td><code>highlight</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Don’t use commonly misspelled words</td>
 <td>Slows you down, increases errors</td>
 <td><code>accumulate</code> variants</td>
 <td><code>sum</code>, <code>collect</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Don’t use numeric suffixes for levels</td>
 <td>Not informative</td>
 <td><code>level1</code>, <code>level2</code>, <code>level3</code></td>
 <td><code>beginner</code>, <code>intermediate</code>, <code>advanced</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Don’t use unsearchable names</td>
 <td>Hard to find and replace</td>
 <td><code>a</code>, <code>f</code></td>
 <td><code>arr</code>, <code>fun</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Don’t prioritize grammar over clarity</td>
 <td>Plural forms aid comprehension</td>
 <td><code>fish</code> (for multiple)</td>
@@ -702,10 +719,7 @@
 <section>
 <section id="the-dos" class="title-slide slide level1 center">
 <h1>The Do’s</h1>
-<p>Follow this principle instead of memorizing rules:</p>
-<div style="background-color: #FFFBC1; padding: 10px; border-radius: 25px; text-align: center; font-size: 2rem;">
-<p><strong>Good names reveal intention and eliminate guesswork.</strong></p>
-</div>
+<p><em>Actionable strategies for creating clear, maintainable names</em></p>
 </section>
 <section id="names-should-be-self-documenting" class="slide level2 smaller">
 <h2>Names should be self-documenting</h2>
@@ -982,126 +996,6 @@
 <div class="fragment">
 <div style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;">
 <p><strong>Following <em>a</em> standard consistently is more important than <em>which</em> standard you adopt.</strong></p>
-</div>
-</div>
-</section>
-<section id="aside-examples-of-conventions" class="slide level2 smaller" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;">
-<h2>Aside: Examples of Conventions</h2>
-<div style="font-size: 0.55em; line-height: 1.3;">
-<div style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
-<p><strong>Programming Language specific</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 17%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Variables</th>
-<th>Functions</th>
-<th>Classes</th>
-<th>Constants</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Scala</strong></td>
-<td><code>camelCase</code></td>
-<td><code>camelCase</code></td>
-<td><code>PascalCase</code></td>
-<td><code>UPPER_SNAKE_CASE</code></td>
-</tr>
-<tr class="even">
-<td><strong>Kotlin</strong></td>
-<td><code>camelCase</code></td>
-<td><code>camelCase</code></td>
-<td><code>PascalCase</code></td>
-<td><code>UPPER_SNAKE_CASE</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Rust</strong></td>
-<td><code>snake_case</code></td>
-<td><code>snake_case</code></td>
-<td><code>PascalCase</code></td>
-<td><code>SCREAMING_SNAKE_CASE</code></td>
-</tr>
-<tr class="even">
-<td><strong>Swift</strong></td>
-<td><code>camelCase</code></td>
-<td><code>camelCase</code></td>
-<td><code>PascalCase</code></td>
-<td><code>camelCase</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Elixir</strong></td>
-<td><code>snake_case</code></td>
-<td><code>snake_case</code></td>
-<td><code>PascalCase</code></td>
-<td><code>@upper_snake_case</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
-<p><strong>Technology Stack specific</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 41%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Layer</th>
-<th>Convention</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Database</strong></td>
-<td><code>snake_case</code></td>
-<td><code>user_profiles</code>, <code>created_at</code></td>
-</tr>
-<tr class="even">
-<td><strong>REST APIs</strong></td>
-<td><code>kebab-case</code>/<code>snake_case</code></td>
-<td><code>/user-profiles</code>, <code>user_name</code></td>
-</tr>
-<tr class="odd">
-<td><strong>GraphQL</strong></td>
-<td><code>camelCase</code></td>
-<td><code>userProfile</code>, <code>orderItems</code></td>
-</tr>
-<tr class="even">
-<td><strong>CSS/HTML</strong></td>
-<td><code>kebab-case</code></td>
-<td><code>.nav-menu</code>, <code>#main-content</code></td>
-</tr>
-<tr class="odd">
-<td><strong>DevOps</strong></td>
-<td><code>kebab-case</code></td>
-<td><code>my-app-deployment</code></td>
-</tr>
-<tr class="even">
-<td><strong>URLs/Routes</strong></td>
-<td><code>kebab-case</code></td>
-<td><code>/api/user-accounts</code>, <code>/admin/user-settings</code></td>
-</tr>
-<tr class="odd">
-<td><strong>Event Names</strong></td>
-<td><code>camelCase</code>/<code>kebab-case</code></td>
-<td><code>userSignedIn</code>, <code>order-completed</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top: 15px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;">
-<p><strong>Consistency within each layer matters more than uniformity across layers</strong></p>
 </div>
 </div>
 </section>
@@ -1503,9 +1397,43 @@
 </div>
 </div>
 </div>
+</section>
+<section id="renaming-in-legacy-code" class="slide level2 smaller">
+<h2>Renaming in legacy code</h2>
+<p>Improving names in existing codebases requires careful strategy to avoid breaking changes.</p>
 <div class="fragment">
-<div style="background-color: #FFFBC1; padding: 10px; margin: 10px; border-radius: 25px;text-align: center; font-size: 1.2rem;">
-<p><strong>Code review transforms naming from reactive to deliberate!</strong></p>
+<p><strong>Safe refactoring approaches:</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Add new name with deprecation</span></span>
+<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">@deprecated</span>(<span class="st">"Use calculate_total() instead"</span>)</span>
+<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_tot(items):</span>
+<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> calculate_total(items)</span>
+<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># implementation</span></span>
+<span id="cb42-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Update all internal calls</span></span>
+<span id="cb43-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Use IDE refactoring tools:</span></span>
+<span id="cb43-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Find All References"</span></span>
+<span id="cb43-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Rename Symbol"</span></span>
+<span id="cb43-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit after each successful rename</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</div>
+<div class="fragment">
+<div style="background-color: #fff3e0; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;">
+<p><strong>Version control best practices:</strong></p>
+<ul>
+<li>Create feature branch for naming changes</li>
+<li>Make one logical naming change per commit</li>
+<li>Use descriptive commit messages: <code>"Rename calc_tot to calculate_total"</code></li>
+<li>Run full test suite after each rename</li>
+</ul>
 </div>
 </div>
 </section></section>
@@ -1519,34 +1447,34 @@
 <section id="whats-in-a-name-well-everything" class="slide level2 smaller">
 <h2><em>“What’s in a name?”</em> Well, everything!</h2>
 <div class="fragment">
+<div style="background-color: #e3f2fd; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;">
+<p><strong>For development velocity:</strong></p>
 <ul>
-<li>Intent-revealing names make the <strong>code easier to read</strong>.</li>
+<li>Easier reading and faster comprehension</li>
+<li>Reduced need for documentation</li>
+<li>Confident feature development without fear</li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li>Trying to find good names forces you to detach from the problem-solving mindset and to <strong>focus on the bigger picture</strong> that motivates this change. This is critical for thoughtful software design.</li>
-</ul>
 </div>
 <div class="fragment">
+<div style="background-color: #f3e5f5; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;">
+<p><strong>For design quality:</strong></p>
 <ul>
-<li>Searching for precise names requires clarity, and seeking such clarity <strong>improves your own understanding</strong> of the code.</li>
+<li>Forces focus on bigger picture and thoughtful design</li>
+<li>Improves your own understanding through clarity-seeking</li>
+<li>Reduces ambiguities and bugs</li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li>Naming precisely and consistently <strong>reduces ambiguities and misunderstandings</strong>, reducing the possibility of bugs.</li>
-</ul>
 </div>
 <div class="fragment">
+<div style="background-color: #e8f5e9; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;">
+<p><strong>For team collaboration:</strong></p>
 <ul>
-<li>Good names <strong>reduce the need for documentation</strong>.</li>
+<li>Reduces cognitive overload across the team</li>
+<li>Makes code more maintainable for future developers</li>
+<li>Enables effective knowledge transfer</li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li>Consistent naming <strong>reduces cognitive overload</strong> for the developers and makes the code more maintainable.</li>
-</ul>
 </div>
 </section>
 <section id="naming-is-hard-but-worth-it" class="slide level2">
@@ -1597,6 +1525,126 @@
 <li><p><strong><a href="https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines">Microsoft .NET Naming Guidelines</a></strong> - .NET framework naming conventions</p></li>
 <li><p><strong><a href="https://rubystyle.guide/#naming-conventions">Ruby Style Guide</a></strong> - Ruby naming conventions</p></li>
 </ul>
+</div>
+</section>
+<section id="extra-examples-of-conventions" class="slide level2 smaller" data-visibility="uncounted" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;">
+<h2><em>Extra</em> : Examples of Conventions</h2>
+<div style="font-size: 0.55em; line-height: 1.3;">
+<div style="background-color: #e3f2fd; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+<p><strong>Programming Language specific</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Variables</th>
+<th>Functions</th>
+<th>Classes</th>
+<th>Constants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scala</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr class="even">
+<td><strong>Kotlin</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Rust</strong></td>
+<td><code>snake_case</code></td>
+<td><code>snake_case</code></td>
+<td><code>PascalCase</code></td>
+<td><code>SCREAMING_SNAKE_CASE</code></td>
+</tr>
+<tr class="even">
+<td><strong>Swift</strong></td>
+<td><code>camelCase</code></td>
+<td><code>camelCase</code></td>
+<td><code>PascalCase</code></td>
+<td><code>camelCase</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Elixir</strong></td>
+<td><code>snake_case</code></td>
+<td><code>snake_case</code></td>
+<td><code>PascalCase</code></td>
+<td><code>@upper_snake_case</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="background-color: #f3e5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+<p><strong>Technology Stack specific</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 41%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Convention</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Database</strong></td>
+<td><code>snake_case</code></td>
+<td><code>user_profiles</code>, <code>created_at</code></td>
+</tr>
+<tr class="even">
+<td><strong>REST APIs</strong></td>
+<td><code>kebab-case</code>/<code>snake_case</code></td>
+<td><code>/user-profiles</code>, <code>user_name</code></td>
+</tr>
+<tr class="odd">
+<td><strong>GraphQL</strong></td>
+<td><code>camelCase</code></td>
+<td><code>userProfile</code>, <code>orderItems</code></td>
+</tr>
+<tr class="even">
+<td><strong>CSS/HTML</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>.nav-menu</code>, <code>#main-content</code></td>
+</tr>
+<tr class="odd">
+<td><strong>DevOps</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>my-app-deployment</code></td>
+</tr>
+<tr class="even">
+<td><strong>URLs/Routes</strong></td>
+<td><code>kebab-case</code></td>
+<td><code>/api/user-accounts</code>, <code>/admin/user-settings</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Event Names</strong></td>
+<td><code>camelCase</code>/<code>kebab-case</code></td>
+<td><code>userSignedIn</code>, <code>order-completed</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 15px; padding: 8px; background-color: rgba(108, 117, 125, 0.1); border-radius: 6px; text-align: center; font-size: 1.1em;">
+<p><strong>Consistency within each layer matters more than uniformity across layers</strong></p>
+</div>
 </div>
 </section>
 <section id="icymi-available-casing-conventions" class="slide level2 smaller" data-visibility="uncounted">
