@@ -1272,10 +1272,6 @@ Invest time in good names early—they pay dividends by reducing system complexi
 
 And Happy Naming! 😊
 
-# Further Reading {.smaller data-visibility="uncounted"}
-
-For a more detailed discussion about how to name things, see the following references.
-
 ## References {.smaller data-visibility="uncounted"}
 
 :::{style="font-size: 25px;"}
