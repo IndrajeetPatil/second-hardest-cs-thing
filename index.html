@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.4">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-10-10 22:18:41.045014">
+  <meta name="dcterms.date" content="2025-10-11 08:21:51.395417">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -398,7 +398,7 @@
 <section id="following-unix-philosophy" class="slide level2 smaller">
 <h2>Following Unix philosophy</h2>
 <div style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;">
-<p><strong>Unix Golden Rule</strong>: <em>“Do One Thing And Do It Well”</em></p>
+<p><em>“Do One Thing And Do It Well”</em></p>
 </div>
 <p>Naming reveals if you’re following this rule.</p>
 <div class="columns">
@@ -453,11 +453,11 @@
 </div>
 </section>
 <section id="function-parameter-names" class="slide level2 smaller">
-<h2>Function parameter names</h2>
-<div style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;">
-<p><strong>Parameter Naming Rule</strong>: Boolean/flag parameters often signal functions doing multiple things</p>
-</div>
+<h2>Function Parameter Names</h2>
 <p>Parameter names reveal design problems.</p>
+<div style="background-color: #f3e5f5; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #7b1fa2;">
+<p>Boolean/flag parameters often signal functions doing multiple things</p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div title="Multiple behaviors">
@@ -1329,6 +1329,9 @@
 <span id="cb38-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
+<div style="background-color: #e8f5e8; padding: 10px; border-radius: 8px; text-align: center; margin: 15px 0;">
+<p>Class represents a concept and should use singular nouns (e.g.&nbsp;<code>User</code> and not <code>Users</code>).</p>
+</div>
 </div>
 <div class="fragment">
 <p><strong>Methods that return values use nouns, action methods use verbs:</strong></p>
@@ -1412,17 +1415,21 @@
 </section>
 <section id="generative-ai-tools-can-be-valuable-allies" class="slide level2 smaller">
 <h2>Generative AI tools can be valuable allies</h2>
-<p>AI tools have context of your entire codebase and can provide meaningful names.</p>
-<div class="fragment">
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>Why AI tools can help:</strong></p>
 <ul>
 <li>Full context understanding of functions/classes</li>
-<li>Cross-domain pattern recognition</li>
 <li>Inconsistency detection across codebase</li>
 <li>Multiple naming suggestions with rationales</li>
 </ul>
+<div style="background-color: rgba(117, 112, 179, 0.15); border-left: 5px solid #7570B3FF; padding: 15px; border-radius: 8px; margin-top: 20px;">
+<p><strong>LLM-Generated Names</strong></p>
+<p>LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones.</p>
+<div style="background-color: #ffffff; text-align: center; font-size: 1.2em; margin-top: 10px;">
+<p><em>Always review LLM-generated names critically.</em></p>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
 <div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -1430,12 +1437,11 @@
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-    H[Human] --&gt; L[Linter]
-    A[AI] --&gt; L[Linter]
-    H -.-&gt;|Collaborates| A
+    H[Human] -.-&gt;|Collaborates| A[AI]
     A -.-&gt;|Feedback| H
-    L --&gt; S[Standardized Names]
-    
+    A --&gt; L[Linter]
+    L --&gt;|Approves| S[Standardized Names]
+
     style H fill:#e3f2fd
     style A fill:#f3e5f5
     style L fill:#fff3e0
@@ -1446,42 +1452,16 @@
 </div>
 </div>
 </div>
+<div style="background-color: #ffffff; padding: 15px; border-radius: 8px; margin-top: 20px;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a>Human-generated name:</span>
+<span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="st">- def process_data(x):</span></span>
+<span id="cb41-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="" aria-hidden="true" tabindex="-1"></a>LLM-suggested improvement:</span>
+<span id="cb41-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="va">+ def calculate_average(sales_data):</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div></div>
-</div>
-<div class="fragment">
-<div title="Symbiotic Naming">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Symbiotic Naming</strong></p>
-</div>
-<div class="callout-content">
-<p>Try to come up with good names yourself. Then, ask AI tools to validate, assess, or suggest improvements.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div title="Cross-LLM Review">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Cross-LLM Review</strong></p>
-</div>
-<div class="callout-content">
-<p>Use a different LLM to evaluate names than the one used to write the code.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="code-review-a-fresh-perspective" class="slide level2 smaller">
 <h2>Code Review: A fresh perspective</h2>
