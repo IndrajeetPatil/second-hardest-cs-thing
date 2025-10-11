@@ -1317,7 +1317,7 @@ Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 
 :::
 
-# *Extra*: Naming and good design {data-visibility="uncounted"}
+# *Extra* : Naming and good design {data-visibility="uncounted"}
 
 Illustrating naming benefits for software design using ***functions*** as examples
 
