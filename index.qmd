@@ -53,7 +53,7 @@ Indrajeet Patil
 
 ::: {.column width="40%"}
 
-![](media/cat.png){width="400" height="300"}
+![](media/cat.png){width="400" height="300" fig-alt="A cat sitting with confused expression, representing confusion about naming things"}
 
 :::
 
@@ -105,7 +105,7 @@ Navigating the codebase with good names as beacons of clarity
 
 ::: {.column width="50%"}
 
-![](media/code_ocean.png){width="450" height="350"}
+![](media/code_ocean.png){width="450" height="350" fig-alt="A person navigating through an ocean of code, symbolizing the challenge of understanding codebases"}
 
 :::
 
@@ -147,57 +147,67 @@ flowchart TD
 **Result**: Naming becomes reactive rather than deliberate
 :::
 
-## The hidden cost of poor naming {.smaller}
+## {.smaller}
 
-. . .
+:::: {.columns}
 
-**Immediate consequences:**
+::: {.column width="50%"}
 
-- Longer code reviews due to unclear intent
+::: {style="background-color: #ffebee; padding: 15px; border-radius: 10px; font-size: 0.9em;"}
+
+::: {style="font-size: 1.3em; font-weight: bold; margin-bottom: 10px;"}
+The hidden cost of poor naming
+:::
+
+*Immediate consequences:*
+
+- Longer code reviews
 - Debugging becomes detective work
-- Extended onboarding for new team members
+- Extended onboarding
 
-. . .
+*Long-term impact:*
 
-**Long-term impact:**
-
-- Technical debt accumulation from avoidance
+- Technical debt accumulation
 - Higher bug introduction rates
-- Risky refactoring due to uncertainty
+- Risky refactoring
 
-. . .
-
-::: {.callout-warning title="The multiplication effect"}
-
-**Poor naming spreads confusion throughout the entire system.**
+::: {style="background-color: #ffffff; padding: 10px; border-radius: 8px; margin-top: 10px; text-align: center;"}
+*Poor naming spreads confusion throughout the entire system.*
+:::
 
 :::
 
-## Good names pay dividends {.smaller}
+:::
 
-. . .
+::: {.column width="50%"}
 
-**Development velocity:**
+::: {style="background-color: #e8f5e9; padding: 15px; border-radius: 10px; font-size: 0.9em;"}
 
-- Code reviews focus on logic, not deciphering
-- Faster component targeting during debugging
+::: {style="font-size: 1.3em; font-weight: bold; margin-bottom: 10px;"}
+Good names pay dividends
+:::
+
+*Development velocity:*
+
+- Code reviews focus on logic
+- Faster component targeting
 - Confident feature development
 
-. . .
-
-**Maintenance benefits:**
+*Maintenance benefits:*
 
 - Safe and predictable refactoring
-- Root cause fixes over symptom patches  
+- Root cause fixes over symptom patches
 - Self-documenting code
 
-. . .
-
-::: {.callout-tip title="The investment mindset"}
-
-**Time spent on naming is not overhead—it's an investment that pays compound interest.**
+::: {style="background-color: #ffffff; padding: 10px; border-radius: 8px; margin-top: 10px; text-align: center;"}
+*Time spent on naming is an investment with compound interest.*
+:::
 
 :::
+
+:::
+
+::::
 
 
 # Naming and good design
@@ -1235,9 +1245,11 @@ def calculate_total(items):
 > "_In your name I will hope, for your name is good._" 
 - Psalms 52:9
 
-## *"What's in a name?"* Well, everything! {.smaller}
+## {.smaller}
 
-. . .
+:::: {.columns}
+
+::: {.column width="60%"}
 
 ::: {style="background-color: #e3f2fd; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
 
@@ -1249,8 +1261,6 @@ def calculate_total(items):
 
 :::
 
-. . .
-
 ::: {style="background-color: #f3e5f5; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
 
 **For design quality:**
@@ -1261,8 +1271,6 @@ def calculate_total(items):
 
 :::
 
-. . .
-
 ::: {style="background-color: #e8f5e9; padding: 15px; border-radius: 10px; margin: 10px 0; font-size: 0.75em;"}
 
 **For team collaboration:**
@@ -1272,6 +1280,20 @@ def calculate_total(items):
 - Enables effective knowledge transfer
 
 :::
+
+:::
+
+::: {.column width="30%"}
+
+![](media/naming-is-key.jpg){width="100%" height="500" fig-alt="A comic showing the importance of naming in programming"}
+
+::: {style="text-align: center; font-size: 0.8em; margin-top: 2px;"}
+Source: Geek & Poke
+:::
+
+:::
+
+::::
 
 ## Naming is hard, but worth it
 
