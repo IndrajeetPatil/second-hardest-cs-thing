@@ -1207,6 +1207,25 @@ Invest time in good names early—they pay dividends by reducing system complexi
 
 And Happy Naming! 😊
 
+<br>
+<br>
+
+::: {style="text-align: center; font-size: 0.7em;"}
+
+Check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations) on software development best practices
+
+:::
+
+::: {style="text-align: center; font-size: 1em;"}
+
+[{{< fa brands linkedin >}}](https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/)
+&nbsp;&nbsp;
+[{{< fa brands github >}}](http://github.com/IndrajeetPatil) 
+&nbsp;&nbsp;
+[{{< fa solid envelope >}}](mailto:patilindrajeet.science@gmail.com)
+
+:::
+
 ## References {.smaller data-visibility="uncounted"}
 
 :::{style="font-size: 25px;"}
@@ -1418,25 +1437,11 @@ def convert_html_to_pdf(file):
 
 ::::
 
-::: {style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;"}
+::: {style="background-color: #e3f2fd; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;font-size: 1em;"}
 **Insight**: If you need a flag parameter, consider splitting into separate functions
 :::
 
-::: {style="background-color: #fff3e0; padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.85em;"}
-**Caveat**: Flag parameters are acceptable when they modify behaviour rather than switch between different operations (e.g., `sort_ascending=True`, `verbose=False`, `case_sensitive=True`).
+::: {style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;font-size: 0.9em;"}
+**Caveat**: Flag parameters are acceptable when they modify a single atomic operation rather than switch between different operations (e.g., `sort_ascending=True`, `verbose=False`).
 :::
-
-# For more {data-visibility="uncounted"}
-
-If you are interested in good programming and software development practices, check out my other [slide decks](https://sites.google.com/site/indrajeetspatilmorality/presentations).
-
-# Find me at... {data-visibility="uncounted"}
-
-{{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/)
-
-{{< fa brands github >}} [GitHub](http://github.com/IndrajeetPatil)
-
-{{< fa solid link >}} [Website](https://sites.google.com/site/indrajeetspatilmorality/)
-
-{{< fa solid envelope >}} [E-mail](mailto:patilindrajeet.science@gmail.com)
 
