@@ -12,6 +12,8 @@ format:
     include-in-header: meta-tags.html
     link-external-newwindow: true
     mermaid-format: png
+revealjs-plugins:
+  - fontawesome
 execute:
   echo: true
   eval: false
