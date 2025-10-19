@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.8">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-10-19 00:16:01.452657">
+  <meta name="dcterms.date" content="2025-10-19 14:12:34.88049">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1034,21 +1034,6 @@
 </div>
 </div>
 </div></div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Choose names that are meaningful to both developers and domain experts.</strong></p>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="use-appropriate-grammatical-forms" class="slide level2 smaller">
 <h2>Use appropriate grammatical forms</h2>
@@ -1171,7 +1156,7 @@
 </ul>
 <div style="background-color: rgba(117, 112, 179, 0.15); border-left: 5px solid #7570B3FF; padding: 15px; border-radius: 8px; margin-top: 20px;">
 <p><strong>LLM-Generated Names</strong></p>
-<p>LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones.</p>
+<p>LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones. <small>Example: <code>process_data(x)</code> -&gt; <code>calculate_average(sales_data)</code></small></p>
 <div style="background-color: #ffffff; text-align: center; font-size: 1.2em; margin-top: 10px;">
 <p><em>Always review LLM-generated names critically.</em></p>
 </div>
@@ -1197,15 +1182,6 @@
 <p></p></figure><p></p>
 </div>
 </div>
-</div>
-<div style="background-color: #ffffff; padding: 15px; border-radius: 8px; margin-top: 20px;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb37-1"><a href="" aria-hidden="true" tabindex="-1"></a>Human-generated name:</span>
-<span id="cb37-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="st">- def process_data(x):</span></span>
-<span id="cb37-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="" aria-hidden="true" tabindex="-1"></a>LLM-suggested improvement:</span>
-<span id="cb37-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="va">+ def calculate_average(sales_data):</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </section>
@@ -1258,22 +1234,22 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Add new name with deprecation</span></span>
-<span id="cb38-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">@deprecated</span>(<span class="st">"Use calculate_total() instead"</span>)</span>
-<span id="cb38-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_tot(items):</span>
-<span id="cb38-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> calculate_total(items)</span>
-<span id="cb38-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
-<span id="cb38-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># implementation</span></span>
-<span id="cb38-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Add new name with deprecation</span></span>
+<span id="cb37-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">@deprecated</span>(<span class="st">"Use calculate_total() instead"</span>)</span>
+<span id="cb37-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_tot(items):</span>
+<span id="cb37-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> calculate_total(items)</span>
+<span id="cb37-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb37-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># implementation</span></span>
+<span id="cb37-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Update all internal calls</span></span>
-<span id="cb39-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Use IDE refactoring tools:</span></span>
-<span id="cb39-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Find All References"</span></span>
-<span id="cb39-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Rename Symbol"</span></span>
-<span id="cb39-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit after each successful rename</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Update all internal calls</span></span>
+<span id="cb38-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Use IDE refactoring tools:</span></span>
+<span id="cb38-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Find All References"</span></span>
+<span id="cb38-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Rename Symbol"</span></span>
+<span id="cb38-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit after each successful rename</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
@@ -1540,10 +1516,10 @@
 </div>
 <div class="callout-content">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_and_sort_estimates(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb40-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
-<span id="cb40-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
-<span id="cb40-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_and_sort_estimates(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb39-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
+<span id="cb39-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
+<span id="cb39-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1561,13 +1537,13 @@
 </div>
 <div class="callout-content">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_estimates(model):</span>
-<span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
-<span id="cb41-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb41-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
-<span id="cb41-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
-<span id="cb41-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_estimates(model):</span>
+<span id="cb40-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
+<span id="cb40-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb40-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sort_estimates(table, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
+<span id="cb40-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
+<span id="cb40-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1597,13 +1573,13 @@
 </div>
 <div class="callout-content">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> is_markdown:</span>
-<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert Markdown</span></span>
-<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert HTML</span></span>
-<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> is_markdown:</span>
+<span id="cb41-3"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert Markdown</span></span>
+<span id="cb41-4"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb41-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb41-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert HTML</span></span>
+<span id="cb41-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1621,13 +1597,13 @@
 </div>
 <div class="callout-content">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb43-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert Markdown</span></span>
-<span id="cb43-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb43-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
-<span id="cb43-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert HTML</span></span>
-<span id="cb43-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert Markdown</span></span>
+<span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb42-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_html_to_pdf(<span class="bu">file</span>):</span>
+<span id="cb42-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert HTML</span></span>
+<span id="cb42-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
