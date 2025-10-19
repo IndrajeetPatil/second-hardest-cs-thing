@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.8">
 
   <meta name="author" content="Indrajeet Patil">
-  <meta name="dcterms.date" content="2025-10-19 14:12:34.88049">
+  <meta name="dcterms.date" content="2025-10-19 17:25:29.299103">
   <meta name="keywords" content="naming, software-engineering, computer-science, software-development">
   <title>Dealing with the Second Hardest Thing in Computer Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -213,9 +213,6 @@
   <meta name="twitter:title" content="Dealing with the Second Hardest Thing in Computer Science">
   <meta name="twitter:description" content="A comprehensive guide to naming conventions and best practices for software development. Learn how to choose meaningful, consistent, and maintainable names for variables, functions, and classes.">
   <meta name="twitter:image" content="https://indrajeetpatil.github.io/second-hardest-cs-thing/media/social-media-card.png">
-  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link rel="canonical" href="https://indrajeetpatil.github.io/second-hardest-cs-thing/">
 </head>
 <body class="quarto-light">
@@ -280,31 +277,12 @@
 <h2>Why naming is hard</h2>
 <p>Multiple cognitive demands exhaust mental capacity, leaving little for naming.</p>
 <div class="fragment">
-<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Programming Syntax] --&gt; D[High Cognitive Load]
-    B[Algorithmic Design] --&gt; D
-    C[Implementation Complexity] --&gt; D
-    
-    D --&gt; E[Quick Naming Decisions]
-    
-    E --&gt; F[Generic Names]
-    E --&gt; G[Shortened Names]  
-    E --&gt; H[Context-Dependent Names]
-    
-    style A fill:#f8f9fa,color:#000
-    style B fill:#f8f9fa,color:#000
-    style C fill:#f8f9fa,color:#000
-    style D fill:#fff3e0,color:#000
-    style E fill:#ffebee,color:#000
-    style F fill:#ffcdd2,color:#000
-    style G fill:#ffcdd2,color:#000
-    style H fill:#ffcdd2,color:#000
-</pre>
+<p><img data-src="index_files/figure-revealjs/mermaid-figure-1.png" style="width:8.07in;height:3.98in"></p>
 </div>
 <p></p></figure><p></p>
 </div>
@@ -1008,26 +986,12 @@
 </div>
 </div></div>
 </div><div class="column" style="width:20%;">
-<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-    Title["Layered Architecture"]
-    UI["Presentation&lt;br/&gt;(Controllers)"]
-    BL["Business Logic&lt;br/&gt;(Services)"]
-    DA["Data Access&lt;br/&gt;(Repository)"]
-    
-    Title -.-&gt; UI
-    UI --&gt; BL
-    BL --&gt; DA
-    
-    style Title fill:none,stroke:none,color:#666
-    style UI fill:#e3f2fd,color:#000
-    style BL fill:#fff3e0,color:#000
-    style DA fill:#f3e5f5,color:#000
-</pre>
+<p><img data-src="index_files/figure-revealjs/mermaid-figure-4.png" style="width:2.36in;height:4.73in"></p>
 </div>
 <p></p></figure><p></p>
 </div>
@@ -1162,22 +1126,12 @@
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-    H[Human] -.-&gt;|Collaborates| A[AI]
-    A -.-&gt;|Feedback| H
-    A --&gt; L[Linter]
-    L --&gt;|Approves| S[Standardized Names]
-
-    style H fill:#e3f2fd
-    style A fill:#f3e5f5
-    style L fill:#fff3e0
-    style S fill:#e8f5e8
-</pre>
+<p><img data-src="index_files/figure-revealjs/mermaid-figure-3.png" style="width:2.31in;height:4.48in"></p>
 </div>
 <p></p></figure><p></p>
 </div>
@@ -1189,36 +1143,12 @@
 <h2>Code Review: A fresh perspective</h2>
 <p>Lower cognitive load + fresh perspective = ideal conditions for better naming.</p>
 <div class="fragment">
-<div class="cell" data-reveal="true" data-eval="true" data-layout-align="default">
+<div class="cell" data-eval="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-    A[Code Review] --&gt; B[Lower Cognitive Load]
-    B --&gt; C[Fresh Perspective]
-    B --&gt; D[Focus on Clarity]
-    
-    C --&gt; E[Question Assumptions]
-    C --&gt; F[Spot Unclear Names]
-    D --&gt; G[Evaluate Intent]
-    D --&gt; H[Assess Abstractions]
-    
-    E --&gt; I[Better Names]
-    F --&gt; I
-    G --&gt; I
-    H --&gt; I
-    
-    style A fill:#e3f2fd,color:#000
-    style B fill:#f3e5f5,color:#000
-    style C fill:#f8f9fa,color:#000
-    style D fill:#f8f9fa,color:#000
-    style E fill:#fff3e0,color:#000
-    style F fill:#fff3e0,color:#000
-    style G fill:#fff3e0,color:#000
-    style H fill:#fff3e0,color:#000
-    style I fill:#e8f5e8,color:#000
-</pre>
+<p><img data-src="index_files/figure-revealjs/mermaid-figure-2.png" style="width:9.9in;height:5.06in"></p>
 </div>
 <p></p></figure><p></p>
 </div>
