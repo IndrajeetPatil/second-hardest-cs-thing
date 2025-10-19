@@ -11,6 +11,7 @@ format:
     help: true
     include-in-header: meta-tags.html
     link-external-newwindow: true
+    mermaid-format: png
 execute:
   echo: true
   eval: false
@@ -855,14 +856,6 @@ flowchart TD
 
 ::::
 
-. . .
-
-::: {.callout-tip}
-
-**Choose names that are meaningful to both developers and domain experts.**
-
-:::
-
 ## Use appropriate grammatical forms {.smaller}
 
 Follow consistent patterns: nouns for entities and data, verbs for actions.
@@ -1000,7 +993,7 @@ user.is_adult()     # returns boolean
 
 **LLM-Generated Names**
 
-LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones.
+LLMs can suggest overly verbose names or miss domain context, but they can also improve unclear ones. <small>Example: `process_data(x)` -> `calculate_average(sales_data)`</small>
 
 ::: {style="background-color: #ffffff; text-align: center; font-size: 1.2em; margin-top: 10px;"}
 
@@ -1028,20 +1021,6 @@ flowchart TD
     style L fill:#fff3e0
     style S fill:#e8f5e8
 ```
-
-::: {style="background-color: #ffffff; padding: 15px; border-radius: 8px; margin-top: 20px;"}
-
-```{.diff}
-Human-generated name:
-
-- def process_data(x):
-
-LLM-suggested improvement:
-
-+ def calculate_average(sales_data):
-```
-
-:::
 
 :::
 
