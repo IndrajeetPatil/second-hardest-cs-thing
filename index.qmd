@@ -1321,7 +1321,7 @@ Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 
 Illustrating naming benefits for software design using ***functions*** as examples
 
-## Following Unix philosophy {.smaller}
+## Following Unix philosophy {.smaller data-visibility="uncounted"}
 
 ::: {style="background-color: #e8f5e8; padding: 15px; border-radius: 12px; text-align: center; margin: 20px 0; border-left: 5px solid #2e7d32;"}
 _"Do One Thing And Do It Well"_
@@ -1370,7 +1370,7 @@ def sort_estimates(table, sort="asc"):
 **Warning**: Functions with `and` or `or` in names likely violate this principle!
 :::
 
-## Function Parameter Names {.smaller}
+## Function Parameter Names {.smaller data-visibility="uncounted"}
 
 Parameter names reveal design problems.
 
