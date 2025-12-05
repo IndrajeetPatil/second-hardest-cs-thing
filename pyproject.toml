@@ -1,0 +1,21 @@
+[project]
+name = "second-hardest-cs-thing"
+version = "1.0.0"
+description = "A comprehensive guide to naming conventions and best practices for software development"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "CC0 1.0 Universal" }
+authors = [{ name = "Indrajeet Patil", email = "patilindrajeet.science@gmail.com" }]
+keywords = ["naming", "software-engineering", "computer-science", "software-development"]
+
+dependencies = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.29.0",
+    "matplotlib>=3.8.0",
+]
+
+[tool.uv]
+required-version = ">=0.9.15"
+
+[dependency-groups]
+dev = []
