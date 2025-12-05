@@ -1300,7 +1300,7 @@ Various domains have established naming conventions that provide consistency and
 
 There are various casing conventions used for software development.
 
-![An illustration showing casing conventions used for software development.](media/horst_cases.jpeg){fig-align="center"}
+![](media/horst_cases.jpeg){fig-align="center" fig-alt="An illustration showing casing conventions used for software development."}
 
 :::{style="text-align: center; font-size: 0.9rem;"}
 
