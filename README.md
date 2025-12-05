@@ -16,28 +16,35 @@ The slides can be seen here:<br>
 
 # Development
 
-This project uses Python 3.13+ with [uv](https://docs.astral.sh/uv/) for dependency management and [Quarto](https://quarto.org/) for rendering slides.
+This project uses Python 3.13+ with [uv](https://docs.astral.sh/uv/) for dependency management, [Quarto](https://quarto.org/) for rendering slides, and [just](https://github.com/casey/just) as a command runner.
+
+## Prerequisites
+
+```bash
+# Install just (macOS)
+brew install just
+```
 
 ## Setup
 
 ```bash
 # Install dependencies
-make install
+just install
 
 # Or update to latest versions
-make update
+just update
 ```
 
 ## Common Commands
 
 ```bash
-make help      # Show all available commands
-make render    # Render slides to HTML
-make preview   # Live preview with auto-reload
-make open      # Open rendered slides in browser
-make clean     # Remove generated files
-make check     # Check Quarto and Python setup
-make all       # Install, render, and open slides
+just help      # Show all available commands
+just render    # Render slides to HTML
+just preview   # Live preview with auto-reload
+just open      # Open rendered slides in browser
+just clean     # Remove generated files
+just check     # Check Quarto and Python setup
+just           # Install, render, and open slides (default)
 ```
 
 # Feedback
