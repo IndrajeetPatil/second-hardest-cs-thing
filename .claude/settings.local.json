@@ -10,7 +10,19 @@
       "Bash(rg:*)",
       "Bash(sed:*)",
       "WebFetch(domain:pandoc.org)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(uv venv:*)",
+      "Bash(uv pip install:*)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(quarto check:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run:*)",
+      "Bash(make help:*)",
+      "Bash(make check:*)",
+      "Bash(uv python:*)",
+      "Bash(uv --version:*)",
+      "Bash(make clean:*)",
+      "Bash(uv lock:*)"
     ],
     "deny": [],
     "ask": []

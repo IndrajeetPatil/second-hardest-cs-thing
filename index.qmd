@@ -22,17 +22,14 @@ description-meta: "A comprehensive guide to naming conventions and best practice
 license: "CC0 1.0 Universal"
 pagetitle: "Dealing with the Second Hardest Thing in Computer Science"
 author-meta: "Indrajeet Patil"
-date-meta: "`r Sys.time()`"
+date-meta: "2025-12-05"
 lang: "en"
 dir: "ltr"
 image: "media/social-media-card.png"
 image-alt: "Preview image for presentation about naming things in computer science"
 canonical-url: "https://indrajeetpatil.github.io/second-hardest-cs-thing/"
+jupyter: python3
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(eval = FALSE)
-```
 
 ## Dealing with the Second Hardest Thing in Computer Science {style="margin-top: 2em; margin-bottom: 1em;"}
 
@@ -1303,13 +1300,7 @@ Various domains have established naming conventions that provide consistency and
 
 There are various casing conventions used for software development.
 
-```{r}
-#| echo: false
-#| eval: true
-#| fig-align: "center"
-#| fig-alt: "An illustration showing casing conventions used for software development."
-knitr::include_graphics("media/horst_cases.jpeg")
-```
+![An illustration showing casing conventions used for software development.](media/horst_cases.jpeg){fig-align="center"}
 
 :::{style="text-align: center; font-size: 0.9rem;"}
 
