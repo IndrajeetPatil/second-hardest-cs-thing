@@ -1,6 +1,19 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-README.html
+# macOS
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+env/
+venv/
+ENV/
+.ipynb_checkpoints
+
+# Quarto
+/.quarto/
+_site/
+README.html

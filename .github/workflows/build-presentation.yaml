@@ -17,10 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Setup Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
-        with:
-          pandoc-version: "latest"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -32,24 +33,15 @@ jobs:
           quarto --version
           quarto install extension quarto-ext/fontawesome --no-prompt
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          use-public-rspm: true
-
-      - name: Install R dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          pak-version: devel
-          upgrade: "TRUE"
+      - name: Install dependencies
+        run: uv sync --frozen --no-install-project
 
       - name: Render slides
-        run: |
-          quarto render index.qmd
+        run: uv run --no-project quarto render index.qmd
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        uses: JamesIves/github-pages-deploy-action@v4.7.4
         with:
           branch: docs
           folder: .
