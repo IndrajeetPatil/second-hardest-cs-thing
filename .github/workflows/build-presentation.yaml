@@ -37,7 +37,7 @@ jobs:
         run: uv sync --frozen --no-install-project
 
       - name: Render slides
-        run: uv run --no-project quarto render index.qmd
+        run: uv run --no-project quarto render index.qmd --execute-daemon-restart
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
