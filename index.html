@@ -6,10 +6,10 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.12">
+  <meta name="generator" content="quarto-1.9.13">
 
   <meta name="author" content="Indrajeet Patil">
   <meta name="dcterms.date" content="2025-12-05">
@@ -558,7 +558,7 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <p>Poor names require more comments:</p>
-<div id="39911d1d" class="cell" data-execution_count="1">
+<div id="40977e80" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># function to convert temperature </span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># from Fahrenheit to Celsius scale</span></span>
 <span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># temp is the temperature in Fahrenheit</span></span>
@@ -567,7 +567,7 @@
 </div>
 </div><div class="column" style="width:55%;">
 <p>Good names are self-documenting:</p>
-<div id="61401938" class="cell" data-execution_count="2">
+<div id="04ce4b95" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_fahrenheit: <span class="bu">float</span>):</span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -597,12 +597,12 @@
 <p>For longer loops, use meaningful names instead of <code>i</code>, <code>j</code>, <code>k</code>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="d48ba87f" class="cell" data-execution_count="3">
+<div id="223efc41" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># abstruse</span></span>
 <span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>inventory[i][j]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="7392911b" class="cell" data-execution_count="4">
+<div id="b2782ee7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># crystal clear</span></span>
 <span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>inventory[warehouse][product]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -612,13 +612,13 @@
 <p>All variables are temporary. Calling one <code>tmp</code> invites carelessness.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="4598b70a" class="cell" data-execution_count="5">
+<div id="5f6996ed" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># generic name</span></span>
 <span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>tmp <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> tmp <span class="op">*</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="d0e48631" class="cell" data-execution_count="6">
+<div id="454f9786" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># more descriptive</span></span>
 <span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>sum_values <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> sum_values <span class="op">*</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -702,13 +702,13 @@
 <p><strong>Use context to eliminate redundancy:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="0a5e934a" class="cell" data-execution_count="7">
+<div id="4767f17e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># redundant in context</span></span>
 <span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>Router.run_router()</span>
 <span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a>BeerShelf.beer_count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="3384c991" class="cell" data-execution_count="8">
+<div id="1d37d193" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># leverages context</span></span>
 <span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a>Router.run()</span>
 <span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a>BeerShelf.count</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -719,7 +719,7 @@
 <p><strong>Avoid encoding implementation details in names:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="63096795" class="cell" data-execution_count="9">
+<div id="f8c15447" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># implementation details encoded</span></span>
 <span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a>binary_search_users()</span>
 <span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a>sql_query_products()</span>
@@ -727,7 +727,7 @@
 <span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>hash_map_cache</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="945a546a" class="cell" data-execution_count="10">
+<div id="6a3d7c47" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># implementation independent</span></span>
 <span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a>find_user()</span>
 <span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a>fetch_products()</span>
@@ -738,7 +738,7 @@
 </div>
 <div class="fragment">
 <p><strong>Find the precision sweet spot:</strong></p>
-<div id="cd99da4c" class="cell" data-execution_count="11">
+<div id="c5069889" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># too imprecise → okay → good → unnecessarily precise</span></span>
 <span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a>d → days → days_since_last_accident → days_since_last_accident_floor_4_lab_23</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -766,7 +766,7 @@
 <p><strong>Avoid conflicting meanings and maintain consistency:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="c0ce7712" class="cell" data-execution_count="12">
+<div id="0015d98f" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># inconsistent - size means different things</span></span>
 <span id="cb15-2"><a href="" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))  <span class="co"># bytes</span></span>
 <span id="cb15-3"><a href="" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="bu">len</span>(a)                  <span class="co"># elements</span></span>
@@ -776,7 +776,7 @@
 <span id="cb15-7"><a href="" aria-hidden="true" tabindex="-1"></a>DebitCardAccount().fetch_expenditure()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="f69f15b6" class="cell" data-execution_count="13">
+<div id="77dc1d06" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># consistent - clear distinctions</span></span>
 <span id="cb16-2"><a href="" aria-hidden="true" tabindex="-1"></a>byte_size <span class="op">=</span> <span class="bu">len</span>(x.encode(<span class="st">'utf-8'</span>))</span>
 <span id="cb16-3"><a href="" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="bu">len</span>(a)</span>
@@ -791,13 +791,13 @@
 <p><strong>Follow language and domain conventions:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="49483b2f" class="cell" data-execution_count="14">
+<div id="d8349f58" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># violates conventions</span></span>
 <span id="cb17-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> playerEntity:</span>
 <span id="cb17-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.HairColor <span class="op">=</span> <span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="77c2298d" class="cell" data-execution_count="15">
+<div id="384a3328" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># follows conventions</span></span>
 <span id="cb18-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PlayerEntity:</span>
 <span id="cb18-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.hair_color <span class="op">=</span> <span class="st">""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -808,14 +808,14 @@
 <p><strong>Use consistent prefixes for IDE tab completion:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="15f2c4a0" class="cell" data-execution_count="16">
+<div id="128d9833" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># bad - scattered when tab-completing</span></span>
 <span id="cb19-2"><a href="" aria-hidden="true" tabindex="-1"></a>parse_json()</span>
 <span id="cb19-3"><a href="" aria-hidden="true" tabindex="-1"></a>xml_reader()</span>
 <span id="cb19-4"><a href="" aria-hidden="true" tabindex="-1"></a>csv_processor()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="9c507b96" class="cell" data-execution_count="17">
+<div id="31d08c3e" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># good - groups related functions</span></span>
 <span id="cb20-2"><a href="" aria-hidden="true" tabindex="-1"></a>parse_json()</span>
 <span id="cb20-3"><a href="" aria-hidden="true" tabindex="-1"></a>parse_xml()</span>
@@ -834,14 +834,14 @@
 <h3 id="unnecessary-details-in-names-should-be-removed">Unnecessary details in names should be removed…</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="4607009b" class="cell" data-execution_count="18">
+<div id="42d5bf4b" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># okay</span></span>
 <span id="cb21-2"><a href="" aria-hidden="true" tabindex="-1"></a>convert_to_string()</span>
 <span id="cb21-3"><a href="" aria-hidden="true" tabindex="-1"></a>file_object</span>
 <span id="cb21-4"><a href="" aria-hidden="true" tabindex="-1"></a>str_name  <span class="co"># Hungarian notation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="376a1b96" class="cell" data-execution_count="19">
+<div id="fbb34ee8" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># better</span></span>
 <span id="cb22-2"><a href="" aria-hidden="true" tabindex="-1"></a>to_string()</span>
 <span id="cb22-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span></span>
@@ -869,7 +869,7 @@
 <h3 id="but-important-details-should-be-kept"><strong>but</strong> important details should be kept!</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="a36605f9" class="cell" data-execution_count="20">
+<div id="6cdbdedb" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># okay</span></span>
 <span id="cb23-2"><a href="" aria-hidden="true" tabindex="-1"></a>child_height</span>
 <span id="cb23-3"><a href="" aria-hidden="true" tabindex="-1"></a>password</span>
@@ -877,7 +877,7 @@
 <span id="cb23-5"><a href="" aria-hidden="true" tabindex="-1"></a>address</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="67a225dd" class="cell" data-execution_count="21">
+<div id="ed0bcbe5" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># better</span></span>
 <span id="cb24-2"><a href="" aria-hidden="true" tabindex="-1"></a>child_height_cm</span>
 <span id="cb24-3"><a href="" aria-hidden="true" tabindex="-1"></a>plaintext_password</span>
@@ -904,14 +904,14 @@
 <p>Names for Boolean variables or functions should make clear what true and false mean. This can be done using prefixes (<strong>is</strong>, <strong>has</strong>, <strong>can</strong>, etc.).</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="81563cd0" class="cell" data-execution_count="22">
+<div id="0bd5c216" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># not great</span></span>
 <span id="cb25-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> child:</span>
 <span id="cb25-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> parent_supervision:</span>
 <span id="cb25-4"><a href="" aria-hidden="true" tabindex="-1"></a>        watch_horror_movie <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="0f9bc509" class="cell" data-execution_count="23">
+<div id="8907ae8c" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># better</span></span>
 <span id="cb26-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_child:</span>
 <span id="cb26-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> has_parent_supervision:</span>
@@ -922,12 +922,12 @@
 <p>In general, use positive terms for Booleans since they are easier to process.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="09c613fe" class="cell" data-execution_count="24">
+<div id="5f281176" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># double negation - difficult</span></span>
 <span id="cb27-2"><a href="" aria-hidden="true" tabindex="-1"></a>is_firewall_disabled <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="3a719007" class="cell" data-execution_count="25">
+<div id="df8e1018" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># better</span></span>
 <span id="cb28-2"><a href="" aria-hidden="true" tabindex="-1"></a>is_firewall_enabled <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -958,13 +958,13 @@
 <p><strong>Use computer science terms for technical concepts:</strong></p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="3beb3c94" class="cell" data-execution_count="26">
+<div id="15456e06" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># vague business language</span></span>
 <span id="cb29-2"><a href="" aria-hidden="true" tabindex="-1"></a>process_items_sequentially()</span>
 <span id="cb29-3"><a href="" aria-hidden="true" tabindex="-1"></a>store_thing_temporarily()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:40%;">
-<div id="4d19f318" class="cell" data-execution_count="27">
+<div id="94b00bdc" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># precise CS terminology</span></span>
 <span id="cb30-2"><a href="" aria-hidden="true" tabindex="-1"></a>traverse_list()</span>
 <span id="cb30-3"><a href="" aria-hidden="true" tabindex="-1"></a>push_to_stack()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -973,13 +973,13 @@
 <p><strong>Use problem domain terms for business concepts:</strong></p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="0e9032f7" class="cell" data-execution_count="28">
+<div id="11128f2c" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># generic technical terms</span></span>
 <span id="cb31-2"><a href="" aria-hidden="true" tabindex="-1"></a>validate_input_data()</span>
 <span id="cb31-3"><a href="" aria-hidden="true" tabindex="-1"></a>process_financial_records()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:40%;">
-<div id="0c569ff1" class="cell" data-execution_count="29">
+<div id="6d101efc" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># domain-specific terms</span></span>
 <span id="cb32-2"><a href="" aria-hidden="true" tabindex="-1"></a>validate_loan_application()</span>
 <span id="cb32-3"><a href="" aria-hidden="true" tabindex="-1"></a>calculate_mortgage_payment()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1006,7 +1006,7 @@
 <p><strong>Classes and objects should use nouns:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="07ae95b5" class="cell" data-execution_count="30">
+<div id="0877f709" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># verb-based - confusing</span></span>
 <span id="cb33-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ProcessPayment:</span>
 <span id="cb33-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -1015,7 +1015,7 @@
 <span id="cb33-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="0e467c96" class="cell" data-execution_count="31">
+<div id="37e64b33" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># noun-based - clear</span></span>
 <span id="cb34-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PaymentProcessor:</span>
 <span id="cb34-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -1032,14 +1032,14 @@
 <p><strong>Methods that return values use nouns, action methods use verbs:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="98744c4b" class="cell" data-execution_count="32">
+<div id="e89223f5" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># inconsistent grammar</span></span>
 <span id="cb35-2"><a href="" aria-hidden="true" tabindex="-1"></a>user.get_name()     <span class="co"># returns name</span></span>
 <span id="cb35-3"><a href="" aria-hidden="true" tabindex="-1"></a>user.save()         <span class="co"># performs action</span></span>
 <span id="cb35-4"><a href="" aria-hidden="true" tabindex="-1"></a>user.validate_age() <span class="co"># returns boolean</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="3a07fbe0" class="cell" data-execution_count="33">
+<div id="1fa69bd6" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># consistent grammar</span></span>
 <span id="cb36-2"><a href="" aria-hidden="true" tabindex="-1"></a>user.name()         <span class="co"># returns name</span></span>
 <span id="cb36-3"><a href="" aria-hidden="true" tabindex="-1"></a>user.save()         <span class="co"># performs action</span></span>
@@ -1163,7 +1163,7 @@
 <p><strong>Safe refactoring approaches:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="30de3781" class="cell" data-execution_count="34">
+<div id="1e566637" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Add new name with deprecation</span></span>
 <span id="cb37-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">@deprecated</span>(<span class="st">"Use calculate_total() instead"</span>)</span>
 <span id="cb37-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_tot(items):</span>
@@ -1174,7 +1174,7 @@
 <span id="cb37-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="99c58990" class="cell" data-execution_count="35">
+<div id="8a34500a" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Update all internal calls</span></span>
 <span id="cb38-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># Use IDE refactoring tools:</span></span>
 <span id="cb38-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># - "Find All References"</span></span>
@@ -1445,7 +1445,7 @@
 <p><strong>Doing multiple things</strong></p>
 </div>
 <div class="callout-content">
-<div id="349f25c7" class="cell" data-execution_count="36">
+<div id="6194391d" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_and_sort_estimates(model, sort<span class="op">=</span><span class="st">"asc"</span>):</span>
 <span id="cb39-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
 <span id="cb39-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort table</span></span>
@@ -1466,7 +1466,7 @@
 <p><strong>Doing one thing each</strong></p>
 </div>
 <div class="callout-content">
-<div id="cdac5978" class="cell" data-execution_count="37">
+<div id="35c965e0" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_estimates(model):</span>
 <span id="cb40-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract estimates</span></span>
 <span id="cb40-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -1502,7 +1502,7 @@
 <p><strong>Multiple behaviours</strong></p>
 </div>
 <div class="callout-content">
-<div id="2c9e6165" class="cell" data-execution_count="38">
+<div id="3c29597e" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_pdf(<span class="bu">file</span>, is_markdown<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> is_markdown:</span>
 <span id="cb41-3"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="co"># convert Markdown</span></span>
@@ -1526,7 +1526,7 @@
 <p><strong>Single purpose each</strong></p>
 </div>
 <div class="callout-content">
-<div id="869d35b5" class="cell" data-execution_count="39">
+<div id="4e7d2be6" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_md_to_pdf(<span class="bu">file</span>):</span>
 <span id="cb42-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convert Markdown</span></span>
 <span id="cb42-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
