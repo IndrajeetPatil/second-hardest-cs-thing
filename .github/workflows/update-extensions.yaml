@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
 
       - name: Update Quarto extensions
-        uses: mcanouil/quarto-extensions-updater@v2
+        uses: mcanouil/quarto-extensions-updater@7d06ddf3644441a874bbb8a0fddaba0b67ab71d6 # v2.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

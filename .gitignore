@@ -1,9 +1,6 @@
 # macOS
 .DS_Store
 
-# Claude Code
-.claude/
-
 # Python
 __pycache__/
 *.py[cod]
@@ -20,3 +17,12 @@ ENV/
 /.quarto/
 _site/
 README.html
+
+# Claude
+.claude/
+
+# Generated files
+_extensions/
+index.html
+index_files/
+index.quarto_ipynb
