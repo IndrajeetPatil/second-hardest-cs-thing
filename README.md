@@ -10,7 +10,7 @@ The title is inspired by the following quote:
 The slides can be seen here:<br>
 <https://www.indrapatil.com/second-hardest-cs-thing/>
 
-<a href="https://www.indrapatil.com/second-hardest-cs-thing/" target="_blank">
+<a href="https://www.indrapatil.com/second-hardest-cs-thing/" target="_blank" rel="noopener noreferrer">
 <img src="media/cat.png" alt="introductory slide" width="400"/>
 </a>
 
