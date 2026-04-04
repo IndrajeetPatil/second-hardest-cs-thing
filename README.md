@@ -8,9 +8,9 @@ The title is inspired by the following quote:
 > \- Phil Karlton
 
 The slides can be seen here:<br>
-<https://indrajeetpatil.github.io/second-hardest-cs-thing/>
+<https://www.indrapatil.com/second-hardest-cs-thing/>
 
-<a href="https://indrajeetpatil.github.io/second-hardest-cs-thing/" target="_blank">
+<a href="https://www.indrapatil.com/second-hardest-cs-thing/" target="_blank" rel="noopener noreferrer">
 <img src="media/cat.png" alt="introductory slide" width="400"/>
 </a>
 
