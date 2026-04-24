@@ -36,15 +36,15 @@ update:
 
 # Render slides
 render:
-    uv run --no-project quarto render index.qmd
+    QUARTO_PYTHON=.venv/bin/python quarto render index.qmd
 
 # Preview with live reload
 preview:
-    uv run --no-project quarto preview index.qmd
+    QUARTO_PYTHON=.venv/bin/python quarto preview index.qmd
 
 # Open rendered slides in browser (macOS)
 open:
-    open index.html
+    open _site/index.html
 
 # Clean generated files
 clean:
@@ -57,4 +57,4 @@ clean:
 
 # Check Quarto setup
 check:
-    uv run --no-project quarto check
+    QUARTO_PYTHON=.venv/bin/python quarto check

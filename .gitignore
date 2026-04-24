@@ -26,3 +26,5 @@ _extensions/
 index.html
 index_files/
 index.quarto_ipynb
+
+**/*.quarto_ipynb
