@@ -1,0 +1,7 @@
+# Dealing with the Second Hardest Thing in Computer Science
+
+> A Quarto RevealJS presentation by Indrajeet Patil about choosing clear, consistent, and maintainable names in software development.
+
+Canonical slides: https://www.indrapatil.com/second-hardest-cs-thing/
+Full agent summary: https://www.indrapatil.com/second-hardest-cs-thing/llms-full.txt
+Source: https://github.com/IndrajeetPatil/second-hardest-cs-thing/

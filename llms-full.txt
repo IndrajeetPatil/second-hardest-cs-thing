@@ -1,0 +1,76 @@
+# Dealing with the Second Hardest Thing in Computer Science
+
+Author: Indrajeet Patil
+Format: Quarto RevealJS presentation
+Canonical URL: https://www.indrapatil.com/second-hardest-cs-thing/
+Source: https://github.com/IndrajeetPatil/second-hardest-cs-thing/
+License: CC0 1.0 Universal
+Publication date: 2025-12-05
+Language: English
+
+## Summary
+
+This slide deck presents practical guidance for naming things in software development. Its central claim is that names should serve code readers, not only code authors. Good names reveal intention, reduce cognitive load, make code review more effective, and lower long-term maintenance risk.
+
+The talk is aimed at software developers, data scientists, code reviewers, maintainers, and technical teams that want more readable and maintainable code. The examples use Python syntax, but the principles apply across programming languages and software domains.
+
+## Learning goals
+
+- Understand why naming affects code quality and maintainability.
+- Recognize common naming pitfalls, including ambiguity, inconsistency, misleading abbreviations, similar-looking names, slang, region-specific terminology, and unsearchable short names.
+- Choose names that are specific, difficult to misinterpret, appropriately abstract, and aligned with language or domain standards.
+- Name Boolean variables and functions so that true and false values are obvious.
+- Use grammatical forms consistently, such as nouns for entities and verbs for actions.
+- Use linters, generative AI, and code review as aids while recognizing their limits.
+- Rename safely in legacy code through deprecation, IDE refactoring tools, small commits, and test runs.
+
+## Core recommendations
+
+- Prefer names that make code self-documenting.
+- Use more descriptive names as scope and complexity increase.
+- Try to misinterpret candidate names before accepting them.
+- Keep important units, encodings, security details, and domain distinctions in names.
+- Remove redundant implementation details when context already provides them.
+- Follow one naming standard consistently within a project.
+- Prefer domain language for business concepts and computer science terminology for technical concepts.
+- Avoid flag parameters when they indicate that a function is doing multiple unrelated things.
+
+## Important examples
+
+- Prefer `fahrenheit_to_celsius(temp_fahrenheit)` over a generic `unit_converter(temp)`.
+- Prefer `inventory[warehouse][product]` over `inventory[i][j]` in long-lived or complex loops.
+- Prefer `get_character_count(file_path)` over `get_size(file_path)` when the return value is not file size in bytes.
+- Prefer `byte_size` and `length` when distinguishing bytes from element counts.
+- Prefer `is_firewall_enabled = True` over `is_firewall_disabled = False` when positive Boolean wording is easier to reason about.
+- Prefer separate functions such as `extract_estimates()` and `sort_estimates()` over a single `extract_and_sort_estimates()` when the function has multiple responsibilities.
+
+## References discussed
+
+- Steve McConnell, Code Complete.
+- Dustin Boswell and Trevor Foucher, The Art of Readable Code.
+- Robert C. Martin, Clean Code.
+- Felienne Hermans, The Programmer's Brain.
+- John Ousterhout, A Philosophy of Software Design.
+- Pete Goodliffe, Code Craft.
+- James Padolsey, Clean Code in JavaScript.
+- Maximiliano Contieri, Clean Code Cookbook.
+- Chris Zimmerman, The Rules of Programming.
+- Ottinger's Rules for Variable and Class Naming.
+- Google C++ Style Guide.
+
+## Useful external naming conventions
+
+- BEM CSS class naming.
+- REST API resource naming.
+- PEP 8 Python naming conventions.
+- Google Java Style Guide.
+- Rust API naming guidelines.
+- Go Code Review Comments.
+- Kubernetes resource naming.
+- SQL style guide naming conventions.
+- Microsoft .NET naming guidelines.
+- Ruby Style Guide.
+
+## Retrieval notes
+
+The canonical HTML page is the primary version of the presentation. This text file exists to give search engines, answer engines, and agentic assistants a concise, non-JavaScript-dependent summary of the deck's content and citation metadata.

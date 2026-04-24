@@ -1,0 +1,10 @@
+# Dealing with the Second Hardest Thing in Computer Science
+
+This is the well-known discovery copy for agentic assistants.
+
+Canonical slides: https://www.indrapatil.com/second-hardest-cs-thing/
+Root llms.txt: https://www.indrapatil.com/second-hardest-cs-thing/llms.txt
+Root llms-full.txt: https://www.indrapatil.com/second-hardest-cs-thing/llms-full.txt
+Source: https://github.com/IndrajeetPatil/second-hardest-cs-thing/
+
+Summary: A Quarto RevealJS presentation on naming things in software development. The deck covers why naming is hard, why names affect maintainability, common naming pitfalls, naming principles, Boolean naming, grammatical consistency, tooling limits, AI-assisted naming, code review, and safe renaming in legacy code.
