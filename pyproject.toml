@@ -14,7 +14,7 @@ keywords = [
     "computer-science",
     "software-development"
 ]
-dependencies = ["jupyter>=1.1.1", "ipykernel>=7.2.0", "matplotlib>=3.10.8"]
+dependencies = ["jupyter>=1.1.1", "ipykernel>=7.3.0", "matplotlib>=3.11.0"]
 
 [tool.uv]
 required-version = ">=0.11.7"
