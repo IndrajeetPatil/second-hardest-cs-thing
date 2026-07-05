@@ -9,7 +9,7 @@ help:
     @echo "  just update        - Update all dependencies (Quarto extensions and Python packages)"
     @echo "  just render        - Render the Quarto slides to HTML"
     @echo "  just preview       - Start Quarto preview with live reload"
-    @echo "  just open          - Alias for preview (live reload, Chrome-safe)"
+    @echo "  just open          - Alias for preview (live-reload dev server)"
     @echo "  just clean         - Remove generated files and caches"
     @echo "  just check         - Check Quarto and Python setup"
     @echo "  just (default)     - Install dependencies and start live-reload preview"
