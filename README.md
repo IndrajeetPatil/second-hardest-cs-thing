@@ -39,10 +39,10 @@ just install  # Install Quarto extensions and Python dependencies
 just update   # Update Quarto extensions and Python dependencies
 just render   # Render slides to HTML
 just preview  # Start a live preview with auto-reload
-just open     # Open rendered slides in the default browser
+just open     # Alias for preview (live-reload dev server over localhost)
 just clean    # Remove generated files and caches
 just check    # Check the Quarto and Python setup
-just          # Install dependencies, render, and open slides
+just          # Install dependencies and start live-reload preview
 ```
 
 ## Feedback
