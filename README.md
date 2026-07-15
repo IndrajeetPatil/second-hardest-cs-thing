@@ -35,8 +35,8 @@ just install
 
 ```bash
 just help     # Show all available commands
-just install  # Install Quarto extensions and Python dependencies
-just update   # Update Quarto extensions and Python dependencies
+just install  # Install Python dependencies
+just update   # Update Python dependencies
 just render   # Render slides to HTML
 just preview  # Start a live preview with auto-reload
 just open     # Alias for preview (live-reload dev server over localhost)

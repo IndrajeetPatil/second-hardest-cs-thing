@@ -4,9 +4,9 @@ default: install preview
 # Show help
 help:
     @echo "Available recipes:"
-    @echo "  just install       - Install Quarto extensions and Python dependencies"
+    @echo "  just install       - Install Python dependencies"
     @echo "  just sync          - Alias for install"
-    @echo "  just update        - Update all dependencies (Quarto extensions and Python packages)"
+    @echo "  just update        - Update Python dependencies"
     @echo "  just render        - Render the Quarto slides to HTML"
     @echo "  just preview       - Start Quarto preview with live reload"
     @echo "  just open          - Alias for preview (live-reload dev server)"
@@ -16,8 +16,6 @@ help:
 
 # Install/sync dependencies
 install:
-    @echo "Installing Quarto extensions..."
-    quarto install extension quarto-ext/fontawesome --no-prompt
     @echo "Installing Python dependencies..."
     uv sync --no-install-project
     @echo "Installation complete"
@@ -27,8 +25,6 @@ alias sync := install
 
 # Update all dependencies
 update:
-    @echo "Updating Quarto extensions..."
-    quarto update extension quarto-ext/fontawesome
     @echo "Updating Python dependencies..."
     uv lock --upgrade
     uv sync --no-install-project
