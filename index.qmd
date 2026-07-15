@@ -11,8 +11,6 @@ format:
     help: true
     include-in-header: meta-tags.html
     link-external-newwindow: true
-revealjs-plugins:
-  - fontawesome
 execute:
   echo: true
   eval: false
@@ -1195,11 +1193,11 @@ Check out my other [slide decks](https://www.indrapatil.com/presentations/) on s
 
 ::: {style="text-align: center; font-size: 1em;"}
 
-[{{< fa brands linkedin >}}](https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/)
+<a class="deck-icon-link" href="https://www.linkedin.com/in/indrajeet-patil-ph-d-397865174/" aria-label="LinkedIn"><span class="deck-icon deck-icon-brands-linkedin" aria-hidden="true"></span></a>
 &nbsp;&nbsp;
-[{{< fa brands github >}}](http://github.com/IndrajeetPatil) 
+<a class="deck-icon-link" href="http://github.com/IndrajeetPatil" aria-label="GitHub"><span class="deck-icon deck-icon-brands-github" aria-hidden="true"></span></a>
 &nbsp;&nbsp;
-[{{< fa solid envelope >}}](mailto:patilindrajeet.science@gmail.com)
+<a class="deck-icon-link" href="mailto:patilindrajeet.science@gmail.com" aria-label="Email"><span class="deck-icon deck-icon-solid-envelope" aria-hidden="true"></span></a>
 
 :::
 
