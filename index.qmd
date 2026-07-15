@@ -52,7 +52,7 @@ Indrajeet Patil
 
 ::: {.column width="40%"}
 
-![](media/cat.png){width="400" height="300" fig-alt="A cat sitting with confused expression, representing confusion about naming things"}
+![](media/cat.webp){width="400" height="300" fig-alt="A cat sitting with confused expression, representing confusion about naming things"}
 
 :::
 
@@ -104,7 +104,7 @@ Navigating the codebase with good names as beacons of clarity
 
 ::: {.column width="50%"}
 
-![](media/code_ocean.png){width="450" height="350" fig-alt="A person navigating through an ocean of code, symbolizing the challenge of understanding codebases"}
+![](media/code_ocean.webp){width="450" height="350" fig-alt="A person navigating through an ocean of code, symbolizing the challenge of understanding codebases"}
 
 :::
 
@@ -1156,7 +1156,7 @@ def calculate_total(items):
 
 ::: {.column width="30%"}
 
-![](media/naming-is-key.jpg){width="100%" height="500" fig-alt="A comic showing the importance of naming in programming"}
+![](media/naming-is-key.webp){width="100%" height="500" fig-alt="A comic showing the importance of naming in programming"}
 
 ::: {style="text-align: center; font-size: 0.8em; margin-top: 2px;"}
 Source: Geek & Poke
@@ -1299,7 +1299,7 @@ Various domains have established naming conventions that provide consistency and
 
 There are various casing conventions used for software development.
 
-![](media/horst_cases.jpeg){fig-align="center" fig-alt="An illustration showing casing conventions used for software development."}
+![](media/horst_cases.webp){fig-align="center" fig-alt="An illustration showing casing conventions used for software development."}
 
 :::{style="text-align: center; font-size: 0.9rem;"}
 
