@@ -24,7 +24,7 @@ author-meta: "Indrajeet Patil"
 date-meta: "2025-12-05"
 lang: "en"
 dir: "ltr"
-image: "media/social-media-card.png"
+image: "media/social-media-card.webp"
 image-alt: "Preview image for presentation about naming things in computer science"
 canonical-url: "https://www.indrapatil.com/second-hardest-cs-thing/"
 jupyter: python3
