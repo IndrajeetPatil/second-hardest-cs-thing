@@ -12,6 +12,7 @@ help:
     @echo "  just open          - Alias for preview (live-reload dev server)"
     @echo "  just clean         - Remove generated files and caches"
     @echo "  just check         - Check Quarto and Python setup"
+    @echo "  just axe           - Preview with the axe accessibility checker enabled"
     @echo "  just (default)     - Install dependencies and start live-reload preview"
 
 # Install/sync dependencies
@@ -32,11 +33,11 @@ update:
 
 # Render slides
 render:
-    QUARTO_PYTHON=.venv/bin/python quarto render index.qmd
+    uv run quarto render index.qmd
 
 # Preview with live reload
 preview:
-    QUARTO_PYTHON=.venv/bin/python quarto preview index.qmd
+    uv run quarto preview index.qmd
 
 # Open rendered slides in browser (macOS)
 alias open := preview
@@ -52,4 +53,9 @@ clean:
 
 # Check Quarto setup
 check:
-    QUARTO_PYTHON=.venv/bin/python quarto check
+    uv run quarto check
+
+# Audit accessibility with axe-core, appending a violations report slide to the deck.
+# Uses the a11y profile because `-M axe:true` cannot override the format block in index.qmd.
+axe:
+    QUARTO_PROFILE=a11y uv run quarto preview index.qmd

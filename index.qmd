@@ -57,7 +57,7 @@ Indrajeet Patil
 ::::
 
 ::: {style="text-align: center; font-size: 0.7em; margin-top: 2em; color: #666;"}
-Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/).
+Source code for these slides can be found [on GitHub](https://github.com/IndrajeetPatil/second-hardest-cs-thing/){style="text-decoration: underline;"}.
 :::
 
 ## What you'll learn today {.smaller}
