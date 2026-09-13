@@ -10,6 +10,7 @@ format:
     touch: true
     help: true
     include-in-header: meta-tags.html
+    include-after-body: accessibility.html
     link-external-newwindow: true
 execute:
   echo: true
@@ -144,7 +145,7 @@ flowchart TD
 **Result**: Naming becomes reactive rather than deliberate
 :::
 
-## {.smaller}
+## The cost of poor naming {#section .smaller .sr-only-heading}
 
 :::: {.columns}
 
@@ -224,7 +225,7 @@ Good names reveal intention and eliminate guesswork.
 
 *Common pitfalls that make names harder to understand*
 
-## {.smaller}
+## Avoid confusion and inconsistency {#section-1 .smaller .sr-only-heading}
 
 ::: {style="font-size: 0.65em;"}
 | Tip | Why | Bad | Good |
@@ -243,7 +244,7 @@ Good names reveal intention and eliminate guesswork.
 | Avoid misleading names | Wrong info is worse than no info | `get_means()` (incorrectly implies precomputed) | `compute_means()` (correctly indicates computation) |
 :::
 
-## {.smaller}
+## Keep names clear and maintainable {#section-2 .smaller .sr-only-heading}
 
 ::: {style="font-size: 0.65em;"}
 | Tip | Why | Bad | Good |
@@ -255,7 +256,7 @@ Good names reveal intention and eliminate guesswork.
 | Don't use uncommon English words | Stick to common parlance | `commence_process()` | `start_process()` |
 | Don't use unpronounceable names | Enables easier verbal communication | `genymdhms()` | `generate_timestamp()` |
 | Don't use region-specific terminology | Prefer international English | `lorry_capacity`, `boot_storage` | `truck_capacity`, `trunk_storage` |
-| <span style="background-color: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
+| <span style="background-color: #fff3e0; color: #a64b00; padding: 4px 8px; border-radius: 4px; font-weight: bold;">**Technical & Maintainability**</span> |  |  |  |
 | Don't misspell to save characters | Correct misspelling is harder to remember | `hilite` | `highlight` |
 | Don't use commonly misspelled words | Slows you down, increases errors | `accumulate` variants | `sum`, `collect` |
 | Don't use numeric suffixes for levels | Not informative | `level1`, `level2`, `level3` | `beginner`, `intermediate`, `advanced` |
@@ -625,7 +626,7 @@ parse_csv()
 
 :::
 
-## {.smaller}
+## Keep important details and remove redundancy {#section-3 .smaller .sr-only-heading}
 
 ### Unnecessary details in names should be removed...
 
@@ -1012,10 +1013,10 @@ flowchart TD
     A --> L[Linter]
     L -->|Approves| S[Standardized Names]
 
-    style H fill:#e3f2fd
-    style A fill:#f3e5f5
-    style L fill:#fff3e0
-    style S fill:#e8f5e8
+    style H fill:#e3f2fd,color:#000
+    style A fill:#f3e5f5,color:#000
+    style L fill:#fff3e0,color:#000
+    style S fill:#e8f5e8,color:#000
 ```
 
 :::
@@ -1114,7 +1115,7 @@ def calculate_total(items):
 > "_In your name I will hope, for your name is good._" 
 - Psalms 52:9
 
-## {.smaller}
+## Benefits for development, design and collaboration {#section-4 .smaller .sr-only-heading}
 
 :::: {.columns}
 
@@ -1413,4 +1414,3 @@ def convert_html_to_pdf(file):
 ::: {style="background-color: #fff3e0; padding: 10px; border-radius: 8px; text-align: center; margin-top: 15px;font-size: 0.9em;"}
 **Caveat**: Flag parameters are acceptable when they modify a single atomic operation rather than switch between different operations (e.g., `sort_ascending=True`, `verbose=False`).
 :::
-
