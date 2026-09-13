@@ -82,7 +82,7 @@ just update    # Update language dependencies
 just axe       # Preview with the axe accessibility checker enabled
 ```
 
-Python decks prefix the render command with `QUARTO_PYTHON=.venv/bin/python`. R decks call `quarto render` directly (R is discovered automatically). See the `justfile` for exact commands.
+Python decks wrap Quarto in `uv run` (e.g. `uv run quarto render index.qmd`), which puts `.venv/bin` on `PATH` so Quarto discovers the project interpreter on its own — no `QUARTO_PYTHON` needed. It also syncs the environment against `uv.lock` first, so a stale venv self-heals. R decks call `quarto render` directly (R is discovered automatically). See the `justfile` for exact commands.
 
 ## Editing slides
 
