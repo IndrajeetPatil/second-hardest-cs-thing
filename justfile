@@ -17,10 +17,22 @@ help:
 
 # Install/sync dependencies
 install:
-    @echo "Installing Python dependencies..."
+    #!/usr/bin/env bash
+    set -euo pipefail
     uv sync --no-install-project
-    quarto add mcanouil/quarto-revealjs-a11y@0.2.3 --no-prompt
-    @echo "Installation complete"
+    # a11y 0.2.3: keep the commit and archive checksum aligned with CI.
+    a11y_commit=0ae858c05f6108558d7bd5204a3dbb540dc8f5e6
+    a11y_sha256=b119ec845f942b8e9e61a9c596dfde7a644baa59c8e0ec29257706aa969e07db
+    archive_dir="$(mktemp -d)"
+    trap 'rm -rf "$archive_dir"' EXIT
+    curl --fail --location --silent --show-error \
+      "https://github.com/mcanouil/quarto-revealjs-a11y/archive/${a11y_commit}.tar.gz" \
+      --output "$archive_dir/a11y.tar.gz"
+    echo "${a11y_sha256}  $archive_dir/a11y.tar.gz" | shasum -a 256 --check
+    quarto add "$archive_dir/a11y.tar.gz" --no-prompt
+    if [ -d _extensions/mcanouil/a11y ]; then
+      quarto remove mcanouil/a11y --no-prompt
+    fi
 
 # Alias for install
 alias sync := install

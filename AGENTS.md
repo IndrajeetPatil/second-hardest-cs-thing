@@ -121,7 +121,9 @@ When modifying `index.qmd`:
 - The a11y integration PR temporarily uses `@feat/revealjs-a11y-extension` to test
   [workflows#61](https://github.com/IndrajeetPatil/workflows/pull/61). Return to `@main`
   after that workflow change merges. Keep the local extension version in `justfile`
-  aligned with the shared workflow.
+  aligned with the shared workflow, including the immutable commit and archive
+  SHA-256. Verify the archive before passing it to Quarto; do not restore the
+  mutable release-tag installation command.
 - Dependabot keeps GitHub Actions dependencies up to date weekly. Python decks also have Dependabot configured for `uv`; R decks do not use Dependabot for R packages.
 
 ## What not to do
