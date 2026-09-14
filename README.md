@@ -35,7 +35,7 @@ just install
 
 ```bash
 just help     # Show all available commands
-just install  # Install Python dependencies
+just install  # Install Python dependencies and the a11y extension
 just update   # Update Python dependencies
 just render   # Render slides to HTML
 just preview  # Start a live preview with auto-reload
@@ -44,6 +44,24 @@ just clean    # Remove generated files and caches
 just check    # Check the Quarto and Python setup
 just          # Install dependencies and start live-reload preview
 ```
+
+### Accessibility
+
+`just install` and the shared CI workflow install the latest
+[`quarto-revealjs-a11y`](https://github.com/mcanouil/quarto-revealjs-a11y) directly
+from upstream with `quarto add mcanouil/quarto-revealjs-a11y --no-prompt`.
+The extension handles browser zoom, slide isolation, focus indicators, link
+underlines, reduced motion, and screen-reader announcements. Run `just install`
+again after `just clean`, which removes installed extensions.
+
+The `accessibility.html` helper still handles scrollable code, slide-menu focus,
+and vertical-slide semantics. Unused tabset handling has been removed. The
+extension's slide-menu patch and accessibility settings panel are disabled:
+version 0.2.3 introduces ARIA and contrast failures in those components.
+
+Use `just axe` to preview with the accessibility report. Check slides, fragments,
+and the menu in presentation and scroll views; the initial report does
+not exercise every state. Normal builds omit the axe checker.
 
 ## Feedback
 

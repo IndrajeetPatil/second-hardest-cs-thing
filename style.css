@@ -15,12 +15,6 @@
   border: 0;
 }
 
-/* Links remain identifiable without relying on their colour. */
-.reveal .slides a:not(.deck-icon-link) {
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
-
 /* Preserve readable syntax on lines outside the highlighted selection. */
 .reveal .slides div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
   opacity: 1;
