@@ -17,22 +17,8 @@ help:
 
 # Install/sync dependencies
 install:
-    #!/usr/bin/env bash
-    set -euo pipefail
     uv sync --no-install-project
-    # a11y 0.2.3: keep the vendored archive URL and checksum aligned with CI.
-    a11y_url=https://raw.githubusercontent.com/IndrajeetPatil/workflows/main/vendor/a11y-v0.2.3.tar.gz
-    a11y_sha256=854bf2cc4229facb041b375253b75038f866f3a5a86aafd826adb0ea817a6994
-    archive_dir="$(mktemp -d)"
-    trap 'rm -rf "$archive_dir"' EXIT
-    curl --fail --location --silent --show-error \
-      "$a11y_url" \
-      --output "$archive_dir/a11y.tar.gz"
-    echo "${a11y_sha256}  $archive_dir/a11y.tar.gz" | shasum -a 256 --check
-    quarto add "$archive_dir/a11y.tar.gz" --no-prompt
-    if [ -d _extensions/mcanouil/a11y ]; then
-      quarto remove mcanouil/a11y --no-prompt
-    fi
+    quarto add mcanouil/quarto-revealjs-a11y --no-prompt
 
 # Alias for install
 alias sync := install

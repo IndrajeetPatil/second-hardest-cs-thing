@@ -25,7 +25,7 @@ llms-full.txt        # Extended machine-readable summary
 robots.txt           # Crawl rules
 sitemap.xml          # Sitemap for search engines
 .github/             # CI workflow (reusable, from IndrajeetPatil/workflows) and Dependabot
-_extensions/         # a11y 0.2.3, installed by `just install` and CI (gitignored)
+_extensions/         # Latest a11y extension, installed by `just install` and CI (gitignored)
 _site/               # Build output (gitignored)
 ```
 
@@ -82,7 +82,7 @@ Check which set is present to know which language context applies.
 All commands use [just](https://github.com/casey/just). The recipes are the same across decks; only the dependency backend differs:
 
 ```bash
-just install   # Install language dependencies and the pinned a11y extension
+just install   # Install language dependencies and the latest a11y extension
 just render    # Render index.qmd to _site/
 just preview   # Live-reload dev server
 just open      # Alias for preview (live-reload dev server over localhost)
@@ -118,9 +118,9 @@ When modifying `index.qmd`:
 
 - The GitHub Actions workflow in `.github/workflows/` renders the deck and deploys to GitHub Pages on push to `main`. It calls a reusable workflow from `IndrajeetPatil/workflows` (Python and R decks use different workflow files). Do not inline the workflow.
 - **Reference the reusable workflow as `@main`, not a commit SHA.** These workflows are first-party, so tracking `main` is intentional: upstream fixes arrive immediately instead of waiting on a manual SHA bump. A previously pinned SHA went five months stale, leaving CI building with pre-release Quarto and installing a FontAwesome extension this deck does not use, long after upstream had fixed both. Dependabot cannot bump a branch ref, so there is nothing to keep in sync.
-- Keep the local extension version in `justfile` aligned with the shared workflow,
-  including the vendored archive URL and SHA-256. Verify the archive before
-  passing it to Quarto; do not restore the mutable release-tag installation command.
+- Install the latest a11y extension directly from upstream with
+  `quarto add mcanouil/quarto-revealjs-a11y --no-prompt` in both `justfile` and CI.
+  This extension is trusted; do not add version pins, vendoring, or checksum checks.
 - Dependabot keeps GitHub Actions dependencies up to date weekly. Python decks also have Dependabot configured for `uv`; R decks do not use Dependabot for R packages.
 
 ## What not to do
