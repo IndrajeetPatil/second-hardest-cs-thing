@@ -118,12 +118,9 @@ When modifying `index.qmd`:
 
 - The GitHub Actions workflow in `.github/workflows/` renders the deck and deploys to GitHub Pages on push to `main`. It calls a reusable workflow from `IndrajeetPatil/workflows` (Python and R decks use different workflow files). Do not inline the workflow.
 - **Reference the reusable workflow as `@main`, not a commit SHA.** These workflows are first-party, so tracking `main` is intentional: upstream fixes arrive immediately instead of waiting on a manual SHA bump. A previously pinned SHA went five months stale, leaving CI building with pre-release Quarto and installing a FontAwesome extension this deck does not use, long after upstream had fixed both. Dependabot cannot bump a branch ref, so there is nothing to keep in sync.
-- The a11y integration PR temporarily uses `@feat/revealjs-a11y-extension` to test
-  [workflows#61](https://github.com/IndrajeetPatil/workflows/pull/61). Return to `@main`
-  after that workflow change merges. Keep the local extension version in `justfile`
-  aligned with the shared workflow, including the immutable commit and archive
-  SHA-256. Verify the archive before passing it to Quarto; do not restore the
-  mutable release-tag installation command.
+- Keep the local extension version in `justfile` aligned with the shared workflow,
+  including the vendored archive URL and SHA-256. Verify the archive before
+  passing it to Quarto; do not restore the mutable release-tag installation command.
 - Dependabot keeps GitHub Actions dependencies up to date weekly. Python decks also have Dependabot configured for `uv`; R decks do not use Dependabot for R packages.
 
 ## What not to do

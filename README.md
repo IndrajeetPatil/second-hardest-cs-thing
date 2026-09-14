@@ -49,9 +49,10 @@ just          # Install dependencies and start live-reload preview
 
 `just install` and the shared CI workflow install
 [`quarto-revealjs-a11y` 0.2.3](https://github.com/mcanouil/quarto-revealjs-a11y/releases/tag/0.2.3).
-Both download a commit-addressed archive and verify its SHA-256 before installing
-it. The commit and checksum in `justfile` must match the shared workflow. Local
-installation also removes the older namespaced copy to prevent duplicate plugins.
+Both download the release archive vendored in `IndrajeetPatil/workflows` and
+verify its SHA-256 before installing it. The archive URL and checksum in
+`justfile` must match the shared workflow. Local installation also removes the
+older namespaced copy to prevent duplicate plugins.
 The extension handles browser zoom, slide isolation, focus indicators, link
 underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.

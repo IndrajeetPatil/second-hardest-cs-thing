@@ -8,8 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    # Integration trial for workflows#61; return to @main after it merges.
-    uses: IndrajeetPatil/workflows/.github/workflows/build-presentation-python.yaml@feat/revealjs-a11y-extension
+    uses: IndrajeetPatil/workflows/.github/workflows/build-presentation-python.yaml@main
     permissions:
       contents: read
       pages: write
