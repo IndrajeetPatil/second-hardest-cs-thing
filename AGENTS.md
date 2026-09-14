@@ -14,7 +14,7 @@ A single-page [Quarto](https://quarto.org/) presentation rendered to [RevealJS](
 index.qmd           # All slide content (the only file you usually need to edit)
 _quarto.yml          # Quarto project config (output dir, resources list)
 _quarto-a11y.yml     # Opt-in profile enabling the axe accessibility checker (`just axe`)
-accessibility.html  # Production zoom, menu, tab-order and code-focus fixes
+accessibility.html  # Compatibility fixes supplementing the a11y extension
 style.css            # Custom RevealJS theme (fonts, colours, component classes)
 meta-tags.html       # OpenGraph, Twitter Card, JSON-LD, and analytics tags
 justfile             # Command runner (install, render, preview, clean, etc.)
@@ -25,7 +25,7 @@ llms-full.txt        # Extended machine-readable summary
 robots.txt           # Crawl rules
 sitemap.xml          # Sitemap for search engines
 .github/             # CI workflow (reusable, from IndrajeetPatil/workflows) and Dependabot
-_extensions/         # Optional Quarto extensions (gitignored; currently unused)
+_extensions/         # a11y 0.2.3, installed by `just install` and CI (gitignored)
 _site/               # Build output (gitignored)
 ```
 
@@ -62,8 +62,13 @@ Check which set is present to know which language context applies.
   `index.qmd`: it belongs in `_quarto-a11y.yml` so the deployed deck never ships the axe-core payload. Note that
   `-M axe:true` cannot enable it, because the `format:` block in `index.qmd` takes precedence over CLI metadata.
   Links inside muted text need a non-colour cue (e.g. `text-decoration: underline`) to satisfy WCAG 1.4.1.
-  Keep the production fixes in `accessibility.html` enabled in normal builds. Inspect all slides,
-  revealed fragments and tab panels in both presentation and native `?view=scroll` modes;
+  The `a11y` extension supplies zoom, focus indicators, link underlines, reduced motion,
+  slide isolation, and screen-reader announcements. Keep `accessibility.html` for
+  code scrolling, menu focus, and vertical-slide semantics. This deck has no
+  tabsets; reassess keyboard handling if adding any.
+  Version 0.2.3's slide-menu patch and settings menu introduce axe failures on this
+  deck, so both are disabled in `index.qmd`. Inspect all slides,
+  revealed fragments and menu panels in both presentation and native `?view=scroll` modes;
   the initial report alone does not exercise every state. For headless checks, use
   `just axe --no-browser --port 8891`.
 - **Icons.** Icons use lightweight HTML spans backed by only the required SVG path data in the custom stylesheet; no icon-font or Quarto icon extension is needed.
@@ -77,7 +82,7 @@ Check which set is present to know which language context applies.
 All commands use [just](https://github.com/casey/just). The recipes are the same across decks; only the dependency backend differs:
 
 ```bash
-just install   # Install language dependencies
+just install   # Install language dependencies and the pinned a11y extension
 just render    # Render index.qmd to _site/
 just preview   # Live-reload dev server
 just open      # Alias for preview (live-reload dev server over localhost)
@@ -113,6 +118,10 @@ When modifying `index.qmd`:
 
 - The GitHub Actions workflow in `.github/workflows/` renders the deck and deploys to GitHub Pages on push to `main`. It calls a reusable workflow from `IndrajeetPatil/workflows` (Python and R decks use different workflow files). Do not inline the workflow.
 - **Reference the reusable workflow as `@main`, not a commit SHA.** These workflows are first-party, so tracking `main` is intentional: upstream fixes arrive immediately instead of waiting on a manual SHA bump. A previously pinned SHA went five months stale, leaving CI building with pre-release Quarto and installing a FontAwesome extension this deck does not use, long after upstream had fixed both. Dependabot cannot bump a branch ref, so there is nothing to keep in sync.
+- The a11y integration PR temporarily uses `@feat/revealjs-a11y-extension` to test
+  [workflows#61](https://github.com/IndrajeetPatil/workflows/pull/61). Return to `@main`
+  after that workflow change merges. Keep the local extension version in `justfile`
+  aligned with the shared workflow.
 - Dependabot keeps GitHub Actions dependencies up to date weekly. Python decks also have Dependabot configured for `uv`; R decks do not use Dependabot for R packages.
 
 ## What not to do

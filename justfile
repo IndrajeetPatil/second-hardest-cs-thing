@@ -4,7 +4,7 @@ default: install preview
 # Show help
 help:
     @echo "Available recipes:"
-    @echo "  just install       - Install Python dependencies"
+    @echo "  just install       - Install Python dependencies and Quarto extensions"
     @echo "  just sync          - Alias for install"
     @echo "  just update        - Update Python dependencies"
     @echo "  just render        - Render the Quarto slides to HTML"
@@ -19,6 +19,7 @@ help:
 install:
     @echo "Installing Python dependencies..."
     uv sync --no-install-project
+    quarto add mcanouil/quarto-revealjs-a11y@0.2.3 --no-prompt
     @echo "Installation complete"
 
 # Alias for install
