@@ -57,7 +57,9 @@ underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.
 
 The `accessibility.html` helper still handles scrollable code, slide-menu focus,
-and vertical-slide semantics. Unused tabset handling has been removed. The
+and vertical-slide semantics. It also carries tabset keyboard handling, which is
+shared verbatim across decks and stays inert here because this deck has no
+tabsets. The
 extension's slide-menu patch and accessibility settings panel are disabled:
 version 0.2.3 introduces ARIA and contrast failures in those components.
 
