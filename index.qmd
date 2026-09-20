@@ -63,7 +63,7 @@ Indrajeet Patil
 
 ::: {.column width="40%"}
 
-![](media/cat.webp){width="400" height="300" fig-alt="A cat sitting with confused expression, representing confusion about naming things"}
+![](media/cat.webp){width="400" height="288" fig-alt="A cat sitting with confused expression, representing confusion about naming things"}
 
 :::
 
@@ -115,7 +115,7 @@ Navigating the codebase with good names as beacons of clarity
 
 ::: {.column width="50%"}
 
-![](media/code_ocean.webp){width="450" height="350" fig-alt="A person navigating through an ocean of code, symbolizing the challenge of understanding codebases"}
+![](media/code_ocean.webp){width="350" height="350" fig-alt="A person navigating through an ocean of code, symbolizing the challenge of understanding codebases"}
 
 :::
 

@@ -19,7 +19,7 @@ _site/
 README.html
 
 # Claude
-.claude/
+/.claude/
 
 # Generated files
 _extensions/
@@ -28,3 +28,4 @@ index_files/
 index.quarto_ipynb
 
 **/*.quarto_ipynb
+**/*.quarto_ipynb_*

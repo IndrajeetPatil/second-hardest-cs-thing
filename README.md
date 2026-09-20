@@ -1,5 +1,7 @@
 # Dealing with the Second Hardest Thing in Computer Science
 
+[![Build and Deploy Presentation](https://github.com/IndrajeetPatil/second-hardest-cs-thing/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/second-hardest-cs-thing/actions/workflows/build-presentation.yaml)
+
 This presentation summarizes my understanding of best practices in naming things for software development.
 
 The title is inspired by the following quote:
@@ -55,7 +57,9 @@ underlines, reduced motion, and screen-reader announcements. Run `just install`
 again after `just clean`, which removes installed extensions.
 
 The `accessibility.html` helper still handles scrollable code, slide-menu focus,
-and vertical-slide semantics. Unused tabset handling has been removed. The
+and vertical-slide semantics. It also carries tabset keyboard handling, which is
+shared verbatim across decks and stays inert here because this deck has no
+tabsets. The
 extension's slide-menu patch and accessibility settings panel are disabled:
 version 0.2.3 introduces ARIA and contrast failures in those components.
 
