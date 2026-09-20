@@ -1,5 +1,7 @@
 # Dealing with the Second Hardest Thing in Computer Science
 
+[![Build and Deploy Presentation](https://github.com/IndrajeetPatil/second-hardest-cs-thing/actions/workflows/build-presentation.yaml/badge.svg)](https://github.com/IndrajeetPatil/second-hardest-cs-thing/actions/workflows/build-presentation.yaml)
+
 This presentation summarizes my understanding of best practices in naming things for software development.
 
 The title is inspired by the following quote:
