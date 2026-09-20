@@ -38,7 +38,7 @@ render:
 preview:
     uv run quarto preview index.qmd
 
-# Open rendered slides in browser (macOS)
+# Alias for preview (live-reload dev server)
 alias open := preview
 
 # Clean generated files
@@ -49,8 +49,9 @@ clean:
     rm -f index.html
     rm -rf index_files/
     rm -rf .ipynb_checkpoints/
+    rm -f README.html
 
-# Check Quarto setup
+# Check Quarto and Python setup
 check:
     uv run quarto check
 
