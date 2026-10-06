@@ -14,7 +14,7 @@ keywords = [
     "computer-science",
     "software-development"
 ]
-dependencies = ["jupyter>=1.1.1", "ipykernel>=7.3.0"]
+dependencies = ["jupyter>=1.1.1", "ipykernel>=7.4.0"]
 
 [tool.uv]
 required-version = ">=0.12.17"
