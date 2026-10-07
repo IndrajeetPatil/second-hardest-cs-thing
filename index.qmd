@@ -1023,7 +1023,7 @@ flowchart TD
     H[Human] -.->|Collaborates| A[AI]
     A -.->|Feedback| H
     A --> L[Linter]
-    L -->|Approves| S[Standardized Names]
+    L -->|Approves| S[Standardised Names]
 
     style H fill:#e3f2fd,color:#000
     style A fill:#f3e5f5,color:#000
@@ -1127,7 +1127,7 @@ def calculate_total(items):
 > "_In your name I will hope, for your name is good._" 
 - Psalms 52:9
 
-## Benefits for development, design and collaboration {#section-4 .smaller .sr-only-heading}
+## Benefits for development, design, and collaboration {#section-4 .smaller .sr-only-heading}
 
 :::: {.columns}
 
