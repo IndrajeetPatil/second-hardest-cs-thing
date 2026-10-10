@@ -3,7 +3,7 @@ name = "second-hardest-cs-thing"
 version = "1.0.0"
 description = "A comprehensive guide to naming conventions and best practices for software development"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.15"
 license = { text = "CC0 1.0 Universal" }
 authors = [
     { name = "Indrajeet Patil", email = "patilindrajeet.science@gmail.com" }
@@ -18,5 +18,5 @@ keywords = [
 dependencies = ["ipykernel>=7.4.0", "nbclient>=0.11.0", "pyyaml>=6.0.3"]
 
 [tool.uv]
-required-version = ">=0.12.17"
+required-version = ">=0.13.0"
 
