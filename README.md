@@ -6,7 +6,7 @@ This presentation summarizes my understanding of best practices in naming things
 
 The title is inspired by the following quote:
 
-> "There are only two hard things in Computer Science: cache invalidation and naming things."</br>
+> "There are only two hard things in Computer Science: cache invalidation and naming things."<br>
 > \- Phil Karlton
 
 The slides can be seen here:<br>
