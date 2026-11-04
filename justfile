@@ -19,6 +19,7 @@ help:
 install:
     uv sync --no-install-project
     quarto add mcanouil/quarto-revealjs-a11y --no-prompt
+    quarto add IndrajeetPatil/quarto-read-aloud --no-prompt
 
 # Alias for install
 alias sync := install
