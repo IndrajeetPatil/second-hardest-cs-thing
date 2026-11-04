@@ -6,7 +6,7 @@ This presentation summarizes my understanding of best practices in naming things
 
 The title is inspired by the following quote:
 
-> "There are only two hard things in Computer Science: cache invalidation and naming things."</br>
+> "There are only two hard things in Computer Science: cache invalidation and naming things."<br>
 > \- Phil Karlton
 
 The slides can be seen here:<br>
@@ -37,7 +37,7 @@ just install
 
 ```bash
 just help     # Show all available commands
-just install  # Install Python dependencies and the a11y extension
+just install  # Install Python dependencies and Quarto extensions
 just update   # Update Python dependencies
 just render   # Render slides to HTML
 just preview  # Start a live preview with auto-reload
@@ -70,3 +70,7 @@ not exercise every state. Normal builds omit the axe checker.
 ## Feedback
 
 Feedback and suggestions are welcome in [the issue tracker](https://github.com/IndrajeetPatil/second-hardest-cs-thing/issues).
+
+### Read aloud
+
+Requires Quarto 1.11.9 or newer. `just install` installs the [Read Aloud extension](https://github.com/IndrajeetPatil/quarto-read-aloud). Select **Read aloud** to hear the current slide’s speaker notes; select **Stop reading** to cancel. Changing slides also stops speech. Voice availability depends on your browser and operating system.
