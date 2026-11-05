@@ -75,9 +75,7 @@ Source code for these slides can be found [on GitHub](https://github.com/Indraje
 :::
 
 ::: {.notes}
-Welcome everyone to Dealing with the Second Hardest Thing in Computer Science.
-Phil Karlton famously joked that there are only two hard problems in computer science: cache invalidation and naming things.
-Today we will explore why naming is challenging and how to transform it from a hurried afterthought into a deliberate, repeatable software engineering practice.
+Welcome to Dealing with the Second Hardest Thing in Computer Science. Phil Karlton's familiar joke pairs cache invalidation with naming things. We will explore why naming is difficult and how to make it a deliberate part of everyday engineering.
 :::
 
 ## What you'll learn today {.smaller}
@@ -105,21 +103,14 @@ None of this advice is **dogma**; there can be valid reasons and conventions to 
 :::
 
 ::: {.notes}
-Review the presentation roadmap:
-- Understand the cognitive bottlenecks that make naming difficult during active coding.
-- Identify common naming pitfalls and anti-patterns that degrade codebase readability.
-- Adopt practical heuristics for choosing clear, specific, and domain-appropriate names.
-- Leverage developer tooling, code review, and generative AI as collaborative naming aids.
-Emphasise that while examples are written in Python, all principles are language-agnostic guidelines rather than rigid dogma.
+We will look at why naming is hard, which common habits make code harder to read, and how to choose clearer alternatives. We will also consider tooling and code review. The examples use Python, but the principles apply across languages and should be adapted to a team's context.
 :::
 
 # "There are only two hard things in Computer Science: cache invalidation and naming things." 
 \- Phil Karlton
 
 ::: {.notes}
-Reflect on Phil Karlton's classic quotation:
-The quote resonates because cache invalidation is a classic algorithmic challenge, whereas naming is fundamentally a communication and abstraction challenge.
-Good names bridge mechanical machine instructions with human mental models.
+Naming is a communication problem as well as a technical one. A program needs identifiers, but its readers need those identifiers to connect the implementation with a useful mental model. That is why even a small name can demand careful thought.
 :::
 
 # Why naming matters
@@ -143,9 +134,7 @@ Navigating the codebase with good names as beacons of clarity
 ::::
 
 ::: {.notes}
-Introduce Section 1: Why naming matters.
-In any substantial software system, developers spend vastly more time reading, navigating, and comprehending existing code than writing new lines.
-Clear names serve as beacons of clarity across an unfamiliar codebase.
+Clear names help us navigate unfamiliar code. They reduce the amount of surrounding implementation we must read before understanding what a value or operation represents.
 :::
 
 ## Why naming is hard {.smaller}
@@ -185,9 +174,7 @@ flowchart TD
 :::
 
 ::: {.notes}
-Explain the cognitive load diagram:
-When implementing functionality, working memory is occupied with language syntax, algorithmic logic, edge cases, and architectural constraints.
-By the time a developer assigns a name, cognitive capacity is depleted, leading to rushed, generic, or overly terse identifiers.
+While implementing a feature, we are already thinking about syntax, logic, edge cases, and architecture. Naming competes for that same attention. A rushed or generic name can be the result of that pressure, which is a reason to revisit names before accepting a change.
 :::
 
 ## The cost of poor naming {#section .smaller .sr-only-heading}
@@ -253,9 +240,7 @@ Good names pay dividends
 ::::
 
 ::: {.notes}
-Contrast the hidden costs of poor naming with the dividends of good naming:
-- Costs: Code reviews slow down, debugging turns into guesswork, and technical debt compounds across teams.
-- Dividends: Reviews focus on high-level logic, refactoring becomes predictable, and the codebase becomes largely self-documenting.
+Poor names make reviews slower and debugging more dependent on guesswork. Clear names let reviewers spend more attention on behaviour and make later refactoring easier to follow. The cost or benefit accumulates across everyone who reads the code.
 :::
 
 # Naming: The Do's and Don'ts
@@ -263,9 +248,7 @@ Contrast the hidden costs of poor naming with the dividends of good naming:
 > "_The beginning of wisdom is to call things by their proper name._" - Confucius
 
 ::: {.notes}
-Introduce Section 2: Naming Do's and Don'ts.
-Frame the section around Confucius's reflection that the beginning of wisdom is calling things by their proper name.
-We will examine antipatterns to eliminate followed by positive patterns to adopt.
+Let’s turn to naming habits: first the traps that create confusion, then practical ways to communicate intent more clearly.
 :::
 
 # Core principle
@@ -279,9 +262,7 @@ Good names reveal intention and eliminate guesswork.
 :::
 
 ::: {.notes}
-Highlight the central thesis of the presentation:
-Names must serve the reader, not the author.
-When writing code, you possess maximum mental context; future readers, including yourself in six months, will have none of it.
+A name needs to serve its reader. While writing code, we know the surrounding reasoning; a future reader may not. A good identifier carries enough of that context to make the code understandable without reconstructing the author's thought process.
 :::
 
 # The Don'ts
@@ -289,8 +270,7 @@ When writing code, you possess maximum mental context; future readers, including
 *Common pitfalls that make names harder to understand*
 
 ::: {.notes}
-Introduce the Don'ts:
-Examining common traps, ambiguities, and inconsistencies that needlessly drain mental energy during code navigation.
+The first set of examples shows how ambiguity and inconsistency add avoidable work for the reader.
 :::
 
 ## Avoid confusion and inconsistency {#section-1 .smaller .sr-only-heading}
@@ -313,11 +293,7 @@ Examining common traps, ambiguities, and inconsistencies that needlessly drain m
 :::
 
 ::: {.notes}
-Walk through the antipattern table:
-- Avoid imprecise opposites (such as begin and last; prefer begin and end).
-- Avoid visually ambiguous characters that look identical in common monospace fonts.
-- Guard against homonyms and ambiguous abbreviations that cause friction during verbal discussions.
-- Stick to consistent spelling conventions across the entire codebase.
+Use opposites that belong together, such as begin and end. Avoid identifiers that are hard to distinguish visually or pronounce in conversation. Consistent spelling also matters: readers should not have to remember two variants of the same term.
 :::
 
 ## Keep names clear and maintainable {#section-2 .smaller .sr-only-heading}
@@ -341,10 +317,7 @@ Walk through the antipattern table:
 :::
 
 ::: {.notes}
-Examine clarity and technical maintainability:
-- Avoid inside jokes, slang, pop-culture references, or obscure vocabulary that exclude teammates.
-- Avoid unpronounceable shorthand: names should be easy to discuss aloud in standups and code reviews.
-- Choose searchable identifiers; single-letter names defeat global search tools.
+A name should be understandable outside the author's circle of references. Inside jokes and obscure shorthand make code harder to discuss and search. Descriptive identifiers give colleagues a better starting point than a private abbreviation or a single letter with a wide scope.
 :::
 
 # The Do's
@@ -352,8 +325,7 @@ Examine clarity and technical maintainability:
 *Actionable strategies for creating clear, maintainable names*
 
 ::: {.notes}
-Transition to positive strategies:
-Concrete, actionable rules for selecting names that communicate purpose and intent with minimal ambiguity.
+The positive patterns all aim at the same result: names that communicate purpose with as little ambiguity as the context allows.
 :::
 
 ## Names should be self-documenting {.smaller}
@@ -401,9 +373,7 @@ def fahrenheit_to_celsius(temp_fahrenheit: float):
 :::
 
 ::: {.notes}
-Demonstrate the inverse relationship between naming quality and required commentary:
-- The left example shows how generic names like unit_converter force developers to write explanatory comment blocks.
-- The right example shows how fahrenheit_to_celsius communicates the contract instantly without needing comments.
+The temperature-conversion example shows how a better name can replace an explanatory comment. A generic converter name leaves its units unclear. A name that says Fahrenheit to Celsius tells the reader both the input and the output convention.
 :::
 
 ## Names should be specific {.smaller}
@@ -484,10 +454,7 @@ Unlike regular functions, long names are less problematic for test functions bec
 :::
 
 ::: {.notes}
-Discuss scope and specificity:
-- Short loop variables like i and j are acceptable in brief, single-line scopes, but nested loops require descriptive indices like warehouse and product.
-- Avoid calling variables tmp, which encourages careless accumulation of state.
-- In test suites, descriptive function names serve as living specifications.
+The amount of context a name needs depends on its scope. A short loop index may be clear in a tiny loop, while nested loops benefit from names such as warehouse and product. Test names can go further and state the behaviour the test is intended to verify.
 :::
 
 ## Names should be difficult to misinterpret {.smaller}
@@ -539,9 +506,7 @@ In reality: <br>
 :::
 
 ::: {.notes}
-Encourage active misinterpretation when evaluating names:
-Ask what else a candidate identifier could mean.
-In the code example, get_size could represent bytes on disk or line count; get_character_count removes all ambiguity.
+A useful check is to ask what else a name could mean. Size might refer to bytes, lines, or characters. If the operation counts characters, naming that quantity directly removes the need for the reader to guess.
 :::
 
 ## Names should be appropriately abstract {.smaller}
@@ -626,10 +591,7 @@ d → days → days_since_last_accident → days_since_last_accident_floor_4_lab
 :::
 
 ::: {.notes}
-Explain abstraction levels:
-- Leverage enclosing context to eliminate redundancy (Router.run rather than Router.run_router).
-- Avoid leaking underlying data structures into names (prefer find_user to binary_search_users).
-- Balance detail to find the sweet spot between uninformative brevity and unwieldy verbosity.
+Choose a useful level of abstraction. The enclosing class may already provide context, so repeating it in every method name adds noise. An implementation detail such as binary search may also be less useful in a public name than the operation it performs: finding a user.
 :::
 
 ## Names should maintain standards {.smaller}
@@ -739,10 +701,7 @@ parse_csv()
 :::
 
 ::: {.notes}
-Reinforce the value of consistent standards:
-- Use consistent vocabulary across classes (do not mix retrieve_expenditure and fetch_expenditure for the same operation).
-- Follow community and language naming conventions (PEP 8 casing).
-- Use matching prefixes (parse_json, parse_xml, parse_csv) to enable efficient IDE tab completion.
+Consistent vocabulary makes a codebase easier to learn. Use the same word for the same operation, follow the language's casing conventions, and group related functions with predictable prefixes. Readers can then transfer what they have learned from one part of the API to another.
 :::
 
 ## Keep important details and remove redundancy {#section-3 .smaller .sr-only-heading}
@@ -819,9 +778,7 @@ ip_address
 :::
 
 ::: {.notes}
-Distinguish unnecessary noise from critical domain qualifiers:
-- Remove redundant type markers and boilerplate verbs like doAddition or classShape.
-- Retain essential units, encodings, and qualifiers such as child_height_cm, plaintext_password, and ip_address.
+Some words are noise, while others carry essential information. A redundant type label can often go. Units, encodings, and security-relevant distinctions should remain when they affect correct use. A height in centimetres or a plaintext password needs that distinction to be clear.
 :::
 
 ## Boolean names should be clear {.smaller}
@@ -891,9 +848,7 @@ However, if the variable is primarily used in its false state (e.g., `is_volcano
 :::
 
 ::: {.notes}
-Discuss Boolean naming conventions:
-- Use standard predicate prefixes such as is_, has_, and can_ to signal Boolean types clearly.
-- Favour positive phrasing (is_firewall_enabled) over double negatives (not is_firewall_disabled) to minimise cognitive strain during conditional evaluation.
+Boolean names should read naturally in a condition. Prefixes such as is, has, and can help signal a yes-or-no value. Positive phrasing, such as checking whether a firewall is enabled, avoids the mental work of interpreting a double negative.
 :::
 
 ## Choose domain-appropriate names {.smaller}
@@ -984,9 +939,7 @@ flowchart TD
 ::::
 
 ::: {.notes}
-Align terminology with architectural layers:
-- Use computer science terminology for lower-level infrastructure, algorithms, and data structures (traverse_list, push_to_stack).
-- Use business domain terminology for domain entities and services (validate_loan_application, calculate_mortgage_payment).
+Use vocabulary suited to the layer of the system. Infrastructure code may discuss traversing a list or pushing to a stack. Business logic should use the language of the domain, such as validating a loan application or calculating a mortgage payment.
 :::
 
 ## Use appropriate grammatical forms {.smaller}
@@ -1070,16 +1023,13 @@ user.is_adult()     # returns boolean
 :::
 
 ::: {.notes}
-Outline grammatical conventions:
-- Classes and objects represent conceptual entities and should be singular nouns (PaymentProcessor, ErrorHandler).
-- Methods that perform actions should use verbs (user.save()), while methods that return values or inspect state should use nouns or predicates (user.name(), user.is_adult()).
+Grammar can help signal an identifier's role. Entities commonly use singular nouns, actions use verbs, and state queries use nouns or predicates. The important point is to follow a consistent convention that makes the intended use easy to anticipate.
 :::
 
 # Utilizing tools
 
 ::: {.notes}
-Introduce Section 3: Tooling and collaboration.
-Examine how linters, generative AI, code reviews, and refactoring tools support developers in maintaining naming quality.
+Tools and collaboration can support better naming. They are useful at different stages, from enforcing a convention to questioning whether a name communicates the right idea.
 :::
 
 ## Naming limitations of linters {.smaller}
@@ -1121,9 +1071,7 @@ Examine how linters, generative AI, code reviews, and refactoring tools support 
 :::
 
 ::: {.notes}
-Delineate what static linters can and cannot accomplish:
-- Linters excel at enforcing structural rules, checking casing patterns, and detecting reserved keywords.
-- However, linters check syntax, not semantics: they cannot understand intent, judge domain accuracy, or assess readability for human colleagues.
+Linters are good at checking structural conventions, such as casing and reserved words. They offer much less help with whether a name reflects the domain or communicates the intended behaviour. Those questions still need contextual review.
 :::
 
 ## Generative AI tools can be valuable allies {.smaller}
@@ -1176,9 +1124,7 @@ flowchart TD
 ::::
 
 ::: {.notes}
-Evaluate generative AI assistants as naming partners:
-LLMs have broad contextual visibility across functions and can propose multiple alternative names with rationales.
-However, AI suggestions must be reviewed critically to avoid overly verbose names or subtle domain mismatches.
+An AI assistant can propose alternative names and explain the differences between them. Treat those suggestions as candidates. Check that they fit the surrounding vocabulary and do not replace a concise domain term with unnecessary verbosity.
 :::
 
 ## Code Review: A fresh perspective {.smaller}
@@ -1217,8 +1163,7 @@ flowchart TD
 ```
 
 ::: {.notes}
-Highlight code review as an ideal naming checkpoint:
-Reviewers operate under significantly lower cognitive load than the original author, allowing them to spot confusing names, question implicit assumptions, and suggest clearer alternatives.
+A reviewer brings a fresh perspective to names that may feel obvious to the author. Questions such as “what does this value represent?” reveal context that the code has failed to communicate. Review is a useful point at which to repair that gap.
 :::
 
 ## Renaming in legacy code {.smaller}
@@ -1274,10 +1219,7 @@ def calculate_total(items):
 :::
 
 ::: {.notes}
-Walk through safe legacy refactoring workflows:
-- Use deprecation decorators to maintain backwards compatibility when updating public APIs.
-- Use IDE refactoring capabilities (Rename Symbol) rather than blunt global search-and-replace.
-- Isolate renames into dedicated commits covered by comprehensive automated tests.
+Renaming existing code needs care, especially at public interfaces. Use symbol-aware refactoring tools, preserve compatibility where required, and keep renames separate from unrelated behaviour changes. Relevant tests provide evidence that the refactoring has preserved the contract.
 :::
 
 # Benefits of good names
@@ -1286,8 +1228,7 @@ Walk through safe legacy refactoring workflows:
 - Psalms 52:9
 
 ::: {.notes}
-Introduce Section 4: The long-term return on investment.
-Reflect on how deliberate naming choices elevate code quality, developer velocity, and software longevity.
+The benefit of good names extends beyond the current edit. They support later development, expose weaknesses in the design, and reduce the effort needed to collaborate on the codebase.
 :::
 
 ## Benefits for development, design, and collaboration {#section-4 .smaller .sr-only-heading}
@@ -1341,10 +1282,7 @@ Source: Geek & Poke
 ::::
 
 ::: {.notes}
-Summarise benefits across three core dimensions:
-- Development velocity: Faster comprehension and less time spent deciphering intent.
-- Design quality: Clear names force modular thinking and reveal architectural flaws early.
-- Team collaboration: Lower collective onboarding overhead and reduced misunderstandings.
+Clear names improve comprehension, make design responsibilities easier to discuss, and help new colleagues find their way around. These benefits reinforce each other: clearer concepts make both implementation and communication easier.
 :::
 
 ## Naming is hard, but worth it
@@ -1362,9 +1300,7 @@ Invest time in good names early—they pay dividends by reducing system complexi
 :::
 
 ::: {.notes}
-Offer concluding encouragement:
-Naming is a craft that improves steadily with deliberate practice.
-Investing a few extra minutes in choosing the right identifier pays compound interest throughout the lifespan of the software.
+Naming is a skill that develops through practice and feedback. A little extra attention during implementation or review can save many later readers from repeating the same investigation.
 :::
 
 # Thank You
@@ -1391,8 +1327,7 @@ Check out my other [slide decks](https://www.indrapatil.com/presentations/) on s
 :::
 
 ::: {.notes}
-Thank the audience for their time and attention.
-Invite questions, reflections, and personal naming experiences from the audience.
+Thank you for listening. Questions, alternative conventions, and examples from your own codebases are welcome.
 :::
 
 ## References {.smaller data-visibility="uncounted"}
@@ -1424,7 +1359,7 @@ Invite questions, reflections, and personal naming experiences from the audience
 :::
 
 ::: {.notes}
-Acknowledge key software craftsmanship literature that shaped these principles, including McConnell's Code Complete, Boswell and Foucher's The Art of Readable Code, and Martin's Clean Code.
+The references include Code Complete, The Art of Readable Code, and Clean Code. They provide broader discussions of naming and readability behind the examples in this presentation.
 :::
 
 ## Popular Naming Conventions {.smaller data-visibility="uncounted"}
@@ -1456,7 +1391,7 @@ Various domains have established naming conventions that provide consistency and
 :::
 
 ::: {.notes}
-Provide reference pointers to widely adopted industry style guides, including PEP 8, the Google Java and C++ style guides, and Rust API naming guidelines.
+These style guides provide language-specific starting points, including Python, Java, C++, and Rust. Use the guide that fits the project, and make any local exceptions explicit.
 :::
 
 ## *Extra* : Examples of Conventions {.smaller data-visibility="uncounted" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
@@ -1496,8 +1431,7 @@ Provide reference pointers to widely adopted industry style guides, including PE
 :::
 
 ::: {.notes}
-Review layer-specific naming conventions across languages and full-stack layers (databases, REST APIs, GraphQL, and CSS).
-Remind presenters that internal consistency within a layer matters more than cross-layer uniformity.
+Conventions can differ between application code, database schemas, web APIs, and stylesheets. Aim for consistency within each layer rather than forcing one naming pattern across every technology.
 :::
 
 ## ICYMI: Available casing conventions {.smaller data-visibility="uncounted"}
@@ -1513,5 +1447,5 @@ Illustration (CC-BY) by [Allison Horst](https://allisonhorst.com/)
 :::
 
 ::: {.notes}
-Conclude with Allison Horst's visual overview of casing conventions, providing an accessible reference for snake_case, camelCase, PascalCase, and kebab-case.
+This visual reference collects common casing styles: words separated by underscores, words joined with capitals, and words separated by hyphens. Their familiar names include snake case, camel case, Pascal case, and kebab case.
 :::
