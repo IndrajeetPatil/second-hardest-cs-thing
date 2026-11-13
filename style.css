@@ -34,6 +34,11 @@
   font-size: 0.75em !important;
 }
 
+/* Let callout fills carry emphasis without a coloured box edge. */
+.reveal .slides section div.callout {
+  border: 0;
+}
+
 /* Lightweight SVG masks using Font Awesome Free 6.7.2 paths. Icons: CC BY 4.0; https://fontawesome.com/license/free */
 
 .deck-icon {

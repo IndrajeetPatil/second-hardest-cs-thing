@@ -81,10 +81,12 @@ The theme format is Quarto RevealJS (`theme: simple`). Custom styles are defined
 - **Line Highlights:** `div.sourceCode pre code.has-line-highlights` preserves unhighlighted lines at full opacity while highlighting selected spans in warm amber (`#fff8e1`).
 - **Icons:** SVG mask icons (`.deck-icon`, `.deck-icon-brands-github`, `.deck-icon-brands-linkedin`, `.deck-icon-solid-envelope`) rendered via CSS masks in `currentColor`.
 - **Mermaid Diagrams:** Dark edge labels (`#1a1a1a`) ensuring contrast against grey backings.
+- **Text Boxes and Callouts:** Use semantic pastel fills without coloured borders or side rules.
 
 ## Do's and Don'ts
 
 - **Do** reuse the established semantic pastel colours for cards and callouts.
+- **Don't** add coloured edges to text boxes, callouts, or slide panels.
 - **Do** format code identifiers with backticks and display code with clear language tags.
 - **Don't** introduce ad-hoc bright saturated background colours.
 - **Don't** use inline style rules that break contrast against the white canvas.
