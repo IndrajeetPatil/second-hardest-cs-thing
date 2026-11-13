@@ -1086,7 +1086,7 @@ Linters are good at checking structural conventions, such as casing and reserved
 - Inconsistency detection across codebase
 - Multiple naming suggestions with rationales
 
-::: {style="background-color: rgba(117, 112, 179, 0.15); border-left: 5px solid #7570B3FF; padding: 15px; border-radius: 8px; margin-top: 20px;"}
+::: {style="background-color: rgba(117, 112, 179, 0.15); padding: 15px; border-radius: 8px; margin-top: 20px;"}
 
 **LLM-Generated Names**
 
@@ -1394,7 +1394,7 @@ Various domains have established naming conventions that provide consistency and
 These style guides provide language-specific starting points, including Python, Java, C++, and Rust. Use the guide that fits the project, and make any local exceptions explicit.
 :::
 
-## *Extra* : Examples of Conventions {.smaller data-visibility="uncounted" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; border-left: 4px solid #6c757d;"}
+## *Extra* : Examples of Conventions {.smaller data-visibility="uncounted" style="background-color: #f8f9fa; padding: 15px; border-radius: 10px;"}
 
 ::: {style="font-size: 0.55em; line-height: 1.3;"}
 
