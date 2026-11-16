@@ -91,11 +91,3 @@ pull request.
   `actions/unpinned-tag`, zizmor `unpinned-uses`) flag this by design: do not
   report it or propose a pin; dismiss such alerts as "won't fix" with this
   reason.
-
-## Agent skills
-
-Skills live in `.agents/skills/<name>/SKILL.md`. Load one before its task:
-
-| Skill | Load before |
-| --- | --- |
-| `check-accessibility` | Changing slide markup, styles, widgets, menus or the a11y setup; any accessibility audit |
