@@ -15,8 +15,8 @@ keywords = [
     "software-development",
     "llms-txt"
 ]
-dependencies = ["ipykernel>=7.4.0", "nbclient>=0.11.0", "pyyaml>=6.0.3"]
+dependencies = ["ipykernel>=7.4.0", "nbclient>=0.11.0", "pyyaml>=6.0.4"]
 
 [tool.uv]
-required-version = ">=0.13.8"
+required-version = ">=0.13.9"
 
