@@ -16,11 +16,21 @@
 }
 
 /* Preserve readable syntax on lines outside the highlighted selection. */
-.reveal .slides div.sourceCode pre code.has-line-highlights > span:not(.highlight-line) {
+.reveal
+  .slides
+  div.sourceCode
+  pre
+  code.has-line-highlights
+  > span:not(.highlight-line) {
   opacity: 1;
 }
 
-.reveal .slides div.sourceCode pre code.has-line-highlights > span.highlight-line {
+.reveal
+  .slides
+  div.sourceCode
+  pre
+  code.has-line-highlights
+  > span.highlight-line {
   background-color: #fff8e1;
 }
 
